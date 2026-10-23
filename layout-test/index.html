@@ -66,7 +66,7 @@ footer{background:#18372f;color:#ecdcbf;font-size:12px;padding:5px 14px;flex:non
 }
 @media(max-height:390px){header{height:47px}.brand #museumName{font-size:17px}.status{font-size:13px}.nav button{font-size:13px;padding:7px 9px}.dpad{width:133px;height:133px}.act button{min-height:54px}.stage .hint{font-size:13px;padding:7px 11px}}
 @media(max-width:720px){.brand small{display:none}.brand{min-width:110px}.brand #museumName{font-size:16px}.status{font-size:12px}.nav button{font-size:12px;padding:8px}}
-</style><link rel="stylesheet" href="art-inspect.css?v=1.9"><link rel="stylesheet" href="viewer-minimal.css?v=1.10"><link rel="stylesheet" href="portrait.css?v=1.5"><link rel="stylesheet" href="viewer-orientation.css?v=1.5"><link rel="stylesheet" href="functional-ui.css?v=1.6"><link rel="stylesheet" href="rpg-chat.css?v=1.6"><link rel="stylesheet" href="p6-story.css?v=1"><link rel="stylesheet" href="ui-v17.css?v=1.7"><link rel="stylesheet" href="registration-compact.css?v=1.20"><link rel="stylesheet" href="a18-fixed-ui.css?v=1"><link rel="stylesheet" href="a18-viewer-framing.css?v=1"><link rel="icon" href="data:,"/><meta name="a18-build" content="release"></head>
+</style><link rel="stylesheet" href="art-inspect.css?v=1.9"><link rel="stylesheet" href="viewer-minimal.css?v=1.10"><link rel="stylesheet" href="portrait.css?v=1.5"><link rel="stylesheet" href="viewer-orientation.css?v=1.5"><link rel="stylesheet" href="functional-ui.css?v=1.6"><link rel="stylesheet" href="rpg-chat.css?v=1.6"><link rel="stylesheet" href="p6-story.css?v=1"><link rel="stylesheet" href="ui-v17.css?v=1.7"><link rel="stylesheet" href="registration-compact.css?v=1.20"><link rel="stylesheet" href="a18-fixed-ui.css?v=1"><link rel="stylesheet" href="a18-viewer-framing.css?v=1"></head>
 <body>
 <div class="app">
 <header><div class="brand"><small>PUZZLE MUSEUM</small><button id="museumName" title="美術館の名前を変更">パズル美術館</button></div></header>
@@ -706,11 +706,40 @@ function showSettings(){
   '<hr><h3>物語</h3><button id="p6StoryHistory" type="button" class="light">美術館の物語</button>'+
   '<hr><h3>広告</h3><button id="adRemoval" type="button" disabled>広告を永久に削除　準備中</button>'+
   '<p class="small">広告削除の買い切り機能は、iOS版の課金機能を実装した後に利用できる予定です。現時点では購入処理は行いません。</p>'+ 
-  '<hr><p class="small">作品と原本写真は、このブラウザの美術館データに保存されます。アプリからの全データ初期化はできません。</p></div>');
+  '<hr><h3>ゲームのリセット</h3><p class="small">テスト中の作品と展示を削除できます。削除した写真は復元できません。</p>'+
+  '<div class="row"><button id="resetWorksOnly" type="button" class="light">作品だけ削除（レベル維持）</button><button id="resetAllProgress" type="button" class="a18-danger">最初からやり直す（Lv.1）</button></div>'+
+  '<p class="small">写真原本はこのブラウザの美術館データに保存されます。リセットは取り消せません。</p></div>');
  $('saveProfile').onclick=async()=>{if(await saveProfile())close();};
  $('closeSettings').onclick=close;
  $('p6StoryHistory').onclick=()=>{close();showStoryHistory();};
-
+ $('resetWorksOnly').onclick=()=>confirmMuseumReset('works');
+ $('resetAllProgress').onclick=()=>confirmMuseumReset('all');
+}
+function confirmMuseumReset(mode){
+ if(saving||saveBlocked||showingEvent)return;
+ const all=mode==='all';
+ open('ゲームのリセット',
+  '<p><strong>'+(all?'Lv.1からやり直しますか？':'作品だけ削除しますか？')+'</strong></p>'+
+  '<p class="small">'+(all?'所蔵作品・写真原本・展示・レベル・物語・館長設定を初期化します。':'所蔵作品・写真原本・展示を削除します。現在のレベル、開放済みの部屋、物語の記録は維持します。')+'</p>'+
+  '<p class="small">この操作は取り消せません。</p><p id="resetError" class="error" role="alert"></p>'+
+  '<div class="row"><button id="executeMuseumReset" type="button" class="a18-danger">削除して'+(all?'最初から開始':'レベルを維持')+'</button><button id="cancelMuseumReset" type="button" class="light">キャンセル</button></div>');
+ $('cancelMuseumReset').onclick=()=>{close();showSettings();};
+ $('executeMuseumReset').onclick=async()=>{
+  if(saving||saveBlocked)return;
+  saving=true;
+  $('executeMuseumReset').disabled=true;
+  try{
+   clearTimeout(saveTimer);
+   const next=P2.resetState(currentSave,mode);
+   await P2.commit(currentSave.revision,next);
+   applyCommitted(next);
+   close();
+   if(all)location.reload();
+  }catch(e){
+   $('resetError').textContent='リセットできませんでした。データは変更されていません。'+(e.code||e.message);
+   saveError(e);
+  }finally{saving=false;}
+ };
 }
 
 function open(title,contents,kind='standard'){
