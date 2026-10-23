@@ -1,0 +1,14 @@
+{
+  "canonical_repo_path": "a18/scenes-preview/assets/official",
+  "characters": {
+    "status": "approved",
+    "count": 48,
+    "folder": "characters"
+  },
+  "furniture": {
+    "status": "not_produced",
+    "approved_count": 0,
+    "count": 0,
+    "folder": "furniture"
+  }
+}

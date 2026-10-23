@@ -1,0 +1,805 @@
+{
+  "version": "A18-approved-characters-v1",
+  "comment": "正式採用キャラクター48点はscenes-preview/assets/official/charactersが正本。額縁・家具の旧候補PNGは非採用・構造検証用に据え置き（表示を変更しない）。",
+  "avatars": {
+    "male": {
+      "pattern": "../scenes-preview/assets/official/characters/curator-{direction}-{frame}.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 1
+      },
+      "size": {
+        "width": 35,
+        "height": 46
+      }
+    },
+    "female": {
+      "pattern": "../scenes-preview/assets/official/characters/female-{direction}-{frame}.png",
+      "placeholder": null,
+      "anchor": {
+        "x": 0.5,
+        "y": 1
+      },
+      "size": {
+        "width": 35,
+        "height": 46
+      },
+      "footBaselinePx": 72,
+      "sourceSize": [
+        60,
+        77
+      ]
+    }
+  },
+  "staff": {
+    "path": "../scenes-preview/assets/official/characters/staff-front-00.png",
+    "portraitPath": "../scenes-preview/assets/official/characters/staff-front-00.png",
+    "sourceSize": [
+      60,
+      77
+    ],
+    "footBaselinePx": 72,
+    "size": {
+      "width": 43,
+      "height": 55
+    }
+  },
+  "butler": {
+    "path": "../scenes-preview/assets/official/characters/butler-front-00.png",
+    "portraitPath": "../scenes-preview/assets/official/characters/butler-front-00.png",
+    "sourceSize": [
+      60,
+      77
+    ],
+    "footBaselinePx": 72,
+    "size": {
+      "width": 43,
+      "height": 55
+    }
+  },
+  "decor": {
+    "sofa": {
+      "path": "assets/candidate-v1.1/props/sofa_red.png",
+      "assetKey": "sofa_red",
+      "sourceSize": [
+        256,
+        256
+      ],
+      "alphaBBox": [
+        23,
+        128,
+        232,
+        238
+      ],
+      "anchor": [
+        0.498,
+        0.9297
+      ],
+      "installation": "floor",
+      "collidable": true
+    },
+    "bench": {
+      "path": "assets/candidate-v1.1/props/bench.png",
+      "assetKey": "bench",
+      "sourceSize": [
+        256,
+        256
+      ],
+      "alphaBBox": [
+        26,
+        155,
+        228,
+        238
+      ],
+      "anchor": [
+        0.4961,
+        0.9297
+      ],
+      "installation": "floor",
+      "collidable": true
+    },
+    "table": {
+      "path": "assets/candidate-v1.1/props/round_table.png",
+      "assetKey": "round_table",
+      "sourceSize": [
+        256,
+        256
+      ],
+      "alphaBBox": [
+        24,
+        51,
+        233,
+        238
+      ],
+      "anchor": [
+        0.502,
+        0.9297
+      ],
+      "installation": "floor",
+      "collidable": true
+    },
+    "plant": {
+      "path": "assets/candidate-v1.1/props/potted_plant.png",
+      "assetKey": "potted_plant",
+      "sourceSize": [
+        256,
+        256
+      ],
+      "alphaBBox": [
+        20,
+        50,
+        237,
+        238
+      ],
+      "anchor": [
+        0.502,
+        0.9297
+      ],
+      "installation": "floor",
+      "collidable": true
+    },
+    "vase": {
+      "path": "assets/candidate-v1.1/props/flower_vase.png",
+      "assetKey": "flower_vase",
+      "sourceSize": [
+        256,
+        256
+      ],
+      "alphaBBox": [
+        75,
+        61,
+        186,
+        238
+      ],
+      "anchor": [
+        0.5098,
+        0.9297
+      ],
+      "installation": "floor",
+      "collidable": true
+    },
+    "lamp": {
+      "path": "assets/candidate-v1.1/props/floor_lamp.png",
+      "assetKey": "floor_lamp",
+      "sourceSize": [
+        256,
+        256
+      ],
+      "alphaBBox": [
+        61,
+        37,
+        195,
+        238
+      ],
+      "anchor": [
+        0.5,
+        0.9297
+      ],
+      "installation": "floor",
+      "collidable": true
+    },
+    "rug": {
+      "path": "assets/candidate-v1.1/props/rug_red.png",
+      "assetKey": "rug_red",
+      "sourceSize": [
+        256,
+        256
+      ],
+      "alphaBBox": [
+        21,
+        129,
+        236,
+        237
+      ],
+      "anchor": [
+        0.502,
+        0.9258
+      ],
+      "installation": "floor",
+      "collidable": false
+    },
+    "rope": {
+      "path": "assets/candidate-v1.1/props/rope_barrier.png",
+      "assetKey": "rope_barrier",
+      "sourceSize": [
+        256,
+        256
+      ],
+      "alphaBBox": [
+        20,
+        67,
+        235,
+        238
+      ],
+      "anchor": [
+        0.498,
+        0.9297
+      ],
+      "installation": "floor",
+      "collidable": true
+    },
+    "sign": {
+      "path": "assets/candidate-v1.1/props/information_sign.png",
+      "assetKey": "information_sign",
+      "sourceSize": [
+        256,
+        256
+      ],
+      "alphaBBox": [
+        49,
+        40,
+        199,
+        238
+      ],
+      "anchor": [
+        0.4844,
+        0.9297
+      ],
+      "installation": "floor",
+      "collidable": true
+    },
+    "clock": {
+      "path": "assets/candidate-v1.1/props/grandfather_clock.png",
+      "assetKey": "grandfather_clock",
+      "sourceSize": [
+        256,
+        256
+      ],
+      "alphaBBox": [
+        87,
+        38,
+        170,
+        234
+      ],
+      "anchor": [
+        0.502,
+        0.9141
+      ],
+      "installation": "floor",
+      "collidable": true
+    },
+    "cabinet": {
+      "path": "assets/candidate-v1.1/props/wood_cabinet.png",
+      "assetKey": "wood_cabinet",
+      "sourceSize": [
+        256,
+        256
+      ],
+      "alphaBBox": [
+        38,
+        44,
+        223,
+        237
+      ],
+      "anchor": [
+        0.5098,
+        0.9258
+      ],
+      "installation": "floor",
+      "collidable": true
+    },
+    "pedestal": {
+      "path": "assets/candidate-v1.1/props/pedestal_round.png",
+      "assetKey": "pedestal_round",
+      "sourceSize": [
+        256,
+        256
+      ],
+      "alphaBBox": [
+        70,
+        39,
+        184,
+        238
+      ],
+      "anchor": [
+        0.4961,
+        0.9297
+      ],
+      "installation": "floor",
+      "collidable": true
+    },
+    "easel": {
+      "path": "assets/candidate-v1.1/props/easel_wood.png",
+      "assetKey": "easel_wood",
+      "sourceSize": [
+        256,
+        256
+      ],
+      "alphaBBox": [
+        52,
+        37,
+        205,
+        237
+      ],
+      "anchor": [
+        0.502,
+        0.9258
+      ],
+      "installation": "floor",
+      "collidable": true
+    },
+    "column": {
+      "path": "assets/candidate-v1.1/props/column.png",
+      "assetKey": "column",
+      "sourceSize": [
+        256,
+        256
+      ],
+      "alphaBBox": [
+        82,
+        55,
+        174,
+        234
+      ],
+      "anchor": [
+        0.5,
+        0.9141
+      ],
+      "installation": "floor",
+      "collidable": true
+    },
+    "statue": {
+      "path": "assets/candidate-v1.1/props/statue_bust.png",
+      "assetKey": "statue_bust",
+      "sourceSize": [
+        81,
+        143
+      ],
+      "alphaBBox": [
+        6,
+        4,
+        72,
+        105
+      ],
+      "anchor": [
+        0.4815,
+        0.7343
+      ],
+      "installation": "floor",
+      "collidable": true
+    },
+    "stool": {
+      "path": "assets/candidate-v1.1/props/stool.png",
+      "assetKey": "stool",
+      "sourceSize": [
+        256,
+        256
+      ],
+      "alphaBBox": [
+        48,
+        55,
+        209,
+        238
+      ],
+      "anchor": [
+        0.502,
+        0.9297
+      ],
+      "installation": "floor",
+      "collidable": true
+    },
+    "tapestry": {
+      "path": "assets/candidate-v1.1/props/tapestry.png",
+      "assetKey": "tapestry",
+      "sourceSize": [
+        256,
+        256
+      ],
+      "alphaBBox": [
+        98,
+        76,
+        237,
+        238
+      ],
+      "anchor": [
+        0.6543,
+        0.9297
+      ],
+      "installation": "wall",
+      "collidable": false
+    },
+    "pedestalSquare": {
+      "path": "assets/candidate-v1.1/props/pedestal_square.png",
+      "assetKey": "pedestal_square",
+      "sourceSize": [
+        256,
+        256
+      ],
+      "alphaBBox": [
+        47,
+        68,
+        210,
+        237
+      ],
+      "anchor": [
+        0.502,
+        0.9258
+      ],
+      "installation": "floor",
+      "collidable": true
+    }
+  },
+  "frames": {
+    "wall": {
+      "gold": {
+        "landscape": {
+          "path": "assets/candidate-v1.1/props/frame_gold_landscape.png",
+          "alphaBBox": [
+            20,
+            57,
+            237,
+            200
+          ],
+          "sourceSize": [
+            256,
+            256
+          ]
+        },
+        "portrait": {
+          "path": "assets/candidate-v1.1/props/frame_gold_portrait.png",
+          "alphaBBox": [
+            63,
+            18,
+            194,
+            239
+          ],
+          "sourceSize": [
+            256,
+            256
+          ]
+        },
+        "square": {
+          "path": "assets/candidate-v1.1/props/frame_gold_square.png",
+          "alphaBBox": [
+            31,
+            31,
+            226,
+            226
+          ],
+          "sourceSize": [
+            256,
+            256
+          ]
+        }
+      },
+      "wood": {
+        "landscape": {
+          "path": "assets/candidate-v1.1/props/frame_wood_landscape.png",
+          "alphaBBox": [
+            20,
+            57,
+            237,
+            200
+          ],
+          "sourceSize": [
+            256,
+            256
+          ]
+        },
+        "portrait": {
+          "path": "assets/candidate-v1.1/props/frame_wood_portrait.png",
+          "alphaBBox": [
+            63,
+            18,
+            194,
+            239
+          ],
+          "sourceSize": [
+            256,
+            256
+          ]
+        },
+        "square": {
+          "path": "assets/candidate-v1.1/props/frame_wood_square.png",
+          "alphaBBox": [
+            31,
+            31,
+            226,
+            226
+          ],
+          "sourceSize": [
+            256,
+            256
+          ]
+        }
+      }
+    },
+    "floor": {
+      "standAsset": "assets/candidate-v1.1/props/easel_wood.png"
+    }
+  },
+  "candidateSource": "unapproved prop and frame images only; character candidates are NOT used",
+  "allCandidateFiles": [
+    {
+      "path": "assets/candidate-v1.1/props/bench.png",
+      "sha256": "f5bb7f45b6073c690857975247891571fdb48029584d52204ed8dec02afddfef"
+    },
+    {
+      "path": "assets/candidate-v1.1/props/column.png",
+      "sha256": "eba4610b0849ea7500e274b296578f8f28651eb12e2f83757178077a87b27d3d"
+    },
+    {
+      "path": "assets/candidate-v1.1/props/easel_wood.png",
+      "sha256": "388af2bf5fea1621efbcc016e7c500090ad1ecb40eb595566d2deda2f4c63d09"
+    },
+    {
+      "path": "assets/candidate-v1.1/props/floor_lamp.png",
+      "sha256": "c87669c297d356c60cefb293dcf658372f10dedffcf8b9b13ff5471e78f8d2dd"
+    },
+    {
+      "path": "assets/candidate-v1.1/props/flower_vase.png",
+      "sha256": "3bf27b7a8e59132b4235fc7cc15a9ce4ad332d6feded28ff832d6d5313a4a5a1"
+    },
+    {
+      "path": "assets/candidate-v1.1/props/frame_gold_landscape.png",
+      "sha256": "ef04ef5ee0ea25374c135c62428e384b85710e4ee2f39b28f4c872424bf030a3"
+    },
+    {
+      "path": "assets/candidate-v1.1/props/frame_gold_portrait.png",
+      "sha256": "89b3443c4ebdb5cec8fb63c3b4cdac97d395f8555ab3f39eae68ca0f3cb9ee57"
+    },
+    {
+      "path": "assets/candidate-v1.1/props/frame_gold_square.png",
+      "sha256": "1690212a37a4409554e7775cb8d708758cbe8989ea07260948044ce037093966"
+    },
+    {
+      "path": "assets/candidate-v1.1/props/frame_wood_landscape.png",
+      "sha256": "8eaaf33d372298cc78d7f715a4e1de5050696f0322196e9c1aa01aa039736a86"
+    },
+    {
+      "path": "assets/candidate-v1.1/props/frame_wood_portrait.png",
+      "sha256": "8d8225a88229dc5c2256c17156b04e6b960e785abc44ec0cdfa3abb32376564d"
+    },
+    {
+      "path": "assets/candidate-v1.1/props/frame_wood_square.png",
+      "sha256": "262d8255fcb8af691b5951b3aded22809ef9356b95d6faf088804dfbe0c4a29a"
+    },
+    {
+      "path": "assets/candidate-v1.1/props/grandfather_clock.png",
+      "sha256": "2d4ebe2b481b85e9526cb18c110ee37c9e032b66c707bf0f992263f7ed34beff"
+    },
+    {
+      "path": "assets/candidate-v1.1/props/information_sign.png",
+      "sha256": "832e42b9db0732c19b7a419a568e67837f87f0eff2f8a10b3f74eb3c1ef5bb21"
+    },
+    {
+      "path": "assets/candidate-v1.1/props/pedestal_round.png",
+      "sha256": "f52cc0348fc0804e08faec2e884d38be7a71f01135316393ce9f3e7b4c7eeaea"
+    },
+    {
+      "path": "assets/candidate-v1.1/props/pedestal_square.png",
+      "sha256": "d62435eed4dd42785d2b8079fc3f2b7af43e45bad134e0ed750161cdbd877c42"
+    },
+    {
+      "path": "assets/candidate-v1.1/props/potted_plant.png",
+      "sha256": "1eb75d7bd5f25a343280c1dee9730468bb7903c819ed2ae538afeb5e8e0c4ffe"
+    },
+    {
+      "path": "assets/candidate-v1.1/props/rope_barrier.png",
+      "sha256": "73d888cdaf2b12216a0346506bfe50f3aee78d8237ef61a93270030893c8a8e3"
+    },
+    {
+      "path": "assets/candidate-v1.1/props/round_table.png",
+      "sha256": "e8ce7f4374831d8f7a33ecd1c000b1fdec6620200eaf663103c6b005b5435a08"
+    },
+    {
+      "path": "assets/candidate-v1.1/props/rug_red.png",
+      "sha256": "af8ce98740ffcc9bd0c8e4ea84fd7081ae090cff8aeb05e9a47bc2769d3707e0"
+    },
+    {
+      "path": "assets/candidate-v1.1/props/sofa_red.png",
+      "sha256": "ee5c6098dc5671a556c893639dfe86233ebcd566cf19cf490dbc199112be0790"
+    },
+    {
+      "path": "assets/candidate-v1.1/props/statue_bust.png",
+      "sha256": "3f5f8d5b41b37c02d3f27f906160cb209a984fe839683cc3318d81fc453ce495"
+    },
+    {
+      "path": "assets/candidate-v1.1/props/stool.png",
+      "sha256": "d245ac50cfdac7c96742aadbd5052185a6a9c01aa79ddc7237ceee439dbe4335"
+    },
+    {
+      "path": "assets/candidate-v1.1/props/tapestry.png",
+      "sha256": "d51a5354ff5a51f96833e2df8bb8ff381a6a55d9a95c48f629b7f98dd26faba1"
+    },
+    {
+      "path": "assets/candidate-v1.1/props/wood_cabinet.png",
+      "sha256": "f1afdec324594f98a4af2bc92a2943379082880619d78e8d4eee149e31b1763b"
+    }
+  ],
+  "officialCharacterFiles": [
+    {
+      "path": "../scenes-preview/assets/official/characters/butler-back-00.png",
+      "sha256": "6c5d63280964e098ef847f4101a776674be8de3547b71a8e4e0854911bcb0f4a"
+    },
+    {
+      "path": "../scenes-preview/assets/official/characters/butler-front-00.png",
+      "sha256": "e3d1f41184ccab4535f0fe05a19bef59024a3665a76e75b43b8991668372213c"
+    },
+    {
+      "path": "../scenes-preview/assets/official/characters/butler-left-00.png",
+      "sha256": "4b9d3a9d71de89fc103e71e5920dd88438b0102a4e400cf72451d6b69ac798d9"
+    },
+    {
+      "path": "../scenes-preview/assets/official/characters/butler-right-00.png",
+      "sha256": "a32c74906bbd26b8593739b2350768e94370c25b8a802d805d4ada68105f9e0b"
+    },
+    {
+      "path": "../scenes-preview/assets/official/characters/curator-back-00.png",
+      "sha256": "6c0d367afc683251214634a6f346093c42b8f693b5dc4cb5445b027894cc4893"
+    },
+    {
+      "path": "../scenes-preview/assets/official/characters/curator-back-01.png",
+      "sha256": "46bbc498026b1f6be4ea6e5db0775d4ede166db5582c6d12cb7f54b1878f6547"
+    },
+    {
+      "path": "../scenes-preview/assets/official/characters/curator-back-02.png",
+      "sha256": "b1a44dd74c2bb2cc555ba749a335901d726ab928f2064d1235fcb4992d761575"
+    },
+    {
+      "path": "../scenes-preview/assets/official/characters/curator-back-03.png",
+      "sha256": "5c9233f8e2e2ad110f3c0e90712a5e957e084651c83bf30cadb060fe882b6ea5"
+    },
+    {
+      "path": "../scenes-preview/assets/official/characters/curator-back-04.png",
+      "sha256": "23579121ded23ef5635f2f552636cac4fa2cd9e2a2f04e8fe6d319f011307155"
+    },
+    {
+      "path": "../scenes-preview/assets/official/characters/curator-front-00.png",
+      "sha256": "8431fd181e70bc8f417840770c94238e664a1d2c9113777c333c926f0062cb43"
+    },
+    {
+      "path": "../scenes-preview/assets/official/characters/curator-front-01.png",
+      "sha256": "15175a92abe4c3dc2726eb89e693111c4d965903f2ebdd3657a08d7a88ed1443"
+    },
+    {
+      "path": "../scenes-preview/assets/official/characters/curator-front-02.png",
+      "sha256": "a2843bc220ada803b4fbd40f0d5de90dbdac639d0df03142a5352f13be875012"
+    },
+    {
+      "path": "../scenes-preview/assets/official/characters/curator-front-03.png",
+      "sha256": "24234da0523ab5d2e2da0bd9c35df0309c181ab3862a5105a588f9e47d61e220"
+    },
+    {
+      "path": "../scenes-preview/assets/official/characters/curator-front-04.png",
+      "sha256": "d23ee33197bf77640852e58bffc3b9aa2b78b2fde241620d1d19ad2103b4743f"
+    },
+    {
+      "path": "../scenes-preview/assets/official/characters/curator-left-00.png",
+      "sha256": "64e23ec4463281efa6f6f3d3064d95ccdf2e007e1bd8211d1d2ee5d7d410389e"
+    },
+    {
+      "path": "../scenes-preview/assets/official/characters/curator-left-01.png",
+      "sha256": "488d6690d882f373d11d39d2d9345db839dc0c850a8a2bd16589483e6f501816"
+    },
+    {
+      "path": "../scenes-preview/assets/official/characters/curator-left-02.png",
+      "sha256": "4d77351577c166aa87cf67dd10a20ca51c3c3f1915b2fce12de589edce126dbc"
+    },
+    {
+      "path": "../scenes-preview/assets/official/characters/curator-left-03.png",
+      "sha256": "9f9c3e38be6f27656a80b64bf955d1cac087d29e86eee9e184c1b96708ffe49d"
+    },
+    {
+      "path": "../scenes-preview/assets/official/characters/curator-left-04.png",
+      "sha256": "93cc2e0d277ef64517606e047c2556af39c1479e5c4eaaf3bae24b4e6f3a2541"
+    },
+    {
+      "path": "../scenes-preview/assets/official/characters/curator-right-00.png",
+      "sha256": "a65e4017a21c1f7000753c440ae98d6437d0293e02693382db7c8db37f1730b8"
+    },
+    {
+      "path": "../scenes-preview/assets/official/characters/curator-right-01.png",
+      "sha256": "8234698130b48e914cb1cbec7a873641a4bc3d708fd6470dd6e530057e4007da"
+    },
+    {
+      "path": "../scenes-preview/assets/official/characters/curator-right-02.png",
+      "sha256": "c4fb82027bb60d7f883a17f5501c6058b9dc405f1b85c6938f6bdd360944f6ce"
+    },
+    {
+      "path": "../scenes-preview/assets/official/characters/curator-right-03.png",
+      "sha256": "43f64bbf1b55640f1f1791cab7f9020c36120a6e1bd0dd5f87b257c4a809377a"
+    },
+    {
+      "path": "../scenes-preview/assets/official/characters/curator-right-04.png",
+      "sha256": "6e7542248d508a71feaf52cc259f9918dbefb4193e4643d3f3c92224ca6c460c"
+    },
+    {
+      "path": "../scenes-preview/assets/official/characters/female-back-00.png",
+      "sha256": "c0f7e00df3052b346329746cad80aeda3c213c7c8311dcb59fe5f5e0592a572b"
+    },
+    {
+      "path": "../scenes-preview/assets/official/characters/female-back-01.png",
+      "sha256": "a873a394ccb347aee2b72df062d242bef995730a0ddbd7abb5e6616adcf1f118"
+    },
+    {
+      "path": "../scenes-preview/assets/official/characters/female-back-02.png",
+      "sha256": "d206ee34051625f6ca2c83c12f908ff9d893cca889c6e09f113c9d6c795f218d"
+    },
+    {
+      "path": "../scenes-preview/assets/official/characters/female-back-03.png",
+      "sha256": "531fda9ca6518318045f7e3cee8c0511648296ecd664e70be902574c016840b3"
+    },
+    {
+      "path": "../scenes-preview/assets/official/characters/female-back-04.png",
+      "sha256": "8ce6aef82473d0e4a881f1a8ea3b69a06ec83f40f285c4a59a4410b7298de8ba"
+    },
+    {
+      "path": "../scenes-preview/assets/official/characters/female-front-00.png",
+      "sha256": "961bc6fd26848121b19c9938aff7e30492bf964ee75b56f2b301d8c40777cb22"
+    },
+    {
+      "path": "../scenes-preview/assets/official/characters/female-front-01.png",
+      "sha256": "4eb90200fcc719206b490127c57d151166d917d5736a1002d1473a6bcc20c3a3"
+    },
+    {
+      "path": "../scenes-preview/assets/official/characters/female-front-02.png",
+      "sha256": "a79e2d3b61827ae3cd58f465b27117843541a4100316f6635b022e43c5c173ec"
+    },
+    {
+      "path": "../scenes-preview/assets/official/characters/female-front-03.png",
+      "sha256": "89750fbd856baab3cd010ddcbca75241a763fc06a2a0505858bc400e86ee5c5e"
+    },
+    {
+      "path": "../scenes-preview/assets/official/characters/female-front-04.png",
+      "sha256": "6427c4cd58086e9f777481028444ca6676658ba8f15ebcb978368bc1d44878f8"
+    },
+    {
+      "path": "../scenes-preview/assets/official/characters/female-left-00.png",
+      "sha256": "f1ef1bd540bd9690fcbf3e9e45270f0d429da30a920ff3745c2daa0f97896acc"
+    },
+    {
+      "path": "../scenes-preview/assets/official/characters/female-left-01.png",
+      "sha256": "3c82df37d940071aa6c8e2fdc10d2ab4027547dc89c7cc72e356933d7c1251e4"
+    },
+    {
+      "path": "../scenes-preview/assets/official/characters/female-left-02.png",
+      "sha256": "10e32e5f205e489b0acd2e606f5f15e807a73eacdacd451b8946c4b35b76bd16"
+    },
+    {
+      "path": "../scenes-preview/assets/official/characters/female-left-03.png",
+      "sha256": "784e9e62deec0789861b3233c5640c13b043079bf39da7e6d10de0515bc6ddee"
+    },
+    {
+      "path": "../scenes-preview/assets/official/characters/female-left-04.png",
+      "sha256": "4ac15ae2ba8b69b450fba7cbe6a6ff4a8dc195c416f9c32e9565a34ae50c2127"
+    },
+    {
+      "path": "../scenes-preview/assets/official/characters/female-right-00.png",
+      "sha256": "9805c223f03516ed8135c5b920e3e6e0db3666aa7244fb1f3d41fe50108ecc67"
+    },
+    {
+      "path": "../scenes-preview/assets/official/characters/female-right-01.png",
+      "sha256": "92529c553042eb06848c32bcdf208ff773f80899221a52aae9c66c8e03787ade"
+    },
+    {
+      "path": "../scenes-preview/assets/official/characters/female-right-02.png",
+      "sha256": "5d9d35f7302b8a4664c6dd1549270b1c2aac4c56fe46ea43db119d7e7b6dac43"
+    },
+    {
+      "path": "../scenes-preview/assets/official/characters/female-right-03.png",
+      "sha256": "f7f849dfefb2e04ae176585deba617ce69ac94deb3e8505eba9334042142aee4"
+    },
+    {
+      "path": "../scenes-preview/assets/official/characters/female-right-04.png",
+      "sha256": "7a02100f23704b54427484c703f66e54638ec0204fb44c2d68a5f217d4a14a9c"
+    },
+    {
+      "path": "../scenes-preview/assets/official/characters/staff-back-00.png",
+      "sha256": "d4377ee8ca4d42c885db2190d36d4861bc62e7e8369516c10539f5259fe5b16c"
+    },
+    {
+      "path": "../scenes-preview/assets/official/characters/staff-front-00.png",
+      "sha256": "47fc46c0eb6d2980a7c4c339b7776a11c885b228e5b00be8afb6c6f3ae877cd3"
+    },
+    {
+      "path": "../scenes-preview/assets/official/characters/staff-left-00.png",
+      "sha256": "8de58d097284da645efb3d6e46af5980736dab38695b08cd23442ceae49b843d"
+    },
+    {
+      "path": "../scenes-preview/assets/official/characters/staff-right-00.png",
+      "sha256": "9063154e08382d7418ea25679ae94b771c780d6f4bab9ea2b8c5a763098a5ddc"
+    }
+  ],
+  "charactersCanonicalPath": "a18/scenes-preview/assets/official/characters/"
+}
