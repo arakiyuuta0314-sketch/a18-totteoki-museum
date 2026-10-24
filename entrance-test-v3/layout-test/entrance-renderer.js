@@ -115,13 +115,13 @@ function frameGeometry(f,img,preferredShape=null){
 // projected into the existing 546x483 logical entrance canvas.
 // Slot IDs and interaction coordinates are intentionally unchanged.
 const APPROVED_WINDOWS=[
- {x:82,y:67,w:111,h:77},
- {x:376,y:67,w:81,h:77},
+ {x:84,y:62,w:109,h:80},
+ {x:374,y:62,w:86,h:80},
  {x:432,y:204,w:56,h:107}
 ];
 // The foreground-right exhibit is on an angled partition.
 // Texture-map two triangles into its trapezoidal inner opening.
-const RIGHT_PANEL=[[408,201],[481,225],[463,314],[409,284]];
+const RIGHT_PANEL=[[424,218],[492,239],[492,321],[424,291]];
 // A continuous column-wise perspective warp avoids the diagonal seam caused
 // by the earlier two-triangle affine mapping.
 const RIGHT_PANEL_CACHE=new WeakMap();
@@ -129,7 +129,7 @@ const RIGHT_WARP_CACHE=new WeakMap();
 let RIGHT_EMPTY_WARP=null;
 function rightPanel(ctx,f,img){
  const cached=img?RIGHT_WARP_CACHE.get(img):RIGHT_EMPTY_WARP;
- if(cached){ctx.drawImage(cached,408,201);return;}
+ if(cached){ctx.drawImage(cached,424,218);return;}
  // Pre-warp to a raster once, with inverse bilinear sampling. No independent
  // canvas strips: Safari otherwise exposes seams on each transformed column.
  let source=img&&RIGHT_PANEL_CACHE.get(img);
