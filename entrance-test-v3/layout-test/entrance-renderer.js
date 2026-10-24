@@ -134,23 +134,23 @@ function rightPanel(ctx,f,img){
  // canvas strips: Safari otherwise exposes seams on each transformed column.
  let source=img&&RIGHT_PANEL_CACHE.get(img);
  if(!source){
-  source=document.createElement('canvas');source.width=256;source.height=256;
+  source=document.createElement('canvas');source.width=512;source.height=512;
   const c=source.getContext('2d');
   if(img&&img.naturalWidth>0&&img.naturalHeight>0){
-   const scale=Math.max(256/img.naturalWidth,256/img.naturalHeight);
+   const scale=Math.max(512/img.naturalWidth,512/img.naturalHeight);
    const w=img.naturalWidth*scale,h=img.naturalHeight*scale;
-   c.drawImage(img,(256-w)/2,(256-h)/2,w,h);
+   c.drawImage(img,(512-w)/2,(512-h)/2,w,h);
    RIGHT_PANEL_CACHE.set(img,source);
   }else{
-   c.fillStyle=f.workId?'#4b4034':'#bba986';c.fillRect(0,0,256,256);
-   if(!f.workId){c.fillStyle='#776143';c.font='bold 72px serif';c.textAlign='center';c.textBaseline='middle';c.fillText('+',128,128);}
+   c.fillStyle=f.workId?'#4b4034':'#bba986';c.fillRect(0,0,512,512);
+   if(!f.workId){c.fillStyle='#776143';c.font='bold 144px serif';c.textAlign='center';c.textBaseline='middle';c.fillText('+',256,256);}
   }
  }
  const [tl,tr,br,bl]=RIGHT_PANEL;
  const left=Math.floor(Math.min(tl[0],bl[0])),top=Math.floor(Math.min(tl[1],tr[1]));
  const right=Math.ceil(Math.max(tr[0],br[0])),bottom=Math.ceil(Math.max(bl[1],br[1]));
  const w=right-left,h=bottom-top;
- const input=source.getContext('2d',{willReadFrequently:true}).getImageData(0,0,256,256).data;
+ const input=source.getContext('2d',{willReadFrequently:true}).getImageData(0,0,512,512).data;
  const out=ctx.createImageData(w,h),dst=out.data;
  // Solve the inverse bilinear quad per destination pixel. Both side edges
  // lean with depth, unlike the old fixed-x column approximation.
@@ -171,10 +171,13 @@ function rightPanel(ctx,f,img){
    v+=(ey*dxdu-ex*dydu)/det;
   }
   if(u<0||u>1||v<0||v>1)continue;
-  const sx=Math.min(255,Math.max(0,Math.floor(u*256)));
-  const sy=Math.min(255,Math.max(0,Math.floor(v*256)));
-  const si=(sy*256+sx)*4,di=(py*w+px)*4;
-  dst[di]=input[si];dst[di+1]=input[si+1];dst[di+2]=input[si+2];dst[di+3]=255;
+  // Bilinear sampling avoids nearest-neighbour jaggies in the skewed painting.
+  const sx=Math.max(0,Math.min(511,u*512-.5)),sy=Math.max(0,Math.min(511,v*512-.5));
+  const x0=Math.floor(sx),y0=Math.floor(sy),x1=Math.min(511,x0+1),y1=Math.min(511,y0+1);
+  const fx=sx-x0,fy=sy-y0,di=(py*w+px)*4;
+  const a=(y0*512+x0)*4,b=(y0*512+x1)*4,c=(y1*512+x0)*4,d=(y1*512+x1)*4;
+  for(let ch=0;ch<3;ch++)dst[di+ch]=Math.round((input[a+ch]*(1-fx)+input[b+ch]*fx)*(1-fy)+(input[c+ch]*(1-fx)+input[d+ch]*fx)*fy);
+  dst[di+3]=255;
  }
  const warped=document.createElement('canvas');warped.width=w;warped.height=h;
  warped.getContext('2d').putImageData(out,0,0);
