@@ -1,11 +1,11 @@
-const fs=require('fs'),vm=require('vm'),assert=require('assert');
+﻿const fs=require('fs'),vm=require('vm'),assert=require('assert');
 const ctx={window:{}};vm.runInNewContext(fs.readFileSync(__dirname+'/entrance-collision.js','utf8'),ctx);
 const m=ctx.window.A18EntranceCollision;
 const cases=[
  ['floor center',326,425,true],['door wall',273,210,false],
  ['door approach',273,260,true],['left railing',72,275,false],
  ['reception',70,395,false],['right partition',480,365,false],
- ['butler center',155,329,false],['butler outside',185,329,true],['right frame upper approach',405,284,true],['right frame base',432,347,false],['carpet side',380,365,true],['right planter',530,450,false]
+ ['butler center',155,329,false],['butler outside',185,329,true],['right frame upper approach',405,284,true],['right frame base',432,347,false],['frame front walk',399,365,true],['frame center blocked',465,300,false],['carpet side',380,365,true],['right planter',530,450,false]
 ];
 for(const [label,x,y,expected] of cases){const actual=m.walkable(x,y);assert.strictEqual(actual,expected,label);console.log('PASS',label);}
 const targets={north:[273,260],west:[142,325],east:[399,365]};
@@ -17,3 +17,4 @@ for(const [name,[tx,ty]] of Object.entries(targets)){
  console.log(name,reachable?'REACHABLE':'BLOCKED');assert(reachable,name+' unreachable');
 }
 console.log('QA OK reachable cells',seen.size);
+
