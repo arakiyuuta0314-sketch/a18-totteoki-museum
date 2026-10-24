@@ -7,7 +7,7 @@
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="stylesheet" href="viewer.css">
 <link rel="stylesheet" href="viewer-frame.css"><link rel="stylesheet" href="viewer-minimal.css?v=1.10">
-<link rel="stylesheet" href="museum-navigation.css?v=1"><script src="layout-system.js?v=fixed1"></script><script src="museum-navigation.js?v=2"></script><script src="museum-progression.js?v=1"></script><script src="asset-renderer.js?v=larger2"></script><script src="museum-p3-renderer.js?v=1"></script><script src="museum-p5-decorations.js?v=2"></script><script src="entrance-renderer.js?v=3"></script><script src="museum-p2-storage.js?v=release-v3"></script>
+<link rel="stylesheet" href="museum-navigation.css?v=1"><script src="layout-system.js?v=fixed1"></script><script src="museum-navigation.js?v=2"></script><script src="museum-progression.js?v=1"></script><script src="asset-renderer.js?v=larger2"></script><script src="museum-p3-renderer.js?v=1"></script><script src="museum-p5-decorations.js?v=2"></script><script src="entrance-renderer.js?v=4"></script><script src="museum-p2-storage.js?v=release-v3"></script>
 <script src="photo-prep.js" defer></script>
 <script src="smart-frame.js" defer></script>
 <script src="photo-tone.js" defer></script>
@@ -424,6 +424,7 @@ async function getAlphaBounds(img){
  return {x:x0,y:y0,w:x1-x0,h:y1-y0};
 }
 async function boot(){
+ const bootHint=document.getElementById("hint");if(bootHint){bootHint.textContent="美術館の準備中…";bootHint.hidden=false;}
  // Defer scripts (staff/photo modules) must finish before registration becomes playable.
  if(document.readyState==='loading')await new Promise(resolve=>document.addEventListener('DOMContentLoaded',resolve,{once:true}));
  if(!window.A18MuseumProgression||!window.A18Navigation||!window.A18Art||!window.A18Entrance||!window.A18P3Gallery||!window.A18P5Decorations||!P2||!window.A18Registration)throw Error('ゲーム機能の読込に失敗しました');
@@ -444,10 +445,7 @@ async function boot(){
  const response=await fetch('layout-assets-manifest.json?v=entrance-v2-20261024');
  if(!response.ok)throw Error('正式候補素材のmanifestを取得できません');
  assetManifest=await response.json();
- await window.A18Art.init(assetManifest);
- await window.A18Entrance.init();
- await window.A18P3Gallery.init();
- await window.A18P5Decorations.init();
+ await Promise.all([window.A18Art.init(assetManifest),window.A18Entrance.init(),window.A18P3Gallery.init(),window.A18P5Decorations.init()]);
  // Reuse only the canonical approved 48 PNGs already decoded by A18Art.
  // Male retains the existing walking-frame crop; female follows the adopted main-preview crop.
  for(const dir of ['front','back','left','right'])for(let i=0;i<5;i++){
@@ -747,6 +745,7 @@ function showSettings(){
  if(showingEvent||saveBlocked)return;
  open('設定','<div class="a18-settings-content"><p class="small">館長の名前・性別・美術館の名前を変更できます。</p>'+profileFields()+
   '<p id="profileError" class="error" role="alert"></p><div class="row"><button id="saveProfile">変更を保存</button><button id="closeSettings" class="light">戻る</button></div>'+
+  '<hr><h3>試遊データ</h3><p class="small">試遊版のレベルと展示を最初からやり直せます。削除すると元に戻せません。</p><a href="reset-playtest.html" style="display:inline-block;padding:12px;background:#f0d18e;color:#17362f;border-radius:10px">レベル・展示をリセット</a>'+
   '<hr><h3>物語</h3><button id="p6StoryHistory" type="button" class="light">美術館の物語</button>'+
   '<hr><h3>広告</h3><button id="adRemoval" type="button" disabled>広告を永久に削除　準備中</button>'+
   '<p class="small">広告削除の買い切り機能は、iOS版の課金機能を実装した後に利用できる予定です。現時点では購入処理は行いません。</p>'+ 

@@ -24,7 +24,7 @@ let ready=false;
 async function init(){
  if(ready)return;
  // A missing asset is a fatal, visible boot error, never a silent placeholder.
- for(const [key,[filename,width,height]] of Object.entries(ITEMS)){
+ await Promise.all(Object.entries(ITEMS).map(async ([key,[filename,width,height]])=>{
   const im=await new Promise((resolve,reject)=>{
    const image=new Image();
    image.onload=()=>resolve(image);
@@ -34,7 +34,7 @@ async function init(){
   if(im.naturalWidth!==width||im.naturalHeight!==height)
    throw Error('エントランスv0.3素材の寸法が不正：'+filename);
   images.set(key,im);
- }
+ }));
  ready=true;
 }
 function requireReady(){
@@ -125,7 +125,11 @@ const RIGHT_PANEL=[[408,201],[481,225],[463,314],[409,284]];
 // A continuous column-wise perspective warp avoids the diagonal seam caused
 // by the earlier two-triangle affine mapping.
 const RIGHT_PANEL_CACHE=new WeakMap();
+const RIGHT_WARP_CACHE=new WeakMap();
+let RIGHT_EMPTY_WARP=null;
 function rightPanel(ctx,f,img){
+ const cached=img?RIGHT_WARP_CACHE.get(img):RIGHT_EMPTY_WARP;
+ if(cached){ctx.drawImage(cached,408,201);return;}
  // Pre-warp to a raster once, with inverse bilinear sampling. No independent
  // canvas strips: Safari otherwise exposes seams on each transformed column.
  let source=img&&RIGHT_PANEL_CACHE.get(img);
@@ -174,6 +178,7 @@ function rightPanel(ctx,f,img){
  }
  const warped=document.createElement('canvas');warped.width=w;warped.height=h;
  warped.getContext('2d').putImageData(out,0,0);
+ if(img)RIGHT_WARP_CACHE.set(img,warped);else RIGHT_EMPTY_WARP=warped;
  ctx.drawImage(warped,left,top);
 }
 // Shared geometric source of truth for the visual openings and interaction.
