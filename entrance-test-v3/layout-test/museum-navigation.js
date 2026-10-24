@@ -4,7 +4,9 @@ const POSITIONS={0:[1,1],1:[0,1],2:[2,1],3:[0,0],4:[2,0],5:[1,0]};
 const REVERSE={west:'east',east:'west',north:'south',south:'north'};
 const NAMES=['エントランス','展示室02','展示室03','展示室04','展示室05','展示室06'];
 const EDGES={
- entrance:{west:{x1:24,x2:43,y1:259,y2:288},east:{x1:503,x2:522,y1:259,y2:288},north:{x1:257,x2:289,y1:230,y2:252}},
+ // Portal footprints are on the visible floor beside the two solid railings.
+ // The source image does NOT contain traversable floor at x=24 or x=522.
+ entrance:{west:{x1:128,x2:144,y1:288,y2:306},east:{x1:389,x2:405,y1:306,y2:330},north:{x1:257,x2:289,y1:205,y2:217}},
  gallery:{west:{x1:24,x2:44,y1:345,y2:417},east:{x1:546,x2:565,y1:345,y2:417},north:{x1:345,x2:385,y1:101,y2:118},south:{x1:265,x2:329,y1:452,y2:471}}
 };
 function validateGraph(links){

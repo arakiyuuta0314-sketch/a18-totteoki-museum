@@ -1,8 +1,13 @@
-/* Entrance-only collision geometry, coordinates in the approved 546x483 art.
-   Collision checks the avatar's foot point, not the sprite's upper body.
-   Kept independent of gallery rooms and save state. */
+/* Collision geometry for the approved 546x483 entrance image.
+ * pos.x / pos.y are the avatar shadow/sole coordinates. The collision disc is
+ * centred five pixels below that point, matching the pre-existing foot check.
+ * Do not create unconditional "walkable strips": the railings and partition
+ * occupy the same y coordinates as the corridor and MUST remain solid.
+ */
 (()=>{'use strict';
-const FOOT_OFFSET=5, RADIUS=9;
+const FOOT_OFFSET=5,RADIUS=9;
+const WALL_FOOT=218;
+const NORTH_PASSAGE=Object.freeze({x1:257,x2:289,y1:195,y2:218});
 const POLYGONS=Object.freeze([
  {id:'west-balustrade',points:[[0,211],[99,211],[117,257],[117,329],[0,335]]},
  {id:'reception',points:[[0,343],[146,343],[148,464],[0,464]]},
@@ -22,12 +27,16 @@ function hitsPolygon(x,y,p,r){
  for(let i=0;i<p.length;i++)if(edgeDistanceSquared(x,y,p[i],p[(i+1)%p.length])<r*r)return true;
  return false;
 }
-function walkable(x,y){
+function walkable(x,y,northOpen=false){
+ if(!Number.isFinite(x)||!Number.isFinite(y))return false;
+ if(x<24||x>522||y>472)return false;
+ if(y<WALL_FOOT){
+  if(!northOpen||x<NORTH_PASSAGE.x1||x>NORTH_PASSAGE.x2||
+     y<NORTH_PASSAGE.y1)return false;
+ }
  const footY=y+FOOT_OFFSET;
- if(x<24||x>522||y<218||y>472)return false;
- // Walk right up to the rear wall / door threshold across the full entrance.
- if(y>=218&&y<=288)return true; // continuous upper walking strip
- return !POLYGONS.some(o=>hitsPolygon(x,footY,o.points,RADIUS)) && Math.hypot(x-155,footY-334)>=20;
+ return !POLYGONS.some(o=>hitsPolygon(x,footY,o.points,RADIUS))
+   && Math.hypot(x-155,footY-334)>=20;
 }
-window.A18EntranceCollision=Object.freeze({POLYGONS,FOOT_OFFSET,RADIUS,walkable,hitsPolygon});
+window.A18EntranceCollision=Object.freeze({POLYGONS,FOOT_OFFSET,RADIUS,WALL_FOOT,NORTH_PASSAGE,walkable,hitsPolygon});
 })();

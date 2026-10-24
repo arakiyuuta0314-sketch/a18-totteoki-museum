@@ -7,7 +7,7 @@
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="stylesheet" href="viewer.css">
 <link rel="stylesheet" href="viewer-frame.css"><link rel="stylesheet" href="viewer-minimal.css?v=1.10">
-<link rel="stylesheet" href="museum-navigation.css?v=1"><script src="layout-system.js?v=collision2"></script><script src="museum-navigation.js?v=85174a3"></script><script src="museum-progression.js?v=1"></script><script src="asset-renderer.js?v=larger2"></script><script src="museum-p3-renderer.js?v=1"></script><script src="museum-p5-decorations.js?v=2"></script><script src="entrance-renderer.js?v=85174a3"></script><script src="entrance-collision.js?v=d29cd30"></script><script src="museum-p2-storage.js?v=release-v3"></script>
+<link rel="stylesheet" href="museum-navigation.css?v=1"><script src="layout-system.js?v=collision2"></script><script src="museum-navigation.js?v=collision-rebuild-20261024"></script><script src="museum-progression.js?v=1"></script><script src="asset-renderer.js?v=larger2"></script><script src="museum-p3-renderer.js?v=1"></script><script src="museum-p5-decorations.js?v=2"></script><script src="entrance-renderer.js?v=85174a3"></script><script src="entrance-collision.js?v=collision-rebuild-20261024"></script><script src="museum-p2-storage.js?v=release-v3"></script>
 <script src="photo-prep.js" defer></script>
 <script src="smart-frame.js" defer></script>
 <script src="photo-tone.js" defer></script>
@@ -514,10 +514,9 @@ function safeMove(x,y){
  const m=src[scene];
  const radius=9,footY=y+5;
  if(scene==='entrance'){
-  // The rear wall ends at y=218. Keep the entire corridor in front of it
-  // walkable, including directly below the locked central door.
-  const openNorth=x>=257&&x<=289&&y>=185&&y<218&&P2.canTraverse(galleryIndex,'north',currentSave.progression);
-  if(!openNorth&&!window.A18EntranceCollision.walkable(x,y))return false;
+  // One authoritative geometry for walking and the debug map.
+  if(!window.A18EntranceCollision.walkable(
+    x,y,P2.canTraverse(galleryIndex,'north',currentSave.progression)))return false;
  }
  if(x<24||x>m.w-24||y<101||y>m.h-11)return false;
  // The wall cannot be walked through. Only the actual north doorway forms a corridor.
@@ -538,6 +537,9 @@ function checkPortal(){
   const rect=PORTAL_EDGES[scene][edge];
   if(!rect)throw new Error('Door edge definition missing: '+scene+' '+edge);
   if(pos.x>=rect.x1&&pos.x<=rect.x2&&pos.y>=rect.y1&&pos.y<=rect.y2){
+   // Do not change rooms while the player is approaching a nearby painting.
+   if(scene==='entrance'&&((edge==='west'&&pos.dir!=='left')||
+     (edge==='east'&&pos.dir!=='right')||(edge==='north'&&pos.dir!=='up')))continue;
    const reverse={west:'east',east:'west',north:'south',south:'north'}[edge];
    if(!P2.canTraverse(galleryIndex,edge,currentSave.progression))return false;
    void changeScene(target,{arrivalFrom:reverse}).then(ok=>{if(ok)fade()});
@@ -569,6 +571,9 @@ function interactionCandidates(){
   return {type:'art',i:L.slotFor(galleryIndex,i),x:a.x,y:a.y,enter:32,leave:38};
  });
  if(galleryIndex===0){
+  if(!P2.canTraverse(galleryIndex,'north',currentSave.progression)){
+   artworks.push({type:'door',x:273,y:218,enter:36,leave:42});
+  }
   const p=L.npcAnchor('butler',0);
   artworks.push({type:'butler',x:p.x,y:p.y,enter:46,leave:54});return artworks;
  }
@@ -593,7 +598,7 @@ function update(){
  $('statusText').textContent=ROOM_LABELS[galleryIndex]+' Lv.'+unlockedRooms()+'　展示 '+displayed+'/'+roomCapacity(galleryIndex)+'　所蔵 '+works.length+'/'+MAX_WORKS;
  const hit=nearby();
  $('act').hidden=!hit;
- if(hit)$('act').textContent=hit.type==='staff'||hit.type==='butler'?'話しかける':carrying?(slot(hit.i)?'作品を入れ替える':'ここに飾る'):slot(hit.i)?'作品を調べる':'額縁を調べる';
+ if(hit)$('act').textContent=hit.type==='door'?'中央の扉を調べる':hit.type==='staff'||hit.type==='butler'?'話しかける':carrying?(slot(hit.i)?'作品を入れ替える':'ここに飾る'):slot(hit.i)?'作品を調べる':'額縁を調べる';
  $('cancel').hidden=!carrying;
  $('cancel').textContent='作品をしまう';
 }
@@ -683,8 +688,11 @@ function drawCollisionDebug(){
   const overlay=document.createElement('canvas');overlay.width=m.w;overlay.height=m.h;
   const c=overlay.getContext('2d');
   for(let y=0;y<m.h;y+=step)for(let x=0;x<m.w;x+=step){
-   const allowed=safeMove(x+step/2,y+step/2);
-   c.fillStyle=allowed?'rgba(42,210,104,.20)':'rgba(245,49,61,.28)';
+   // Green means the entire sampled cell is safe. Amber denotes a boundary.
+   const probes=[[1,1],[step-1,1],[1,step-1],[step-1,step-1],[step/2,step/2]];
+   const hits=probes.filter(([dx,dy])=>safeMove(x+dx,y+dy)).length;
+   c.fillStyle=hits===probes.length?'rgba(42,210,104,.20)':
+     hits===0?'rgba(245,49,61,.28)':'rgba(245,184,53,.25)';
    c.fillRect(x,y,step,step);
   }
   collisionDebugCache={key:cacheKey,canvas:overlay};
@@ -793,6 +801,10 @@ function action(){
  const h=nearby();if(!h)return;
  if(h.type==='staff'){staffDialog();return}
  if(h.type==='butler'){butlerDialog();return}
+ if(h.type==='door'){
+  open('中央の扉','<p>扉はまだ閉ざされています。</p><div class="row"><button id="closeDoor">閉じる</button></div>');
+  $('closeDoor').onclick=close;return;
+ }
  if(h.type==='art'){inspect(h.i);return}
 }
 function editMemo(a){
