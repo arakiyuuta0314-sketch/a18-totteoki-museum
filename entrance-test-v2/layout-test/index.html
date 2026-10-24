@@ -512,9 +512,29 @@ function worldPoint(e){
 const wallFootLine=()=>scene==='entrance'?202:164;
 const northDoorway=()=>({x1:344,x2:387});
 function roomObstacles(){return L.obstacles(fixtures,galleryIndex);}
+// Lv.6 approved entrance: fixed furnishings are not movable scenery.
+// Coordinates are in the 546x483 logical scene. Edge portal strips remain
+// open so the existing room-transition rules are not accidentally broken.
+const LV6_ENTRANCE_SOLIDS=[
+ [0,139,359,470],   // reception counter / plants, lower left
+ [0,116,224,313],   // left foreground balustrade
+ [413,546,218,338], // right foreground angled exhibition partition
+ [518,546,397,472]  // right foreground plant / plinth
+];
+function entranceSolid(x,y){
+ const foot=y+5,rad=9;
+ // Portal approach must remain traversable until exits are remapped.
+ if((x<=46||x>=500)&&y>=345&&y<=417)return false;
+ return LV6_ENTRANCE_SOLIDS.some(([left,right,top,bottom])=>{
+  const cx=Math.max(left,Math.min(x,right));
+  const cy=Math.max(top,Math.min(foot,bottom));
+  return Math.hypot(x-cx,foot-cy)<rad;
+ });
+}
 function safeMove(x,y){
  const m=src[scene];
  const radius=9,footY=y+5;
+ if(scene==='entrance'&&entranceSolid(x,y))return false;
  if(x<24||x>m.w-24||y<101||y>m.h-11)return false;
  // The wall cannot be walked through. Only the actual north doorway forms a corridor.
  if(y<wallFootLine()){
@@ -561,7 +581,7 @@ function walk(dir){
 }
 function interactionCandidates(){
  const artworks=L.roomFrames(fixtures,galleryIndex).map((f,i)=>{
-  const a=L.anchor(f,galleryIndex);
+  const a=galleryIndex===0?window.A18Entrance.approvedAnchor(i):L.anchor(f,galleryIndex);
   return {type:'art',i:L.slotFor(galleryIndex,i),x:a.x,y:a.y,enter:32,leave:38};
  });
  if(galleryIndex===0){

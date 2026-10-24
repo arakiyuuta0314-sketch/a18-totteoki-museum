@@ -161,6 +161,19 @@ function rightPanel(ctx,f,img){
  }
  ctx.restore();
 }
+// Shared geometric source of truth for the visual openings and interaction.
+function approvedAnchor(index){
+ if(index===2)return {x:390,y:338}; // stand on the accessible side of the angled partition
+ const rect=APPROVED_WINDOWS[index];
+ if(!rect)throw Error('Unknown approved frame index '+index);
+ return {x:rect.x+rect.w/2,y:208};
+}
+function approvedGeometry(index){
+ if(index===2)return {polygon:RIGHT_PANEL.map(p=>p.slice()),anchor:approvedAnchor(index)};
+ const r=APPROVED_WINDOWS[index];
+ if(!r)throw Error('Unknown approved frame index '+index);
+ return {window:{...r},anchor:approvedAnchor(index)};
+}
 function approvedFrame(ctx,f,img,index){
  if(index<0||index>=APPROVED_WINDOWS.length)throw Error('Unknown entrance photo slot '+f.id);
  if(index===2){rightPanel(ctx,f,img);return;}
@@ -211,5 +224,5 @@ function frame(ctx,f,img,preferredShape=null,index=-1){
  ctx.restore();
  nineSlice(ctx,outer);
 }
-window.A18Entrance={init,background,foreground,frame,frameGeometry,assetCount:()=>images.size,ready:()=>ready};
+window.A18Entrance={init,background,foreground,frame,frameGeometry,approvedAnchor,approvedGeometry,assetCount:()=>images.size,ready:()=>ready};
 })();
