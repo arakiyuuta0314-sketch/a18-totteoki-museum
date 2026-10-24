@@ -121,7 +121,7 @@ const APPROVED_WINDOWS=[
 ];
 // The foreground-right exhibit is on an angled partition.
 // Texture-map two triangles into its trapezoidal inner opening.
-const RIGHT_PANEL=[[426,201],[487,226],[487,323],[426,276]];
+const RIGHT_PANEL=[[426,201],[489,226],[489,323],[426,276]];
 // A continuous column-wise perspective warp avoids the diagonal seam caused
 // by the earlier two-triangle affine mapping.
 const RIGHT_PANEL_CACHE=new WeakMap();
