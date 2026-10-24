@@ -4,8 +4,8 @@ const m=ctx.window.A18EntranceCollision;
 const cases=[
  ['floor center',326,425,true],['door wall',273,210,false],
  ['door approach',273,260,true],['left railing',72,275,false],
- ['reception',70,395,false],['right partition',480,295,false],
- ['carpet side',380,365,true],['right planter',530,450,false]
+ ['reception',70,395,false],['right partition',480,365,false],
+ ['butler center',155,329,false],['butler outside',185,329,true],['right frame upper approach',405,284,true],['right frame base',432,347,false],['carpet side',380,365,true],['right planter',530,450,false]
 ];
 for(const [label,x,y,expected] of cases){const actual=m.walkable(x,y);assert.strictEqual(actual,expected,label);console.log('PASS',label);}
 const targets={north:[273,260],west:[142,325],east:[399,365]};

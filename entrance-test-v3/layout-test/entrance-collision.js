@@ -6,7 +6,7 @@ const FOOT_OFFSET=5, RADIUS=9;
 const POLYGONS=Object.freeze([
  {id:'west-balustrade',points:[[0,211],[99,211],[117,257],[117,329],[0,335]]},
  {id:'reception',points:[[0,343],[146,343],[148,464],[0,464]]},
- {id:'east-partition',points:[[416,195],[546,237],[546,406],[422,341]]},
+ {id:'east-partition',points:[[420,305],[546,345],[546,406],[422,347]]},
  {id:'east-planter',points:[[518,413],[546,405],[546,483],[516,483]]}
 ]);
 function inside(x,y,p){let hit=false;for(let i=0,j=p.length-1;i<p.length;j=i++){
@@ -25,7 +25,7 @@ function hitsPolygon(x,y,p,r){
 function walkable(x,y){
  const footY=y+FOOT_OFFSET;
  if(x<24||x>522||y<247||y>472)return false;
- return !POLYGONS.some(o=>hitsPolygon(x,footY,o.points,RADIUS));
+ return !POLYGONS.some(o=>hitsPolygon(x,footY,o.points,RADIUS)) && Math.hypot(x-155,footY-334)>=20;
 }
 window.A18EntranceCollision=Object.freeze({POLYGONS,FOOT_OFFSET,RADIUS,walkable,hitsPolygon});
 })();

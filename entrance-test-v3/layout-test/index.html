@@ -7,7 +7,7 @@
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="stylesheet" href="viewer.css">
 <link rel="stylesheet" href="viewer-frame.css"><link rel="stylesheet" href="viewer-minimal.css?v=1.10">
-<link rel="stylesheet" href="museum-navigation.css?v=1"><script src="layout-system.js?v=collision2"></script><script src="museum-navigation.js?v=entrance-rebuild1"></script><script src="museum-progression.js?v=1"></script><script src="asset-renderer.js?v=larger2"></script><script src="museum-p3-renderer.js?v=1"></script><script src="museum-p5-decorations.js?v=2"></script><script src="entrance-renderer.js?v=13"></script><script src="entrance-collision.js?v=1"></script><script src="museum-p2-storage.js?v=release-v3"></script>
+<link rel="stylesheet" href="museum-navigation.css?v=1"><script src="layout-system.js?v=collision2"></script><script src="museum-navigation.js?v=entrance-rebuild1"></script><script src="museum-progression.js?v=1"></script><script src="asset-renderer.js?v=larger2"></script><script src="museum-p3-renderer.js?v=1"></script><script src="museum-p5-decorations.js?v=2"></script><script src="entrance-renderer.js?v=13"></script><script src="entrance-collision.js?v=2"></script><script src="museum-p2-storage.js?v=release-v3"></script>
 <script src="photo-prep.js" defer></script>
 <script src="smart-frame.js" defer></script>
 <script src="photo-tone.js" defer></script>
@@ -509,7 +509,7 @@ function worldPoint(e){
 // All interaction anchors are computed from the same room geometry.
 const wallFootLine=()=>scene==='entrance'?244:164;
 const northDoorway=()=>scene==='entrance'?{x1:255,x2:291}:{x1:344,x2:387};
-function roomObstacles(){return L.obstacles(fixtures,galleryIndex);}
+function roomObstacles(){return galleryIndex===0?L.obstacles(fixtures,galleryIndex).slice(1):L.obstacles(fixtures,galleryIndex);}
 function safeMove(x,y){
  const m=src[scene];
  const radius=9,footY=y+5;
@@ -690,6 +690,7 @@ function drawCollisionDebug(){
   for(const obj of window.A18EntranceCollision.POLYGONS){
    ctx.beginPath();obj.points.forEach(([x,y],i)=>i?ctx.lineTo(x,y):ctx.moveTo(x,y));ctx.closePath();ctx.stroke();
   }
+  ctx.beginPath();ctx.arc(155,334,20,0,Math.PI*2);ctx.stroke();
   ctx.beginPath();ctx.arc(pos.x,pos.y+5,9,0,Math.PI*2);ctx.stroke();
  }
  ctx.strokeStyle='#55c9ff';ctx.lineWidth=2;
