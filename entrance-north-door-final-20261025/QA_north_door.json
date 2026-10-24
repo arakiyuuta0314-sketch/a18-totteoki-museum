@@ -1,0 +1,103 @@
+{
+  "scope": "NORTH DOOR CLOSED/OPEN with exact approved architecture",
+  "source_approved": "C:\\Users\\User\\source\\repos\\a18-totteoki-museum-pages\\entrance-test-v3\\layout-test\\assets\\entrance\\v0.3\\approved_entrance_trial.jpg",
+  "source_sha256": "7d0ea4a76607df87261767f144fcd80c058b5111cdfdf79fa6297ba2bb8c163e",
+  "source_extra_arch_study": "G:\\マイドライブ\\06.アプリ開発\\03.開発・テスト\\A18_パズル美術館\\24_エントランス再設計_品質基準\\A18_entrance_Lv6_A_background_candidate_20261025.png",
+  "geometry": {
+    "portal_replaced_region": [
+      243,
+      116,
+      322,
+      213
+    ],
+    "north_collision_window": {
+      "x_min": 257,
+      "x_max": 289,
+      "y_min": 195,
+      "y_max": 218
+    }
+  },
+  "screen_canvas": [
+    546,
+    483
+  ],
+  "closed_pixel_exact": true,
+  "off_door_art_preserved": true,
+  "characters": "Only original formal PNGs used in QA. None baked into delivered assets.",
+  "user_photos": "No user photos used. QA uses demonstration photos only.",
+  "quality_status": "DOOR DRAWN AND ALPHA-VALIDATED; USER VISUAL APPROVAL PENDING",
+  "files": {
+    "entrance_bg_north_open_base.png": {
+      "size": [
+        546,
+        483
+      ],
+      "bytes": 434858,
+      "sha256": "79c908aa2b3aaf394bbc2452fb926459a54619de658b78826aceb8ddd04f7791"
+    },
+    "entrance_door_north_closed.png": {
+      "size": [
+        546,
+        483
+      ],
+      "bytes": 17354,
+      "sha256": "fdbcecbeefecc90356fbc084e7310b317faaa9cf32b65d79883a48b926c8a1e3"
+    },
+    "entrance_door_north_open.png": {
+      "size": [
+        546,
+        483
+      ],
+      "bytes": 4629,
+      "sha256": "c1dc9a89e0e027d019282f85f0a2e8c62e4e0f73738049649876d0d8a64e5e49"
+    },
+    "QA_north_door_closed.png": {
+      "size": [
+        546,
+        483
+      ],
+      "bytes": 433933,
+      "sha256": "574893c262a51aa278a2dcac2cc2853c0338832f60e1ae872cf3fd350b034886"
+    },
+    "QA_north_door_open.png": {
+      "size": [
+        546,
+        483
+      ],
+      "bytes": 435003,
+      "sha256": "ea7a99e46b13a40fb9f2bffcd2ae7c1e4b6578f9a55d90eb3a576637e7d195d6"
+    },
+    "QA_north_open_with_photos.png": {
+      "size": [
+        546,
+        483
+      ],
+      "bytes": 453192,
+      "sha256": "87a3a29aa7e26a380461c02eba07b64654cb7514aea2d3df3eb342a237d30a59"
+    },
+    "QA_north_open_photos_formal_characters.png": {
+      "size": [
+        546,
+        483
+      ],
+      "bytes": 521543,
+      "sha256": "10a2ee09d4b29bb7871ce972d1da0d070b56640b21a93ef30f3d617029c2424d"
+    },
+    "QA_north_closed_vs_open.png": {
+      "size": [
+        1092,
+        483
+      ],
+      "bytes": 460954,
+      "sha256": "3573459f929d0d6494a6d56be5f4a46118ffb68e83d55db931b5b76e478f5698"
+    },
+    "QA_north_open_4x.png": {
+      "size": [
+        588,
+        788
+      ],
+      "bytes": 79270,
+      "sha256": "ff5f29c23db518053f45d584c72891176b4d02fa25249721586a501d6946649d"
+    }
+  }
+}
