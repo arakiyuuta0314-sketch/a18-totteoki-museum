@@ -24,11 +24,9 @@ function hitsPolygon(x,y,p,r){
 }
 function walkable(x,y){
  const footY=y+FOOT_OFFSET;
- if(x<24||x>522||y<230||y>472)return false;
- // A narrow corridor behind the balustrade and partition reaches the side galleries.
- if(y>=247&&y<=288)return true; // continuous upper walking strip
- // The locked central door is handled by the caller's progression gate.
- if(y<247)return false;
+ if(x<24||x>522||y<218||y>472)return false;
+ // Walk right up to the rear wall / door threshold across the full entrance.
+ if(y>=218&&y<=288)return true; // continuous upper walking strip
  return !POLYGONS.some(o=>hitsPolygon(x,footY,o.points,RADIUS)) && Math.hypot(x-155,footY-334)>=20;
 }
 window.A18EntranceCollision=Object.freeze({POLYGONS,FOOT_OFFSET,RADIUS,walkable,hitsPolygon});

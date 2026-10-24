@@ -514,9 +514,11 @@ function safeMove(x,y){
  const m=src[scene];
  const radius=9,footY=y+5;
  if(scene==='entrance'){
-  const centralDoor=x>=257&&x<=289&&y>=230&&y<247;
-  if(centralDoor){if(!P2.canTraverse(galleryIndex,'north',currentSave.progression))return false;}
-  else if(!window.A18EntranceCollision.walkable(x,y))return false;
+  const centralDoorWall=x>=228&&x<=318&&y<247;
+  if(centralDoorWall){
+   const openDoorway=x>=257&&x<=289&&y>=230;
+   if(!openDoorway||!P2.canTraverse(galleryIndex,'north',currentSave.progression))return false;
+  }else if(!window.A18EntranceCollision.walkable(x,y))return false;
  }
  if(x<24||x>m.w-24||y<101||y>m.h-11)return false;
  // The wall cannot be walked through. Only the actual north doorway forms a corridor.
