@@ -702,7 +702,18 @@ function draw(){
  for(let i=0;i<roomRects().length;i++)paintArtwork(slot(L.slotFor(galleryIndex,i)),i);
  decorate();drawButler();drawGalleryStaff();
  const hit=nearby();
- if(hit?.type==='art'&&carrying){const f=fixtureAt(hit.i),[x1,y1,x2,y2]=L.r(f);ctx.strokeStyle='#76b18a';ctx.lineWidth=3;ctx.strokeRect(x1-7,y1-7,x2-x1+14,y2-y1+14)}
+ if(hit?.type==='art'&&carrying){
+  ctx.save();ctx.strokeStyle='#76b18a';ctx.lineWidth=2;
+  if(galleryIndex===0){
+   const geometry=window.A18Entrance.approvedGeometry(hit.i);
+   if(geometry.window){const r=geometry.window;ctx.strokeRect(r.x-3,r.y-3,r.w+6,r.h+6);}
+   else {ctx.beginPath();geometry.polygon.forEach((pt,i)=>i?ctx.lineTo(...pt):ctx.moveTo(...pt));ctx.closePath();ctx.stroke();}
+  }else{
+   const f=fixtureAt(hit.i),[x1,y1,x2,y2]=L.r(f);
+   ctx.strokeRect(x1-7,y1-7,x2-x1+14,y2-y1+14);
+  }
+  ctx.restore();
+ }
  avatar();ctx.restore();requestAnimationFrame(draw);
 }
 function profileFields(){

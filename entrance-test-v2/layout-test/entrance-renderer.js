@@ -145,20 +145,11 @@ function rightPanel(ctx,f,img){
  const lerp=(a,b,t)=>a+(b-a)*t;
  ctx.save();
  ctx.beginPath();ctx.moveTo(...tl);ctx.lineTo(...tr);ctx.lineTo(...br);ctx.lineTo(...bl);ctx.closePath();ctx.clip();
- // Each narrow vertical source strip maps continuously between the two
- // sloping edges. Slight overlap prevents antialias gaps between strips.
- const count=128;
- for(let i=0;i<count;i++){
-  const t=i/count,next=(i+1)/count;
-  const topX=lerp(tl[0],tr[0],t),topY=lerp(tl[1],tr[1],t);
-  const bottomX=lerp(bl[0],br[0],t),bottomY=lerp(bl[1],br[1],t);
-  const dx=lerp(tl[0],tr[0],next)-topX;
-  const dy=lerp(tl[1],tr[1],next)-topY;
-  const ux=(bottomX-topX)/256,uy=(bottomY-topY)/256;
-  ctx.save();ctx.transform(dx,dy,ux,uy,topX,topY);
-  ctx.drawImage(source,i*2,0,2,256,0,0,1.012,256);
-  ctx.restore();
- }
+ // Draw the complete image in one operation under the perspective-shaped
+ // clip. Strip-by-strip canvas transforms created visible vertical gaps on iOS.
+ // A single continuous draw preserves the photo without sampling seams.
+ ctx.imageSmoothingEnabled=true;
+ ctx.drawImage(source,tl[0],tl[1],tr[0]-tl[0],Math.max(br[1],bl[1])-tl[1]);
  ctx.restore();
 }
 // Shared geometric source of truth for the visual openings and interaction.
@@ -166,7 +157,7 @@ function approvedAnchor(index){
  if(index===2)return {x:390,y:338}; // stand on the accessible side of the angled partition
  const rect=APPROVED_WINDOWS[index];
  if(!rect)throw Error('Unknown approved frame index '+index);
- return {x:rect.x+rect.w/2,y:208};
+ return {x:rect.x+rect.w/2,y:226};
 }
 function approvedGeometry(index){
  if(index===2)return {polygon:RIGHT_PANEL.map(p=>p.slice()),anchor:approvedAnchor(index)};
