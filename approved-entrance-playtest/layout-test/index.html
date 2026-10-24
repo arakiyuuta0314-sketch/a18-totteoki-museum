@@ -163,6 +163,18 @@ function saveError(e){
  }
  heldKeys.clear();
  console.error('A18 v3 storage halted:',e);
+ // Show the underlying startup exception instead of masking it as generic Error.
+ const diagnostic=document.createElement('pre');
+ diagnostic.id='a18StartupDiagnostic';
+ diagnostic.style.cssText='white-space:pre-wrap;overflow-wrap:anywhere;background:#fff3d4;color:#633;padding:10px;font:12px monospace';
+ diagnostic.textContent='診断: '+String(e?.code||e?.name||'Error')+' / '+String(e?.message||e);
+ $('hint').after(diagnostic);
+ const reset=document.createElement('a');
+ reset.href='reset-playtest.html';
+ reset.textContent='試遊版の保存データを削除して最初から試す';
+ reset.style.cssText='display:block;background:#fff3d4;color:#143f35;padding:12px;margin:8px 0;border-radius:8px;text-align:center';
+ diagnostic.after(reset);
+
  $('hint').textContent='保存できませんでした（'+(e.code||e.name||'ERROR')+'）。データを変更せず停止しました。再読み込みしてください。';
  $('hint').hidden=false;
 }
