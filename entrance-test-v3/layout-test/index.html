@@ -669,15 +669,22 @@ function drawButler(){
 }
 // Diagnostic overlay only; does not modify collision or saved data.
 const collisionDebug=new URLSearchParams(location.search).get('collisionDebug')==='1';
+let collisionDebugCache=null;
 function drawCollisionDebug(){
  if(!collisionDebug)return;
  const m=src[scene],step=6;
- ctx.save();
- for(let y=0;y<m.h;y+=step)for(let x=0;x<m.w;x+=step){
-  const allowed=safeMove(x+step/2,y+step/2);
-  ctx.fillStyle=allowed?'rgba(42,210,104,.20)':'rgba(245,49,61,.28)';
-  ctx.fillRect(x,y,step,step);
+ const cacheKey=scene+'|'+galleryIndex+'|'+JSON.stringify(fixtures)+'|'+currentSave.progression.unlockedThroughLevel;
+ if(!collisionDebugCache||collisionDebugCache.key!==cacheKey){
+  const overlay=document.createElement('canvas');overlay.width=m.w;overlay.height=m.h;
+  const c=overlay.getContext('2d');
+  for(let y=0;y<m.h;y+=step)for(let x=0;x<m.w;x+=step){
+   const allowed=safeMove(x+step/2,y+step/2);
+   c.fillStyle=allowed?'rgba(42,210,104,.20)':'rgba(245,49,61,.28)';
+   c.fillRect(x,y,step,step);
+  }
+  collisionDebugCache={key:cacheKey,canvas:overlay};
  }
+ ctx.save();ctx.drawImage(collisionDebugCache.canvas,0,0);
  if(scene==='entrance'){
   ctx.strokeStyle='#ffdd66';ctx.lineWidth=2;
   for(const obj of window.A18EntranceCollision.POLYGONS){
