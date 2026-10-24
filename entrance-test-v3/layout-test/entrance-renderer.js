@@ -18,8 +18,8 @@ const ITEMS={
  glow:['entrance_wall_glow_v03.png',546,483],
  plaque:['entrance_plaque_blank_v03.png',101,23],
  approved:['approved_entrance_trial.jpg',546,483],
- passageLeft:['entrance_passage_foreground_left_v01.png',546,483],
- passageRight:['entrance_passage_foreground_right_v01.png',546,483]
+ passageLeft:['entrance_passage_foreground_left_v02.png',546,483],
+ passageRight:['entrance_passage_foreground_right_v02.png',546,483]
 };
 const images=new Map();
 let ready=false;
@@ -67,8 +67,8 @@ function background(ctx){
 function passageForeground(ctx,playerX,playerY){
  requireReady();
  // Side passage architecture occludes the player, not the whole room.
- if(playerY<336&&playerX<140)place(ctx,'passageLeft',0,0);
- if(playerY<406&&playerX>401)place(ctx,'passageRight',0,0);
+ if(playerY<275&&playerX<140)place(ctx,'passageLeft',0,0);
+ if(playerY<275&&playerX>401)place(ctx,'passageRight',0,0);
 }
 function foreground(ctx){
  requireReady();
