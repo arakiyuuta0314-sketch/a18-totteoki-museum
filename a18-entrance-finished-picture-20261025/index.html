@@ -1,0 +1,15 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#243d32"><link rel="icon" href="data:,">
+<title>A18 エントランス Lv.6｜正式キャラ合成・一枚絵</title>
+<style>*{box-sizing:border-box}body{margin:0;color:#27382f;background:#f6f1e7;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif}header{background:#243d32;color:#fff;padding:17px 15px}h1{font-size:clamp(19px,5vw,26px);margin:0 0 7px}header p{font-size:12px;margin:0;opacity:.9;line-height:1.5}main{max-width:1150px;margin:auto;padding:13px 10px 35px}.tabs{display:flex;gap:8px;padding:3px 0 12px}.tabs button{font-size:14px;flex:1;padding:12px 8px;color:#244334;background:#fff;border-radius:8px;border:1px solid #b7c1b5;font-weight:bold}.tabs button[aria-pressed=true]{background:#295d49;color:#fff;border-color:#295d49}img{display:block;width:100%;height:auto;border:1px solid #a99d89;border-radius:6px;box-shadow:0 5px 16px #312c2022}.bottom{font-size:12px;line-height:1.8;color:#5d6c61;padding-top:12px}.bottom a{color:#26583d}a.link{display:inline-block;margin-top:9px;padding:9px 12px;color:#fff;background:#285a46;border-radius:9px;text-decoration:none;font-size:13px;font-weight:bold}</style></head>
+<body><header><h1>A18 エントランス Lv.6｜一枚絵</h1><p>実際の正式キャラPNGを合成した美術完成像の比較用画像。ゲームには未組み込み。</p></header>
+<main><div class="tabs"><button type="button" id="male" aria-pressed="true">男性館長</button><button type="button" id="female" aria-pressed="false">女性館長</button></div>
+<img id="mainPicture" alt="3通路・3枚の思い出の写真を備える美術館エントランス。正式キャラクターの館長と爺やを合成した高画質の一枚絵。" src="A18_entrance_A_Lv6_photo_first_OFFICIAL_male.png" width="1092" height="967">
+<a id="imageFile" class="link" href="A18_entrance_A_Lv6_photo_first_OFFICIAL_male.png" target="_blank" rel="noopener">画像を開いて拡大 ↗</a>
+<div class="bottom">これは美術監修用の静止画です。人物2体には採用済みの正式PNGを使用し、画中の写真3枚は表示例です。背景は制作候補であり、最終的な採否・ゲーム用レイヤー分割は未確定です。<a href="../entrance-photo-first-v03/">レイアウト確定用v0.3</a>も比較できます。</div>
+</main>
+<script>
+const map={male:'A18_entrance_A_Lv6_photo_first_OFFICIAL_male.png',female:'A18_entrance_A_Lv6_photo_first_OFFICIAL_female.png'};
+for(const sex of Object.keys(map)){document.getElementById(sex).onclick=()=>{for(const x of Object.keys(map))document.getElementById(x).setAttribute('aria-pressed',String(x===sex));document.getElementById('mainPicture').src=map[sex];document.getElementById('imageFile').href=map[sex]}}
+</script></body></html>

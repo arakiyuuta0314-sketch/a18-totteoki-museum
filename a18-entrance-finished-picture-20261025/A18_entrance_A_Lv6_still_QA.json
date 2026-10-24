@@ -1,0 +1,26 @@
+{
+  "source_sha256": {
+    "A18_entrance_Lv6_A_background_candidate_20261025.png": "1441287c305c700bd2355247d19d9adf8926c3a46df53366020297f612b3b85a",
+    "curator-back-00.png": "6c0d367afc683251214634a6f346093c42b8f693b5dc4cb5445b027894cc4893",
+    "female-back-00.png": "c0f7e00df3052b346329746cad80aeda3c213c7c8311dcb59fe5f5e0592a572b",
+    "butler-front-00.png": "e3d1f41184ccab4535f0fe05a19bef59024a3665a76e75b43b8991668372213c",
+    "memory_dog_demo.jpg": "6f4eb2fd32fa71eab7790c5bb20bba79cf93239383ba16cf1bcf67511e81869a",
+    "memory_holiday_demo.jpg": "498084dc3e95fd32b147fd980f4b2c3e5c0a9a0990ce6eeaa4ea54160f18eae4",
+    "memory_cat_demo.jpg": "dc110fee78ad97f76fb29c93885b853d060fb572424b18f23c3ea9456056567c"
+  },
+  "character_sprite_handling": "Loaded original approved PNG, nearest-neighbor resize only. No AI redraw.",
+  "frame_demo": "3 sample photos cropped from generated reference; NOT user content.",
+  "background_is_candidate": true,
+  "art_approval": "Not yet approved; static one-sheet mock only; layered game integration not done",
+  "cropping_in_source_px": [
+    0,
+    72,
+    1254,
+    1182
+  ],
+  "output_resolution": [
+    1092,
+    967
+  ],
+  "composite_count": 2
+}
