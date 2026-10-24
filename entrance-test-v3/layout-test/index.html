@@ -7,7 +7,7 @@
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="stylesheet" href="viewer.css">
 <link rel="stylesheet" href="viewer-frame.css"><link rel="stylesheet" href="viewer-minimal.css?v=1.10">
-<link rel="stylesheet" href="museum-navigation.css?v=1"><script src="layout-system.js?v=collision2"></script><script src="museum-navigation.js?v=collision2"></script><script src="museum-progression.js?v=1"></script><script src="asset-renderer.js?v=larger2"></script><script src="museum-p3-renderer.js?v=1"></script><script src="museum-p5-decorations.js?v=2"></script><script src="entrance-renderer.js?v=13"></script><script src="museum-p2-storage.js?v=release-v3"></script>
+<link rel="stylesheet" href="museum-navigation.css?v=1"><script src="layout-system.js?v=collision2"></script><script src="museum-navigation.js?v=entrance-rebuild1"></script><script src="museum-progression.js?v=1"></script><script src="asset-renderer.js?v=larger2"></script><script src="museum-p3-renderer.js?v=1"></script><script src="museum-p5-decorations.js?v=2"></script><script src="entrance-renderer.js?v=13"></script><script src="entrance-collision.js?v=1"></script><script src="museum-p2-storage.js?v=release-v3"></script>
 <script src="photo-prep.js" defer></script>
 <script src="smart-frame.js" defer></script>
 <script src="photo-tone.js" defer></script>
@@ -510,32 +510,13 @@ function worldPoint(e){
 const wallFootLine=()=>scene==='entrance'?244:164;
 const northDoorway=()=>scene==='entrance'?{x1:255,x2:291}:{x1:344,x2:387};
 function roomObstacles(){return L.obstacles(fixtures,galleryIndex);}
-// Lv.6 approved entrance: fixed furnishings are not movable scenery.
-// Coordinates are in the 546x483 logical scene. Edge portal strips remain
-// open so the existing room-transition rules are not accidentally broken.
-const LV6_ENTRANCE_SOLIDS=[
- [0,139,359,470],   // reception counter / plants, lower left
- [0,116,224,313],   // left foreground balustrade
- [413,546,218,338], // right foreground angled exhibition partition
- [518,546,397,472]  // right foreground plant / plinth
-];
-function entranceSolid(x,y){
- const foot=y+5,rad=9;
- // Portal approach must remain traversable until exits are remapped.
- if((x<=46||x>=500)&&y>=345&&y<=417)return false;
- return LV6_ENTRANCE_SOLIDS.some(([left,right,top,bottom])=>{
-  const cx=Math.max(left,Math.min(x,right));
-  const cy=Math.max(top,Math.min(foot,bottom));
-  return Math.hypot(x-cx,foot-cy)<rad;
- });
-}
 function safeMove(x,y){
  const m=src[scene];
  const radius=9,footY=y+5;
- if(scene==='entrance'&&entranceSolid(x,y))return false;
+ if(scene==='entrance'&&!window.A18EntranceCollision.walkable(x,y))return false;
  if(x<24||x>m.w-24||y<101||y>m.h-11)return false;
  // The wall cannot be walked through. Only the actual north doorway forms a corridor.
- if(y<wallFootLine()){
+ if(scene!=='entrance'&&y<wallFootLine()){
   const door=northDoorway();
   if(!P2.canTraverse(galleryIndex,'north',currentSave.progression)||x<door.x1+radius/2||x>door.x2-radius/2)return false;
  }
@@ -617,7 +598,7 @@ async function changeScene(next,options={}){
  const edge=Object.keys(ROOM_LINKS[galleryIndex]).find(dir=>ROOM_LINKS[galleryIndex][dir]===room);
  if(!edge||!P2.canTraverse(galleryIndex,edge,currentSave.progression))throw Error('E_ROOM_LOCKED');
  const targetScene=room===0?'entrance':'gallery',m=src[targetScene];
- const location={west:[76,388],east:[m.w-76,388],north:[367,151],south:[296,426]}[options.arrivalFrom]||m.spawn;
+ const location=(room===0?{west:[161,365],east:[384,370],north:[273,280],south:[273,280]}:{west:[76,388],east:[m.w-76,388],north:[367,151],south:[296,426]})[options.arrivalFrom]||m.spawn;
  const direction={west:'right',east:'left',north:'down',south:'up'}[options.arrivalFrom]||'up';
  const arrival={x:location[0],y:location[1],dir:direction,stride:0};
  if(modal||showingEvent||saveBlocked)return false;
@@ -690,15 +671,23 @@ function drawButler(){
 const collisionDebug=new URLSearchParams(location.search).get('collisionDebug')==='1';
 function drawCollisionDebug(){
  if(!collisionDebug)return;
- const m=src[scene],step=12;
+ const m=src[scene],step=6;
  ctx.save();
  for(let y=0;y<m.h;y+=step)for(let x=0;x<m.w;x+=step){
   const allowed=safeMove(x+step/2,y+step/2);
   ctx.fillStyle=allowed?'rgba(42,210,104,.20)':'rgba(245,49,61,.28)';
   ctx.fillRect(x,y,step,step);
  }
+ if(scene==='entrance'){
+  ctx.strokeStyle='#ffdd66';ctx.lineWidth=2;
+  for(const obj of window.A18EntranceCollision.POLYGONS){
+   ctx.beginPath();obj.points.forEach(([x,y],i)=>i?ctx.lineTo(x,y):ctx.moveTo(x,y));ctx.closePath();ctx.stroke();
+  }
+  ctx.beginPath();ctx.arc(pos.x,pos.y+5,9,0,Math.PI*2);ctx.stroke();
+ }
  ctx.strokeStyle='#55c9ff';ctx.lineWidth=2;
- for(const [x,y] of Object.values(L.PORTALS[galleryIndex])){
+ for(const rect of Object.values(PORTAL_EDGES[scene])){
+  const x=(rect.x1+rect.x2)/2,y=(rect.y1+rect.y2)/2;
   ctx.beginPath();ctx.arc(x,y,13,0,Math.PI*2);ctx.stroke();
  }
  for(const h of interactionCandidates()){
@@ -706,7 +695,7 @@ function drawCollisionDebug(){
   if(Number.isFinite(x)&&Number.isFinite(y)){ctx.beginPath();ctx.arc(x,y,7,0,Math.PI*2);ctx.stroke();}
  }
  ctx.fillStyle='rgba(0,0,0,.75)';ctx.fillRect(12,12,244,24);
- ctx.fillStyle='white';ctx.font='13px sans-serif';ctx.fillText('COLLISION DEBUG / 12px GRID',19,29);
+ ctx.fillStyle='white';ctx.font='13px sans-serif';ctx.fillText('COLLISION DEBUG / 6px GRID',19,29);
  ctx.restore();
 }
 function draw(){
