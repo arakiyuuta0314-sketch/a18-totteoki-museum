@@ -187,7 +187,7 @@ function rightPanel(ctx,f,img){
 }
 // Shared geometric source of truth for the visual openings and interaction.
 function approvedAnchor(index){
- if(index===2)return {x:405,y:350}; // interaction on the accessible west edge of the solid partition
+ if(index===2)return {x:425,y:350}; // interaction on the accessible west edge of the solid partition
  const rect=APPROVED_WINDOWS[index];
  if(!rect)throw Error('Unknown approved frame index '+index);
  return {x:rect.x+rect.w/2,y:226};
