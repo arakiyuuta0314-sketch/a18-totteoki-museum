@@ -1,7 +1,7 @@
 /* A18 release v3: one atomic state record; no legacy migration, reset or fault injection. */
 (()=>{'use strict';
 const L=window.A18Layout;
-const DATABASE='a18-totteoki-museum-v3', STORE='states', KEY='museum', EVENTS=['intro-v1','lv2-v1','lv3-v1','lv4-v1','lv5-v1','lv6-v1','gallery06-complete-v1'];
+const DATABASE='a18-approved-entrance-playtest-v1', STORE='states', KEY='museum', EVENTS=['intro-v1','lv2-v1','lv3-v1','lv4-v1','lv5-v1','lv6-v1','gallery06-complete-v1'];
 const error=(code,path='')=>Object.assign(Error(code+(path?' '+path:'')),{code,path});
 const copy=x=>structuredClone(x);
 let dbPromise=null;
