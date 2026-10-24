@@ -18,8 +18,8 @@ const ITEMS={
  glow:['entrance_wall_glow_v03.png',546,483],
  plaque:['entrance_plaque_blank_v03.png',101,23],
  approved:['approved_entrance_trial.jpg',546,483],
- passageLeft:['entrance_passage_foreground_left_v02.png',546,483],
- passageRight:['entrance_passage_foreground_right_v02.png',546,483]
+ passageLeft:['entrance_passage_foreground_left_v03.png',546,483],
+ passageRight:['entrance_passage_foreground_right_v03.png',546,483]
 };
 const images=new Map();
 let ready=false;
