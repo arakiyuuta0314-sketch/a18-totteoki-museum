@@ -115,8 +115,8 @@ function frameGeometry(f,img,preferredShape=null){
 // projected into the existing 546x483 logical entrance canvas.
 // Slot IDs and interaction coordinates are intentionally unchanged.
 const APPROVED_WINDOWS=[
- {x:90,y:71,w:97,h:66},
- {x:382,y:71,w:69,h:66},
+ {x:82,y:67,w:111,h:77},
+ {x:376,y:67,w:81,h:77},
  {x:432,y:204,w:56,h:107}
 ];
 // The foreground-right exhibit is on an angled partition.
@@ -126,8 +126,9 @@ const RIGHT_PANEL=[[410,204],[477,224],[477,309],[410,281]];
 // by the earlier two-triangle affine mapping.
 const RIGHT_PANEL_CACHE=new WeakMap();
 function rightPanel(ctx,f,img){
- const cached=img&&RIGHT_PANEL_CACHE.get(img);
- let source=cached;
+ // Pre-warp to a raster once, with inverse bilinear sampling. No independent
+ // canvas strips: Safari otherwise exposes seams on each transformed column.
+ let source=img&&RIGHT_PANEL_CACHE.get(img);
  if(!source){
   source=document.createElement('canvas');source.width=256;source.height=256;
   const c=source.getContext('2d');
@@ -142,15 +143,29 @@ function rightPanel(ctx,f,img){
   }
  }
  const [tl,tr,br,bl]=RIGHT_PANEL;
- const lerp=(a,b,t)=>a+(b-a)*t;
- ctx.save();
- ctx.beginPath();ctx.moveTo(...tl);ctx.lineTo(...tr);ctx.lineTo(...br);ctx.lineTo(...bl);ctx.closePath();ctx.clip();
- // Draw the complete image in one operation under the perspective-shaped
- // clip. Strip-by-strip canvas transforms created visible vertical gaps on iOS.
- // A single continuous draw preserves the photo without sampling seams.
- ctx.imageSmoothingEnabled=true;
- ctx.drawImage(source,tl[0],tl[1],tr[0]-tl[0],Math.max(br[1],bl[1])-tl[1]);
- ctx.restore();
+ const left=Math.floor(Math.min(tl[0],bl[0])),top=Math.floor(Math.min(tl[1],tr[1]));
+ const right=Math.ceil(Math.max(tr[0],br[0])),bottom=Math.ceil(Math.max(bl[1],br[1]));
+ const w=right-left,h=bottom-top;
+ const input=source.getContext('2d',{willReadFrequently:true}).getImageData(0,0,256,256).data;
+ const out=ctx.createImageData(w,h),dst=out.data;
+ for(let py=0;py<h;py++)for(let px=0;px<w;px++){
+  const x=left+px+.5,y=top+py+.5;
+  // Horizontal u follows the slanted side edges, vertical v follows
+  // the continuously interpolated upper/lower boundaries.
+  const u=(x-tl[0])/(tr[0]-tl[0]);
+  if(u<0||u>1)continue;
+  const yTop=tl[1]+(tr[1]-tl[1])*u;
+  const yBottom=bl[1]+(br[1]-bl[1])*u;
+  const v=(y-yTop)/(yBottom-yTop);
+  if(v<0||v>1)continue;
+  const sx=Math.min(255,Math.max(0,Math.floor(u*256)));
+  const sy=Math.min(255,Math.max(0,Math.floor(v*256)));
+  const si=(sy*256+sx)*4,di=(py*w+px)*4;
+  dst[di]=input[si];dst[di+1]=input[si+1];dst[di+2]=input[si+2];dst[di+3]=255;
+ }
+ const warped=document.createElement('canvas');warped.width=w;warped.height=h;
+ warped.getContext('2d').putImageData(out,0,0);
+ ctx.drawImage(warped,left,top);
 }
 // Shared geometric source of truth for the visual openings and interaction.
 function approvedAnchor(index){
