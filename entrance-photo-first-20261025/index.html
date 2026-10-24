@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#243c36">
+<link rel="icon" href="data:,">
+<title>A18｜写真が主役のエントランス構図 A案</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f5f2eb;color:#26342d;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif}
+header{padding:23px 18px 20px;background:#243c36;color:#fff}h1{margin:0;font-size:clamp(22px,5.4vw,28px);letter-spacing:.025em;line-height:1.35}
+header small{display:block;color:#cadbd0;letter-spacing:.08em;font-size:12px;margin-bottom:7px}
+header p{font-size:13px;line-height:1.65;margin:9px 0 0;color:#e7eee8}
+main{max-width:670px;padding:20px 12px 38px;margin:auto}.intro{font-size:14px;line-height:1.75;background:#fff;border:1px solid #e6e0d4;border-radius:14px;padding:14px 17px;margin-bottom:15px}
+.optionTitle{margin:20px 4px 8px;font-size:17px}.control{background:#fff;border:1px solid #e6dfd4;border-radius:12px;padding:12px 13px;display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-bottom:13px}
+.control label{font-size:11px;font-weight:bold;display:block;color:#617368;margin:0 0 5px}
+.control button{display:inline-block;min-height:40px;width:50%;margin:0;padding:5px 0;appearance:none;background:#f5f5f0;border:1px solid #c9d3cc;color:#3e6253;font-size:12px;white-space:nowrap}
+.control button:first-of-type{border-radius:8px 0 0 8px}.control button:last-of-type{border-radius:0 8px 8px 0;border-left:0}
+.control button[aria-pressed=true]{background:#275844;border-color:#275844;color:white;font-weight:bold}
+.stage{border-radius:13px;overflow:hidden;border:1px solid #d6cfbd;background:#dfd5c6;box-shadow:0 4px 16px #3e32251a}
+.stage svg{display:block;width:100%;height:auto}
+.legend{display:flex;justify-content:space-between;gap:5px;font-size:11px;background:#fff;color:#6a6c66;padding:10px 9px}
+.legend span{text-align:center}
+.summary{background:#fff;padding:14px 16px;border-radius:12px;border:1px solid #e7e1d4;margin-top:16px;font-size:14px;line-height:1.8}
+.summary strong{color:#24533f}
+nav{padding:16px 2px 0;font-size:12px}nav a{color:#306348}
+.note{font-size:12px;line-height:1.7;color:#69736a;margin:15px 2px 0}
+@media(max-width:360px){.control{gap:7px;padding:10px}.control button{font-size:11px}}
+</style></head>
+<body>
+<header><small>A18 とっておき美術館 ／ 美術設計の比較試験</small><h1>A案を「写真が主役」に再設計</h1>
+<p>正式キャラクター原本を合成。Lv.1／Lv.6、写真あり／空き枠を切り替えられる構図テストです。</p></header>
+<main>
+<div class="intro"><b>今回の確認ポイント</b><br>
+豪華な建築そのものではなく、登録した写真が3枚並ぶ喜びを優先します。中央と左右の通路は残し、額縁の表示面積と鑑賞のしやすさを先に設計しました。</div>
+<div class="control">
+ <div><label>写真の状態</label><button type="button" id="photosOn" aria-pressed="true">写真あり</button><button type="button" id="photosOff" aria-pressed="false">空き枠</button></div>
+ <div><label>装飾の状態</label><button type="button" id="lv1" aria-pressed="false">Lv.1</button><button type="button" id="lv6" aria-pressed="true">Lv.6</button></div>
+</div>
+<div class="stage">
+<svg id="museum" viewBox="0 0 546 483" role="img" aria-label="A案の写真優先エントランス構図。左右と正面の通路、壁面展示2枠と右前の展示1枠、正式の館長と爺や。">
+<defs>
+ <linearGradient id="wall" x2="0" y2="1"><stop stop-color="#ebdfcf"/><stop offset="1" stop-color="#c5b39c"/></linearGradient>
+ <linearGradient id="floor" x2="0" y2="1"><stop stop-color="#d8c9b4"/><stop offset="1" stop-color="#e8ded0"/></linearGradient>
+ <linearGradient id="wood" x2="0" y2="1"><stop stop-color="#5d4838"/><stop offset="1" stop-color="#45352b"/></linearGradient>
+ <linearGradient id="carpet" x2="0" y2="1"><stop stop-color="#71403c"/><stop offset="1" stop-color="#884f48"/></linearGradient>
+ <linearGradient id="photoA" x2="0" y2="1"><stop stop-color="#a3b8bb"/><stop offset="1" stop-color="#e4c9ad"/></linearGradient>
+ <linearGradient id="photoB" x2="0" y2="1"><stop stop-color="#a6afb9"/><stop offset="1" stop-color="#e7b59f"/></linearGradient>
+ <linearGradient id="photoC" x2="0" y2="1"><stop stop-color="#abb7a8"/><stop offset="1" stop-color="#deb9af"/></linearGradient>
+ <radialGradient id="lamp"><stop stop-color="#f5e4bc" stop-opacity=".55"/><stop offset="1" stop-color="#f5e4bc" stop-opacity="0"/></radialGradient>
+ <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2"/></filter>
+ <clipPath id="p1"><rect x="90" y="95" width="124" height="111" rx="1"/></clipPath>
+ <clipPath id="p2"><rect x="332" y="95" width="124" height="111" rx="1"/></clipPath>
+ <clipPath id="p3"><polygon points="418,316 519,319 519,418 418,411"/></clipPath>
+</defs>
+<!-- Base building; intentionally quiet and independent from photos -->
+<rect x="0" y="0" width="546" height="483" fill="#e5d8c6"/>
+<rect x="0" y="0" width="546" height="259" fill="url(#wall)"/>
+<path d="M0 258 H546 V483 H0Z" fill="url(#floor)"/>
+<path d="M0 38 H546" stroke="#a89273" stroke-width="5"/>
+<path d="M0 51 H546 M0 68 H546" stroke="#d1bfa5" stroke-width="2"/>
+<rect x="0" y="232" width="546" height="28" fill="url(#wood)"/>
+<path d="M0 228 H546" stroke="#98785a" stroke-width="5"/>
+<g stroke="#cab89f" stroke-width="1" opacity=".46">
+ <path d="M0 311H546 M0 376H546 M0 449H546"/>
+ <path d="M30 260 L0 483 M108 260 L60 483 M188 260 L155 483 M350 260 L386 483 M430 260 L485 483 M510 260 L546 483"/>
+</g>
+<!-- Passage openings, never occluded by art -->
+<path d="M0 147 Q0 125 22 125 H44 Q69 125 69 147 V280 H0Z" fill="#4e453c" stroke="#93775b" stroke-width="6"/>
+<path d="M0 163 Q0 149 17 149 H46 V280 H0Z" fill="#687468"/>
+<path d="M546 147 Q546 125 524 125 H500 Q477 125 477 147 V280 H546Z" fill="#4e453c" stroke="#93775b" stroke-width="6"/>
+<path d="M546 163 Q546 149 529 149 H500 V280 H546Z" fill="#687468"/>
+<path d="M237 115 Q237 95 255 95 H291 Q309 95 309 115 V261 H237Z" fill="#473c32" stroke="#917358" stroke-width="7"/>
+<path d="M248 125 Q248 112 258 112 H288 Q298 112 298 125 V261 H248Z" fill="#708176"/>
+<path d="M258 128 H288 M258 157 H288 M258 186 H288 M258 215 H288" stroke="#9cab99" stroke-width="1.5"/>
+<!-- Narrow unobtrusive central rug -->
+<path d="M253 269 H291 L353 483 H193Z" fill="url(#carpet)"/>
+<path d="M257 273 H287 L343 479 H202Z" fill="none" stroke="#b99c71" stroke-width="2"/>
+<!-- Small architectural corners -->
+<path d="M73 48 H82 V255 H72 M464 48 H473 V255 H464" fill="none" stroke="#b9a184" stroke-width="6"/>
+<!-- Spotlights face display mats instead of producing attention-grabbing room decor -->
+<g fill="#bea077"><rect x="143" y="72" width="18" height="4" rx="2"/><rect x="385" y="72" width="18" height="4" rx="2"/></g>
+<g fill="url(#lamp)"><ellipse cx="152" cy="130" rx="85" ry="95"/><ellipse cx="394" cy="130" rx="85" ry="95"/></g>
+<!-- Two main display zones on the back wall -->
+<g id="frame1">
+ <rect x="78" y="83" width="148" height="137" rx="2" fill="#352b23" opacity=".24" transform="translate(3 3)"/>
+ <rect x="78" y="83" width="148" height="137" rx="2" fill="#9e865f"/>
+ <rect x="83" y="88" width="138" height="127" fill="#5b4334"/>
+ <rect x="90" y="95" width="124" height="111" fill="#e7ddcc"/>
+</g>
+<g id="frame2">
+ <rect x="320" y="83" width="148" height="137" rx="2" fill="#352b23" opacity=".24" transform="translate(3 3)"/>
+ <rect x="320" y="83" width="148" height="137" rx="2" fill="#9e865f"/>
+ <rect x="325" y="88" width="138" height="127" fill="#5b4334"/>
+ <rect x="332" y="95" width="124" height="111" fill="#e7ddcc"/>
+</g>
+<!-- Sample photo silhouettes are test-only placeholders, never actual user content -->
+<g class="samplePhoto" clip-path="url(#p1)">
+ <rect x="90" y="95" width="124" height="111" fill="url(#photoA)"/>
+ <circle cx="152" cy="136" r="26" fill="#504e57" opacity=".72"/>
+ <path d="M96 215 Q105 170 152 170 Q204 170 216 215" fill="#4c4d52" opacity=".84"/>
+ <path d="M116 100 Q145 105 174 96" fill="none" stroke="#fff" stroke-opacity=".2" stroke-width="7"/>
+</g>
+<g class="samplePhoto" clip-path="url(#p2)">
+ <rect x="332" y="95" width="124" height="111" fill="url(#photoB)"/>
+ <path d="M332 179 Q380 153 456 181 V211 H332Z" fill="#5f7776" opacity=".65"/>
+ <circle cx="394" cy="136" r="25" fill="#66626a"/>
+ <path d="M347 215 Q348 166 394 167 Q439 166 448 215" fill="#4c5662" opacity=".84"/>
+</g>
+<!-- Front-right showcase is near-frontal and deliberately has a readable artwork face -->
+<path d="M397 290 L538 299 V449 L397 434Z" fill="#655041" stroke="#3d3129" stroke-width="4"/>
+<path d="M405 299 L530 306 V439 L405 426Z" fill="#baa47e"/>
+<path d="M411 306 L525 310 V431 L411 418Z" fill="#553f34"/>
+<path d="M418 316 L519 319 V418 L418 411Z" fill="#e7ddcc"/>
+<g class="samplePhoto" clip-path="url(#p3)">
+ <rect x="416" y="313" width="108" height="108" fill="url(#photoC)"/>
+ <circle cx="468" cy="351" r="23" fill="#625f59"/>
+ <path d="M422 427 Q419 374 468 379 Q510 378 519 423" fill="#6a5960"/>
+</g>
+<!-- Empty-wall framing markers -->
+<g class="emptyPhoto" fill="#b7a48c" font-family="sans-serif" font-size="30" font-weight="200" text-anchor="middle">
+ <text x="152" y="160">＋</text><text x="394" y="160">＋</text><text x="468" y="374">＋</text>
+</g>
+<!-- Quiet furniture, scene does not become a hotel lobby -->
+<g>
+ <path d="M23 341 H103 L111 359 H20Z" fill="#6c5443"/>
+ <rect x="27" y="356" width="79" height="39" fill="url(#wood)"/>
+ <path d="M33 366 H99 M33 384 H99" stroke="#9b7756" stroke-width="1"/>
+</g>
+<!-- Lv.6 add-ons: detachable independent layer and no overlap with display windows -->
+<g id="decorLv6">
+ <path d="M0 260H546" stroke="#9f855d" stroke-width="3"/>
+ <g fill="#59705b"><ellipse cx="35" cy="323" rx="22" ry="14"/><ellipse cx="30" cy="309" rx="18" ry="18"/><ellipse cx="355" cy="287" rx="17" ry="12"/><ellipse cx="364" cy="278" rx="13" ry="13"/></g>
+ <g fill="#95816a"><path d="M17 334 H53 L48 356 H21Z"/><path d="M345 295 H373 L370 316 H349Z"/></g>
+ <g stroke="#b49a72" stroke-width="3"><path d="M34 395H99"/><path d="M97 366V390"/></g>
+ <path d="M0 273H546" stroke="#c7ad84" stroke-opacity=".34" stroke-width="1"/>
+</g>
+<!-- Player avatar and butler; exact original PNGs, not generated or visually altered -->
+<image href="../scenes-preview/assets/official/characters/butler-front-00.png" x="113" y="286" width="43" height="55" preserveAspectRatio="xMidYMax meet"/>
+<image href="../scenes-preview/assets/official/characters/curator-back-00.png" x="254" y="381" width="35" height="46" preserveAspectRatio="xMidYMax meet"/>
+<!-- Minimal exit wayfinding overlay, concept only -->
+<g font-family="sans-serif" font-size="11" fill="#fff" text-anchor="middle">
+ <g><rect x="5" y="243" width="48" height="19" rx="8" fill="#465f54" fill-opacity=".86"/><text x="29" y="256">← 左</text></g>
+ <g><rect x="246" y="243" width="54" height="19" rx="8" fill="#465f54" fill-opacity=".86"/><text x="273" y="256">↑ 奥</text></g>
+ <g><rect x="494" y="243" width="47" height="19" rx="8" fill="#465f54" fill-opacity=".86"/><text x="518" y="256">右 →</text></g>
+</g>
+</svg>
+<div class="legend"><span>左通路・展示①</span><span>正面通路</span><span>右通路・展示②③</span></div>
+</div>
+<div class="summary"><strong>構図の狙い</strong><br>
+正面の2展示は並べて眺めやすく、右手前の3展示目も写真が大きく見える位置へ調整しました。豪華さは額装・素材・少量の家具で表現し、写真より目立つシャンデリアや花壇は置いていません。<br><br>
+現在の3展示窓は試案として約<strong>37,325px²／全画面263,718px²（約14.2%）</strong>。比較対象の旧試遊版はコード上の3窓合計が約8.5%でした。面積を増やしても通路を保てるかは実ゲームとの統合試験で確認します。</div>
+<p class="note">※実ユーザー写真は使用していません。画面内の3枚は抽象的な仮の写真表示です。Lv.1／Lv.6の切替は美術の構成比較であり、確定した装飾スケジュールではありません。現在のゲームや保存データは変更していません。</p>
+<nav><a href="../entrance-compare-20261025/">← A/B/C構図比較へ戻る</a></nav>
+</main>
+<script>
+(() => {
+ let photo=true,level=6;
+ const $=id=>document.getElementById(id);
+ function update(){
+  document.querySelectorAll('.samplePhoto').forEach(el=>el.style.display=photo?'':'none');
+  document.querySelectorAll('.emptyPhoto').forEach(el=>el.style.display=photo?'none':'');
+  $('decorLv6').style.display=level===6?'':'none';
+  $('photosOn').setAttribute('aria-pressed',String(photo));
+  $('photosOff').setAttribute('aria-pressed',String(!photo));
+  $('lv1').setAttribute('aria-pressed',String(level===1));
+  $('lv6').setAttribute('aria-pressed',String(level===6));
+ }
+ $('photosOn').addEventListener('click',()=>{photo=true;update()});
+ $('photosOff').addEventListener('click',()=>{photo=false;update()});
+ $('lv1').addEventListener('click',()=>{level=1;update()});
+ $('lv6').addEventListener('click',()=>{level=6;update()});
+ update();
+})();
+</script></body></html>
