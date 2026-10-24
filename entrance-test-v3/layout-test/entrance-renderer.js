@@ -129,7 +129,7 @@ const RIGHT_WARP_CACHE=new WeakMap();
 let RIGHT_EMPTY_WARP=null;
 function rightPanel(ctx,f,img){
  const cached=img?RIGHT_WARP_CACHE.get(img):RIGHT_EMPTY_WARP;
- if(cached){ctx.drawImage(cached,426,201);return;}
+ if(cached){ctx.drawImage(cached,426,201,cached.width/3,cached.height/3);return;}
  // Pre-warp to a raster once, with inverse bilinear sampling. No independent
  // canvas strips: Safari otherwise exposes seams on each transformed column.
  let source=img&&RIGHT_PANEL_CACHE.get(img);
@@ -150,12 +150,13 @@ function rightPanel(ctx,f,img){
  const left=Math.floor(Math.min(tl[0],bl[0])),top=Math.floor(Math.min(tl[1],tr[1]));
  const right=Math.ceil(Math.max(tr[0],br[0])),bottom=Math.ceil(Math.max(bl[1],br[1]));
  const w=right-left,h=bottom-top;
+ const renderScale=3,hiW=w*renderScale,hiH=h*renderScale;
  const input=source.getContext('2d',{willReadFrequently:true}).getImageData(0,0,512,512).data;
- const out=ctx.createImageData(w,h),dst=out.data;
+ const out=ctx.createImageData(hiW,hiH),dst=out.data;
  // Solve the inverse bilinear quad per destination pixel. Both side edges
  // lean with depth, unlike the old fixed-x column approximation.
- for(let py=0;py<h;py++)for(let px=0;px<w;px++){
-  const x=left+px+.5,y=top+py+.5;
+ for(let py=0;py<hiH;py++)for(let px=0;px<hiW;px++){
+  const x=left+(px+.5)/renderScale,y=top+(py+.5)/renderScale;
   let u=.5,v=.5;
   for(let k=0;k<9;k++){
    const xx=(1-u)*(1-v)*tl[0]+u*(1-v)*tr[0]+u*v*br[0]+(1-u)*v*bl[0];
@@ -174,15 +175,15 @@ function rightPanel(ctx,f,img){
   // Bilinear sampling avoids nearest-neighbour jaggies in the skewed painting.
   const sx=Math.max(0,Math.min(511,u*512-.5)),sy=Math.max(0,Math.min(511,v*512-.5));
   const x0=Math.floor(sx),y0=Math.floor(sy),x1=Math.min(511,x0+1),y1=Math.min(511,y0+1);
-  const fx=sx-x0,fy=sy-y0,di=(py*w+px)*4;
+  const fx=sx-x0,fy=sy-y0,di=(py*hiW+px)*4;
   const a=(y0*512+x0)*4,b=(y0*512+x1)*4,c=(y1*512+x0)*4,d=(y1*512+x1)*4;
   for(let ch=0;ch<3;ch++)dst[di+ch]=Math.round((input[a+ch]*(1-fx)+input[b+ch]*fx)*(1-fy)+(input[c+ch]*(1-fx)+input[d+ch]*fx)*fy);
   dst[di+3]=255;
  }
- const warped=document.createElement('canvas');warped.width=w;warped.height=h;
+ const warped=document.createElement('canvas');warped.width=hiW;warped.height=hiH;
  warped.getContext('2d').putImageData(out,0,0);
  if(img)RIGHT_WARP_CACHE.set(img,warped);else RIGHT_EMPTY_WARP=warped;
- ctx.drawImage(warped,left,top);
+ ctx.drawImage(warped,left,top,w,h);
 }
 // Shared geometric source of truth for the visual openings and interaction.
 function approvedAnchor(index){
