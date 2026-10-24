@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ja"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#1f3d34"><link rel="icon" href="data:,">
+<title>A18｜右手前の展示壁 完成素材</title>
+<style>
+*{box-sizing:border-box}
+body{background:#f4f0e8;color:#24382e;font:15px/1.65 -apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;margin:0}
+header{background:#1f3d34;color:#fff;padding:22px 17px}
+header .eyebrow{font-size:11px;letter-spacing:.12em;color:#cfe3d4}
+h1{font-size:clamp(21px,5.2vw,30px);margin:4px 0 9px}
+header p{font-size:13px;margin:0;color:#e7eee7}
+main{max-width:820px;padding:17px 12px 44px;margin:auto}
+.notice{border:1px solid #ded2bf;border-radius:13px;padding:15px;background:#fff;font-size:13px;margin-bottom:15px}
+.controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:0 0 12px}
+.controls button{border:1px solid #afc7bb;background:#fff;color:#2a5744;cursor:pointer;border-radius:9px;font-weight:700;font-size:13px;min-height:44px;padding:7px}
+.controls button[aria-pressed=true]{background:#295e49;color:#fff;border-color:#295e49}
+.preview{display:block;width:100%;height:auto;max-width:100%;border:1px solid #c4b79f;border-radius:10px;box-shadow:0 4px 16px #4b3d2720}
+.caption{font-size:12px;color:#5e6c60;margin:10px 2px 19px}
+.downloads{padding:15px;background:#fff;border-radius:12px;border:1px solid #ded2bf}
+.downloads h2{font-size:16px;margin:0 0 9px}
+.downloads a{color:#235941;font-size:13px;display:inline-block;padding:4px 0}
+.downloads a.primary{display:block;background:#255b43;color:#fff;text-align:center;padding:12px 8px;border-radius:9px;text-decoration:none;font-weight:700;margin:5px 0 9px}
+.note{font-size:12px;color:#617165;line-height:1.7;margin-top:17px}
+</style>
+</head>
+<body>
+<header>
+<div class="eyebrow">A18 とっておき美術館</div>
+<h1>右手前の展示壁｜完成素材</h1>
+<p>高品質な元背景を維持し、写真・前景・人物の重なりを独立制御するための素材一式です。</p>
+</header>
+<main>
+<div class="notice"><b>今回は右手前の展示壁1組が対象です。</b> 元の額縁・照明・木部は描き直していません。正式キャラクターのPNGを使用し、合成前後の品質を検証しました。</div>
+<div class="controls" role="group" aria-label="表示する確認画像">
+<button id="three" type="button" aria-pressed="true">写真3枚＋正式キャラ</button>
+<button id="empty" type="button" aria-pressed="false">3枠目を空に</button>
+<button id="behind" type="button" aria-pressed="false">キャラが壁の奥</button>
+<button id="front" type="button" aria-pressed="false">キャラが壁の手前</button>
+</div>
+<img class="preview" id="stage" alt="写真3枚と正式キャラクターを合成した右手前展示壁" src="QA_complete_wall_three_photos_and_formal_sprites.png" width="546" height="483">
+<p class="caption" id="caption">写真3枚と、正式採用済みの館長・爺やを使った合成状態です。</p>
+<div class="downloads">
+<h2>制作データ</h2>
+<a class="primary" href="A18_right_display_wall_complete_assets_20261025.zip">完成候補PNG・制作スクリプト・品質QA（ZIP）</a>
+<a href="entrance_fg_right_display_wall.png" target="_blank" rel="noopener">展示壁の透過PNG</a> ・
+<a href="entrance_photo03_aperture_mask.png" target="_blank" rel="noopener">写真窓マスク</a> ・
+<a href="QA_independent_foreground_checker.png" target="_blank" rel="noopener">透明化の確認画像</a>
+</div>
+<p class="note"><b>検証結果：</b> 元の空き額縁状態は全画素で完全一致。写真3枚を入れた状態では、以前の試験画像にあった「額縁手すりの前へ写真が重なる」12画素を遮蔽する修正以外は一致。ゲーム本体への組み込みはまだ行っていません。右展示壁の美術候補として監修をお願いします。</p>
+</main>
+<script>
+const states={
+three:['QA_complete_wall_three_photos_and_formal_sprites.png','写真3枚と、正式採用済みの館長・爺やを使った合成状態です。'],
+empty:['QA_complete_wall_empty_slot_formal_sprites.png','右手前の写真枠だけを空枠にした状態です。'],
+behind:['QA_avatar_behind_right_wall.png','正式キャラが展示壁の奥を歩く想定で、壁に隠れる状態です。'],
+front:['QA_avatar_in_front_right_wall.png','正式キャラが壁の手前に立った状態です。']
+};
+for(const id of Object.keys(states)){document.getElementById(id).addEventListener('click',()=>{
+for(const key of Object.keys(states))document.getElementById(key).setAttribute('aria-pressed',String(key===id));
+document.getElementById('stage').src=states[id][0];
+document.getElementById('caption').textContent=states[id][1];
+})}
+</script>
+</body></html>

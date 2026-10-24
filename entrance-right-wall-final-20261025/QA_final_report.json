@@ -1,0 +1,24 @@
+{
+  "source_sha256": "7d0ea4a76607df87261767f144fcd80c058b5111cdfdf79fa6297ba2bb8c163e",
+  "full_photo_composite_exact_except_occlusion": true,
+  "photo_max_delta": 89,
+  "photo_occlusion_corrected_pixels": 12,
+  "original_reassembly_exact": true,
+  "package_files": [
+    "entrance_bg_without_right_display_wall.png",
+    "entrance_fg_right_display_wall.png",
+    "entrance_photo03_aperture_mask.png",
+    "entrance_photo03_empty_backing.png",
+    "QA_right_wall_reassembled_empty.png",
+    "QA_complete_wall_three_photos_and_formal_sprites.png",
+    "QA_complete_wall_empty_slot_formal_sprites.png",
+    "QA_original_vs_reassembly_exact.png",
+    "QA_sprite_front_back_comparison.png",
+    "QA_right_wall_3x.png",
+    "QA_independent_foreground_checker.png",
+    "build_right_wall.py",
+    "make_qa_package.py",
+    "README_right_display_wall.md"
+  ],
+  "status": "RIGHT_WALL_COMPLETED_CANDIDATE_AWAITING_USER_APPROVAL_AND_GAME_INTEGRATION"
+}
