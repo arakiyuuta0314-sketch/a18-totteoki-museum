@@ -190,7 +190,7 @@ function approvedAnchor(index){
  if(index===2)return {x:457,y:377}; // interaction on the accessible west edge of the solid partition
  const rect=APPROVED_WINDOWS[index];
  if(!rect)throw Error('Unknown approved frame index '+index);
- return {x:rect.x+rect.w/2,y:226};
+ return {x:index===0?150:399,y:268}; // floor directly in front of the rear frames
 }
 function approvedGeometry(index){
  if(index===2)return {polygon:RIGHT_PANEL.map(p=>p.slice()),anchor:approvedAnchor(index)};
