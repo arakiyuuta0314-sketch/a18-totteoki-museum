@@ -686,6 +686,30 @@ function drawButler(){
  if(galleryIndex!==0)return;
  window.A18Art.npc(ctx,'butler',L.BUTLER.x,L.BUTLER.footY);
 }
+// Diagnostic overlay only; does not modify collision or saved data.
+const collisionDebug=new URLSearchParams(location.search).get('collisionDebug')==='1';
+function drawCollisionDebug(){
+ if(!collisionDebug)return;
+ const m=src[scene],step=12;
+ ctx.save();
+ for(let y=0;y<m.h;y+=step)for(let x=0;x<m.w;x+=step){
+  const allowed=L.walkable(x+step/2,y+step/2,fixtures,galleryIndex)
+    && !(scene==='entrance'&&entranceSolid(x+step/2,y+step/2));
+  ctx.fillStyle=allowed?'rgba(42,210,104,.20)':'rgba(245,49,61,.28)';
+  ctx.fillRect(x,y,step,step);
+ }
+ ctx.strokeStyle='#55c9ff';ctx.lineWidth=2;
+ for(const [x,y] of Object.values(L.PORTALS[galleryIndex])){
+  ctx.beginPath();ctx.arc(x,y,13,0,Math.PI*2);ctx.stroke();
+ }
+ for(const h of interactionCandidates()){
+  const x=h.x??h.anchor?.x,y=h.y??h.anchor?.y;
+  if(Number.isFinite(x)&&Number.isFinite(y)){ctx.beginPath();ctx.arc(x,y,7,0,Math.PI*2);ctx.stroke();}
+ }
+ ctx.fillStyle='rgba(0,0,0,.75)';ctx.fillRect(12,12,244,24);
+ ctx.fillStyle='white';ctx.font='13px sans-serif';ctx.fillText('COLLISION DEBUG / 12px GRID',19,29);
+ ctx.restore();
+}
 function draw(){
  if(!loaded)return;
  const m=src[scene],maxY=Math.max(0,m.h-logicalH),maxX=Math.max(0,m.w-logicalW);
@@ -698,7 +722,7 @@ function draw(){
  ctx.setTransform(scale,0,0,scale,-cameraX*scale,-cameraY*scale);
  drawBackground();
  for(let i=0;i<roomRects().length;i++)paintArtwork(slot(L.slotFor(galleryIndex,i)),i);
- decorate();drawButler();drawGalleryStaff();
+ decorate();drawButler();drawGalleryStaff();drawCollisionDebug();
  const hit=nearby();
  if(hit?.type==='art'&&carrying){
   ctx.save();ctx.strokeStyle='#76b18a';ctx.lineWidth=2;
