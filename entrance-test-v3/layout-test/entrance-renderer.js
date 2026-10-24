@@ -121,7 +121,7 @@ const APPROVED_WINDOWS=[
 ];
 // The foreground-right exhibit is on an angled partition.
 // Texture-map two triangles into its trapezoidal inner opening.
-const RIGHT_PANEL=[[423,200],[489,225],[489,335],[423,278]];
+const RIGHT_PANEL=[[426,201],[487,226],[487,323],[426,276]];
 // A continuous column-wise perspective warp avoids the diagonal seam caused
 // by the earlier two-triangle affine mapping.
 const RIGHT_PANEL_CACHE=new WeakMap();
@@ -129,7 +129,7 @@ const RIGHT_WARP_CACHE=new WeakMap();
 let RIGHT_EMPTY_WARP=null;
 function rightPanel(ctx,f,img){
  const cached=img?RIGHT_WARP_CACHE.get(img):RIGHT_EMPTY_WARP;
- if(cached){ctx.drawImage(cached,423,200);return;}
+ if(cached){ctx.drawImage(cached,426,201);return;}
  // Pre-warp to a raster once, with inverse bilinear sampling. No independent
  // canvas strips: Safari otherwise exposes seams on each transformed column.
  let source=img&&RIGHT_PANEL_CACHE.get(img);
