@@ -7,7 +7,7 @@
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="stylesheet" href="viewer.css">
 <link rel="stylesheet" href="viewer-frame.css"><link rel="stylesheet" href="viewer-minimal.css?v=1.10">
-<link rel="stylesheet" href="museum-navigation.css?v=1"><script src="layout-system.js?v=fixed1"></script><script src="museum-navigation.js?v=2"></script><script src="museum-progression.js?v=1"></script><script src="asset-renderer.js?v=larger2"></script><script src="museum-p3-renderer.js?v=1"></script><script src="museum-p5-decorations.js?v=2"></script><script src="entrance-renderer.js?v=13"></script><script src="museum-p2-storage.js?v=release-v3"></script>
+<link rel="stylesheet" href="museum-navigation.css?v=1"><script src="layout-system.js?v=collision2"></script><script src="museum-navigation.js?v=collision2"></script><script src="museum-progression.js?v=1"></script><script src="asset-renderer.js?v=larger2"></script><script src="museum-p3-renderer.js?v=1"></script><script src="museum-p5-decorations.js?v=2"></script><script src="entrance-renderer.js?v=13"></script><script src="museum-p2-storage.js?v=release-v3"></script>
 <script src="photo-prep.js" defer></script>
 <script src="smart-frame.js" defer></script>
 <script src="photo-tone.js" defer></script>
@@ -507,8 +507,8 @@ function worldPoint(e){
 // Collision and interaction are intentionally separate.
 // Staff bodies and exhibition stands are solid; interaction is separate.
 // All interaction anchors are computed from the same room geometry.
-const wallFootLine=()=>scene==='entrance'?202:164;
-const northDoorway=()=>({x1:344,x2:387});
+const wallFootLine=()=>scene==='entrance'?244:164;
+const northDoorway=()=>scene==='entrance'?{x1:255,x2:291}:{x1:344,x2:387};
 function roomObstacles(){return L.obstacles(fixtures,galleryIndex);}
 // Lv.6 approved entrance: fixed furnishings are not movable scenery.
 // Coordinates are in the 546x483 logical scene. Edge portal strips remain
@@ -693,8 +693,7 @@ function drawCollisionDebug(){
  const m=src[scene],step=12;
  ctx.save();
  for(let y=0;y<m.h;y+=step)for(let x=0;x<m.w;x+=step){
-  const allowed=L.walkable(x+step/2,y+step/2,fixtures,galleryIndex)
-    && !(scene==='entrance'&&entranceSolid(x+step/2,y+step/2));
+  const allowed=safeMove(x+step/2,y+step/2);
   ctx.fillStyle=allowed?'rgba(42,210,104,.20)':'rgba(245,49,61,.28)';
   ctx.fillRect(x,y,step,step);
  }

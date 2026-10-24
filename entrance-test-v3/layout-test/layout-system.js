@@ -9,10 +9,10 @@ const BASE=[
  [[77,56,207,154],[407,56,534,154],[56,244,153,319],[177,244,264,319],[412,262,512,336]],
  [[39,63,151,153],[215,48,320,147],[418,63,537,153],[66,257,179,338],[403,239,516,316]]
 ];
-const ROOM_SIZE=Array.from({length:6},(_,i)=>({w:i===0?546:589,h:i===0?483:482,wallFoot:i===0?202:164}));
+const ROOM_SIZE=Array.from({length:6},(_,i)=>({w:i===0?546:589,h:i===0?483:482,wallFoot:i===0?244:164}));
 const ROOM_LINKS={0:{west:1,east:2,north:5},1:{east:0,north:3},2:{west:0,north:4},3:{south:1,east:5},4:{south:2,west:5},5:{south:0,west:3,east:4}};
 const PORTALS={
- 0:{west:[70,388],east:[476,388],north:[367,220]},
+ 0:{west:[70,388],east:[476,388],north:[273,220]},
  1:{east:[513,388],north:[367,183]},2:{west:[76,388],north:[367,183]},
  3:{south:[296,420],east:[513,388]},4:{south:[296,420],west:[76,388]},
  5:{south:[296,420],west:[76,388],east:[513,388]}
@@ -162,7 +162,7 @@ function obstacles(fixtures,room){
 function walkable(x,y,fixtures,room){
  const m=ROOM_SIZE[room],radius=9,fy=y+5;
  if(x<24||x>m.w-24||y<101||y>m.h-11)return false;
- if(y<m.wallFoot && (ROOM_LINKS[room].north==null||x<349||x>382))return false;
+ if(y<m.wallFoot && (ROOM_LINKS[room].north==null||x<(room===0?255:349)||x>(room===0?291:382)))return false;
  for(const [l,rr,t,b] of obstacles(fixtures,room)){
   const cx=Math.max(l,Math.min(x,rr)),cy=Math.max(t,Math.min(fy,b));
   if(Math.hypot(x-cx,fy-cy)<radius)return false;
