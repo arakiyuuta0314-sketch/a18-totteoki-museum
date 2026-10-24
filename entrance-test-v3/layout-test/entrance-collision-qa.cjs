@@ -27,7 +27,7 @@ for(const [label,x,y,open,allowed] of [
  ['unlocked door cannot go behind doorway',273,194,true,false]]){
  assert.equal(C.walkable(x,y,open),allowed,label);console.log('PASS',label);
 }
-const centers={north:[273,212],west:[136,297],east:[397,318]};
+const centers={north:[273,212],west:[33,228],east:[513,228]};
 for(const [dir,[x,y]] of Object.entries(centers)){
  const r=doors[dir];assert(x>=r.x1&&x<=r.x2&&y>=r.y1&&y<=r.y2,'portal center '+dir);
  assert(C.walkable(x,y,dir==='north'),'portal traversable when unlocked '+dir);
@@ -41,7 +41,7 @@ for(let head=0;head<queue.length;head++){
  }
 }
 for(const [name,[tx,ty]] of Object.entries({
- 'north-door-approach':[273,218],west:centers.west,east:centers.east,'west-frame':[150,268],'east-frame':[399,268],
+ 'north-door-approach':[273,218],west:centers.west,east:centers.east,'west-frame':[157,218],'east-frame':[392,218],
  'foreground-frame':[457,377],'butler-approach':[185,314],
  'left-crossing':[131,254],'right-crossing':[400,254]})){
  const reachable=[...seen].some(k=>{const [x,y]=k.split(',').map(Number);return Math.hypot(x-tx,y-ty)<=5});

@@ -24,7 +24,7 @@ const target=process.env.A18_TEST_URL||'http://127.0.0.1:18087/entrance-test-v3/
    const api=window.__A18_SCENE_STUDY__,nav=window.A18Navigation.EDGES.entrance;
    return {doorBlocked:!api.canMove(273,217),doorFloor:api.canMove(273,218),
     railing:!api.canMove(72,275),partition:!api.canMove(465,300),
-    wall:!api.canMove(210,208),leftPortal:api.canMove(139,296),rightPortal:api.canMove(397,318),
+    wall:!api.canMove(210,208),leftPortal:api.canMove(33,228),rightPortal:api.canMove(513,228),
     anchors:api.state().interactionAnchors,nav};
   });console.log('GEOMETRY',JSON.stringify(geometry));
   for(const [key,val] of Object.entries(geometry))if(typeof val==='boolean')check(key,val);

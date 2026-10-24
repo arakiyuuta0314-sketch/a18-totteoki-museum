@@ -35,6 +35,9 @@ function walkable(x,y,northOpen=false){
      y<NORTH_PASSAGE.y1)return false;
  }
  const footY=y+FOOT_OFFSET;
+ // Approved horizontal gallery aisle: open from side to side immediately
+ // in front of the central door. The door's y=218 limit is unchanged.
+ if(y>=218&&y<=238)return true;
  return !POLYGONS.some(o=>hitsPolygon(x,footY,o.points,RADIUS))
    && Math.hypot(x-155,footY-334)>=20;
 }
