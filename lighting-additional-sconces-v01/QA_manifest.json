@@ -1,0 +1,117 @@
+{
+  "status": "art_candidate_preliminary",
+  "source_approved": "G:\\マイドライブ\\06.アプリ開発\\03.開発・テスト\\A18_パズル美術館\\43_エントランス完成素材_3額縁本体装飾分離_v01\\entrance_bare_three_frame_backing.png",
+  "visual_source_49": "G:\\マイドライブ\\06.アプリ開発\\03.開発・テスト\\A18_パズル美術館\\49_エントランス完成素材_右手前壁面基準再投影_v07\\view_wood_empty_100.png",
+  "separated": [
+    "outer_left",
+    "outer_right",
+    "foreground_left",
+    "foreground_right"
+  ],
+  "rectangles": {
+    "outer_left": [
+      38,
+      68,
+      66,
+      150
+    ],
+    "outer_right": [
+      473,
+      68,
+      501,
+      150
+    ],
+    "foreground_left": [
+      392,
+      203,
+      419,
+      274
+    ],
+    "foreground_right": [
+      497,
+      253,
+      530,
+      327
+    ]
+  },
+  "body_and_emission_independent": true,
+  "retained_existing29_and30": true,
+  "all_outside_rectangles_byte_identical_to_49": true,
+  "source_inpainted_unseen_wall": true,
+  "off_art_approval": false,
+  "on_comparison_mae_from_v49": 0.5533044338226318,
+  "game_integrated": false,
+  "technical_QA": {
+    "result": "PASS",
+    "outside_4_registered_rectangles_changed_pixels_off": 0,
+    "outside_4_registered_rectangles_changed_pixels_on": 0,
+    "v49_new_frame_pixels_preserved": true,
+    "fixtures": {
+      "outer_left": {
+        "body_alpha_pixels": 335,
+        "emission_alpha_pixels": 650,
+        "preserved_latest_foreground_pixels": 0
+      },
+      "outer_right": {
+        "body_alpha_pixels": 331,
+        "emission_alpha_pixels": 681,
+        "preserved_latest_foreground_pixels": 0
+      },
+      "foreground_left": {
+        "body_alpha_pixels": 294,
+        "emission_alpha_pixels": 577,
+        "preserved_latest_foreground_pixels": 193
+      },
+      "foreground_right": {
+        "body_alpha_pixels": 331,
+        "emission_alpha_pixels": 635,
+        "preserved_latest_foreground_pixels": 74
+      }
+    },
+    "mobile_browser_states": 32,
+    "off_background_exact_source": false,
+    "photo_input_game_integrated": false
+  },
+  "files_sha256": {
+    "fixture_foreground_left_body.png": "3d78a7a3b7d41acbcb5c5857dabc0b2a9ce7dd075397e6879c59cc5ce4f5ac35",
+    "fixture_foreground_left_emission.png": "91fed0bd4c01853e84688f445ece50c3d49cbab3a3ea1ea5303ae5634f3b2fe5",
+    "fixture_foreground_right_body.png": "07961bbf66206bac36456256f4d52e7a9294ccd4629e5b87486d30951bf07637",
+    "fixture_foreground_right_emission.png": "515694821e54fe85d6f8d2ad5c17b95b5899435c37c62ff91fc3b3044d212491",
+    "fixture_outer_left_body.png": "9d0a6fc642d7a8162cf1cb3beb91fc32939d4f608ed605f0a855b0f2fb3c29fc",
+    "fixture_outer_left_emission.png": "b0905601bd47a2d8091d22e886ce8ef29915da971803b1bbf96863811deed4d3",
+    "fixture_outer_right_body.png": "e967302471fd3a784ad349b9986a55896f34b7ff50977df99e076d15ee4ba97b",
+    "fixture_outer_right_emission.png": "541b31e556b4e85853c53798bb8318c32e630195d87b4ff6776f43ec535f1e5a"
+  },
+  "final_art_approval": false,
+  "pending_ceiling_and_counter_lights": true,
+  "mobile_qa": {
+    "css_width": 390,
+    "css_height": 844,
+    "dpr": 2,
+    "states": 32,
+    "result": "PASS"
+  },
+  "materials_sha256": {
+    "fixture_foreground_left_body.png": "3d78a7a3b7d41acbcb5c5857dabc0b2a9ce7dd075397e6879c59cc5ce4f5ac35",
+    "fixture_foreground_left_emission.png": "91fed0bd4c01853e84688f445ece50c3d49cbab3a3ea1ea5303ae5634f3b2fe5",
+    "fixture_foreground_right_body.png": "07961bbf66206bac36456256f4d52e7a9294ccd4629e5b87486d30951bf07637",
+    "fixture_foreground_right_emission.png": "515694821e54fe85d6f8d2ad5c17b95b5899435c37c62ff91fc3b3044d212491",
+    "fixture_outer_left_body.png": "9d0a6fc642d7a8162cf1cb3beb91fc32939d4f608ed605f0a855b0f2fb3c29fc",
+    "fixture_outer_left_emission.png": "b0905601bd47a2d8091d22e886ce8ef29915da971803b1bbf96863811deed4d3",
+    "fixture_outer_right_body.png": "e967302471fd3a784ad349b9986a55896f34b7ff50977df99e076d15ee4ba97b",
+    "fixture_outer_right_emission.png": "541b31e556b4e85853c53798bb8318c32e630195d87b4ff6776f43ec535f1e5a",
+    "QA_all_four_body_only.png": "9a849449f01d2921e9ce52ca4d0f51f091b20b25ba67f2c1487154d559a86329",
+    "QA_all_four_sconces_off.png": "2735b0e0d7fb05d5dc3f59c82fa9c091e8e31743e9177aa2dcab8b1d50188852",
+    "QA_all_four_sconces_on.png": "60c814e2ceb8d73c73bb0d7993b388ced8cfee479654e7473ea4ae1722259b64",
+    "QA_all_sconces_off_body_on.png": "f4c3e48af8b34fc52080b215fd4546ae05690f15e27f50f341e248b52129da7f",
+    "QA_foreground_left_original_off_body_on_3x.png": "630365f838311a69c9266ad3763fd863500526c9635ec0f24b10248cda103340",
+    "QA_foreground_right_original_off_body_on_3x.png": "046c521438a7562a342403fa75edf3f8240fba740b8b1d3b4d77fbb0eeb05ffc",
+    "QA_left_outer_only.png": "9f7fcb83ce4a9ce3432b0292a7d0c902e4ce63e29847e23d7b66a6a161b97238",
+    "QA_mobile_all_off_390x844.png": "4d3fe35674d560e674df6c495d9f49a3a9153c8104392bf0a2b7221543d1e9c3",
+    "QA_mobile_all_on_390x844.png": "09eac44d78351dcc84ea4ae5b8edcfd1b450619242373a1a7420d0ca6006ebe8",
+    "QA_mobile_body_only_390x844.png": "8102d86d2d5bc11a3b8783ceca2f1fe6f1191fc6aca8e7d050e88caf7dc0823c",
+    "QA_outer_left_original_off_body_on_3x.png": "61127819d74678056e5685d123fb7a62ddce5c0b38a74009872be0f03015a077",
+    "QA_outer_right_original_off_body_on_3x.png": "46b2b9c841a83dd8aa824fc2235acb2056bac39c569a889ded33025a0ea8cfcc",
+    "QA_source_v49.png": "ceb5d5458b17340df14cb89f02a36e16b03c014714490b25c34dc71f2102e301"
+  }
+}
