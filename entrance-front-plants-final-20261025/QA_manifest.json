@@ -1,0 +1,119 @@
+{
+  "title": "A18 Entrance E01 E02 front left and right independent plants v01",
+  "source_sha256": "7d0ea4a76607df87261767f144fcd80c058b5111cdfdf79fa6297ba2bb8c163e",
+  "canvas": [
+    546,
+    483
+  ],
+  "components": {
+    "left": {
+      "source_rect_xyxy": [
+        0,
+        398,
+        66,
+        483
+      ],
+      "anchor_local_xy": [
+        21,
+        85
+      ],
+      "asset": "entrance_plant_left.png",
+      "object_id": "E01"
+    },
+    "right": {
+      "source_rect_xyxy": [
+        450,
+        398,
+        538,
+        483
+      ],
+      "anchor_local_xy": [
+        51,
+        85
+      ],
+      "asset": "entrance_plant_right.png",
+      "object_id": "E02"
+    }
+  },
+  "verified_scales": [
+    0.9,
+    1.0,
+    1.1
+  ],
+  "verified_horizontal_shift_inward_px": 5,
+  "repair": {
+    "exact_outside_plant_regions": true,
+    "changed_pixels": 7483,
+    "original_with_both_reassembled_mean_abs_rgb_error": 0.118,
+    "source_pixel_exact_inside_repair": false,
+    "background_is_reconstructed_not_source_truth": true
+  },
+  "characters": {
+    "original_file_sha256": {
+      "butler-front-00.png": "e3d1f41184ccab4535f0fe05a19bef59024a3665a76e75b43b8991668372213c",
+      "curator-front-00.png": "8431fd181e70bc8f417840770c94238e664a1d2c9113777c333c926f0062cb43"
+    },
+    "regenerated": false
+  },
+  "tests": {
+    "isolated_alpha_both": true,
+    "registered_photo_unchanged_outside_regions": true,
+    "independent_show_hide": true,
+    "both_states": true,
+    "three_size_states": true
+  },
+  "game_integrated": false,
+  "user_art_approval": "pending",
+  "browser_qa": {
+    "tested_css_viewport": [
+      390,
+      844
+    ],
+    "device_scale_factor": 2,
+    "states": [
+      "both on standard",
+      "left off",
+      "both off",
+      "left 90%, right 110%, both shifted",
+      "reset standard"
+    ],
+    "loaded_images": true,
+    "javascript_errors": 0,
+    "http_errors": 0
+  },
+  "deliverable_status": "completed candidate pending user art adoption",
+  "file_hashes_sha256": {
+    "build_front_plants.py": "a8880b50376ba759efb9104a8a3b6613abe1210f44162a62d2c971c4cdec9a60",
+    "entrance_bg_without_front_plants.png": "8abf4c8baf881a3352bb84276f124ec75bfd078cedf67dc0b30df75df01f44a6",
+    "entrance_bg_without_left_plant.png": "9ab2b11d1a7440cde10842ce8c2b484cd77f6bf5fe6de24721d414de740f2a82",
+    "entrance_bg_without_right_plant.png": "aab372a36d3703e1349658985dd93c0b35b6444d1d44eae142842778a5fd6bc0",
+    "entrance_plant_left.png": "377ba7b918dba9e02ab816449321b507625c853a09c45647bc07ef9133a54c85",
+    "entrance_plant_left_mask.png": "9cb3e3de0dc37d8b6ecccffa0c6a985ea8d02681349b1f75063f4c1002e9034e",
+    "entrance_plant_right.png": "4709c267e04578765c2e6bc02f65f04828c00d0492ece452a44b68057ada840c",
+    "entrance_plant_right_mask.png": "cdd7523abc94d75e66c7caa103fc9f5a111875ee152cfb199602c5fefa17d77a",
+    "front-plants-preview.js": "e09405c6cfdaa627721ddf1582eb72492192d0d4bd72f332e0514ebeaec10d40",
+    "index.html": "ca130365f6dfb387ebebc5981b21f8fee0d18fe5487d5c8682194d3371f00086",
+    "QA_3_sizes.jpg": "0b8386e17d1ea1e51fc2951d9100666a77b9989c0cefc9ec714b413f74912e92",
+    "QA_both_090pct.png": "38459a56a89b221f6b3b30c0dca8c78e7aa070a756e3d98bc29f664498aa2a91",
+    "QA_both_110pct.png": "faaff767cfa8c94678832e09fc4d1516b7012b713157393f412c5a49cac97267",
+    "QA_both_plants_off_photo_and_formal_sprites.png": "e75f8ed695ceb6f8129b7b0f4b483f29eda686720dc8517bfabcbec3bfa0a5be",
+    "QA_both_plants_on_photo_and_formal_sprites.png": "bcad84fe5953cf9a9f3df849ef1cf9e4008ed2e5745903db4ad8e9f635b2f8f0",
+    "QA_both_shift_inward_5px.png": "8f5a0d5dec11d29443edba146ee19c8d01179ef9619e80ac47517e55133cf809",
+    "QA_browser_mobile.cjs": "b27ab1dd703ff0984b808ce804eeadc6ac1e7c33b13b73e8f2198780fdb13ad6",
+    "QA_left_isolated_5x.png": "b95eb9204a9b3bd912ddb1cdab02a22bc9d56176d2850bb16f78b54329006b7c",
+    "QA_left_only_photo_and_formal_sprites.png": "df31a13142cf7a3a99790ca57d36c077d6e8fb8fa2089677aa72cbadc394ba03",
+    "QA_mobile_both_hidden_390x844.png": "0944ce726b4c621b076d47a4ef894b20da7db5f63931b86a892fbccfc27e393c",
+    "QA_mobile_default_390x844.png": "78eb68f3d6a3b6b8bcfe403e8ed1b34fc70d08d439fc7695848ffdcbf84484e8",
+    "QA_mobile_mixed_scales_390x844.png": "56d1793bcdfc47c19481c81d7988b0c194eda398286319e695e7b0a97a140bb6",
+    "QA_on_off_comparison.jpg": "4455a481936e15df65897365824167b59c033a782c7e3f76d67133ebe2770c46",
+    "QA_right_isolated_5x.png": "9fc8a3a3f0d08cd85138d73f6d6ee9031ce0b958c41507f25d2e9f1e7adcd68d",
+    "QA_right_only_photo_and_formal_sprites.png": "cb955d56af7724ab2825457edf71af1ff8393995681ff3ae5d9680b986e58bf2",
+    "source_approved_photo_and_sprites_preview.png": "ba0cf1a5bd950a3fa69d091a816e1b1d0fe61980c6afd439fd88e993ca5a8b53",
+    "source_left_foliage_and_vase_mask.png": "a9b3916b5d5a4d722c33a22d978c39c2cb0bed13d9b6126d8f8e972f68c284c0",
+    "source_left_restoration_change_mask.png": "6e479bf4eacff3e578968e3a1974663461d4c08928f9eb243e728abf39f56bc2",
+    "source_left_restoration_patch.png": "20ab20bfea8a00f5c75733b413fb6c03dcef84237b5fcf8357c13da28106bb0e",
+    "source_right_foliage_and_vase_mask.png": "4452b37d904bfef16d5cc6948286dd9ad048fdfd0360e798393bc6384da69c74",
+    "source_right_restoration_change_mask.png": "de89577a75240ce5f5f44e5269292f0cc19fa934f15dc3a66ff9d3ce7cdca79d",
+    "source_right_restoration_patch.png": "e0bc5bfe23b398521dfa8df38afb4858e481f869081af72132c974817e082707"
+  }
+}
