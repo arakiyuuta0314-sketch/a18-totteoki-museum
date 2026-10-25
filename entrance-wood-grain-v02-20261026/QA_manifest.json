@@ -1,0 +1,196 @@
+{
+  "title": "A18 wood-grain wooden frame second candidate",
+  "source_d43": "G:\\マイドライブ\\06.アプリ開発\\03.開発・テスト\\A18_パズル美術館\\43_エントランス完成素材_3額縁本体装飾分離_v01",
+  "source_frame_sha256": {
+    "left": "ae56c769c09af51a035defab9b61fdeaf5f00b430664ef39e3929b0c559c90e0",
+    "right": "09e02f7396a33ed29892234d910cc5cb4726bbbddc04135f96a8756dc4d38fb6",
+    "front": "752868e7814829117cee599ec0365e46fe53c84525956fa6be004ce85584b65e"
+  },
+  "wood_texture_sample": "wood_atlas_mini.png, crop-resize from prior generated wooden frame image; no room or character generation",
+  "source_wood_texture_sha256": "a868460d2cd861d37b2310272bef92b3d816913843b5bf9c7f1848b396ba199a",
+  "unchanged_v01": true,
+  "exact_canvas": [
+    546,
+    483
+  ],
+  "official_character_original_sha256": {
+    "butler-front-00.png": "e3d1f41184ccab4535f0fe05a19bef59024a3665a76e75b43b8991668372213c",
+    "curator-front-00.png": "8431fd181e70bc8f417840770c94238e664a1d2c9113777c333c926f0062cb43"
+  },
+  "same_original_alpha_all_three_frames": true,
+  "changed_pixels_at_100_empty": 13124,
+  "outside_frame_changed_pixels": 0,
+  "photo_window_pixels_modified_outside_frame": 0,
+  "all_qa_states": 24,
+  "scale": [
+    90,
+    100,
+    110
+  ],
+  "photos": [
+    false,
+    true
+  ],
+  "prior_gold_assets_untouched": true,
+  "lighting_baked_in": true,
+  "game_integrated": false,
+  "lv1_approved": false,
+  "user_art_approved": false,
+  "browser_qa": {
+    "viewport": [
+      390,
+      844
+    ],
+    "device_pixel_ratio": 2,
+    "states": 24,
+    "js_errors": 0,
+    "http_errors": 0,
+    "horizontal_overflow": false,
+    "qa_status": "PASS"
+  },
+  "visual_approval": "pending_user_review",
+  "source_not_overwritten": true,
+  "official_character_recreated": false,
+  "files": {
+    "frame_front_wood_grain_v02.png": {
+      "sha256": "fb459e973a94d8fdc0c06a6593a959c1228c53b21b9d3a4d8fff558a6a54b29f",
+      "bytes": 41212
+    },
+    "frame_left_wood_grain_v02.png": {
+      "sha256": "67ce27980c1619a1676bfbae10c3ce645d46dd56ca0b6f311b84409abe208e88",
+      "bytes": 15322
+    },
+    "frame_right_wood_grain_v02.png": {
+      "sha256": "b31b46cfc21758ce41eb27e63b7e643fa073ef96161aecd2fa5a44f8934cc41e",
+      "bytes": 14899
+    },
+    "QA_four_states_unmodified_wood_new_gold.png": {
+      "sha256": "d0b77396c4bd9bc019cb239da8429533504d0fc2343070112d95d46f4f5367ac",
+      "bytes": 474244
+    },
+    "QA_front_old_new_3x.png": {
+      "sha256": "6d7fb7ab3694ff410eac503c94c9b49cdf503f1406941e5b211c8838b752e149",
+      "bytes": 60728
+    },
+    "QA_left_old_new_3x.png": {
+      "sha256": "5fde0eac9f6ec15aad80ee9b8d066c658827798dba57b5d37bfb0aeed776da51",
+      "bytes": 37917
+    },
+    "QA_mobile_new_390x844.png": {
+      "sha256": "6284682e120cd227bf6c0948d86cb52945cee65f8ccca829d5a769ac80fd79be",
+      "bytes": 941911
+    },
+    "QA_mobile_photo110_390x844.png": {
+      "sha256": "33e62ad71f755d148d0f64205751fb1e7cd9e635974ff3c8aa3d0c8ad7d2e564",
+      "bytes": 953870
+    },
+    "QA_old_new_photo_scene.png": {
+      "sha256": "1c30f51d2d9569d33a6e19367ac5fbe4b5a072c00d676bead3b29153db344e18",
+      "bytes": 432920
+    },
+    "QA_right_old_new_3x.png": {
+      "sha256": "d057190d71d0c884346169df94fc238d44d79d5d4d498f293b51426df7235fe9",
+      "bytes": 35007
+    },
+    "reference_wood_grain_texture.png": {
+      "sha256": "ffd0a8308ce258df9478da7d9441461b3a817497e68294f871107d34bcd398f5",
+      "bytes": 7520
+    },
+    "view_gold_empty_100.png": {
+      "sha256": "6b11c9a2451c7bac7e3a31cfc7c5a1ba0f915c8f6e66f7093e2b08c5c5282444",
+      "bytes": 398389
+    },
+    "view_gold_empty_110.png": {
+      "sha256": "dc0c4493b42866f640dec61b286c58c354cebc5dacf2a73f12f2c0d60ebf5ec8",
+      "bytes": 391045
+    },
+    "view_gold_empty_90.png": {
+      "sha256": "33c520a66cf9b4066a9c226a552df6440e15a0469542a3656a3aca77aca6284b",
+      "bytes": 391167
+    },
+    "view_gold_photos_100.png": {
+      "sha256": "0d5267e5336dd41a629a3a5e29b320aa157fd7320a182bdbf5861ae22fd50417",
+      "bytes": 417559
+    },
+    "view_gold_photos_110.png": {
+      "sha256": "bef75cd6d41243152abbc225f7b0b15fe21b90fd203e46996d9fe1eaefb87a27",
+      "bytes": 410024
+    },
+    "view_gold_photos_90.png": {
+      "sha256": "e17a8802b75ee1ab06cd6852aae422d17953574c512324fdb4b8f445467f3b3c",
+      "bytes": 405073
+    },
+    "view_new_empty_100.png": {
+      "sha256": "fa30b914e6f017552ed760d083c853af528e70faa495f4c9c358b41c82974a1b",
+      "bytes": 384838
+    },
+    "view_new_empty_110.png": {
+      "sha256": "7c27fde5966e3571f0b0b1f31729319bd15b91ae1296da23f17c4493f8c32cc0",
+      "bytes": 377630
+    },
+    "view_new_empty_90.png": {
+      "sha256": "a6798eb2f2970f2341925c448176fef55807a6f900684e555c44ab450b9cef64",
+      "bytes": 381233
+    },
+    "view_new_photos_100.png": {
+      "sha256": "0ccda7e13857f8d2015dba4d3199a15668b8b54d3e8d22d021498daf5455cf3a",
+      "bytes": 405322
+    },
+    "view_new_photos_110.png": {
+      "sha256": "728eae6ad506788eed5f4a301ded093aae14fef31a43e01b3df427c0a37ffdd4",
+      "bytes": 397672
+    },
+    "view_new_photos_90.png": {
+      "sha256": "09a7a6612dc719e5cb75ac2e55eaa6112cc4e203f166f5f251fdbe632e111b84",
+      "bytes": 395857
+    },
+    "view_none_empty_100.png": {
+      "sha256": "dc776643d1eec03c3f84a856ee004e6a564a0a7bce1ef128f8426a9355e92a59",
+      "bytes": 372623
+    },
+    "view_none_empty_110.png": {
+      "sha256": "444fe34771a4316c213d5871de72d630ab9a45aa63397f0d64e75e75bf1ba556",
+      "bytes": 373778
+    },
+    "view_none_empty_90.png": {
+      "sha256": "fccfd26913622544b262e58d18ba5a76e1ea28e37e3d2db476a6ac2acfff8ce9",
+      "bytes": 370097
+    },
+    "view_none_photos_100.png": {
+      "sha256": "39715b0c3762d0d5b6fd31ec9df9c7a062a4daf4b021d8ba874c352fb094601c",
+      "bytes": 393002
+    },
+    "view_none_photos_110.png": {
+      "sha256": "45fa775699da1278842d258d6c396b669200530ef51fa80c85bb69128ee9bdc3",
+      "bytes": 393849
+    },
+    "view_none_photos_90.png": {
+      "sha256": "4afb4e50b6266544eb721c872451a60362acb37ab333e95de4470dc79da86970",
+      "bytes": 384730
+    },
+    "view_old_empty_100.png": {
+      "sha256": "86d4f67b88bc700a7bf056f91aa9da1f954ea61eda12a81aa4152cafd4e9ff44",
+      "bytes": 377115
+    },
+    "view_old_empty_110.png": {
+      "sha256": "d455674c0436a6ba01ac7a5e69692785b7be70d7eabf0965437418cbd1c49dae",
+      "bytes": 369700
+    },
+    "view_old_empty_90.png": {
+      "sha256": "ef7878c924e51ce421b92f45194a842ad88507bcf7d03f4ef7366ffa9af52e35",
+      "bytes": 374888
+    },
+    "view_old_photos_100.png": {
+      "sha256": "6c73a74da9573e270889e6f604a219837aaede9701a23e824310b8006d81ac5c",
+      "bytes": 397764
+    },
+    "view_old_photos_110.png": {
+      "sha256": "bbbf08c1ab46d245afa61aed2866d243cca50040bb9710498a7937cb81211d5e",
+      "bytes": 390076
+    },
+    "view_old_photos_90.png": {
+      "sha256": "1f4840889fb202eb3c7922ff4cb26100ec6189c480454ac498c4b54013d2e975",
+      "bytes": 389748
+    }
+  }
+}
