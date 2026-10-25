@@ -1,0 +1,66 @@
+{
+  "result": "PASS",
+  "wall_quad_manual_trace_source": "43/entrance_bare_three_frame_backing.png",
+  "wall_quad_px": [
+    [
+      405.0,
+      157.0
+    ],
+    [
+      509.0,
+      197.0
+    ],
+    [
+      501.0,
+      369.0
+    ],
+    [
+      405.0,
+      294.0
+    ]
+  ],
+  "new_display_outer_px": [
+    [
+      417.3148498535156,
+      181.20077514648438
+    ],
+    [
+      500.0141906738281,
+      217.50804138183594
+    ],
+    [
+      494.5731201171875,
+      344.3802795410156
+    ],
+    [
+      416.7358093261719,
+      287.0769958496094
+    ]
+  ],
+  "wall_top_bottom_slope": [
+    0.38461539149284363,
+    0.78125
+  ],
+  "v06_top_bottom_slope": [
+    0.3125,
+    0.5609756112098694
+  ],
+  "v07_top_bottom_slope": [
+    0.4390272796154022,
+    0.7361930012702942
+  ],
+  "old_absolute_slope_error": [
+    0.07211539149284363,
+    0.22027438879013062
+  ],
+  "new_absolute_slope_error": [
+    0.054411888122558594,
+    0.04505699872970581
+  ],
+  "both_edges_improved": true,
+  "photo_and_frame_one_H": true,
+  "other_architecture_delta_pixels": 0,
+  "raster_gap_pixels": 2,
+  "source_wall_corners_approximate_not_approved": true,
+  "all_rooms_regression_tested": false
+}
