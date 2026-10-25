@@ -1,0 +1,115 @@
+{
+  "source": "C:\\Users\\User\\source\\repos\\a18-entrance-left-foreground-20261025\\entrance-test-v3\\layout-test\\assets\\entrance\\v0.3\\approved_entrance_trial.jpg",
+  "sha256": "7d0ea4a76607df87261767f144fcd80c058b5111cdfdf79fa6297ba2bb8c163e",
+  "canvas": [
+    546,
+    483
+  ],
+  "wall_polygon": [
+    [
+      0,
+      215
+    ],
+    [
+      66,
+      215
+    ],
+    [
+      70,
+      221
+    ],
+    [
+      72,
+      307
+    ],
+    [
+      78,
+      316
+    ],
+    [
+      0,
+      316
+    ]
+  ],
+  "rail_polygon": [
+    [
+      83,
+      198
+    ],
+    [
+      94,
+      177
+    ],
+    [
+      101,
+      180
+    ],
+    [
+      100,
+      197
+    ],
+    [
+      94,
+      204
+    ],
+    [
+      91,
+      231
+    ],
+    [
+      89,
+      250
+    ],
+    [
+      91,
+      279
+    ],
+    [
+      87,
+      308
+    ],
+    [
+      83,
+      321
+    ],
+    [
+      72,
+      318
+    ],
+    [
+      69,
+      299
+    ],
+    [
+      72,
+      231
+    ],
+    [
+      78,
+      210
+    ]
+  ],
+  "mask_wall_pixels": 4563,
+  "mask_rail_pixels": 2562,
+  "original_reconstruction_pixel_exact": true,
+  "character_source_original_sha256": "8431fd181e70bc8f417840770c94238e664a1d2c9113777c333c926f0062cb43",
+  "visual_role": "occlusion foreground, fixed geometry",
+  "game_integrated": false,
+  "note": "Previous right display wall and photo frames unchanged. Fixed left-hand partition, not a free-standing movable furniture asset.",
+  "art_review_status": "candidate",
+  "qa_browser_mobile": {
+    "viewport_css": [
+      390,
+      844
+    ],
+    "DPR": 2,
+    "controls": [
+      "behind",
+      "front",
+      "reset"
+    ],
+    "js_errors": 0
+  },
+  "qa_state": "completed_candidate_pending_user_art_approval",
+  "original_sprite_bytes_identical": true
+}
