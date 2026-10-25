@@ -1,0 +1,35 @@
+{
+  "QA_both_sides": true,
+  "base_pixels_exact_standard_empty": true,
+  "range_tested_percent": [
+    90,
+    100,
+    108
+  ],
+  "states_tested": [
+    "empty",
+    "registered_photo"
+  ],
+  "browser": {
+    "viewport_css": [
+      390,
+      844
+    ],
+    "device_pixel_ratio": 2,
+    "canvas_visible": true,
+    "controls_tested": [
+      "left_size",
+      "right_size",
+      "empty_photo",
+      "reset"
+    ],
+    "js_errors": 0,
+    "network_errors": 0
+  },
+  "original_characters_unmodified": true,
+  "game_integrated": false,
+  "visual_review_status": "finished_art_candidate_user_review",
+  "warnings": [
+    "Outside 90%–108% requires additional wall-interference review"
+  ]
+}

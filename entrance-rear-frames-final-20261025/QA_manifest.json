@@ -1,0 +1,318 @@
+{
+  "title": "A18 entrance back-wall exhibition frames left/right v01",
+  "source": "C:\\Users\\User\\source\\repos\\a18-totteoki-museum-pages\\entrance-test-v3\\layout-test\\assets\\entrance\\v0.3\\approved_entrance_trial.jpg",
+  "source_sha256": "7d0ea4a76607df87261767f144fcd80c058b5111cdfdf79fa6297ba2bb8c163e",
+  "canvas": [
+    546,
+    483
+  ],
+  "source_sprite_sha256": {
+    "butler-front-00.png": "e3d1f41184ccab4535f0fe05a19bef59024a3665a76e75b43b8991668372213c",
+    "curator-front-00.png": "8431fd181e70bc8f417840770c94238e664a1d2c9113777c333c926f0062cb43"
+  },
+  "frame_units": "logical 546x483 pixels; 5x5 mapping of one RGBA source to target outer rectangle",
+  "specs": {
+    "left": {
+      "outer": [
+        76,
+        50,
+        201,
+        157
+      ],
+      "inner": [
+        84,
+        61,
+        194,
+        144
+      ],
+      "col": [
+        0,
+        20,
+        48,
+        77,
+        105,
+        125
+      ],
+      "row": [
+        0,
+        25,
+        47,
+        71,
+        87,
+        107
+      ],
+      "center": [
+        138.5,
+        103.5
+      ]
+    },
+    "right": {
+      "outer": [
+        365,
+        50,
+        468,
+        157
+      ],
+      "inner": [
+        373,
+        61,
+        460,
+        144
+      ],
+      "col": [
+        0,
+        17,
+        40,
+        65,
+        86,
+        103
+      ],
+      "row": [
+        0,
+        25,
+        47,
+        71,
+        87,
+        107
+      ],
+      "center": [
+        416.5,
+        103.5
+      ]
+    }
+  },
+  "scale_verified": [
+    0.9,
+    1.0,
+    1.08
+  ],
+  "minimum_recommended_scale": 0.9,
+  "maximum_recommended_scale": 1.08,
+  "pixel_exact_standard_empty": true,
+  "source_unchanged_outside_rectangles": true,
+  "photo_unshaded": true,
+  "browser_qa_required": true,
+  "game_integration": false,
+  "tests": {
+    "left_0.9": {
+      "outer": [
+        112,
+        96
+      ],
+      "window": [
+        97,
+        72
+      ],
+      "alpha_window_zero": true
+    },
+    "left_1.0": {
+      "outer": [
+        125,
+        107
+      ],
+      "window": [
+        110,
+        83
+      ],
+      "alpha_window_zero": true
+    },
+    "left_1.08": {
+      "outer": [
+        135,
+        116
+      ],
+      "window": [
+        120,
+        92
+      ],
+      "alpha_window_zero": true
+    },
+    "right_0.9": {
+      "outer": [
+        93,
+        96
+      ],
+      "window": [
+        77,
+        72
+      ],
+      "alpha_window_zero": true
+    },
+    "right_1.0": {
+      "outer": [
+        103,
+        107
+      ],
+      "window": [
+        87,
+        83
+      ],
+      "alpha_window_zero": true
+    },
+    "right_1.08": {
+      "outer": [
+        111,
+        116
+      ],
+      "window": [
+        95,
+        92
+      ],
+      "alpha_window_zero": true
+    }
+  },
+  "files": {
+    "approved_reference.jpg": {
+      "px": [
+        546,
+        483
+      ],
+      "mode": "RGB",
+      "sha256": "7d0ea4a76607df87261767f144fcd80c058b5111cdfdf79fa6297ba2bb8c163e"
+    },
+    "demo_photo_left.jpg": {
+      "px": [
+        160,
+        176
+      ],
+      "mode": "RGB",
+      "sha256": "fb6e613aacdbc8b0f303e6f13539b0ad37ab4c309eeb169ef54b8ab1e1c5ad02"
+    },
+    "demo_photo_right.jpg": {
+      "px": [
+        160,
+        176
+      ],
+      "mode": "RGB",
+      "sha256": "c486720ffcc90847ceba016dc520263ab2eb039a375e08f628171a563b99cdfc"
+    },
+    "empty_left.png": {
+      "px": [
+        110,
+        83
+      ],
+      "mode": "RGBA",
+      "sha256": "51ea1212bbffb0763ecafd333f3fdf9aafd41004b1103d8fdfa89b42627111fc"
+    },
+    "empty_right.png": {
+      "px": [
+        87,
+        83
+      ],
+      "mode": "RGBA",
+      "sha256": "88d18a0a47d746b85d26c52c6cf8e8adcc2c64c35c55c29a66f8c9b642ddabaa"
+    },
+    "entrance_bg_without_rear_frames.png": {
+      "px": [
+        546,
+        483
+      ],
+      "mode": "RGB",
+      "sha256": "a4f878b6bd581a911b095acf913d9ad4e584bb9f63daa6db68efcc467f3c2da0"
+    },
+    "frame_left_5x5.png": {
+      "px": [
+        125,
+        107
+      ],
+      "mode": "RGBA",
+      "sha256": "c3000e35311d2f43b25e97971ccc40bfbbea74fd7161d0d1478e80ad49283948"
+    },
+    "frame_right_5x5.png": {
+      "px": [
+        103,
+        107
+      ],
+      "mode": "RGBA",
+      "sha256": "eb89773c8cab98a1c9b7c2f93ae5ae6801b47130a38fb24d31c74765910de46b"
+    },
+    "QA_clean_backwall_3x.png": {
+      "px": [
+        1245,
+        393
+      ],
+      "mode": "RGB",
+      "sha256": "7e833cc9b6b9f562ca3e1ce931c2d5495e32ec77aff7e6ff19469b0953e963ce"
+    },
+    "QA_comparison_empty_and_photos_three_sizes.jpg": {
+      "px": [
+        1638,
+        966
+      ],
+      "mode": "RGB",
+      "sha256": "a42ecd4aa989d900b51ae3e9839469437f72834d0ec3ea338a924a6fe2086bc4"
+    },
+    "QA_empty_090pct.png": {
+      "px": [
+        546,
+        483
+      ],
+      "mode": "RGB",
+      "sha256": "25bd8da50067192bb7d65e9742422d2ceaad190bae7024a4aad32cd2ac0073f3"
+    },
+    "QA_empty_100pct.png": {
+      "px": [
+        546,
+        483
+      ],
+      "mode": "RGB",
+      "sha256": "a324846b42421ff8dafd1ff0397fe2c80be4e213ddc9431ea95263abe60e8ae8"
+    },
+    "QA_empty_108pct.png": {
+      "px": [
+        546,
+        483
+      ],
+      "mode": "RGB",
+      "sha256": "07b6079326a4f60926850f8d68ee5ae2ba288dfdb80d94bf0abf161e53af5f3d"
+    },
+    "QA_exact_reconstruction_empty.png": {
+      "px": [
+        546,
+        483
+      ],
+      "mode": "RGB",
+      "sha256": "8c0ef56ef58146a9b4a75267bb0edf88c17cfc26c24917ade3d9ea9944d70172"
+    },
+    "QA_photos_090pct.png": {
+      "px": [
+        546,
+        483
+      ],
+      "mode": "RGB",
+      "sha256": "8c2fbc16c3a4f1577b1e8a6acc812d9579ddc9ddc215f5ef1dc9917290b85cb0"
+    },
+    "QA_photos_100pct.png": {
+      "px": [
+        546,
+        483
+      ],
+      "mode": "RGB",
+      "sha256": "ba0cf1a5bd950a3fa69d091a816e1b1d0fe61980c6afd439fd88e993ca5a8b53"
+    },
+    "QA_photos_108pct.png": {
+      "px": [
+        546,
+        483
+      ],
+      "mode": "RGB",
+      "sha256": "85c13c1a162af05f918a9776b4f65da7a0d3c6d9e4fb6532423f8bc4040bfe4c"
+    },
+    "window_left_mask.png": {
+      "px": [
+        110,
+        83
+      ],
+      "mode": "L",
+      "sha256": "aaed0f8e9f6697254e0d520cae37373c073a618830d898c9393845fd3cd759ff"
+    },
+    "window_right_mask.png": {
+      "px": [
+        87,
+        83
+      ],
+      "mode": "L",
+      "sha256": "b66e7ab645695064d2f39e3712e2dac90e7747e0539ec073b12cddd3736dec4e"
+    }
+  }
+}

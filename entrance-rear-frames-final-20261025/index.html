@@ -1,0 +1,25 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A18 背面左右展示枠｜完成候補 v01</title><link rel="icon" href="data:,">
+<style>
+:root{color-scheme:light}*{box-sizing:border-box}body{margin:0;background:#f7f4ec;color:#252920;font-family:system-ui,-apple-system,"Hiragino Kaku Gothic ProN",sans-serif;line-height:1.65}header{background:#234539;color:#fff;padding:24px 18px}header>div,main{max-width:930px;margin:auto}h1{font-size:1.45rem;margin:0}h2{font-size:1.14rem;margin:20px 0 10px;color:#244638}p{margin:8px 0 14px}small,.hint{color:#657068;font-size:.82rem}header p{color:#e1ecdf}main{padding:16px 12px 50px}.panel{background:white;border:1px solid #e5e2d8;border-radius:14px;padding:14px;margin:12px 0;box-shadow:0 2px 7px #3344220d}.canvas-wrap{background:#e7e2d3;border-radius:8px;overflow:hidden;text-align:center}#viewer{display:block;width:100%;max-width:546px;margin:auto;height:auto;image-rendering:auto}button,input{accent-color:#34694e}button{border:0;border-radius:7px;padding:10px 14px;background:#2d6345;color:white;font-weight:bold;cursor:pointer}.controls{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-top:14px}.controls label{display:block;font-size:.92rem;font-weight:600}.controls input[type=range]{width:100%}.switch{display:flex;align-items:center;gap:8px}.shots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.shot{min-width:0}.shot a{display:block}.shot img{width:100%;border-radius:6px;border:1px solid #d9d5ca}.shot figcaption{font-size:.77rem;text-align:center;margin:4px 0}.shot figure{margin:0}.compare{overflow-x:auto}.compare img{display:block;width:100%;min-width:750px;max-width:1638px}a{color:#256244;text-decoration:underline;text-underline-offset:3px}.note{border-top:1px solid #ddd;padding-top:12px}@media(max-width:500px){.shots{grid-template-columns:1fr 1fr 1fr;gap:4px}.panel{padding:10px}.shot figcaption{font-size:.7rem}}
+</style></head><body>
+<header><div><div style="font-size:.8rem;opacity:.9">A18 とっておき美術館 ／ 完成美術素材候補</div><h1>エントランス・背面の左右展示枠</h1><p>原本の金色装飾を残し、額縁だけをサイズ変更できる素材です。左右どちらも個別に変更できます。</p></div></header>
+<main>
+<section class="panel"><h2>実際の背景＋正式キャラクターで確認</h2>
+<p class="hint">実素材を5×5分割してブラウザで合成しています。写真は検証用の仮画像です。</p>
+<div class="canvas-wrap"><div id="loading">素材を読み込み中…</div><canvas id="viewer" width="1092" height="966" hidden role="img" aria-label="写真枠の合成プレビュー"></canvas></div>
+<div class="controls"><div><label for="leftScale">左の額縁：<strong id="leftPct">100%</strong></label><input id="leftScale" type="range" min="90" max="108" value="100"></div>
+<div><label for="rightScale">右の額縁：<strong id="rightPct">100%</strong></label><input id="rightScale" type="range" min="90" max="108" value="100"></div>
+<div><label class="switch"><input id="showPhoto" type="checkbox" checked> 写真入り（OFFで空き枠）</label><p><button id="reset">標準サイズに戻す</button></p></div></div></section>
+<section class="panel"><h2>拡大・縮小の品質比較</h2><p class="hint">標準サイズの空き枠は原本とピクセル単位で一致。左右とも装飾を分割して固定しています。</p>
+<div class="shots"><div class="shot"><figure><a href="QA_photos_090pct.png"><img src="QA_photos_090pct.png" alt="90パーセント縮小"></a><figcaption>90% 縮小</figcaption></figure></div>
+<div class="shot"><figure><a href="QA_photos_100pct.png"><img src="QA_photos_100pct.png" alt="100パーセント標準"></a><figcaption>100% 標準</figcaption></figure></div>
+<div class="shot"><figure><a href="QA_photos_108pct.png"><img src="QA_photos_108pct.png" alt="108パーセント拡大"></a><figcaption>108% 拡大</figcaption></figure></div></div>
+<p>空き枠の画像：<a href="QA_empty_090pct.png">90%</a> ／ <a href="QA_empty_100pct.png">100%</a> ／ <a href="QA_empty_108pct.png">108%</a></p>
+<p>元画像の額縁を除去した壁面：<a href="QA_clean_backwall_3x.png">3倍の拡大画像</a></p></section>
+<section class="panel"><h2>完成候補の構成</h2>
+<p>背景下地・左右の透明額縁・左右の空き枠台紙・写真窓マスク・分割定義・制作ソースを独立管理しています。</p>
+<p>写真は台紙または登録画像の上から額縁を重ねて表示します。写真窓は透明なため、影が写真に被ることはありません。</p>
+<p class="note hint">原本は変更していません。今回の素材はゲーム本体へ未統合です。推奨サイズ範囲は90〜108%。それ以上のサイズ変更には壁面との干渉を再検証してください。</p>
+<p><a href="QA_manifest.json">寸法・透過・原本照合の検証データ</a></p></section></main>
+<script src="render_rear_frames.js"></script></body></html>
