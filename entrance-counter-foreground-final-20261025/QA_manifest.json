@@ -1,0 +1,110 @@
+{
+  "source_sha256": "7d0ea4a76607df87261767f144fcd80c058b5111cdfdf79fa6297ba2bb8c163e",
+  "canvas": [
+    546,
+    483
+  ],
+  "pieces": {
+    "top_lip": [
+      [
+        0,
+        384
+      ],
+      [
+        94,
+        384
+      ],
+      [
+        101,
+        380
+      ],
+      [
+        105,
+        367
+      ],
+      [
+        109,
+        342
+      ],
+      [
+        117,
+        324
+      ],
+      [
+        127,
+        325
+      ],
+      [
+        119,
+        365
+      ],
+      [
+        115,
+        388
+      ],
+      [
+        110,
+        395
+      ],
+      [
+        0,
+        396
+      ]
+    ],
+    "front_face": [
+      [
+        0,
+        395
+      ],
+      [
+        109,
+        395
+      ],
+      [
+        106,
+        432
+      ],
+      [
+        101,
+        449
+      ],
+      [
+        60,
+        451
+      ],
+      [
+        52,
+        421
+      ],
+      [
+        0,
+        416
+      ]
+    ]
+  },
+  "alpha_pixels": {
+    "top_lip": 2257,
+    "front_face": 3968
+  },
+  "return_to_reference_pixel_exact": true,
+  "fixed_occlusion_only": true,
+  "actor_sprite_sha256": "8431fd181e70bc8f417840770c94238e664a1d2c9113777c333c926f0062cb43",
+  "game_implementation": false,
+  "art_status": "completed_candidate_pending_user_review",
+  "note": "countertop vase, side plants, and display photos unchanged; counter only masks actor depth",
+  "qa_browser_mobile": {
+    "viewport_css": [
+      390,
+      844
+    ],
+    "device_pixel_ratio": 2,
+    "states": [
+      "behind",
+      "front",
+      "behind"
+    ],
+    "js_errors": 0
+  },
+  "user_review_status": "candidate_complete_pending_art_approval",
+  "original_sprite_byte_exact": true
+}
