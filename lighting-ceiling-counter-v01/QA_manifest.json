@@ -252,5 +252,17 @@
     "background_repair_from_surrounding_image": true
   },
   "art_user_approved": false,
-  "published_qa": "will_validate_after_push"
+  "published_qa": {
+    "status": "PASS",
+    "url": "https://arakiyuuta0314-sketch.github.io/a18-art-previews/entrance-ceiling-counter-v01-20261026/",
+    "chrome_css": [
+      390,
+      844
+    ],
+    "dpr": 2,
+    "tested_states": 8,
+    "control_buttons": 3,
+    "js_http_errors": 0,
+    "horizontal_scroll": false
+  }
 }
