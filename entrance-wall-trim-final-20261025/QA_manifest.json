@@ -1,0 +1,94 @@
+{
+  "source": "C:\\Users\\User\\source\\repos\\a18-entrance-wall-trim-20261025\\entrance-test-v3\\layout-test\\assets\\entrance\\v0.3\\approved_entrance_trial.jpg",
+  "source_sha256": "7d0ea4a76607df87261767f144fcd80c058b5111cdfdf79fa6297ba2bb8c163e",
+  "dimensions": [
+    546,
+    483
+  ],
+  "rects_xyxy": {
+    "ceiling_west": [
+      65,
+      11,
+      205,
+      20
+    ],
+    "ceiling_east": [
+      355,
+      11,
+      480,
+      20
+    ],
+    "wainscot_west": [
+      68,
+      164,
+      203,
+      172
+    ],
+    "wainscot_east": [
+      358,
+      164,
+      400,
+      172
+    ]
+  },
+  "separate_layers": 4,
+  "background": "entrance_bg_without_wall_trims.png",
+  "pixel_exact_source_reconstruction": true,
+  "source_changed_outside_object_regions": false,
+  "photo_and_official_characters_unchanged": true,
+  "states_checked": [
+    "stage0_empty",
+    "stage1_lower",
+    "stage2_both"
+  ],
+  "game_implementation": false,
+  "status": "completed visual candidate waiting user art approval",
+  "limitations": "These are fixed-length original architectural mouldings, not nine-slice or free-moving furniture. Future length changes need new endpoint QA.",
+  "browser_qa": {
+    "mobile_css": [
+      390,
+      844
+    ],
+    "dpr": 2,
+    "states_verified": [
+      "all_on",
+      "all_off",
+      "waist_only",
+      "individual_right_top",
+      "all_restore"
+    ],
+    "image_errors": 0,
+    "network_errors": 0,
+    "javascript_errors": 0
+  },
+  "qa_status": "completed, pending user visual review",
+  "files_sha256": {
+    "build_wall_trim.py": "8c8bf3015570c07d23fa56e17e002eb12bf3060842f97632da9d9027a43e5f64",
+    "entrance_bg_without_wall_trims.png": "d3b53a3204ddf911d3634fb714ab2e05da49de4652506a49c30fffd81304041e",
+    "entrance_wall_trim_ceiling_east.png": "a6bf1181a012817e900dc40d1f33daf33e75d9e2d3d41064a86bd5c943150527",
+    "entrance_wall_trim_ceiling_east_mask.png": "b581e4e9128e8fa4f7e01542a3a9999b99f7f01835941f3e24c734f05b8cbc63",
+    "entrance_wall_trim_ceiling_west.png": "78c84b9edeac3babe77a064e8599ba005a141522bb26558a84972c3fe687f28f",
+    "entrance_wall_trim_ceiling_west_mask.png": "c9fb298b15c97dbba4018e2cfdd23abf8ea9d5b3712748c3bfa883d5360febc8",
+    "entrance_wall_trim_wainscot_east.png": "9a312ed304be026d7328d3b2b46caeaf5731b958d85a397f42eeedc0d1031d14",
+    "entrance_wall_trim_wainscot_east_mask.png": "68a756d85a3c19aef32728dcdb5b444329cfc349d09da2370a2c8497dd7db4e7",
+    "entrance_wall_trim_wainscot_west.png": "8962b7c3d5805d58902dd1f63fe0728242845482e0d590e7901db7d261fec48d",
+    "entrance_wall_trim_wainscot_west_mask.png": "cdfe1187932ac0611b1fac0418219657181f51647a35185717ac69b449c21e27",
+    "index.html": "877496bb0fa63d34cbb2d417dcb98ea7dea39e958e937f711836e23a1d9fcfa4",
+    "QA_all_trims_on_off.jpg": "a45b154844d45d1ede7c826e4177794f506fcb4f8da6068ec73f0e022b619b99",
+    "QA_browser_mobile.cjs": "e91ebf997252c874366c744ccd0ad1541da21551764fadf3ec2a5d561ff19a63",
+    "QA_ceiling_only.png": "656ae99adb05d46bd1d5c525202cc97220fd49abd3e52e38ec07edb2a9b80b19",
+    "QA_lower_only.png": "f2a3f08a28d80bfc8a13be3f5e0365d7e71f6173be859d4c4c925ef8d0aa8c7c",
+    "QA_mobile_all_390x844.png": "f402f8b444c63334a41a5c1c59d5daceba549dd33e5d22d818a6d97c96b9d765",
+    "QA_mobile_lower_only_390x844.png": "ad56655fb0e02e39daa9bb5c3bef1f23366d8617da7e2ad3f42312ed1f706469",
+    "QA_mobile_none_390x844.png": "927f1afbc5369e59ab536eec9477e7fce161f001e4e68b85088b5f2295fa38db",
+    "QA_no_trim.png": "e3fdb63ba83bc7e514dfc4ecbb03cd90defb56140be92904caf2ffa94dbcb72b",
+    "QA_source_reconstruction_all_on.png": "574893c262a51aa278a2dcac2cc2853c0338832f60e1ae872cf3fd350b034886",
+    "QA_stage0_empty.png": "e3fdb63ba83bc7e514dfc4ecbb03cd90defb56140be92904caf2ffa94dbcb72b",
+    "QA_stage1_lower.png": "f2a3f08a28d80bfc8a13be3f5e0365d7e71f6173be859d4c4c925ef8d0aa8c7c",
+    "QA_stage2_both.png": "ba0cf1a5bd950a3fa69d091a816e1b1d0fe61980c6afd439fd88e993ca5a8b53",
+    "QA_trim_growth_3states.jpg": "d96a44f5ec8b01e5287f9dce29e1481154183a5a203dd0d74d3124ddfc7a8e17",
+    "QA_with_photos_characters_trim_off.png": "e3fdb63ba83bc7e514dfc4ecbb03cd90defb56140be92904caf2ffa94dbcb72b",
+    "QA_with_photos_characters_trim_on.png": "ba0cf1a5bd950a3fa69d091a816e1b1d0fe61980c6afd439fd88e993ca5a8b53",
+    "render-wall-trims.js": "d338d3ca13b812ee2a1722f3943cb98823c64f73aa8974c1863f450b41acb0d2"
+  }
+}
