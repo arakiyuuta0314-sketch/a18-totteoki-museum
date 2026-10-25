@@ -1,0 +1,132 @@
+{
+  "status": "art_candidate_pending_user_approval",
+  "one_h_exact_common": true,
+  "source_outer_to_target_outer_max_error_px": 0.0,
+  "source_inner_to_derived_inner_max_error_px": 0.0,
+  "old_v05_inner_max_deviation_px": 6.741191864013672,
+  "wood_gold_alpha_equal": true,
+  "photo_empty_registration_alpha_equal": true,
+  "photo_window_overlap": 0,
+  "old_photo_mask_unused": true,
+  "frame_outer_union_raster_gap_pixels": 0,
+  "largest_gap_components_pixels": [],
+  "user_photo_input_sizes_tested": [
+    [
+      800,
+      1200
+    ],
+    [
+      1920,
+      1080
+    ],
+    [
+      500,
+      500
+    ],
+    [
+      83,
+      110
+    ],
+    [
+      1280,
+      720
+    ]
+  ],
+  "inverse_angle_same_transform_supported": true,
+  "canvas": [
+    546,
+    483
+  ],
+  "states": 36,
+  "source_sha256": {
+    "gold": "8acbe982f1889a36797f83550ab684e7e6f2a33ea132ea8b25d8e877a92a1ffe",
+    "body": "7648bb106a9c3e2c0b534d2dd4146560f9f6b16c7a7e4d8a3fd7d8743f4a76fc"
+  },
+  "official_character_sha256": {
+    "butler-front-00.png": "e3d1f41184ccab4535f0fe05a19bef59024a3665a76e75b43b8991668372213c",
+    "curator-front-00.png": "8431fd181e70bc8f417840770c94238e664a1d2c9113777c333c926f0062cb43"
+  },
+  "game_integrated": false,
+  "level1_decided": false,
+  "main_modified": false,
+  "chrome_qa": {
+    "resolution_css": [
+      390,
+      844
+    ],
+    "device_pixel_ratio": 2,
+    "tested_states": 36,
+    "http_errors": 0,
+    "js_errors": 0,
+    "overflow": false,
+    "result": "PASS"
+  },
+  "user_approved": false,
+  "parent_43_to_47_unchanged": true,
+  "file_hashes": {
+    "canonical_content_empty.png": "3104ea4a6f117edb077ea470177dbd96cc951af8043d6cf4daa9bdf1e8273aaf",
+    "canonical_content_photos.png": "1bbd671e0e1cc3fff1e9b748cbf4ce3bebbe08a735544a13540f9db625946049",
+    "canonical_content_registration.png": "3cd4aa9e5f1c71b85ce95b886c4cecb6b78677cc36b37de4bda5f63a0e45e54e",
+    "canonical_empty.png": "d47881518d6bc505a2817c2d421472f753c7344e3252768e63076358b57332c9",
+    "canonical_gold.png": "8acbe982f1889a36797f83550ab684e7e6f2a33ea132ea8b25d8e877a92a1ffe",
+    "canonical_gold_body.png": "7648bb106a9c3e2c0b534d2dd4146560f9f6b16c7a7e4d8a3fd7d8743f4a76fc",
+    "canonical_gold_ornaments.png": "56d7ad000278a8db500aba9b110d83c841bc70ce4dc48dd938ffe35545f916b6",
+    "canonical_photos.png": "8950c69d28fea221c9d76b8ea1fb05f7b6a4552bb6979f3b78c06822dbb09d6f",
+    "canonical_wood.png": "67ce27980c1619a1676bfbae10c3ce645d46dd56ca0b6f311b84409abe208e88",
+    "QA_4_styles_single_H.png": "c6ba27850f6d4da74f2ca7e1bb0de8b5f9a7441f3f999010e1435f4cdb9d52ac",
+    "QA_mobile_gold_photos_390x844.png": "42da23d80065b1ccc853bde4656745a9612f02f8e061b58057d5b85398e3fa8c",
+    "QA_mobile_registration_390x844.png": "80abf17986169a2a879f55dc1e2403989d97b50dd070d05760b9aee8e8d26f8c",
+    "QA_mobile_wood_empty_390x844.png": "df14c889223223c9411e0353d3bce00de5102be9fac41a87305b636b0158fac8",
+    "QA_opposite_angle_same_source.png": "0f5f5757b1220d726446fb24664fe43a2d7d8050b82f158d9f1de7c3e0a22d45",
+    "QA_portrait_input_800x1200.png": "d3d954818ddc68bde20000e3e0323fd774eac47d933a3e17936cfa2e8f3a8f4b",
+    "QA_previous_v05_wood_empty.png": "3131a124db31fdba1e3f213252042957c959b26930b696a5deeec0555b2e18db",
+    "QA_three_styles_right_front_3x.png": "23edc53d3b5261b5a917e7cf2b195ce631ab64e59cfc41b19ecfeadc4ddb566f",
+    "QA_wood_vs_gold_empty.png": "73da8a748e19e43f8ade916c5cfd06eef440908a20dc648871ae250134e63e15",
+    "QA_wood_vs_gold_photos.png": "49f2c36ff8fcd340c437b1fb4c3e2edf5a42c799f93c7edd6efc57eb69573bfd",
+    "QA_wood_vs_gold_registration.png": "65a6b59c2c909e9949c8ac6e0d47afff897710f0454b04f6f8985f8894d67409",
+    "right_front_content_empty.png": "b627050a51fbc330a83e767d33ca80be314d9fb31384bf3d337a9195b0098fbc",
+    "right_front_content_photos.png": "8324b797941412668fa0badad70603d56b72d46a50fec077b241534a06ccfe16",
+    "right_front_content_registration.png": "5c1c401264f1b7eef438986f40e26e47d2ef9e3f7fa4660d6ecdda13d91c2668",
+    "right_front_frame_gold.png": "e6eb3746f63e8dc9a2dced712bd6bccab34a28061feaec52de4ba153cb9d2343",
+    "right_front_frame_gold_body.png": "25e63960b654ef3e91bac08d355f8664ede4df5648aeebe866b8e524b71324ac",
+    "right_front_frame_gold_ornaments.png": "658b07db369ac5a16176c82a1bbc8802344829a48bf9a6fcb64418a2d409d201",
+    "right_front_frame_wood.png": "b6e6da8fce30ab9485fd24e3c9e187e6788b21642f391ae5885bd7ed76f345c3",
+    "right_front_shared_window_mask.png": "1d952ff1bb28a8d2d3da3e95e6d700424ce675de18c3b8501d48f57dae481413",
+    "view_gold_body_empty_100.png": "974504c6c30d6bfe761915b4b122ff44a653a5dd3a63f1059702d811790dd7d4",
+    "view_gold_body_empty_110.png": "e06aea06dff70d3b57b7353f3b5c0bc49970681a09cb81c51ec6085184c199d0",
+    "view_gold_body_empty_90.png": "a2b870c058464efeed1693f21ba86b23aadcd99eb0b01b08665b22fd6e5fb323",
+    "view_gold_body_photos_100.png": "5c47fc6a63291c6fdb9e7778cd8ad6f170298f05cb524b410babd7d6c951a953",
+    "view_gold_body_photos_110.png": "8e35f74dbf3f7c52d9634e1a55c9f1b87fa3eae850a0ee51e3923b1295fe729d",
+    "view_gold_body_photos_90.png": "605dd1acbd12e04c7e3e83b6f35f2757e7a9acc02351a036991302ebb4ee3989",
+    "view_gold_body_registration_100.png": "e3730a1acaca01e98d0f61418c534481f60066ae04c440426798e7325e1fbf0d",
+    "view_gold_body_registration_110.png": "165e9e39bc637f8edfe7a2f88929940c8fed6e2efe4a0fd9bbbe9b9c0fdd0324",
+    "view_gold_body_registration_90.png": "1f9cd48f5f83832760b6dc7bc9672746bc91ae20e795014931d698ef6d76dcd3",
+    "view_gold_empty_100.png": "6e90d29b90a0a932a5a3bc7ca735fc31e1e0c0742ffd0ae1adb1643feb29766e",
+    "view_gold_empty_110.png": "abb787f960adb7097e19bbb133abe019407aed9bab8e27b9ad723554f4647b3a",
+    "view_gold_empty_90.png": "842fbd136a25225de778625d7b2dc635242b9dc71165cb0775b8c9c749a3875c",
+    "view_gold_photos_100.png": "35a3d9136bae9ae0e76547df34e5c116e4c8d966257dd8bd477f7a092aa052fd",
+    "view_gold_photos_110.png": "a43bb20fb90d39e938797b0c3eb5822e4a28e539a84a0de73e7564098e040182",
+    "view_gold_photos_90.png": "828e56eb94d67a213a4e03fa59bdafa2b866d7c96902d7805f061cd7e279a370",
+    "view_gold_registration_100.png": "ca87e41b635e59779a8a00e997e155dc15a496d2ed44f694f35b79249d6101db",
+    "view_gold_registration_110.png": "10e51a4b699c20891cfdcc2bd3198c2d839e498fd9171325b9ca9995edbcc12d",
+    "view_gold_registration_90.png": "152e2ceb614c63129786ae3479622f6eb683280a0bfccf3b47060cbf2886dde5",
+    "view_none_empty_100.png": "1a3a6fe1a4fb634e743d1bf2dd2383aa1eec2bbb3934d791e828eb4d8b8eccc5",
+    "view_none_empty_110.png": "9f0b235fedd280e6427c2f6bc2f8b2239814bf3fb4cc4bf802d2691d07193f16",
+    "view_none_empty_90.png": "19f982975c3a1ae9ce4e3900d0dd0a91f20a5ae783d0687e61a6fff36c1d0ec7",
+    "view_none_photos_100.png": "23648dea20b7fd732965ee82f7c92c9a2826c6faa5b44380ad0a576ef19651ee",
+    "view_none_photos_110.png": "605bc67285d1862cd92eb6da8a6b2244f90fb274ebbb26acab0b0f6be61f8265",
+    "view_none_photos_90.png": "b8b60708a5e8166624f483ae74ed69e986152dccdc0278aa6f970a5df37cec37",
+    "view_none_registration_100.png": "146350e00e4609ee884f20bc717856a66e7716f1f3fada2028c6dfca7aad9d53",
+    "view_none_registration_110.png": "feefa89e9c007f139143058542c66a520d2255882d1b2efea2bd560ee3fa5953",
+    "view_none_registration_90.png": "cd875627e1b691be8c497511e5162fb6fb877e1172792c9b3a9fcd4095ba149e",
+    "view_wood_empty_100.png": "4c39cc51ee7765fba0561aa20b9dcd1b5c3cd1a1a01899577d517767a2f1d2da",
+    "view_wood_empty_110.png": "28f6d87ff2f2834c372cd83e9b18be644ebfa2b9071209f8b3d4ae220e3c471a",
+    "view_wood_empty_90.png": "7d0651e7dc1a144c5cc253969b9eadbb648426da91e0b4e7bf06d6b796405d3b",
+    "view_wood_photos_100.png": "cf2a7d95449cea87217f1017e314d9ae39509864300dacd09e46138f9bc5e17a",
+    "view_wood_photos_110.png": "43b1aff2826fa542c300405cd13284ec65b16794ed3a2fe2fb8fb673d0b65180",
+    "view_wood_photos_90.png": "5abec70a704ba4c6f3dc96a83d49115fae469f11bd354fc0309e4675ab65a0d2",
+    "view_wood_registration_100.png": "39b26301edb83141dd426221bf0fc973f71d60cc1e683199fd724c5cab9709aa",
+    "view_wood_registration_110.png": "01b6bfb21c8d805cfe3180193b0c692d4beead119aa21329b6004b2b88273d88",
+    "view_wood_registration_90.png": "dbb71750a244c689fa40b1bfb3a93c7d63493f097943e33f1d1a03dcfe97c3e9"
+  }
+}
