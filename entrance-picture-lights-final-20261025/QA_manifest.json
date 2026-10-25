@@ -26,7 +26,7 @@
   "layer_blend": "normal source over RGBA",
   "phone_browser_qa": "pending",
   "game_integrated": false,
-  "user_approval": "completed_candidate_pending_review",
+  "user_approval": "candidate_pending_user_review",
   "art_note": "Off-state gold frame top repaired by horizontal donors from original room; photo registration mask unmodified.",
   "browser_qa": {
     "viewport_css": [
@@ -39,137 +39,139 @@
       "both off",
       "reset"
     ],
-    "errors": 0
+    "errors": 0,
+    "status": "passed"
   },
   "photo_protection": "Registered photos unchanged below y=69. Separate photo-safe light foreground PNGs.",
   "files": {
     "entrance_bg_without_picture_lights.png": {
+      "sha256": "6cbb7bec6245b30514185a82780682ebf5b52e320729a7582d091fb2893fa5bf",
       "pixels": [
         546,
         483
       ],
-      "mode": "RGB",
-      "sha256": "6cbb7bec6245b30514185a82780682ebf5b52e320729a7582d091fb2893fa5bf"
+      "mode": "RGB"
     },
     "entrance_picture_light_east.png": {
+      "sha256": "7ab80c83952e6936d0828823ea10462e6bc9ffa624e0fdd94292d0d29bd7dd1f",
       "pixels": [
         47,
         39
       ],
-      "mode": "RGBA",
-      "sha256": "7ab80c83952e6936d0828823ea10462e6bc9ffa624e0fdd94292d0d29bd7dd1f"
+      "mode": "RGBA"
     },
     "entrance_picture_light_east_photo_safe.png": {
+      "sha256": "96dd44337ca2d64b8829d1abb96a7522fde4902ad03e312903942398b2a88271",
       "pixels": [
         47,
         39
       ],
-      "mode": "RGBA",
-      "sha256": "96dd44337ca2d64b8829d1abb96a7522fde4902ad03e312903942398b2a88271"
+      "mode": "RGBA"
     },
     "entrance_picture_light_west.png": {
+      "sha256": "a3cd5124ea9a90e27652bb75d6cd495ed6ce0ab121e40d04aa60c3c7b8453c45",
       "pixels": [
         45,
         39
       ],
-      "mode": "RGBA",
-      "sha256": "a3cd5124ea9a90e27652bb75d6cd495ed6ce0ab121e40d04aa60c3c7b8453c45"
+      "mode": "RGBA"
     },
     "entrance_picture_light_west_photo_safe.png": {
+      "sha256": "a1a53baf3cdb96670b7fbb4b61335eaab6cc79c1ac5fba6e4035f16d026652b6",
       "pixels": [
         45,
         39
       ],
-      "mode": "RGBA",
-      "sha256": "a1a53baf3cdb96670b7fbb4b61335eaab6cc79c1ac5fba6e4035f16d026652b6"
+      "mode": "RGBA"
     },
     "QA_east_only.png": {
+      "sha256": "d2fb3c1cfe9f753663b96a58d104a83bae373f176fe63b9c862acd86a0b4acbd",
       "pixels": [
         546,
         483
       ],
-      "mode": "RGB",
-      "sha256": "d2fb3c1cfe9f753663b96a58d104a83bae373f176fe63b9c862acd86a0b4acbd"
+      "mode": "RGB"
     },
     "QA_empty_wall_no_picture_lights.png": {
+      "sha256": "6cbb7bec6245b30514185a82780682ebf5b52e320729a7582d091fb2893fa5bf",
       "pixels": [
         546,
         483
       ],
-      "mode": "RGB",
-      "sha256": "6cbb7bec6245b30514185a82780682ebf5b52e320729a7582d091fb2893fa5bf"
+      "mode": "RGB"
     },
     "QA_mobile_390x844.png": {
+      "sha256": "3926517d1945fa1ceef7f57e69fe37983fef99ad038f54f7acf4ea9ea0088496",
       "pixels": [
         780,
         2716
       ],
-      "mode": "RGB",
-      "sha256": "3926517d1945fa1ceef7f57e69fe37983fef99ad038f54f7acf4ea9ea0088496"
+      "mode": "RGB"
     },
     "QA_mobile_both_off_390x844.png": {
+      "sha256": "bab867e60ffa5c869e7f4c6eba8de5db0988237e75279bb9d33220d85dc24895",
       "pixels": [
         780,
         2716
       ],
-      "mode": "RGB",
-      "sha256": "bab867e60ffa5c869e7f4c6eba8de5db0988237e75279bb9d33220d85dc24895"
+      "mode": "RGB"
     },
     "QA_original_reassembled_two_lights.png": {
+      "sha256": "574893c262a51aa278a2dcac2cc2853c0338832f60e1ae872cf3fd350b034886",
       "pixels": [
         546,
         483
       ],
-      "mode": "RGB",
-      "sha256": "574893c262a51aa278a2dcac2cc2853c0338832f60e1ae872cf3fd350b034886"
+      "mode": "RGB"
     },
     "QA_photos_sprites_both_lights.png": {
+      "sha256": "551fb5e0925ec8f2be6672f1fc9404f0f7ac1b918c8c9e3c303b0d4c02f12d99",
       "pixels": [
         546,
         483
       ],
-      "mode": "RGB",
-      "sha256": "551fb5e0925ec8f2be6672f1fc9404f0f7ac1b918c8c9e3c303b0d4c02f12d99"
+      "mode": "RGB"
     },
     "QA_photos_sprites_no_lights.png": {
+      "sha256": "0d94ec6386a503c3ce0307257830a151cc04ede93efb40b2262712b137c555cd",
       "pixels": [
         546,
         483
       ],
-      "mode": "RGB",
-      "sha256": "0d94ec6386a503c3ce0307257830a151cc04ede93efb40b2262712b137c555cd"
+      "mode": "RGB"
     },
     "QA_picture_lights_on_off.png": {
+      "sha256": "06df19aaca67f0381ea2a5e350338f13fb929326fa39ebbaed141053f500c110",
       "pixels": [
         1092,
         483
       ],
-      "mode": "RGB",
-      "sha256": "06df19aaca67f0381ea2a5e350338f13fb929326fa39ebbaed141053f500c110"
+      "mode": "RGB"
     },
     "QA_picture_light_isolation_east.png": {
+      "sha256": "d2b7a588c16a3b781ff6ee44046f104b156aff3a2b6347d220e8a49a0a0ce06d",
       "pixels": [
         376,
         156
       ],
-      "mode": "RGB",
-      "sha256": "d2b7a588c16a3b781ff6ee44046f104b156aff3a2b6347d220e8a49a0a0ce06d"
+      "mode": "RGB"
     },
     "QA_picture_light_isolation_west.png": {
+      "sha256": "f9e4af084124af8d48e3e21c1e8e3bb5d8f9973f3fef7b906f9d407625ed893a",
       "pixels": [
         360,
         156
       ],
-      "mode": "RGB",
-      "sha256": "f9e4af084124af8d48e3e21c1e8e3bb5d8f9973f3fef7b906f9d407625ed893a"
+      "mode": "RGB"
     },
     "QA_west_only.png": {
+      "sha256": "32d2ae2b1abdf012078cbfdce704a9f279161a4cd14ba1c42c589c1cc2ac2d26",
       "pixels": [
         546,
         483
       ],
-      "mode": "RGB",
-      "sha256": "32d2ae2b1abdf012078cbfdce704a9f279161a4cd14ba1c42c589c1cc2ac2d26"
+      "mode": "RGB"
     }
-  }
+  },
+  "source_window_protection": "registered photo pixels from y=69 downward unchanged"
 }
