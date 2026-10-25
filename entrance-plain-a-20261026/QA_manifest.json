@@ -1,0 +1,73 @@
+{
+  "scenario": "A – nearly undecorated entrance",
+  "not_approved_for_Lv1": true,
+  "canvas": [
+    546,
+    483
+  ],
+  "primary_image": "A18_entrance_A_plain_no_decor_preview.png",
+  "source_project": "entrance-b01-unified-20261025",
+  "removed": [
+    "Three registered sample photos; retain blank display mats",
+    "E01/E02 front planters",
+    "E03 countertop flower vase",
+    "E06 wooden plinths",
+    "E04 rear picture lamps",
+    "E05 ceiling and wainscot additional trim",
+    "E08 red-carpet gold trim",
+    "two directional signs and two wall sconces",
+    "two original baked-in ornamental plants, local material restoration"
+  ],
+  "retained": [
+    "Existing door (closed)",
+    "Three functional picture frames and blank mats",
+    "Architectural walls, rails and reception desk",
+    "Original red carpet",
+    "Reception desk lantern and nameplate (baked-in permanent fixtures)",
+    "Real original official character sprites (butler and curator)",
+    "Architectural gold/lighting that is part of original background"
+  ],
+  "source_pixel_preservation_outside_repair": true,
+  "local_restoration_mask_count": 6042,
+  "repaired_areas": [
+    "left wall shrub behind desk lamp",
+    "right freestanding display-wall shrub/pot"
+  ],
+  "uncertainty": "Unseen wall/cabinet pixels cannot be verified source-exact; repaired from adjacent original material. This is a design comparison, not an adopted Lv1 design.",
+  "game_integrated": false,
+  "official_character_hashes": {
+    "butler-front-00.png": "e3d1f41184ccab4535f0fe05a19bef59024a3665a76e75b43b8991668372213c",
+    "curator-front-00.png": "8431fd181e70bc8f417840770c94238e664a1d2c9113777c333c926f0062cb43"
+  },
+  "restoration_qa": "outside repair mask unchanged; empty frame center windows verified; actor PNG hashes match originals",
+  "browser_QA": {
+    "chrome_mobile_viewport": [
+      390,
+      844
+    ],
+    "device_scale_factor": 2,
+    "states_checked": [
+      "A_plain",
+      "decorated_reference",
+      "A_reset"
+    ],
+    "JS_errors": 0,
+    "HTTP_errors": 0,
+    "all_images_546x483": true
+  },
+  "status": "A composition delivered for evaluation, NOT chosen as Lv1",
+  "file_sha256": {
+    "A18_entrance_A_plain_no_decor_preview.png": "7ebae5782a058d5fad1462c534a8fa6842d2db2196509a26de693b49b70a1edf",
+    "build_plain_a.py": "a62e4e7efaecfe10f2789118faa4099e25d4b4befea7885e5d2aa7f6b1160fde",
+    "finalize_plain_a.py": "43f9216d1c6bfaba1f2d1108284ef519f8af8481df82fbd9240980997cb64a61",
+    "index.html": "720ab77fbfcd30c53c24a20f9d8e105102a98d9e629a15b6343f2b29d786a282",
+    "QA_A_vs_decorated_original.jpg": "92e2ac10c1aeae133cb7b7e0ade913fa6f9eda3fa4727aaa8acd5c868328ada7",
+    "QA_browser_mobile.cjs": "697758bb303aa5d8bfa7938e43cf81574373a1c8bb120a1a56d6ac44524038e2",
+    "QA_embedded_plant_restoration_mask.png": "32877e2f878b55451009895099715014bfb7739bf0df50338a9c35f55dcd8e91",
+    "QA_mobile_A_plain_390x844.png": "b62095828cc9739e37b26d24570b16a981b3ccc647aa9dd973cd503e6e6aa092",
+    "QA_mobile_decorated_390x844.png": "416d83ed9095e9b97a80dc4c6250d01fdc97c9562e7e94f396416c3a024bfaa3",
+    "QA_plain_without_characters.png": "f01486216c5394b9d6a0f12ed7e2ba1a80e5cc9666aed9b70a5170f99233223f",
+    "QA_prior_decorated_reference.png": "ed70d348453e475c5ab18c58056d85073ded771922c5564d887d44fe646cfdae",
+    "SOURCE_pre_repair_no_characters.png": "ad4091830f51d6bd90e78aa723c0f433f046da5e15bb7f442413ed3e7cf8c275"
+  }
+}
