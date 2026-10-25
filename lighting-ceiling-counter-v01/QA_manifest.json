@@ -1,0 +1,256 @@
+{
+  "status": "technical_candidate_requires_art_review",
+  "input_art": "50_エントランス完成候補_追加壁灯4点分離_v01/QA_all_four_sconces_on.png",
+  "ceiling_lamps_count": 8,
+  "ceiling_centers_x": [
+    59,
+    95,
+    135,
+    179,
+    286,
+    398,
+    438,
+    475
+  ],
+  "ceiling_body_and_emission_reusable": true,
+  "ceiling_placement": [
+    [
+      50,
+      0
+    ],
+    [
+      86,
+      0
+    ],
+    [
+      126,
+      0
+    ],
+    [
+      170,
+      0
+    ],
+    [
+      277,
+      0
+    ],
+    [
+      389,
+      0
+    ],
+    [
+      429,
+      0
+    ],
+    [
+      466,
+      0
+    ]
+  ],
+  "ceiling_unit_source_x": 135,
+  "counter_lamp_polygon": [
+    [
+      23,
+      307
+    ],
+    [
+      32,
+      307
+    ],
+    [
+      38,
+      309
+    ],
+    [
+      40,
+      315
+    ],
+    [
+      42,
+      323
+    ],
+    [
+      43,
+      330
+    ],
+    [
+      40,
+      338
+    ],
+    [
+      36,
+      341
+    ],
+    [
+      32,
+      343
+    ],
+    [
+      33,
+      356
+    ],
+    [
+      37,
+      359
+    ],
+    [
+      40,
+      364
+    ],
+    [
+      39,
+      370
+    ],
+    [
+      34,
+      373
+    ],
+    [
+      20,
+      373
+    ],
+    [
+      16,
+      369
+    ],
+    [
+      16,
+      364
+    ],
+    [
+      19,
+      360
+    ],
+    [
+      25,
+      358
+    ],
+    [
+      25,
+      344
+    ],
+    [
+      21,
+      342
+    ],
+    [
+      16,
+      340
+    ],
+    [
+      13,
+      333
+    ],
+    [
+      13,
+      326
+    ],
+    [
+      16,
+      315
+    ],
+    [
+      19,
+      310
+    ]
+  ],
+  "counter_lamp_body_and_emission_independent": true,
+  "outside_light_source_regions_changed_pixels": 0,
+  "restored_background_is_estimated": true,
+  "input_matches_after_recombination_pixel_exact": false,
+  "game_integration": false,
+  "user_art_approval": false,
+  "old_29_30_49_50_modified": false,
+  "files_sha256": {
+    "ceiling_lamp_row_body.png": "9ebdd4e821616463d666e0fb94e772e7ed8a1792d88d39bee2821ea9eef38eac",
+    "ceiling_lamp_row_emission.png": "2cb04fe051fbeff45a9b383ec9f4671fc1a50f23cd70dc65b2babe4af6ba2bc1",
+    "ceiling_lamp_unit_body.png": "9558d6be9871696c17d4804e5e2ebda81d7d55c24c8f0e55716827bb4bd3b08f",
+    "ceiling_lamp_unit_emission.png": "9abfb5f8c2b2c4ab2c24815fa00b3d55f52d9b2bcc6e92f00cb61be89d6b0359",
+    "counter_lamp_body.png": "3fffecee78f276d30ac444c8a78824da39ee719bb6f101c93c0447e91d71fc3c",
+    "counter_lamp_emission.png": "8a31f39cd171ca72e811a9c008383af87c89e6770a92f343cd489b083013e44e",
+    "QA_all_off.png": "a5a6a7265e5fab68f82dd72c007855d4512cf0eb5e3b941815c94a5c5d8d3f34",
+    "QA_all_on.png": "5561ed48ae556201888327326281c7f8613545ad94fd95eacf6aff339dadbcd2",
+    "QA_bodies_only.png": "8b77bc4840146bc4d60927a32e2a2521d390e8920e711399d447dc833f389b2c",
+    "QA_ceiling_and_counter_removed_background.png": "a5a6a7265e5fab68f82dd72c007855d4512cf0eb5e3b941815c94a5c5d8d3f34",
+    "QA_ceiling_only.png": "1bfe7f2fbc5b5385b8a5aeacc3ea61b70439ef9505650058f803fc4d097ab229",
+    "QA_ceiling_original_off_body_on_zoom.png": "6784b67b1a15a0a21c00984411440616371c98cb1202bcffaca0cb12f55ba764",
+    "QA_desk_body_only.png": "df62b59df5a31176a5ffc0dc89ccf106d61755e015cf66ff2940760bcc8ae7d0",
+    "QA_desk_only.png": "9fa6e5e00a5eff7f27251f68266bb4ad1cc3a2bc1f1a60817b866adc7adce16e",
+    "QA_desk_original_off_body_on_zoom.png": "9a8099ca002b5e9efb8184c1b464b37b290f333241dd8b6856eedb2ea1f35d21",
+    "QA_eight_reusable_identical_units_demo.png": "5fe101287a58ece362f096248c0052600b3ec02bd4d2232139c5a6da4238f0d5",
+    "QA_four_state_contact_sheet.png": "152eda8597c7a9df4e109e7256c727dd5ed2f16b6ba14f57ff67885e1680632b",
+    "QA_mobile_all_off_390x844.png": "d6e593935004047ad7375143333a27e1f83106c335c88acb73c012edea2148b0",
+    "QA_mobile_all_on_390x844.png": "f1f950616f539bba1cc11ee290bec500c0fef1dd45d0c0409b18a232f065289e",
+    "QA_mobile_body_only_390x844.png": "8e08d22a384a2ee584876b81bdba5cc8a94de16ca64466e6cccdf604bd790d15",
+    "QA_source_v50.png": "60c814e2ceb8d73c73bb0d7993b388ced8cfee479654e7473ea4ae1722259b64"
+  },
+  "technical_qa": {
+    "pass": true,
+    "pixels_outside_ceiling_or_counter_regions_changed": 0,
+    "source_50_characters_and_frames_unchanged": true,
+    "ceiling_units": 8,
+    "counter_lamps": 1,
+    "reuse_sample_passed": true,
+    "source_pixels_matched_after_recompose": false,
+    "transparent_assets": {
+      "ceiling_lamp_row_body.png": {
+        "size": [
+          546,
+          483
+        ],
+        "alpha_pixels": 176,
+        "sha256": "9ebdd4e821616463d666e0fb94e772e7ed8a1792d88d39bee2821ea9eef38eac"
+      },
+      "ceiling_lamp_row_emission.png": {
+        "size": [
+          546,
+          483
+        ],
+        "alpha_pixels": 720,
+        "sha256": "2cb04fe051fbeff45a9b383ec9f4671fc1a50f23cd70dc65b2babe4af6ba2bc1"
+      },
+      "ceiling_lamp_unit_body.png": {
+        "size": [
+          19,
+          15
+        ],
+        "alpha_pixels": 22,
+        "sha256": "9558d6be9871696c17d4804e5e2ebda81d7d55c24c8f0e55716827bb4bd3b08f"
+      },
+      "ceiling_lamp_unit_emission.png": {
+        "size": [
+          19,
+          15
+        ],
+        "alpha_pixels": 90,
+        "sha256": "9abfb5f8c2b2c4ab2c24815fa00b3d55f52d9b2bcc6e92f00cb61be89d6b0359"
+      },
+      "counter_lamp_body.png": {
+        "size": [
+          546,
+          483
+        ],
+        "alpha_pixels": 1743,
+        "sha256": "3fffecee78f276d30ac444c8a78824da39ee719bb6f101c93c0447e91d71fc3c"
+      },
+      "counter_lamp_emission.png": {
+        "size": [
+          546,
+          483
+        ],
+        "alpha_pixels": 1058,
+        "sha256": "8a31f39cd171ca72e811a9c008383af87c89e6770a92f343cd489b083013e44e"
+      }
+    },
+    "chrome_local_390x844_dpr2": {
+      "states": 8,
+      "actions": 3,
+      "errors": 0,
+      "overflow": false,
+      "pass": true
+    },
+    "background_repair_from_surrounding_image": true
+  },
+  "art_user_approved": false,
+  "published_qa": "will_validate_after_push"
+}
