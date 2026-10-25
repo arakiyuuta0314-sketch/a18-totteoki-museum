@@ -1,0 +1,30 @@
+{
+  "result": "PASS",
+  "arbitrary_photo_input_sizes": [
+    [
+      800,
+      1200
+    ],
+    [
+      1920,
+      1080
+    ],
+    [
+      110,
+      83
+    ],
+    [
+      83,
+      110
+    ],
+    [
+      546,
+      483
+    ]
+  ],
+  "all_photo_masks_identical": true,
+  "wood_gold_alpha_identical": true,
+  "reverse_orientation_same_code": true,
+  "common_photo_window_pixels": 5568,
+  "wood_frame_alpha_pixels": 4088
+}

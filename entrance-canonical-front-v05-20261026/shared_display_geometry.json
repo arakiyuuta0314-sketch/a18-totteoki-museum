@@ -1,0 +1,131 @@
+{
+  "schema": "A18_CANONICAL_EXHIBIT_v1",
+  "canvas": [
+    546,
+    483
+  ],
+  "canonical_outer_quad": [
+    [
+      76,
+      50
+    ],
+    [
+      200,
+      50
+    ],
+    [
+      200,
+      156
+    ],
+    [
+      76,
+      156
+    ]
+  ],
+  "canonical_inner_quad": [
+    [
+      84,
+      61
+    ],
+    [
+      193,
+      61
+    ],
+    [
+      193,
+      143
+    ],
+    [
+      84,
+      143
+    ]
+  ],
+  "right_front": {
+    "outer_quad": [
+      [
+        419,
+        187
+      ],
+      [
+        499,
+        212
+      ],
+      [
+        499,
+        338
+      ],
+      [
+        417,
+        292
+      ]
+    ],
+    "inner_quad": [
+      [
+        426,
+        201
+      ],
+      [
+        489,
+        226
+      ],
+      [
+        489,
+        323
+      ],
+      [
+        426,
+        276
+      ]
+    ],
+    "scale_anchor": [
+      457.5,
+      261.0
+    ]
+  },
+  "left_facing_demo": {
+    "outer_quad": [
+      [
+        127,
+        187
+      ],
+      [
+        47,
+        212
+      ],
+      [
+        47,
+        338
+      ],
+      [
+        129,
+        292
+      ]
+    ],
+    "inner_quad": [
+      [
+        120,
+        201
+      ],
+      [
+        57,
+        226
+      ],
+      [
+        57,
+        323
+      ],
+      [
+        120,
+        276
+      ]
+    ]
+  },
+  "layers": [
+    "backing",
+    "photo_or_empty_mat",
+    "frame_body",
+    "frame_ornament",
+    "official_character"
+  ],
+  "origin": "43 front photo mask contour, 43 left gold and 44 left wood"
+}
