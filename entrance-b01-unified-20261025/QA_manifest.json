@@ -1,0 +1,97 @@
+{
+  "source": "approved_entrance_trial.jpg",
+  "source_canvas": [
+    546,
+    483
+  ],
+  "base": "B01_entrance_base_without_independent_art.png",
+  "component_count": 13,
+  "components": [
+    {
+      "object": "O01 right wall base",
+      "target_pixels": 32966
+    },
+    {
+      "object": "F01 F02 background clean",
+      "target_pixels": 24396
+    },
+    {
+      "object": "D01 D02 north portal",
+      "target_pixels": 7663
+    },
+    {
+      "object": "O02 left foreground underlay",
+      "target_pixels": 6934
+    },
+    {
+      "object": "O04 counter foreground underlay",
+      "target_pixels": 6114
+    },
+    {
+      "object": "E03 counter flowers underlay",
+      "target_pixels": 1451
+    },
+    {
+      "object": "E01 E02 front plants underlay",
+      "target_pixels": 7483
+    },
+    {
+      "object": "E06 wooden plinth underlay",
+      "target_pixels": 7464
+    },
+    {
+      "object": "B01 dark walnut residual leaf repair",
+      "target_pixels": 1989
+    },
+    {
+      "object": "E08 carpet gold piping",
+      "target_pixels": 9694
+    },
+    {
+      "object": "fixtures left/right signs and sconces",
+      "target_pixels": 5955
+    },
+    {
+      "object": "E04 rear picture lights",
+      "target_pixels": 3588
+    },
+    {
+      "object": "E05 ceiling and wainscot ornament",
+      "target_pixels": 3801
+    }
+  ],
+  "separated_pixels": 109345,
+  "empty_original_rgb_mae": 0.2362,
+  "qa_images": [
+    "QA_B01_complete_pictures_and_characters.png",
+    "QA_B01_all_empty_photos.png",
+    "QA_B01_north_open.png",
+    "QA_B01_no_plants_no_plinths.png",
+    "QA_B01_no_gold_ornaments.png",
+    "QA_B01_clean_base_only.png"
+  ],
+  "formal_characters": "Original bytes, no redraw",
+  "game_integration": false,
+  "release_candidate": false,
+  "status": "B01 art composite candidate, requires cross-layer visual review and browser QA",
+  "quality_gate": {
+    "standard_visual": "reviewable QA candidate; game not integrated",
+    "five_mobile_states": true,
+    "plantless_plinthless": "NOT PASSED: left counter panel has visible repaired seam",
+    "background_base_alone": "UNDERLAY ONLY; always composite fixed architecture first",
+    "chrome_mobile_qa": {
+      "css_size": [
+        390,
+        844
+      ],
+      "DPR": 2,
+      "JS_HTTP_errors": 0
+    },
+    "todo": [
+      "finish wood panel restoration",
+      "Lv2-6 artwork and layers",
+      "browser gameplay collision regression",
+      "iOS Safari QA"
+    ]
+  }
+}
