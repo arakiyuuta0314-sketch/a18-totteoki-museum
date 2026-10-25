@@ -1,0 +1,168 @@
+{
+  "source": "C:\\Users\\User\\source\\repos\\a18-entrance-carpet-trim-20261025\\entrance-test-v3\\layout-test\\assets\\entrance\\v0.3\\approved_entrance_trial.jpg",
+  "source_sha256": "7d0ea4a76607df87261767f144fcd80c058b5111cdfdf79fa6297ba2bb8c163e",
+  "canvas": [
+    546,
+    483
+  ],
+  "outer": [
+    [
+      194,
+      240
+    ],
+    [
+      364,
+      240
+    ],
+    [
+      387,
+      431
+    ],
+    [
+      177,
+      431
+    ]
+  ],
+  "inner": [
+    [
+      207,
+      253
+    ],
+    [
+      351,
+      253
+    ],
+    [
+      372,
+      417
+    ],
+    [
+      191,
+      417
+    ]
+  ],
+  "crop": [
+    173,
+    235,
+    393,
+    438
+  ],
+  "trim_pixel_count": 9694,
+  "standard_source_exact": true,
+  "original_outside_trim_unchanged": true,
+  "character_source": "QA photos+formal sprites from previous approved composites",
+  "state": "completed candidate, pending user art review",
+  "game_integrated": false,
+  "approved_characters": "in prior QA image and untouched",
+  "normal_display_order": [
+    "base",
+    "photo",
+    "characters",
+    "carpet gold trim"
+  ],
+  "trim_off_underlay": "original red carpet fabric perspective-warped to conceal former gold trim",
+  "qa_browser_mobile": {
+    "viewport_css": [
+      390,
+      844
+    ],
+    "device_scale_factor": 2,
+    "states": [
+      "gold_on",
+      "gold_off",
+      "reset"
+    ],
+    "js_errors": 0
+  },
+  "qa_state": "candidate_complete_await_user_review",
+  "files": {
+    "entrance_bg_carpet_without_gold_trim.png": {
+      "size": [
+        546,
+        483
+      ],
+      "mode": "RGB",
+      "sha256": "7813138a95096b223eb75fbac29a803bb0766aa417812db0035c69b04aed9895"
+    },
+    "entrance_carpet_gold_trim.png": {
+      "size": [
+        220,
+        203
+      ],
+      "mode": "RGBA",
+      "sha256": "f066feca73289733c97cd8c2ee0f4240522b2fd3d807e5694a8d420fd02e4247"
+    },
+    "entrance_carpet_gold_trim_mask.png": {
+      "size": [
+        220,
+        203
+      ],
+      "mode": "L",
+      "sha256": "250af55a81ad7129a758f29cd247b00553ccc6e03a17a15f9cfc7ed09376180f"
+    },
+    "QA_carpet_source_crop_3x.png": {
+      "size": [
+        708,
+        675
+      ],
+      "mode": "RGB",
+      "sha256": "df5bf71514c7f6c6b3615d9b911e1d2cb1cb9115dcf989fc73588269777686cf"
+    },
+    "QA_carpet_trim_on_off.png": {
+      "size": [
+        1092,
+        483
+      ],
+      "mode": "RGB",
+      "sha256": "91ea146cc3670efafc8d3a352a1d54846a9450039fadf313f368eee7eaf1fdb0"
+    },
+    "QA_mobile_gold_off_390x844.png": {
+      "size": [
+        780,
+        2564
+      ],
+      "mode": "RGB",
+      "sha256": "cb9a68cfe5fd1d22e4c0fc72ea71a7528a443d9865783dff07981abfaf778b04"
+    },
+    "QA_mobile_gold_on_390x844.png": {
+      "size": [
+        780,
+        2564
+      ],
+      "mode": "RGB",
+      "sha256": "c58a4aa37bed249de2b0116ef83bc7bb186deff50fe2a5a2e7ecf3a04bf9e6f2"
+    },
+    "QA_photos_and_formal_sprites_trim_off.png": {
+      "size": [
+        546,
+        483
+      ],
+      "mode": "RGB",
+      "sha256": "4c1d9a4ba5bc5ab29ac3f9b0cdbaa0c2dd6ffa72ee2b298c314049b11b09a76a"
+    },
+    "QA_photos_and_formal_sprites_trim_on.png": {
+      "size": [
+        546,
+        483
+      ],
+      "mode": "RGB",
+      "sha256": "efb97102b30775cfa547da3af2a7c3682005ef154c97c02dcab8c3b673f651d3"
+    },
+    "QA_trim_off_red_carpet.png": {
+      "size": [
+        546,
+        483
+      ],
+      "mode": "RGB",
+      "sha256": "377ff2ce26ffb0b6bfbf65ab4c56f215765807db6eb536ae3df690843283710e"
+    },
+    "QA_trim_on_original_match.png": {
+      "size": [
+        546,
+        483
+      ],
+      "mode": "RGB",
+      "sha256": "8c0ef56ef58146a9b4a75267bb0edf88c17cfc26c24917ade3d9ea9944d70172"
+    }
+  }
+}
