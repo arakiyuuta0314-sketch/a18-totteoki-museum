@@ -1,0 +1,222 @@
+{
+  "title": "A18 E06 left/right independent walnut plinths under front plants",
+  "source_original_sha256": "7d0ea4a76607df87261767f144fcd80c058b5111cdfdf79fa6297ba2bb8c163e",
+  "source_approved_plant_art_sha256": {
+    "left": "377ba7b918dba9e02ab816449321b507625c853a09c45647bc07ef9133a54c85",
+    "right": "4709c267e04578765c2e6bc02f65f04828c00d0492ece452a44b68057ada840c"
+  },
+  "canvas": [
+    546,
+    483
+  ],
+  "objects": {
+    "left": {
+      "polygon": [
+        [
+          0,
+          426
+        ],
+        [
+          52,
+          426
+        ],
+        [
+          54,
+          429
+        ],
+        [
+          60,
+          431
+        ],
+        [
+          63,
+          446
+        ],
+        [
+          60,
+          483
+        ],
+        [
+          0,
+          483
+        ]
+      ],
+      "crop": [
+        0,
+        426,
+        64,
+        483
+      ],
+      "anchor": [
+        31,
+        57
+      ],
+      "repair_inside": [
+        0,
+        446,
+        44,
+        483
+      ],
+      "repair_mask": [
+        [
+          0,
+          446
+        ],
+        [
+          44,
+          446
+        ],
+        [
+          44,
+          483
+        ],
+        [
+          0,
+          483
+        ]
+      ]
+    },
+    "right": {
+      "polygon": [
+        [
+          458,
+          442
+        ],
+        [
+          480,
+          438
+        ],
+        [
+          530,
+          437
+        ],
+        [
+          546,
+          436
+        ],
+        [
+          546,
+          483
+        ],
+        [
+          458,
+          483
+        ],
+        [
+          457,
+          467
+        ]
+      ],
+      "crop": [
+        457,
+        435,
+        546,
+        483
+      ],
+      "anchor": [
+        45,
+        48
+      ],
+      "repair_inside": [
+        476,
+        451,
+        536,
+        483
+      ],
+      "repair_mask": [
+        [
+          476,
+          451
+        ],
+        [
+          536,
+          451
+        ],
+        [
+          536,
+          483
+        ],
+        [
+          476,
+          483
+        ]
+      ]
+    }
+  },
+  "layers": [
+    "marble_without_both_plinths",
+    "plinth_contact_shadow_left/right",
+    "plinth_left/right",
+    "existing_plant_left/right",
+    "official_character_layer/UI"
+  ],
+  "coordinate_system": "source 546x483, fixed floor-bottom anchor",
+  "verified_sizes": [
+    0.9,
+    1.0,
+    1.1
+  ],
+  "verified_inward_shift_pixels": 5,
+  "photo_and_character_pixels_unchanged_outside_bottom_regions": true,
+  "reference_reassembled_pixel_identical": false,
+  "reference_reassembled_rgb_mae": 0.85728,
+  "notes": "Both plinths extend past bottom screen edge in the original. Back-side wood hidden by plants is reconstructed with the real original wood panel texture; ground underneath was never visible and is inferred from adjacent original marble.",
+  "integrated_into_game": false,
+  "user_art_review": "pending",
+  "qa_browser": {
+    "chrome_emulated_mobile_css": [
+      390,
+      844
+    ],
+    "device_scale_factor": 2,
+    "tested": [
+      "two_plinths_and_plants",
+      "plinths_only",
+      "empty_museum_floor",
+      "left_90_right_110_shift5",
+      "single_plinth_visibility",
+      "restore"
+    ],
+    "javascript_errors": 0,
+    "network_errors": 0
+  },
+  "qa_status": "craft_candidate_complete; user art review pending; game not integrated",
+  "files_sha256": {
+    "build_plinths.py": "84d446b4476b0ae3cb25d9c4e1a69802c06d90c21c68a88c4171a8fef7ebacdd",
+    "entrance_bg_without_both_plinths.png": "4a890898c93b67ccb66a0f04275a041aa745dd46d9d205e1aa55d62334bbbbd5",
+    "entrance_bg_without_left_plinth.png": "238af47b0400afffbf9ca6539bbd54df08de8af9de36bc2d3ab16dce73b77dc9",
+    "entrance_bg_without_right_plinth.png": "db18a50a3639d1ae37d0b290ffb995be999fb15dcb9c29a3f13addb00fb850d9",
+    "entrance_plinth_left.png": "2728199d2e2a52464601308b3da57aac107dd17fd2c8b474567826079ee5d352",
+    "entrance_plinth_left_mask.png": "1e9f374ab97942baeb6fe1510f589d90c2c6940dab05d170bf01bf242df54b31",
+    "entrance_plinth_right.png": "ae9e8000ee595368fe309cf0a9bcf12f46dfd6af69e65fcd7bdd275c46933e6f",
+    "entrance_plinth_right_mask.png": "15dffe97873e6a2eee58a42460efa63506bb803862b4761c305e7852bf55f39c",
+    "entrance_plinth_shadow_left.png": "2ce162aa08575731485f35a5334091b0ba8bbf335e9183afbc4f0455677c37dc",
+    "entrance_plinth_shadow_right.png": "5d47806df338c365f29d1c1910dbd9e04ad806065485ea703d9ceb5531975191",
+    "index.html": "e661e6e43bced52941f0f4a939d3b0435da0eb3059b803893b1c7b098a7abfbf",
+    "QA_browser_mobile.cjs": "757c96f3fbf4031c114c1f8199f559a8ea5ead101b89c4e877261bb37404ffa0",
+    "QA_full_vs_empty_background.jpg": "1aeb61f8d1254084781f905ee5603acc69448ab3f6b4898aad8e15b6c83c9305",
+    "QA_left_plinth_only.png": "e0807f77bbac83f476a4ac28dde30f37edf8a91a5c982dfc050297d44f1ca5e2",
+    "QA_mobile_different_sizes_390x844.png": "e5d80d6b7b115b6c6b75bd10ebad454d6639e1199a1a1aef97fd799f8b253b64",
+    "QA_mobile_empty_floor_390x844.png": "f8f1b7a7f5aa56b2fe50c3015cd6e962e635c94a7e81c14b5d3d18ad8dfe5ed4",
+    "QA_mobile_plinth_only_390x844.png": "392d015420f9a9646f7de490b1205d9ed6c133ab7f459f4e62151ee70c93c54a",
+    "QA_mobile_standard_390x844.png": "d6c4a5f48ce12a7b95acfc5cd12a1e89c7c4ec6f3d6ee9aa491fa64a0e465c44",
+    "QA_no_plinths_no_plants.png": "79c6faa5fa26228deafa28f9b897eda4db66db9da319136db4e3bfd37e4b345c",
+    "QA_no_plinths_with_plants.png": "ffdf67f70d64f9875bdeec061956a9362fed50183523e8998cbc075594113777",
+    "QA_plinth_left_isolated_6x.png": "2391d72846abc4f80cd67255cadeca26aa727ac84ef37c63deb709f2e68d92a3",
+    "QA_plinth_right_isolated_6x.png": "6ea14e400a3f20c1bac8d9294a43442e903ba65ec863ae66d18e5a4ad95471bc",
+    "QA_plinths_and_plants_090pct.png": "c96d92932e0a39c84fe94e0929d08b359e8eab6764b1d9a370b8f857759a6bab",
+    "QA_plinths_and_plants_100pct.png": "80e4968a96e78d242f51cd9e0eb7205b9806b9aa5114c74aa14215776ac68520",
+    "QA_plinths_and_plants_110pct.png": "a3b39675b20d36b14aea43820f199ba961e204bf8f8a25e7f52cec3436a3d271",
+    "QA_plinths_and_plants_shift_inwards_5px.png": "3371bb67b9c2d04827c1ebda84ee4e6feaa936e3e61f840dc20ea15393747303",
+    "QA_plinths_only.png": "8eaf5998922bff898644c33b15c72e78436209257d19bf59e95ea7a7ce794974",
+    "QA_right_plinth_only.png": "9c802c8451599640f152eae1bc44e2a6cd5cf0e73e40dfb917c32cf5f77bbaf6",
+    "QA_three_sizes.jpg": "108ea6f59f7907c46d0540a95f5d0e9886cb25eea09bcaee74217dda759fa055",
+    "render-plinths.js": "7da00ebc1d464dfee861bc9f6e541ed2d2ef59d1b5a025f4e046e61b64e675b8",
+    "source_original_approved.jpg": "7d0ea4a76607df87261767f144fcd80c058b5111cdfdf79fa6297ba2bb8c163e",
+    "source_original_plant_left.png": "377ba7b918dba9e02ab816449321b507625c853a09c45647bc07ef9133a54c85",
+    "source_original_plant_right.png": "4709c267e04578765c2e6bc02f65f04828c00d0492ece452a44b68057ada840c",
+    "source_previous_background_without_plants.png": "8abf4c8baf881a3352bb84276f124ec75bfd078cedf67dc0b30df75df01f44a6",
+    "source_previous_preview_without_plants.png": "e75f8ed695ceb6f8129b7b0f4b483f29eda686720dc8517bfabcbec3bfa0a5be",
+    "source_wood_panelling_donor.png": "405fd672892c678eaaafb173b134138de463e7476e0ce60d644376e8418ef3a6"
+  }
+}
