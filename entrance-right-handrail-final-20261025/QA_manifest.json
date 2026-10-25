@@ -1,0 +1,73 @@
+{
+  "object": "O03 right passage handrail",
+  "source_sha256": "7d0ea4a76607df87261767f144fcd80c058b5111cdfdf79fa6297ba2bb8c163e",
+  "source_size": [
+    546,
+    483
+  ],
+  "mask_outline": [
+    [
+      394,
+      146
+    ],
+    [
+      400,
+      142
+    ],
+    [
+      406,
+      143
+    ],
+    [
+      531,
+      183
+    ],
+    [
+      538,
+      189
+    ],
+    [
+      539,
+      217
+    ],
+    [
+      531,
+      210
+    ],
+    [
+      526,
+      200
+    ],
+    [
+      401,
+      169
+    ],
+    [
+      394,
+      170
+    ]
+  ],
+  "opaque_pixels": 3540,
+  "draw_order": "clean wall -> right frame/photo -> right foreground rail -> player if in front",
+  "standard_full_scene_rgb_identical_to_prior": true,
+  "display_off_region": "reconstructed dark panel/wood underlay (not a source-exact scene)",
+  "reference_characters_unchanged": true,
+  "photo_windows_unchanged": true,
+  "game_unchanged": true,
+  "user_art_approval": "pending",
+  "mobile_qa": {
+    "viewport_css": [
+      390,
+      844
+    ],
+    "dpr": 2,
+    "states": [
+      "on",
+      "off",
+      "frame_scale110",
+      "photo_empty",
+      "reset"
+    ],
+    "js_network_errors": 0
+  }
+}
