@@ -1,0 +1,77 @@
+{
+  "source_sha256": "7d0ea4a76607df87261767f144fcd80c058b5111cdfdf79fa6297ba2bb8c163e",
+  "canvas": [
+    546,
+    483
+  ],
+  "outer": [
+    [
+      414,
+      183
+    ],
+    [
+      500,
+      212
+    ],
+    [
+      502,
+      340
+    ],
+    [
+      413,
+      294
+    ]
+  ],
+  "inner": [
+    [
+      426,
+      201
+    ],
+    [
+      489,
+      226
+    ],
+    [
+      489,
+      323
+    ],
+    [
+      426,
+      276
+    ]
+  ],
+  "reference_exact": true,
+  "frame_ring_pixels": 5079,
+  "photo_window_pixels": 5568,
+  "game_integrated": false,
+  "size_range_tested": [
+    90,
+    100,
+    110
+  ],
+  "frame_center": [
+    457.5,
+    261
+  ],
+  "photo_and_empty_standard_match_prior_QA_exact": true,
+  "method": "independent RGBA masked original trapezoid border and photo; affine uniform scale about fixed center to preserve corners, no axis-only distortion",
+  "photo_state_100pct_pixel_difference": 0,
+  "needs_final_user_art_review": true,
+  "transparent_background_repair": true,
+  "mobile_QA": {
+    "viewport_css": [
+      390,
+      844
+    ],
+    "DPR": 2,
+    "states": [
+      "photo100",
+      "empty110",
+      "hidden",
+      "reset"
+    ],
+    "js_errors": 0,
+    "network_errors": 0
+  },
+  "acceptance": "production_art_candidate_pending_user_review"
+}
