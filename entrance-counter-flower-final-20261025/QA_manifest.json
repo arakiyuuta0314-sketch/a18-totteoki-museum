@@ -1,0 +1,89 @@
+{
+  "source_sha256": "7d0ea4a76607df87261767f144fcd80c058b5111cdfdf79fa6297ba2bb8c163e",
+  "source_size": [
+    546,
+    483
+  ],
+  "seed_masks_are_editable": true,
+  "plant_sprite": {
+    "file": "entrance_counter_flower_vase.png",
+    "width": 44,
+    "height": 75,
+    "reference_offset": [
+      68,
+      318
+    ],
+    "anchor_offset": [
+      22,
+      70
+    ]
+  },
+  "underlay": {
+    "file": "entrance_bg_without_counter_flower.png",
+    "patch_rect": [
+      69,
+      325,
+      118,
+      391
+    ],
+    "changed_pixels": 1451
+  },
+  "verified": {
+    "scale_percent": [
+      90,
+      100,
+      110
+    ],
+    "shift_left_px": 5,
+    "photo_and_formal_characters": true,
+    "outside_restoration_rect_exact": true,
+    "mean_abs_rgb_error_vs_reference": 0.03924,
+    "max_abs_rgb_error_vs_reference": 110,
+    "pixel_exact_reference": false
+  },
+  "official_character_png_sha256": {
+    "curator-front-00.png": "8431fd181e70bc8f417840770c94238e664a1d2c9113777c333c926f0062cb43",
+    "butler-front-00.png": "e3d1f41184ccab4535f0fe05a19bef59024a3665a76e75b43b8991668372213c"
+  },
+  "game_integrated": false,
+  "status": "completed candidate; user art approval pending",
+  "browser": {
+    "viewport_css": [
+      390,
+      844
+    ],
+    "device_pixel_ratio": 2,
+    "states_verified": [
+      "100% standard visible",
+      "110% and shifted 5px left hidden",
+      "reset to 100%"
+    ],
+    "network_errors": 0,
+    "javascript_errors": 0
+  },
+  "art_review_status": "complete_craft_candidate_not_yet_user_approved",
+  "source_inputs_rebuildable": true,
+  "file_checksums_sha256": {
+    "build_counter_flower.py": "6c1310d24697397a620752affc0265ae6663b0f799c6f1dfcdf76ab7ca99711f",
+    "entrance_bg_without_counter_flower.png": "3bc5a6ed28a6163184a783fabdedcfb91b0fd44c99ae1f2a114ddd6252906336",
+    "entrance_counter_flower_alpha_mask.png": "44e587bd48e655767c7c7fd91e87fe4f9bf1b506fe2fea971a0f9666d08c1385",
+    "entrance_counter_flower_vase.png": "8b62a320db1c39336e01f5c37417f19ff3343a40ff60126224ee6e8825e98a0d",
+    "flower-preview.js": "0ac6aa0329b2294cd31b2ec3583bf332e87a153f78ca2396d7016020c4152da5",
+    "index.html": "e78d4031874280391906b4e1ac32d3de8770b6a72faf0184e640270110a47a93",
+    "QA_browser_mobile.cjs": "36e4ad6aae4f7e9309720428c23ef77bf5d67e612ef9d2824349846221287ce9",
+    "QA_browser_mobile_390x844.png": "f091da2f1ac4301f93e7d4932dca6a62ea3d266ccce4e9a9dc8f23cc262c156b",
+    "QA_browser_off_390x844.png": "49e8162f072fc0e4d4a9ed7c11d796804c8df4fa0685c4cbb8e782896ee94437",
+    "QA_flower_on_off_comparison.png": "03aab266c3aa1b97364515cef6de8d77a7231e8ba8ea141be922d5e11f4d6070",
+    "QA_flower_original_reassembly.png": "f2e80346a5e10255810be465b5f0c1ae376c0cf9a755aa9b77b3b7343d9049d6",
+    "QA_flower_repositioned_5px_left.png": "34ae991ada91a34ee2740939a0969c2429b0549dc71f20c5b93b4895679dd9ab",
+    "QA_photos_characters_flower_090pct.png": "44b627e6a4f5ab124ac5569cd751fd6868bc378e2b54541bfaca5ba9e9dd9621",
+    "QA_photos_characters_flower_100pct.png": "ca3562ba12d6e482e9f02c8cffeb30999725eba9ec2fd30c84ea230fdc1cb895",
+    "QA_photos_characters_flower_110pct.png": "5b432863a3787bff3f51f66fa1efeaf17693d760bd3bd123dc5d5688483e4be1",
+    "QA_photos_characters_no_counter_flower.png": "51e8342fc58bcffe2bc34242ce00f7cee25d94954b0355fa60fd31d6b11dd810",
+    "QA_three_sizes.png": "9997336d8c4cbf782ab2a7913361829595db324931e4e81430ae8bbf254ed930",
+    "source_approved_preview_photos_formal_characters.png": "ba0cf1a5bd950a3fa69d091a816e1b1d0fe61980c6afd439fd88e993ca5a8b53",
+    "source_flower_alpha_mask.png": "eea3230e2103b6b07a29a87f96758428deab1a19d12b7d6e384ba995ccedd77a",
+    "source_tabletop_restoration_mask.png": "9f79d8acabcab1911a90e33824ef15cce2e1124022f2cc24c61c551864bef5f4",
+    "source_tabletop_restoration_patch.png": "a7647b2d41d0e68969e4cf6ca2d7c0619e002ad47c779f24095799fb643ea4a3"
+  }
+}
