@@ -1,0 +1,192 @@
+{
+  "source": "C:\\Users\\User\\source\\repos\\a18-entrance-greenery-20261025\\entrance-test-v3\\layout-test\\assets\\entrance\\v0.3\\approved_entrance_trial.jpg",
+  "source_sha256": "7d0ea4a76607df87261767f144fcd80c058b5111cdfdf79fa6297ba2bb8c163e",
+  "canvas": [
+    546,
+    483
+  ],
+  "fixture_rectangles": {
+    "west_sign": [
+      4,
+      61,
+      43,
+      116
+    ],
+    "east_sign": [
+      503,
+      61,
+      543,
+      116
+    ],
+    "west_sconce": [
+      214,
+      83,
+      233,
+      129
+    ],
+    "east_sconce": [
+      334,
+      83,
+      354,
+      129
+    ]
+  },
+  "normal_blend_alpha_png": true,
+  "unmodified_outside_regions": true,
+  "mean_channel_abs_error_returned": 0.0,
+  "formal_characters": "Original sprites from prior approved photo-frame composited QA; not regenerated",
+  "qa": [
+    "reassembly",
+    "alpha",
+    "restored walls",
+    "photo and characters"
+  ],
+  "game_integration": false,
+  "user_art_approval": "pending",
+  "browser": {
+    "chrome_mobile_css_viewport": [
+      390,
+      844
+    ],
+    "device_pixel_ratio": 2,
+    "independent_controls": 4,
+    "verified_states": [
+      "all",
+      "mixed",
+      "reset"
+    ],
+    "errors": 0
+  },
+  "review_status": "finished_visual_candidate_pending_user_adoption",
+  "background_removed_art_note": "Missing plaster reconstructed from source without invented buildings. Visual inspection recommended in all-off state.",
+  "files": {
+    "entrance_bg_without_signs_sconces.png": {
+      "sha256": "a16fb019946d9c7759e409ba1482fdf32f5737931d67e6ca9b661f2e85f2336c",
+      "pixels": [
+        546,
+        483
+      ],
+      "mode": "RGB"
+    },
+    "entrance_east_sconce.png": {
+      "sha256": "a8677961a3ef41d38d215957170063e10bdb4b5b1a69564f9b870a63966fe971",
+      "pixels": [
+        20,
+        46
+      ],
+      "mode": "RGBA"
+    },
+    "entrance_east_sign.png": {
+      "sha256": "ca60147ccaf45cc9f97c5449ed800e77a275bf0b55fbf2d6f4c9a7b3d738a7c9",
+      "pixels": [
+        40,
+        55
+      ],
+      "mode": "RGBA"
+    },
+    "entrance_west_sconce.png": {
+      "sha256": "af0bbe5d90a97066cfbdbb5d03081efd01210654bf6c839921ee9a8cb3e0ae8c",
+      "pixels": [
+        19,
+        46
+      ],
+      "mode": "RGBA"
+    },
+    "entrance_west_sign.png": {
+      "sha256": "d1fbee69223b54cf3f334f7a54c90219b5bcdde2e262509cd0e5d5b04acd0bd4",
+      "pixels": [
+        39,
+        55
+      ],
+      "mode": "RGBA"
+    },
+    "QA_all_four_reassembled.png": {
+      "sha256": "574893c262a51aa278a2dcac2cc2853c0338832f60e1ae872cf3fd350b034886",
+      "pixels": [
+        546,
+        483
+      ],
+      "mode": "RGB"
+    },
+    "QA_all_four_removed.png": {
+      "sha256": "a16fb019946d9c7759e409ba1482fdf32f5737931d67e6ca9b661f2e85f2336c",
+      "pixels": [
+        546,
+        483
+      ],
+      "mode": "RGB"
+    },
+    "QA_browser_mixed_390x844.png": {
+      "sha256": "be3c5d39f74e5b2d565f0ecd9ad1195356da8f905ac9a40be45789fa92b2b16a",
+      "pixels": [
+        780,
+        3230
+      ],
+      "mode": "RGB"
+    },
+    "QA_browser_mobile_390x844.png": {
+      "sha256": "0502266393e00dfe9eebfcf7cb5b6d409d7a7c526ce591196b7f9e72de7e3077",
+      "pixels": [
+        780,
+        3230
+      ],
+      "mode": "RGB"
+    },
+    "QA_fixture_photo_comparison.png": {
+      "sha256": "963f3a79f8eae35fc928b173589e33e47c8e51c9758b9904255bb4c2276d1cab",
+      "pixels": [
+        1092,
+        483
+      ],
+      "mode": "RGB"
+    },
+    "QA_isolation_east_sconce.png": {
+      "sha256": "96f3847e66144147e4623d3d7e6c924af3f304995b80433799c249ce2e88a6d4",
+      "pixels": [
+        160,
+        184
+      ],
+      "mode": "RGB"
+    },
+    "QA_isolation_east_sign.png": {
+      "sha256": "db48d210ef01ab0d854276ad8a0233595fb0944a1ec97f03768c50b07b10fa9c",
+      "pixels": [
+        320,
+        220
+      ],
+      "mode": "RGB"
+    },
+    "QA_isolation_west_sconce.png": {
+      "sha256": "fd607da21dfea867f2daf57085bb7d5fdce815f7472579005ea9f86990c23234",
+      "pixels": [
+        152,
+        184
+      ],
+      "mode": "RGB"
+    },
+    "QA_isolation_west_sign.png": {
+      "sha256": "02cf11f3ff6891b343a395c7006b17d2ce394d25be6d6709bfed15ab4608905a",
+      "pixels": [
+        312,
+        220
+      ],
+      "mode": "RGB"
+    },
+    "QA_photos_sprites_all_four.png": {
+      "sha256": "ba0cf1a5bd950a3fa69d091a816e1b1d0fe61980c6afd439fd88e993ca5a8b53",
+      "pixels": [
+        546,
+        483
+      ],
+      "mode": "RGB"
+    },
+    "QA_photos_sprites_none.png": {
+      "sha256": "127926c1cbc15572c8643f3d90825c2d597f844cb17c3ffb1c32ab953f44beec",
+      "pixels": [
+        546,
+        483
+      ],
+      "mode": "RGB"
+    }
+  }
+}
