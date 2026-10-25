@@ -1,0 +1,122 @@
+{
+  "art_id": "E08-carpet-body-split",
+  "canvas": [
+    546,
+    483
+  ],
+  "source_corners": [
+    [
+      193,
+      235
+    ],
+    [
+      367,
+      235
+    ],
+    [
+      390,
+      438
+    ],
+    [
+      172,
+      438
+    ]
+  ],
+  "body": {
+    "file": "entrance_red_carpet_body.png",
+    "crop_xyxy": [
+      164,
+      226,
+      399,
+      449
+    ]
+  },
+  "piping": {
+    "file": "entrance_red_carpet_gold_trim.png",
+    "crop_xywh": [
+      173,
+      235,
+      220,
+      203
+    ],
+    "preserved_prior_approved": true
+  },
+  "floor_underlay": "entrance_marble_floor_without_carpet.png",
+  "contact_shadow": "entrance_red_carpet_contact_shadow.png",
+  "carpet_floor_anchor_xy": [
+    281,
+    438
+  ],
+  "scaling_tested": [
+    0.9,
+    1.0,
+    1.1
+  ],
+  "translation_x_tested": [
+    0,
+    5
+  ],
+  "comparison_full_image_mae_vs_previous_A": 0.7676,
+  "floor_repair_pixels": 48580,
+  "scene_reflectance": "marble below old rug is inferred from surrounding approved marble; not source-exact",
+  "original_characters_preserved": true,
+  "photo_frame_windows_preserved": true,
+  "game_integrated": false,
+  "user_approved": false,
+  "lv1_or_lv2_assignment": "not assigned",
+  "browser_qa": {
+    "css_viewport": [
+      390,
+      844
+    ],
+    "DPR": 2,
+    "states": [
+      "gold100",
+      "plain100",
+      "bare",
+      "gold90",
+      "gold110_shift5",
+      "reset"
+    ],
+    "missing_images": 0,
+    "JS_errors": 0,
+    "HTTP_errors": 0
+  },
+  "art_status": "completed candidate, awaits user visual approval; NOT yet assigned to any level",
+  "plain_red_body": "entrance_red_carpet_plain_body.png",
+  "strict_source": "approved background and unchanged official character PNG; hidden marble reconstructed",
+  "build_script": "build_carpet_independent.py",
+  "files_sha256": {
+    "build_carpet_independent.py": "cfb06768b77e76b2f9247a817e5440faf08348ced5894def80e29f476be8bece",
+    "entrance_floor_repair_mask.png": "e10885e1bee6205f2b8e11bda09da052748e2e7f5a93ffcb4570cddf38598045",
+    "entrance_marble_floor_without_carpet.png": "3d9d8ecf19b8da9ed12fbb67ea86b26e94faf164b64399499bbaea8004dab120",
+    "entrance_red_carpet_body.png": "5fb6f8561831ad20b61f200cc1ae7946eff5cd2b30257c9866903b2cacc9385f",
+    "entrance_red_carpet_body_mask.png": "54f47a7002f801d9e82e21a8ccc75fb656518f4c130e85e921128ac42f9df975",
+    "entrance_red_carpet_contact_shadow.png": "08e39a8147c9ea305ee47f26cb19df29e09fcce80e1a3cf83089492bd8634e15",
+    "entrance_red_carpet_gold_residue_removal_mask.png": "77c7008033d87416e510e1e6712e5ac70c3aa63de2b5c3330d0ae70787f2b35e",
+    "entrance_red_carpet_gold_trim.png": "f066feca73289733c97cd8c2ee0f4240522b2fd3d807e5694a8d420fd02e4247",
+    "entrance_red_carpet_plain_body.png": "203300220f46ab081eaa44dacaea23a7fc5c83608ac464200f0f0ade498a6f87",
+    "index.html": "c0c40f4eb893dec6377b9301db848503222897acc995ca11aefac0e3dacdd00c",
+    "QA_bare_floor_without_characters.png": "3d9d8ecf19b8da9ed12fbb67ea86b26e94faf164b64399499bbaea8004dab120",
+    "QA_browser_mobile.cjs": "501bf6957d181547f488befbbee773ac16ad925aa2b4d95498ff2a5d1816a3e2",
+    "QA_carpet_three_sizes.jpg": "bfa6286b694b1b416589ff6af94ea01488aa3feceb754086f3100ad4ac7be957",
+    "QA_marble_floor_without_carpet.png": "15f1c7b16a4a3504f0727e1f0182f2058a0c6a20e7672a53fa48cad1c86d3a7a",
+    "QA_mobile_bare_marble_390x844.png": "54a670ef21bbc3dd7ff21c54cb38034c86098fa299cc576c84a0be4e09ce5348",
+    "QA_mobile_carpet_090pct_390x844.png": "bf8f63671517226ba4ce896fca351255610161b4a20fe1c1913ba0274468a2ee",
+    "QA_mobile_carpet_110pct_shift_390x844.png": "57185ce55ee339dc704249560c81bae2c8d0723a9a74ada6dedf0187d3d26893",
+    "QA_mobile_carpet_gold_390x844.png": "d5531adf53c850372b90aacf8ade8e0871ff0617e5d88642739a435c0669d426",
+    "QA_mobile_carpet_plain_390x844.png": "506fd35c6dc82fc5207b10cf274564d56d92b9f22d56ade0adceca33d8b841cb",
+    "QA_red_carpet_090pct.png": "2aaaeddd2d51ac0b3f80684e7bba56e573da9bc7954c988825dbdd7ab1ccf6af",
+    "QA_red_carpet_110pct.png": "0935ccfead4ac5bb485324a6c42532ad5043cf47c92a347d79d8eb4b32ab1ed1",
+    "QA_red_carpet_shift_5px.png": "ddf1f1637b5f53dcbe6dc688ed69aaf2b3fc2d61111f0327b7115116a501a19f",
+    "QA_red_carpet_without_gold.png": "0925049df4babb5c03dfe80f7f2ce7a3577f4e7033338605ce766e68118a92ac",
+    "QA_red_carpet_with_gold.png": "920b69b88296e5716c8634f3b147a3b9cd9f88d5addc0d6e753626a7e100a889",
+    "QA_three_carpet_states.jpg": "5c407809a9e00e358d23bdb21573893bda06847f18df101c5a5efff1ce38fdaa",
+    "render-carpet.js": "97bf9228bcf52586786035237a4b0da4733d5505df055057b2970d940b745537",
+    "source_approved_decorated_comparison.png": "ed70d348453e475c5ab18c58056d85073ded771922c5564d887d44fe646cfdae",
+    "source_A_without_characters.png": "f01486216c5394b9d6a0f12ed7e2ba1a80e5cc9666aed9b70a5170f99233223f",
+    "source_A_with_formal_characters.png": "7ebae5782a058d5fad1462c534a8fa6842d2db2196509a26de693b49b70a1edf",
+    "source_original_approved.jpg": "7d0ea4a76607df87261767f144fcd80c058b5111cdfdf79fa6297ba2bb8c163e",
+    "source_original_red_carpet_without_gold.png": "7813138a95096b223eb75fbac29a803bb0766aa417812db0035c69b04aed9895"
+  }
+}

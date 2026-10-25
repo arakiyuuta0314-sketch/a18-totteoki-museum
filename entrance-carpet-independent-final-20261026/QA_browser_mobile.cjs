@@ -1,0 +1,27 @@
+const assert=require('node:assert/strict'),path=require('node:path'),pp=require('C:/Users/User/AppData/Local/npm-cache/_npx/4b4c857f6efdfb61/node_modules/puppeteer');(async()=>{
+const browser=await pp.launch({headless:true,executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe',args:['--no-sandbox']});const page=await browser.newPage(),errors=[];
+page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error')errors.push(m.text())});page.on('response',r=>{if(r.status()>=400)errors.push(r.status()+' '+r.url())});
+try{await page.setViewport({width:390,height:844,deviceScaleFactor:2,isMobile:true,hasTouch:true});
+await page.goto('http://127.0.0.1:18835/entrance-carpet-independent-final-20261026/',{waitUntil:'networkidle0',timeout:30000});
+await page.waitForFunction(()=>window.A18CarpetIndependent?.ready===true,{timeout:15000});
+const state=()=>page.evaluate(()=>window.A18CarpetIndependent.state());
+assert.deepEqual(await state(),{carpet:true,gold:true,scale:100,offset:0});
+assert(await page.evaluate(()=>[...document.images].every(i=>i.naturalWidth>0)));
+assert((await page.$eval('#scene',e=>e.getBoundingClientRect().width))>=300);
+await page.screenshot({path:path.join(__dirname,'QA_mobile_carpet_gold_390x844.png'),fullPage:true});
+await page.click('#gold');assert.equal((await state()).gold,false);
+await page.screenshot({path:path.join(__dirname,'QA_mobile_carpet_plain_390x844.png'),fullPage:true});
+await page.click('#carpet');assert.equal((await state()).carpet,false);
+assert(await page.$eval('#gold',e=>e.disabled));
+await page.screenshot({path:path.join(__dirname,'QA_mobile_bare_marble_390x844.png'),fullPage:true});
+await page.click('#carpet');await page.click('#gold');
+await page.$eval('#scale',e=>{e.value=90;e.dispatchEvent(new Event('input',{bubbles:true}))});
+assert.equal((await state()).scale,90);
+await page.screenshot({path:path.join(__dirname,'QA_mobile_carpet_090pct_390x844.png'),fullPage:true});
+await page.$eval('#scale',e=>{e.value=110;e.dispatchEvent(new Event('input',{bubbles:true}))});
+await page.$eval('#offset',e=>{e.value=5;e.dispatchEvent(new Event('input',{bubbles:true}))});
+assert.deepEqual(await state(),{carpet:true,gold:true,scale:110,offset:5});
+await page.screenshot({path:path.join(__dirname,'QA_mobile_carpet_110pct_shift_390x844.png'),fullPage:true});
+await page.click('#reset');assert.deepEqual(await state(),{carpet:true,gold:true,scale:100,offset:0});
+assert.equal(errors.length,0,JSON.stringify(errors));console.log('PASS 390x844 DPR2: no carpet, plain red, gold edge, 90%, 110% shifted, reset; errors=0');
+}finally{await browser.close()}})().catch(e=>{console.error(e);process.exit(1)});
