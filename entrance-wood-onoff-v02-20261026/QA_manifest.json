@@ -1,0 +1,38 @@
+{
+  "status": "technical_candidate_pending_visual_approval",
+  "source_public_commit": "9ceeca4",
+  "canvas": [
+    546,
+    483
+  ],
+  "official_wood_source": "44 and 49 v07 via v52 overlay, unchanged",
+  "new_repairs": [
+    "remaining right-front exhibition bar/light",
+    "rear exhibition light mounts and warm bloom x138/x414",
+    "wall placard shadow residues"
+  ],
+  "repair_pixels": 5757,
+  "repair_area_by_group": {
+    "sign": 2786,
+    "rear": 2342,
+    "right_front": 629
+  },
+  "repair_mask_total": 6619,
+  "outside_repair_mask_changed_pixels": 0,
+  "on_off_diff_pixels": 11431,
+  "outside_frame_alpha_changed_pixels": 0,
+  "floor_door_characters_unchanged": true,
+  "user_art_approval": false,
+  "lv1_decided": false,
+  "game_integrated": false,
+  "source_sha256": {
+    "old_off": "1fba8e57977ed5ea52e59a16b764e1b36fc1dcfedb86466038f96802b0b21153",
+    "old_on": "8bf3e9b2bf67137e25ac9557ebe9c39233c685d9e3af59a5873ddd6d11beaf9f",
+    "wood_overlay": "5d93306aeeabda9c3ef7e6905e96f2968c11fdf517a01bf7354a9b6cde4f91cf"
+  },
+  "formal_character_sha256": {
+    "butler-front-00.png": "e3d1f41184ccab4535f0fe05a19bef59024a3665a76e75b43b8991668372213c",
+    "curator-front-00.png": "8431fd181e70bc8f417840770c94238e664a1d2c9113777c333c926f0062cb43"
+  },
+  "caveat": "Removed-light and unseen wall pixels estimated from neighboring real source artwork; cannot certify exact original unseen surfaces."
+}
