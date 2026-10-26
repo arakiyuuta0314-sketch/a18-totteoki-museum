@@ -1,0 +1,64 @@
+{
+  "app": "A18 とっておき美術館",
+  "freeze_date": "2026-10-26",
+  "phase": "entrance_art_asset_production_paused_user_accepted",
+  "baseline_preference": "frame_OFF",
+  "app_game_integration": false,
+  "lv1_final_design_selected": false,
+  "canvas": [
+    546,
+    483
+  ],
+  "canonical_sources": {
+    "entrance_background_without_wood_frames": {
+      "path": "entrance-plain-master-v09-right-mat/entrance_OFF.png",
+      "sha256": "1cf45e2d2edca55f142af07b28e15b8d2cfe05fd4f4de421facd6b3b5f5dfc1c",
+      "description": "無装飾基準。展示用空台紙・既存キャラクター・右奥の柱を保持。木製額縁は表示しない。"
+    },
+    "comparison_with_right_front_wood_only": {
+      "path": "entrance-plain-master-v09-right-mat/entrance_ON.png",
+      "sha256": "9d608b52c62b3d299e80eb5adf3e3f7b6662b6a0d628acf80f8b5374d19318fe",
+      "description": "木製額縁3点セットではなく右手前の1点のみを重ねた比較用。"
+    },
+    "right_front_empty_mat": {
+      "path": "entrance-plain-master-v09-right-mat/right_front_content_empty_formal_v07.png",
+      "sha256": "461fcdb8a7d97a2ad443b111cf2ef7c79ec8bb6c2c9708b28118893089cc494f"
+    },
+    "right_front_wood_frame": {
+      "path": "entrance-plain-master-v09-right-mat/right_front_frame_wood_formal_v07.png",
+      "sha256": "21f182fe2177aeb2c989fc5e50ac2f28cd13ce832baf6f9dafccbaa5ca6c2ed9"
+    }
+  },
+  "additional_standalone_components": {
+    "rear_frames_and_materials": "entrance-wood-grain-v02-20261026/",
+    "three_frames_independent_masks_and_empty_mats": "entrance-frames-independent-20261026/",
+    "right_front_unified_projection": "entrance-wall-plane-v07-20261026/",
+    "separated_wall_sconces": "lighting-additional-sconces-v01/",
+    "separated_ceiling_and_counter_lights": "lighting-ceiling-counter-v01/",
+    "north_door": "entrance-north-door-final-20261025/",
+    "carpet": "entrance-carpet-independent-final-20261026/",
+    "plant_items": "entrance-front-plants-final-20261025/"
+  },
+  "QA": {
+    "off_on_diff_pixels": 3386,
+    "off_on_diff_outside_front_wood_sprite": 0,
+    "formal_mat_wood_sprite_overlap_pixels": 0,
+    "v08_missing_mat_corrected_pixels": 157,
+    "registered_window_matches_mat_alpha": true,
+    "public_390x844_chrome": "PASS_as_of_2026-10-26",
+    "technical_QA_pass": true
+  },
+  "public_preview": "https://arakiyuuta0314-sketch.github.io/a18-art-previews/entrance-plain-master-v09-right-mat/",
+  "google_drive_artifact_folder": "G:/マイドライブ/06.アプリ開発/03.開発・テスト/A18_パズル美術館/59_エントランス右手前台紙欠損正式素材修復_v09_監修待ち",
+  "known_limitations": [
+    "現在の背景はユーザーが素材制作の一区切りを判断した候補。全体美術の厳密な最終承認ではない。",
+    "既存原画に焼き込まれた照明反射・補修面などは将来の改訂余地がある。",
+    "額縁なしを今後の検討基準にするが、それをLv.1として確定したわけではない。",
+    "静的Pagesでの素材比較でありゲームへの統合・全6室回帰は未実施。"
+  ],
+  "unintegrated_workstreams": [
+    "別系列の衝突判定・インタラクション作業ブランチ",
+    "採用されなかった初期美術比較試作",
+    "未決定のLv.1装飾設計"
+  ]
+}
