@@ -1,0 +1,48 @@
+{
+  "version": "v07",
+  "status": "art_review_pending",
+  "source": "v06 undecorated base commit 4f80b69",
+  "canvas": [
+    546,
+    483
+  ],
+  "authoritative_OFF_v06_sha256": "3bfae101e549b753a0d276ef9ce5e6b703270be480054bfab7de28fb3c5494d5",
+  "right_column_position": [
+    513,
+    0,
+    546,
+    213
+  ],
+  "left_existing_column_source": [
+    0,
+    0,
+    33,
+    213
+  ],
+  "method": "exact horizontal mirror without interpolation; official right foreground alpha occlusion protected",
+  "foreground_mask_source_hashes": {
+    "entrance_fg_right_display_wall.png": "3252f134da424c50488f2dd2c61286d45966d35db29a2cf8c2687579fcc6248c",
+    "entrance_fg_right_rail.png": "2264dbc4dd463b74bd7aa189e21c95a92f3d0f16bf1f70c43ff1f07af910ab6b"
+  },
+  "changed_pixels": 6151,
+  "outside_declared_right_corner_change": 0,
+  "foreground_occlusion_change_count": 0,
+  "door_floor_characters_and_front_walls_unchanged": true,
+  "picture_mats_unchanged": true,
+  "new_image_generation": false,
+  "level1_approved": false,
+  "notes": "This fixes only the far right architectural corner pillar. Broader backdrop lighting/wood seams remain v06 and require art review.",
+  "local_browser_qa": {
+    "viewport": [
+      390,
+      844
+    ],
+    "DPR": 2,
+    "result": "PASS",
+    "mode_transitions": 2,
+    "zoom_images_loaded": 3,
+    "HTTP_and_JS_errors": 0
+  },
+  "final_design_approval": false,
+  "game_integration": false
+}
