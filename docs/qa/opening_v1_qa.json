@@ -1,0 +1,88 @@
+{
+  "checks": [
+    {
+      "name": "fresh title opens",
+      "pass": true,
+      "info": null
+    },
+    {
+      "name": "title separate image asset",
+      "pass": true,
+      "info": null
+    },
+    {
+      "name": "title has only one functional button",
+      "pass": true,
+      "info": null
+    },
+    {
+      "name": "first protagonist line",
+      "pass": true,
+      "info": null
+    },
+    {
+      "name": "scene three name flow",
+      "pass": true,
+      "info": null
+    },
+    {
+      "name": "gender choice after name",
+      "pass": true,
+      "info": null
+    },
+    {
+      "name": "museum after white fade",
+      "pass": true,
+      "info": null
+    },
+    {
+      "name": "butler addresses female honorific",
+      "pass": true,
+      "info": null
+    },
+    {
+      "name": "name persisted after museum choice",
+      "pass": true,
+      "info": null
+    },
+    {
+      "name": "normal museum interaction returns",
+      "pass": true,
+      "info": null
+    },
+    {
+      "name": "saved profile skips replay",
+      "pass": true,
+      "info": null
+    },
+    {
+      "name": "saved title persists",
+      "pass": true,
+      "info": null
+    },
+    {
+      "name": "intro replay opens sepia without changing save",
+      "pass": true,
+      "info": null
+    },
+    {
+      "name": "replay leaves saved data unchanged",
+      "pass": true,
+      "info": null
+    },
+    {
+      "name": "skip preserves mandatory profile input",
+      "pass": true,
+      "info": null
+    },
+    {
+      "name": "no page errors",
+      "pass": true,
+      "info": []
+    }
+  ],
+  "console_errors": [
+    "Failed to load resource: the server responded with a status of 404 (File not found)"
+  ],
+  "page_errors": []
+}

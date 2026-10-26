@@ -66,7 +66,7 @@ footer{background:#18372f;color:#ecdcbf;font-size:12px;padding:5px 14px;flex:non
 }
 @media(max-height:390px){header{height:47px}.brand #museumName{font-size:17px}.status{font-size:13px}.nav button{font-size:13px;padding:7px 9px}.dpad{width:133px;height:133px}.act button{min-height:54px}.stage .hint{font-size:13px;padding:7px 11px}}
 @media(max-width:720px){.brand small{display:none}.brand{min-width:110px}.brand #museumName{font-size:16px}.status{font-size:12px}.nav button{font-size:12px;padding:8px}}
-</style><link rel="stylesheet" href="art-inspect.css?v=1.9"><link rel="stylesheet" href="viewer-minimal.css?v=1.10"><link rel="stylesheet" href="portrait.css?v=1.5"><link rel="stylesheet" href="viewer-orientation.css?v=1.5"><link rel="stylesheet" href="functional-ui.css?v=1.6"><link rel="stylesheet" href="rpg-chat.css?v=1.6"><link rel="stylesheet" href="p6-story.css?v=1"><link rel="stylesheet" href="ui-v17.css?v=1.7"><link rel="stylesheet" href="registration-compact.css?v=1.20"><link rel="stylesheet" href="a18-fixed-ui.css?v=1"><link rel="stylesheet" href="a18-viewer-framing.css?v=1"></head>
+</style><link rel="stylesheet" href="art-inspect.css?v=1.9"><link rel="stylesheet" href="viewer-minimal.css?v=1.10"><link rel="stylesheet" href="portrait.css?v=1.5"><link rel="stylesheet" href="viewer-orientation.css?v=1.5"><link rel="stylesheet" href="functional-ui.css?v=1.6"><link rel="stylesheet" href="rpg-chat.css?v=1.6"><link rel="stylesheet" href="p6-story.css?v=1"><link rel="stylesheet" href="ui-v17.css?v=1.7"><link rel="stylesheet" href="registration-compact.css?v=1.20"><link rel="stylesheet" href="a18-fixed-ui.css?v=1"><link rel="stylesheet" href="a18-viewer-framing.css?v=1"><link rel="stylesheet" href="opening-v1.css?v=1"></head>
 <body>
 <div class="app">
 <header><div class="brand"><small>PUZZLE MUSEUM</small><button id="museumName" title="美術館の名前を変更">パズル美術館</button></div></header>
@@ -94,6 +94,8 @@ footer{background:#18372f;color:#ecdcbf;font-size:12px;padding:5px 14px;flex:non
     <div class="a18-viewer-tip">ピンチで拡大・ドラッグで移動・ダブルタップで切替</div>
   </div>
 </section>
+<div id="a18OpeningRoot" class="a18-opening-root" hidden></div>
+<script src="opening-v1.js?v=1"></script>
 <script src="viewer.js?v=fixed1"></script>
 <script>
 (() => {
@@ -330,8 +332,11 @@ function showProgressionEvent(id=null,options={}){
  if(ev.id==='intro-v1'){
   if(fromHistory){
    showingEvent=true;
-   const lines=data.steps.filter(step=>step.type==='dialogue').map(step=>step.text);
-   renderStoryPage({id:ev.id,data:{...data,lines,systemText:'はじまりの物語'},role:'butler',index:0,fromHistory:true});
+   const back=()=>{showingEvent=false;showStoryHistory();};
+   window.A18Opening.start({
+    preset:{name:playerName,gender:avatarGender},
+    onComplete:back,onSkip:back
+   });
   }else if(!playerName)showIntroOpening();
   else showIntroAfterProfile();
   return;
@@ -341,22 +346,45 @@ function showProgressionEvent(id=null,options={}){
 }
 function showIntroOpening(){
  if(showingEvent||modal||saveBlocked)return;
- const intro=eventData('intro-v1');
  if(!currentSave.progression.events.some(e=>e.id==='intro-v1'&&e.status==='queued'))return;
+ window.A18Opening.start({
+  onComplete:draft=>showButlerMuseumName(draft),
+  onSkip:()=>onboarding()
+ });
+}
+function showButlerMuseumName(draft){
+ if(showingEvent||modal||saveBlocked)return;
+ if(!draft||!draft.name||!['male','female'].includes(draft.gender))throw Error('E_INTRO_PROFILE_DRAFT');
  showingEvent=true;
- let index=0;
- function render(){
-  const steps=intro.steps.filter(step=>['O01','O02','O03'].includes(step.step));
-  open('とっておき美術館へ、ようこそ',
-   '<div class="p6-story-meta">はじまりの物語　'+(index+1)+' / '+steps.length+'</div>'+
-   storyPortrait('butler',steps[index].text)+
-   '<div class="p6-story-actions"><button id="introNext">'+(index===2?'館長になる':'次へ ▼')+'</button>'+
-   '<button id="introSkipOpening" class="light">オープニングをスキップ</button></div>','rpg');
-  function profile(){showingEvent=false;close();onboarding();}
-  $('introNext').onclick=()=>{if(index<2){index++;render();}else profile();};
-  $('introSkipOpening').onclick=profile;
- }
- render();
+ const honorific=draft.name+(draft.gender==='female'?'お嬢様':'様');
+ const greeting='……おや。お待ちしておりました、'+honorific+'。';
+ open('ようこそ',
+  storyPortrait('butler',greeting)+
+  '<p>ようこそ。こちらは、あなた様の美術館でございます。</p>'+
+  '<p>さて……この館に、名前をいただけますかな？</p>'+
+  '<label for="a18OpeningMuseumTitle">美術館の名前</label>'+
+  '<input id="a18OpeningMuseumTitle" maxlength="24" autocomplete="off">'+
+  '<p id="a18OpeningMuseumError" class="error" role="alert"></p>'+
+  '<div class="p6-story-actions"><button id="a18OpeningMuseumOk" type="button">この名前にする</button></div>','rpg');
+ $('a18OpeningMuseumTitle').value=museumTitle;
+ const confirm=async()=>{
+  if(saving||saveBlocked)return;
+  const title=$('a18OpeningMuseumTitle').value.trim();
+  if(!title){$('a18OpeningMuseumError').textContent='美術館の名前を入力してください。';return;}
+  $('a18OpeningMuseumOk').disabled=true;
+  if(!await commitChange(s=>{
+   s.playerName=draft.name;s.avatarGender=draft.gender;s.museumTitle=title;
+  },{event:false})){
+   $('a18OpeningMuseumError').textContent='保存できませんでした。再読み込み後にやり直してください。';
+   $('a18OpeningMuseumOk').disabled=false;
+   return;
+  }
+  showingEvent=false;
+  close();
+  showIntroAfterProfile();
+ };
+ $('a18OpeningMuseumOk').onclick=()=>{void confirm();};
+ $('a18OpeningMuseumTitle').onkeydown=e=>{if(e.key==='Enter'){e.preventDefault();void confirm();}};
 }
 function showIntroAfterProfile(){
  if(showingEvent||modal||saveBlocked||!playerName)return;
@@ -520,11 +548,13 @@ async function boot(){
   spriteBounds.set(femaleId,await getAlphaBounds(female));
  }
  loaded=true;resize();update();requestAnimationFrame(draw);
- if(!playerName){
-  if(currentSave.progression.events.some(e=>e.id==='intro-v1'&&e.status==='queued'))showIntroOpening();
-  else onboarding();
- }else if(currentSave.progression.events.some(e=>e.id==='intro-v1'&&e.status==='queued'))showIntroAfterProfile();
- else showProgressionEvent();
+ window.A18Opening.title(()=>{
+  if(!playerName){
+   if(currentSave.progression.events.some(e=>e.id==='intro-v1'&&e.status==='queued'))showIntroOpening();
+   else onboarding();
+  }else if(currentSave.progression.events.some(e=>e.id==='intro-v1'&&e.status==='queued'))showIntroAfterProfile();
+  else showProgressionEvent();
+ });
 }
 function isPortraitGame(){return matchMedia('(orientation:portrait) and (max-width:850px)').matches;}
 function resize(){
