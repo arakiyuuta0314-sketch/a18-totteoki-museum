@@ -1,0 +1,46 @@
+{
+  "status": "candidate_technical_only_visual_review_required",
+  "source": "v03 (26b2466)",
+  "image_generation": false,
+  "canvas": [
+    546,
+    483
+  ],
+  "backwall_left": [
+    28,
+    211
+  ],
+  "backwall_right": [
+    354,
+    519
+  ],
+  "column_extremes": [
+    [
+      0,
+      30
+    ],
+    [
+      516,
+      546
+    ]
+  ],
+  "independently_recropped_underlying_panels": true,
+  "foreground_preserved_pixels": 34332,
+  "floor_door_reception_people_preserved": true,
+  "ON_diff_pixels": 21071,
+  "unresolved": "Photographic texture stretch, lighting bakes and lower wood-panel seams require user design acceptance",
+  "source_sha256": {
+    "entrance_OFF.png": "7566ec4cf26649e029e8adff363e9ec759f090fb0c89d97404f2ead2bcf83231",
+    "entrance_ON.png": "91111336e2e3d53233b01beac27de5417a2ecd18192d4b9acc5c0af1cfa247ac"
+  },
+  "qa": {
+    "mobile_chrome_390x844_DPR2": "PASS",
+    "html_works": true,
+    "geometry": "prototype",
+    "art_quality": "NOT_APPROVED",
+    "room_floor_door_NPC_foreground_exact": true,
+    "lamp_residual_status": "not solved by this iteration",
+    "rear_right_frame_derived_from_left_source": "yes mirrored as geometry prototype; NOT formal independent right frame",
+    "wood_seam_status": "visible artifacts; requires rebuilding from matching baseline"
+  }
+}
