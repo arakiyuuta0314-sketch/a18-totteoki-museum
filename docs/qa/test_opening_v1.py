@@ -3,7 +3,7 @@ from pathlib import Path
 from functools import partial
 from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
 from threading import Thread
-from playwright.sync_api import sync_playwright
+from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeoutError
 import json, time, contextlib
 
 ROOT=Path(__file__).resolve().parents[2]
@@ -20,7 +20,11 @@ def take(page,name):
 def press_until(page,locator,limit=30):
     for n in range(limit):
         if page.locator(locator).count() and page.locator(locator).is_visible():return
-        page.locator("#a18OpeningDialog").click(timeout=10000)
+        try:
+            page.locator("#a18OpeningDialog").click(timeout=1500)
+        except PlaywrightTimeoutError:
+            if page.locator(locator).count() and page.locator(locator).is_visible():return
+            raise
         page.wait_for_timeout(85)
     page.wait_for_selector(locator,timeout=10000)
 def run():

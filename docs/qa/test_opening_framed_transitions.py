@@ -3,7 +3,7 @@ from pathlib import Path
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from functools import partial
 from threading import Thread
-from playwright.sync_api import sync_playwright
+from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeoutError
 import json
 
 ROOT=Path(__file__).resolve().parents[2]
@@ -18,7 +18,13 @@ class Quiet(SimpleHTTPRequestHandler):
 def advance_until(page,select,limit=55):
     for i in range(limit):
         if page.locator(select).count() and page.locator(select).is_visible():return
-        page.locator("#a18OpeningDialog").click()
+        try:
+            page.locator("#a18OpeningDialog").click(timeout=1500)
+        except PlaywrightTimeoutError:
+            # The scene is removed when the white fade reaches the butler.
+            # Accept this race only if the awaited destination is visible.
+            if page.locator(select).count() and page.locator(select).is_visible():return
+            raise
         page.wait_for_timeout(80)
     page.locator(select).wait_for(timeout=10000)
 def rect(el):
