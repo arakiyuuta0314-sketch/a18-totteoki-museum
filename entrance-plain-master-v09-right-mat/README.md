@@ -29,3 +29,8 @@ v08の木枠の内側に透けて見えていた。
 
 作業継続ブランチ：feature/a18-entrance-plain-master-v06-20261026。
 mainおよびゲーム本体は変更しない。
+
+## GitHub Pages 公開検証
+- URL: https://arakiyuuta0314-sketch.github.io/a18-art-previews/entrance-plain-master-v09-right-mat/
+- 公開側コミット72343b3。公開後390x844 DPR2 Chromeで初期ON・切替・拡大3点を確認。
+- 公開PNG5点が成果物とバイト一致、HTMLは改行コード正規化後一致。

@@ -38,5 +38,10 @@
     "compare_detail_3_images": "PASS",
     "HTTP_JS_errors": 0,
     "horizontal_overflow": false
-  }
+  },
+  "publish_URL": "https://arakiyuuta0314-sketch.github.io/a18-art-previews/entrance-plain-master-v09-right-mat/",
+  "public_commit": "72343b3",
+  "public_png_byte_matches": 5,
+  "public_html_eol_normalized_match": true,
+  "public_mobile_chrome_QA": "PASS"
 }

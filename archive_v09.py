@@ -38,6 +38,11 @@ v08の木枠の内側に透けて見えていた。
 
 作業継続ブランチ：feature/a18-entrance-plain-master-v06-20261026。
 mainおよびゲーム本体は変更しない。
+
+## GitHub Pages 公開検証
+- URL: https://arakiyuuta0314-sketch.github.io/a18-art-previews/entrance-plain-master-v09-right-mat/
+- 公開側コミット72343b3。公開後390x844 DPR2 Chromeで初期ON・切替・拡大3点を確認。
+- 公開PNG5点が成果物とバイト一致、HTMLは改行コード正規化後一致。
 """
 (SRC/'README.md').write_text(readme,encoding='utf8')
 root=Path(r'G:\マイドライブ\06.アプリ開発\03.開発・テスト\A18_パズル美術館')
@@ -46,7 +51,7 @@ dest=root/'59_エントランス右手前台紙欠損正式素材修復_v09_監�
 dest.mkdir(exist_ok=True)
 for p in SRC.iterdir():
  if p.is_file():shutil.copy2(p,dest/p.name)
-for file in ('rebuild_mat_v09.py','build_web_v09.py','archive_v09.py'):
+for file in ('rebuild_mat_v09.py','build_web_v09.py','archive_v09.py','verify_public_v09.py'):
  shutil.copy2(BASE/file,dest/file)
 z=dest/'A18_entrance_right_mat_v09_review.zip'
 if z.exists():z.unlink()
