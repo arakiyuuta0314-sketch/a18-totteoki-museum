@@ -22,3 +22,7 @@
 - この時点でLv.1としてOFF/ONを確定しない。
 
 正式なソース履歴はfeature/a18-entrance-art-polish-v03-20261026。Git main/既存ゲーム本体は未変更。
+
+## 公開配信QA
+- GitHub Pagesコミット: 2aaa38e。実際のURLで390×844 DPR2 Chromeボタン3回、比較切替2回、拡大3点すべて正常。HTTP/JSエラー0。
+- 公開PNG5点について、ローカル正式成果物とバイト単位で一致することを確認。

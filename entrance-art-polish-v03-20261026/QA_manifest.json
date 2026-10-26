@@ -35,5 +35,23 @@
     "console_js_http_errors": 0
   },
   "wood_style_selected": "defined",
-  "fixture_contrast_limitation": "Lighting bounce baked into original artwork remains unchanged; only local visible fixture scars repaired"
+  "fixture_contrast_limitation": "Lighting bounce baked into original artwork remains unchanged; only local visible fixture scars repaired",
+  "public_qa": {
+    "url": "https://arakiyuuta0314-sketch.github.io/a18-art-previews/entrance-art-polish-v03-20261026/",
+    "pages_commit": "2aaa38e",
+    "pages_deployment": "success",
+    "mobile_chrome_390x844_dpr2": "PASS",
+    "off_on_buttons": "PASS",
+    "side_by_side_toggle": "PASS",
+    "three_zoom_views": "PASS",
+    "console_js_http_errors": 0,
+    "horizontal_overflow": false,
+    "http_files_identical_to_local": [
+      "entrance_OFF.png",
+      "entrance_ON.png",
+      "QA_zoom_rear_left.png",
+      "QA_zoom_rear_right.png",
+      "QA_zoom_right_front.png"
+    ]
+  }
 }
