@@ -1,0 +1,39 @@
+{
+  "version": "v03",
+  "canvas": [
+    546,
+    483
+  ],
+  "lv1_decided": false,
+  "art_approved": false,
+  "source": "v02 17a8865",
+  "method": "local source-pixel donor blending; original sprite wooden detail contrast + bevel; image generation unused",
+  "prior_source_hashes": {
+    "entrance_OFF.png": "3c0f4df3fc261acbd66847d5b8fc2ce042d8183c02ed3610f454c2c7a66f3779",
+    "entrance_ON.png": "cfb8fb2d2c490c1dd38f4586168d0a9aad4e20d5eab16ae19a95b87dae999b1a",
+    "layer_rear_left.png": "67ce27980c1619a1676bfbae10c3ce645d46dd56ca0b6f311b84409abe208e88",
+    "layer_rear_right.png": "b31b46cfc21758ce41eb27e63b7e643fa073ef96161aecd2fa5a44f8934cc41e",
+    "layer_right_front_v07.png": "21f182fe2177aeb2c989fc5e50ac2f28cd13ce832baf6f9dafccbaa5ca6c2ed9"
+  },
+  "source_sprite_hashes": {
+    "butler-front-00.png": "e3d1f41184ccab4535f0fe05a19bef59024a3665a76e75b43b8991668372213c",
+    "curator-front-00.png": "8431fd181e70bc8f417840770c94238e664a1d2c9113777c333c926f0062cb43"
+  },
+  "lighting_repair_changed_pixels": 2466,
+  "wood_ON_changed_pixels": 17166,
+  "outside_managed_frame_plus_shadow_changed_pixels": 0,
+  "base_outside_repair_changed_pixels": 0,
+  "caveat": "Unseen fixture backgrounds remain source-neighbor estimates; art approval pending.",
+  "browser_qa": {
+    "test": "Chrome Headless",
+    "device": "390x844 DPR2",
+    "off_on": "PASS",
+    "side_by_side_switch": "PASS",
+    "zoom_details": "PASS",
+    "images_loaded": "PASS",
+    "horizontal_overflow": false,
+    "console_js_http_errors": 0
+  },
+  "wood_style_selected": "defined",
+  "fixture_contrast_limitation": "Lighting bounce baked into original artwork remains unchanged; only local visible fixture scars repaired"
+}
