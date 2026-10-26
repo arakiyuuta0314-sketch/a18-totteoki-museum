@@ -40,14 +40,15 @@
  }
  function sceneMarkup(scene){
   return '<section class="a18-opening-frame a18-opening-scene" aria-label="オープニング">'+
-    '<img id="a18OpeningImage" class="a18-opening-illustration" src="assets/opening/'+sceneImages[scene]+'" alt="セピア色の風景">'+
+    '<div id="a18OpeningVisual" class="a18-opening-visual">'+
+      '<img id="a18OpeningImage" class="a18-opening-illustration" src="assets/opening/'+sceneImages[scene]+'" alt="セピア色の風景">'+
+      '<div id="a18OpeningVisualCurtain" class="a18-opening-visual-curtain"></div></div>'+
     '<button id="a18OpeningSkip" class="a18-opening-skip" type="button">スキップ</button>'+
     '<div class="a18-opening-dialog" id="a18OpeningDialog" role="button" tabindex="0" aria-label="会話を進める">'+
       '<span id="a18OpeningSpeaker" class="a18-opening-speaker"></span>'+
       '<p id="a18OpeningWords" aria-live="off"></p>'+
       '<div id="a18OpeningForm"></div>'+
-      '<span id="a18OpeningNext" class="a18-opening-next" aria-hidden="true"></span></div>'+
-    '<div id="a18OpeningCurtain" class="a18-opening-curtain"></div></section>';
+      '<span id="a18OpeningNext" class="a18-opening-next" aria-hidden="true"></span></div></section>';
  }
  function bind(){
   el('a18OpeningSkip').onclick=()=>{
@@ -69,18 +70,36 @@
  async function transition(nextScene,serial){
   if(changing)return false;
   changing=true;stopTyping();
-  const curtain=el('a18OpeningCurtain');
-  curtain.classList.add('black');
+  const visual=el('a18OpeningVisual'),curtain=el('a18OpeningVisualCurtain');
+  // Keep the letterbox, dialogue and controls untouched while the scene changes.
+  el('a18OpeningSpeaker').textContent='';
+  el('a18OpeningWords').textContent='';
+  el('a18OpeningNext').textContent='';
+  const next=document.createElement('img');
+  next.className='a18-opening-illustration a18-opening-incoming';
+  next.alt='セピア色の風景';
+  next.src='assets/opening/'+sceneImages[nextScene];
+  try{await next.decode();}catch(err){throw Error('E_A18_SCENE_IMAGE '+nextScene)}
+  if(serial!==token)return false;
+  // The first landscape change has a soft dip; the light scenes crossfade.
+  if(nextScene===1){
+   curtain.classList.add('dim');
+   await sleep(130);
+   if(serial!==token)return false;
+  }
+  visual.insertBefore(next,curtain);
+  void next.offsetWidth; // Commit the transparent first frame before fading in.
+  next.classList.add('visible');
   await sleep(260);
   if(serial!==token)return false;
-  const image=el('a18OpeningImage');
-  image.src='assets/opening/'+sceneImages[nextScene];
-  try{await image.decode();}catch(err){throw Error('E_A18_SCENE_IMAGE '+nextScene)}
-  if(serial!==token)return false;
-  await sleep(100);
-  curtain.classList.remove('black');
-  await sleep(260);
-  if(serial!==token)return false;
+  el('a18OpeningImage').remove();
+  next.id='a18OpeningImage';
+  next.classList.remove('a18-opening-incoming','visible');
+  if(nextScene===1){
+   curtain.classList.remove('dim');
+   await sleep(260);
+   if(serial!==token)return false;
+  }
   changing=false;
   return true;
  }
@@ -135,11 +154,14 @@
  async function finish(){
   if(changing)return;
   changing=true;stopTyping();
-  const curtain=el('a18OpeningCurtain');
+  const serial=token,curtain=el('a18OpeningVisualCurtain');
+  // The final white flash, too, belongs only to the illustrated area.
   curtain.classList.add('white');
   await sleep(25);
+  if(serial!==token)return;
   curtain.classList.add('visible');
   await sleep(580);
+  if(serial!==token)return;
   const complete=state.onComplete,result={name:state.name,gender:state.gender};
   deactivate();
   complete(result);

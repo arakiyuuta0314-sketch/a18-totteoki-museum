@@ -1,0 +1,166 @@
+{
+  "checks": [
+    {
+      "name": "image frame narrower than overall scene 390",
+      "pass": true,
+      "detail": {
+        "visual": {
+          "x": 2,
+          "y": 202.5,
+          "width": 386,
+          "height": 217.1
+        },
+        "frame": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 844
+        }
+      }
+    },
+    {
+      "name": "white/dim curtain nested in image frame 390",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "no whole-scene black curtain 390",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "scene 3 reached 390",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "fixed black-band image rectangle 390",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "fixed dialogue rectangle 390",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "all transition overlays stay bounded 390",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "uses overlapping image fades 390",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "only scene 1->2 uses partial dim 390",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "dialogue stays fixed at scene 4 390",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "end uses image-only white 390",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "end white remains bounded 390",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "butler loads after ending 390",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "image frame narrower than overall scene 320",
+      "pass": true,
+      "detail": {
+        "visual": {
+          "x": 2,
+          "y": 168,
+          "width": 316,
+          "height": 177.8
+        },
+        "frame": {
+          "x": 0,
+          "y": 0,
+          "width": 320,
+          "height": 700
+        }
+      }
+    },
+    {
+      "name": "white/dim curtain nested in image frame 320",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "no whole-scene black curtain 320",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "scene 3 reached 320",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "fixed black-band image rectangle 320",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "fixed dialogue rectangle 320",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "all transition overlays stay bounded 320",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "uses overlapping image fades 320",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "only scene 1->2 uses partial dim 320",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "dialogue stays fixed at scene 4 320",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "end uses image-only white 320",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "end white remains bounded 320",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "butler loads after ending 320",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "no page errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": []
+}
