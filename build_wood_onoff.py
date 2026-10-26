@@ -60,6 +60,26 @@ allowed51[:15,:]=True;allowed51[303:399,8:47]=True
 assert not np.any(np.any(off51!=s51,axis=2)&~allowed51),"51 edits outside contract"
 mask51=np.any(off51!=s51,axis=2)&allowed51
 base[mask51]=off51[mask51]
+# The tiny countertop guide placard is not building architecture and must
+# not remain in a "no signs" OFF state. The surrounding existing countertop
+# supplies source pixels for a strictly localized estimated repair.
+signmask=np.zeros((H,W),dtype=np.uint8)
+cv2.fillPoly(signmask,[np.array([(49,339),(65,339),(73,350),(74,378),(71,391),(42,391),(42,356)],np.int32)],255)
+signmask=cv2.dilate(signmask,np.ones((3,3),np.uint8),iterations=1)
+original_sign=base.copy()
+repaired=base.copy()
+# Same-row countertop donors preserve the horizontal stone/green/wood bands.
+# The 8px perimeter feather joins the original intact tabletop.
+for y in range(334,398):
+ left=np.median(original_sign[y,26:40],axis=0).astype(float)
+ right=np.median(original_sign[y,80:91],axis=0).astype(float)
+ for x in range(38,78):
+  u=np.clip((x-38)/39,0,1)
+  repaired[y,x]=np.uint8(np.clip(np.rint(left*(1-u)+right*u),0,255))
+dist=cv2.distanceTransform(signmask,cv2.DIST_L2,3)
+soft=np.clip(dist/6,0,1)
+base=np.uint8(np.clip(np.rint(base*(1-soft[:,:,None])+repaired*soft[:,:,None]),0,255))
+png(signmask,"QA_counter_nameplate_removal_mask.png")
 png(base,"entrance_clean_base_no_mats_no_characters.png")
 canvas=Image.fromarray(base,"RGB").convert("RGBA")
 mats={"left":img(D43/"exhibition_left_empty_mat.png","RGBA"),
@@ -136,8 +156,9 @@ report={"status":"technical_candidate_pending_art_review",
  "non_wood_changed_pixels":int((diff&~a).sum()),
  "fifty_changed_pixels":int(fifty.sum()),"fifty_allowed_rects":rect50,
  "fifty_one_changed_pixels":int(mask51.sum()),
+ "counter_nameplate_removed":True,"counter_nameplate_repair_pixels":int(np.count_nonzero(signmask)),
  "picture_light_repairs":picture30,"sign_wall_light_repairs":fixture29,
- "estimated_repairs":["29 sign/sconce backgrounds","30 rear picture lights","50 sconces","51 ceiling lamps and reception desk lamp","43 wall behind old gold frames"],
+ "estimated_repairs":["29 sign/sconce backgrounds","30 rear picture lights","50 sconces","51 ceiling lamps and reception desk lamp","43 wall behind old gold frames","countertop guide placard"],
  "approval_level1":False,"user_art_approval":False,"game_integrated":False,
  "main_game_modified":False}
 (OUT/"QA_manifest.json").write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding="utf-8")

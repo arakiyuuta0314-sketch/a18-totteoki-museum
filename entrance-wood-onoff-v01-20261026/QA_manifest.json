@@ -59,6 +59,8 @@
     ]
   },
   "fifty_one_changed_pixels": 4764,
+  "counter_nameplate_removed": true,
+  "counter_nameplate_repair_pixels": 1767,
   "picture_light_repairs": {
     "west": [
       116,
@@ -104,7 +106,8 @@
     "30 rear picture lights",
     "50 sconces",
     "51 ceiling lamps and reception desk lamp",
-    "43 wall behind old gold frames"
+    "43 wall behind old gold frames",
+    "countertop guide placard"
   ],
   "approval_level1": false,
   "user_art_approval": false,
