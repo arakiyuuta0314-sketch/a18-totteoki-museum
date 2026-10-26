@@ -1,0 +1,31 @@
+{
+  "version": "v08",
+  "approval": "art_review_pending",
+  "canvas": [
+    546,
+    483
+  ],
+  "OFF_base": "v07 c4257f2 exact original PNG bytes unchanged",
+  "ON_frame": "49 formal right_front_frame_wood.png, 546x483 registered",
+  "reason": "v07 plain OFF omitted optional frame; no evidence that v07 pillar compositing removed it",
+  "v07_OFF_sha256": "59a3b8ab73d4a10ce3a35ae2fe5b434ba8731a4bec6a43f177daad7d6ca446b5",
+  "v08_OFF_sha256": "59a3b8ab73d4a10ce3a35ae2fe5b434ba8731a4bec6a43f177daad7d6ca446b5",
+  "frame_source_sha256": "21f182fe2177aeb2c989fc5e50ac2f28cd13ce832baf6f9dafccbaa5ca6c2ed9",
+  "ON_minus_OFF_changed_pixels": 3386,
+  "wood_alpha_area": 3398,
+  "changed_pixels_outside_frame_alpha": 0,
+  "frame_overlap_with_registered_window": 0,
+  "right_rear_column_unchanged": true,
+  "other_architecture_people_unchanged": true,
+  "game_integrated": false,
+  "lv1_decided": false,
+  "note": "OFF is still intentionally a frame-less architecture base; ON displays the restored formal 49 frame. Art quality not yet approved.",
+  "local_browser_test": {
+    "device": "Chrome 390x844 DPR2",
+    "default": "frame_ON",
+    "button_switches": 2,
+    "detail_zoom_images": 3,
+    "errors": 0,
+    "result": "PASS"
+  }
+}
