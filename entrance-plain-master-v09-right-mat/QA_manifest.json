@@ -1,0 +1,42 @@
+{
+  "version": "v09",
+  "status": "technical_pass_art_review_pending",
+  "canvas": [
+    546,
+    483
+  ],
+  "base": "v08 OFF / v07 architecture from existing original PNG",
+  "no_image_generation": true,
+  "registered_photo_mat_from": "49/right_front_content_empty.png",
+  "wood_from": "49/right_front_frame_wood.png",
+  "window_from": "49/right_front_shared_window_mask.png",
+  "photo_mat_pixels": 6595,
+  "frame_alpha_pixels": 3398,
+  "replaced_wrong_old_mat_pixels_OFF": 157,
+  "v08_ON_to_v09_ON_changes": 157,
+  "changed_OUTSIDE_photo_window_from_v08": 0,
+  "ON_OFF_changes": 3386,
+  "ON_OFF_changes_OUTSIDE_frame": 0,
+  "frame_mat_alpha_overlap": 0,
+  "registered_matte_window_alpha_exact": true,
+  "right_rear_column_unchanged": true,
+  "characters_unchanged": true,
+  "game_integrated": false,
+  "level1_decided": false,
+  "source_SHA256": {
+    "v08_off": "59a3b8ab73d4a10ce3a35ae2fe5b434ba8731a4bec6a43f177daad7d6ca446b5",
+    "v08_on": "808ad34c3dffbd1fe62296759460f50836dd52e6976547c72b9eac99eb525f03",
+    "mat": "461fcdb8a7d97a2ad443b111cf2ef7c79ec8bb6c2c9708b28118893089cc494f",
+    "frame": "21f182fe2177aeb2c989fc5e50ac2f28cd13ce832baf6f9dafccbaa5ca6c2ed9",
+    "window_mask": "8a7cc27eed8053f905eda06066f8863c0cd9d7a011da59d5a23df41869ec67ed"
+  },
+  "known_art_issue": "original wall and lighting overall not fully approved; this patch fixes registered paper only",
+  "local_browser_QA": {
+    "Chrome": "390x844 DPR2",
+    "default": "ON",
+    "OFF_ON_switch": "PASS",
+    "compare_detail_3_images": "PASS",
+    "HTTP_JS_errors": 0,
+    "horizontal_overflow": false
+  }
+}

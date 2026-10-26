@@ -1,0 +1,24 @@
+const assert=require('node:assert/strict'),path=require('node:path');
+const puppeteer=require('C:/Users/User/AppData/Local/npm-cache/_npx/4b4c857f6efdfb61/node_modules/puppeteer');
+const url=process.env.A18_V09_URL||'http://127.0.0.1:18859/';
+(async()=>{const b=await puppeteer.launch({headless:true,executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe',args:['--no-sandbox']});try{
+const p=await b.newPage(),errors=[];
+p.on('pageerror',e=>errors.push('JS '+e.message));p.on('console',m=>{if(m.type()==='error')errors.push('CONSOLE '+m.text())});p.on('response',r=>{if(r.status()>=400)errors.push('HTTP '+r.status()+' '+r.url())});
+await p.setViewport({width:390,height:844,deviceScaleFactor:2,isMobile:true,hasTouch:true});
+const r=await p.goto(url,{waitUntil:'networkidle0',timeout:30000});assert.equal(r.status(),200);
+await p.waitForFunction(()=>window.A18RightMatV09?.ready===true);
+assert.equal(await p.evaluate(()=>window.A18RightMatV09.getMode()),'ON');
+assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
+assert.equal(await p.evaluate(()=>[...document.querySelectorAll('.pair img')].every(i=>i.naturalWidth===546&&i.naturalHeight===483)),true);
+await p.screenshot({path:path.join(__dirname,'QA_mobile_ON_390x844.png'),fullPage:true});
+await p.click('#btnOff');assert.equal(await p.evaluate(()=>window.A18RightMatV09.getMode()),'OFF');
+await p.screenshot({path:path.join(__dirname,'QA_mobile_OFF_390x844.png'),fullPage:true});
+await p.click('#btnOn');assert.equal(await p.evaluate(()=>window.A18RightMatV09.getMode()),'ON');
+assert.equal(await p.$eval('#zoom',x=>x.open),true);await p.click('#zoom summary');assert.equal(await p.$eval('#zoom',x=>x.open),false);await p.click('#zoom summary');assert.equal(await p.$eval('#zoom',x=>x.open),true);
+await p.evaluate(async()=>{for(const im of document.querySelectorAll('#zoom img'))await im.decode()});
+assert(await p.evaluate(()=>[...document.querySelectorAll('#zoom img')].every(i=>i.naturalWidth>0)));
+assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
+await p.screenshot({path:path.join(__dirname,'QA_mobile_zoom_390x844.png'),fullPage:true});
+assert.deepEqual(errors,[]);
+console.log('QA_A18_RIGHT_MAT_V09_PASS',JSON.stringify({url,width:390,height:844,DPR:2,ON_default:true,toggles:2,zoom:3,errors}));
+}finally{await b.close()}})().catch(e=>{console.error('QA_FAIL',e.stack||e);process.exit(1)});
