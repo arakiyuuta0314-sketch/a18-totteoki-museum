@@ -7,7 +7,7 @@
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="stylesheet" href="viewer.css">
 <link rel="stylesheet" href="viewer-frame.css"><link rel="stylesheet" href="viewer-minimal.css?v=1.10">
-<link rel="stylesheet" href="museum-navigation.css?v=1"><script src="layout-system.js?v=fixed1"></script><script src="museum-navigation.js?v=2"></script><script src="museum-progression.js?v=1"></script><script src="asset-renderer.js?v=larger2"></script><script src="museum-p3-renderer.js?v=1"></script><script src="museum-p5-decorations.js?v=2"></script><script src="entrance-renderer.js?v=3"></script><script src="museum-p2-storage.js?v=reset-20261024-2"></script>
+<link rel="stylesheet" href="museum-navigation.css?v=1"><script src="layout-system.js?v=fixed1"></script><script src="museum-navigation.js?v=2"></script><script src="museum-progression.js?v=1"></script><script src="asset-renderer.js?v=larger2"></script><script src="museum-p3-renderer.js?v=1"></script><script src="museum-p5-decorations.js?v=2"></script><script src="entrance-renderer.js?v=9-art-20261026"></script><script src="museum-p2-storage.js?v=reset-20261024-2"></script>
 <script src="photo-prep.js" defer></script>
 <script src="smart-frame.js" defer></script>
 <script src="photo-tone.js" defer></script>
@@ -498,7 +498,7 @@ function worldPoint(e){
 // Staff bodies and exhibition stands are solid; interaction is separate.
 // All interaction anchors are computed from the same room geometry.
 const wallFootLine=()=>scene==='entrance'?202:164;
-const northDoorway=()=>({x1:344,x2:387});
+const northDoorway=()=>scene==='entrance'?{x1:260,x2:312}:{x1:344,x2:387};
 function roomObstacles(){return L.obstacles(fixtures,galleryIndex);}
 function safeMove(x,y){
  const m=src[scene];
@@ -587,7 +587,8 @@ async function changeScene(next,options={}){
  const edge=Object.keys(ROOM_LINKS[galleryIndex]).find(dir=>ROOM_LINKS[galleryIndex][dir]===room);
  if(!edge||!P2.canTraverse(galleryIndex,edge,currentSave.progression))throw Error('E_ROOM_LOCKED');
  const targetScene=room===0?'entrance':'gallery',m=src[targetScene];
- const location={west:[76,388],east:[m.w-76,388],north:[367,151],south:[296,426]}[options.arrivalFrom]||m.spawn;
+ const arrivalMap=room===0?{west:[76,453],east:[470,453],north:[284,230],south:[296,426]}:{west:[76,388],east:[m.w-76,388],north:[367,151],south:[296,426]};
+ const location=arrivalMap[options.arrivalFrom]||m.spawn;
  const direction={west:'right',east:'left',north:'down',south:'up'}[options.arrivalFrom]||'up';
  const arrival={x:location[0],y:location[1],dir:direction,stride:0};
  if(modal||showingEvent||saveBlocked)return false;
@@ -624,10 +625,9 @@ function avatar(){
 function drawBackground(){
  if(scene==='entrance'){
   window.A18Entrance.background(ctx);
-  window.A18P5Decorations.paint(ctx,0,currentSave.progression);
-  // Entrance v0.3 arch remains approved; P3 shutter overlays are driven by
-  // exactly the same canTraverse predicate used by movement and changeScene.
-  window.A18P3Gallery.doors(ctx,0,currentSave.progression,true);
+  // New frame-OFF architecture is the accepted interim visual baseline.
+  // Old P5 entrance decorations and P3 shutters are incompatible with v09 coordinates.
+  // Logical progression and collision gates are still enforced by P2 / navigation.
   return;
  }
  window.A18P3Gallery.background(ctx,galleryIndex,currentSave.progression);

@@ -1,0 +1,147 @@
+{
+  "boot": {
+    "ready": true,
+    "entrance": true,
+    "document": "complete"
+  },
+  "res": {
+    "ready": true,
+    "assets": 4,
+    "state": {
+      "scene": "entrance",
+      "room": 0,
+      "progression": 1,
+      "frameRects": [
+        [
+          43,
+          64,
+          189,
+          143
+        ],
+        [
+          374,
+          64,
+          506,
+          143
+        ],
+        [
+          420,
+          228,
+          499,
+          343
+        ]
+      ],
+      "interactions": [
+        {
+          "type": "art",
+          "i": 0,
+          "x": 150,
+          "y": 227,
+          "enter": 32,
+          "leave": 38
+        },
+        {
+          "type": "art",
+          "i": 1,
+          "x": 368,
+          "y": 228,
+          "enter": 32,
+          "leave": 38
+        },
+        {
+          "type": "art",
+          "i": 2,
+          "x": 382,
+          "y": 358,
+          "enter": 32,
+          "leave": 38
+        },
+        {
+          "type": "butler",
+          "x": 138.64166666666668,
+          "y": 341.71428571428567,
+          "enter": 46,
+          "leave": 54
+        }
+      ],
+      "obstacles": [
+        [
+          123.23333333333333,
+          154.05,
+          317.4285714285714,
+          366
+        ],
+        [
+          399,
+          540,
+          158,
+          420
+        ],
+        [
+          0,
+          115,
+          321,
+          443
+        ],
+        [
+          0,
+          104,
+          172,
+          315
+        ],
+        [
+          410,
+          509,
+          216,
+          353
+        ]
+      ]
+    },
+    "placement": {
+      "ok": true,
+      "reason": ""
+    },
+    "proof": [
+      {
+        "index": 0,
+        "inside": 11310,
+        "outside": 0,
+        "fixture": [
+          116,
+          103.5
+        ],
+        "mode": "cover"
+      },
+      {
+        "index": 1,
+        "inside": 10220,
+        "outside": 0,
+        "fixture": [
+          440,
+          103.5
+        ],
+        "mode": "cover"
+      },
+      {
+        "index": 2,
+        "inside": 6546,
+        "outside": 0,
+        "fixture": [
+          459.5,
+          285.5
+        ],
+        "mode": "cover"
+      }
+    ],
+    "portals": {
+      "west": 1,
+      "east": 2,
+      "north": 5
+    },
+    "css": {
+      "overflow": false
+    }
+  },
+  "errors": [],
+  "netErrors": []
+}
