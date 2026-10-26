@@ -7,7 +7,7 @@
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="stylesheet" href="viewer.css">
 <link rel="stylesheet" href="viewer-frame.css"><link rel="stylesheet" href="viewer-minimal.css?v=1.10">
-<link rel="stylesheet" href="museum-navigation.css?v=1"><script src="layout-system.js?v=entrance-v09-save-20261026"></script><script src="museum-navigation.js?v=entrance-v09-fix-20261026"></script><script src="museum-progression.js?v=1"></script><script src="asset-renderer.js?v=larger2"></script><script src="museum-p3-renderer.js?v=lazy-20261026"></script><script src="museum-p5-decorations.js?v=lazy-20261026"></script><script src="entrance-renderer.js?v=9-align-20261026"></script><script src="museum-p2-storage.js?v=reset-20261024-2"></script>
+<link rel="stylesheet" href="museum-navigation.css?v=1"><script src="layout-system.js?v=entrance-v09-save-20261026"></script><script src="museum-navigation.js?v=entrance-v09-fix-20261026"></script><script src="museum-progression.js?v=1"></script><script src="asset-renderer.js?v=larger2"></script><script src="museum-p3-renderer.js?v=lazy-20261026"></script><script src="museum-p5-decorations.js?v=lazy-20261026"></script><script src="entrance-renderer.js?v=10-hq-20261026"></script><script src="museum-p2-storage.js?v=reset-20261024-2"></script>
 <script src="photo-prep.js" defer></script>
 <script src="smart-frame.js" defer></script>
 <script src="photo-tone.js" defer></script>
@@ -116,7 +116,7 @@ const fixtures=L.defaults();
 L.restoreClassicFrameDimensions(fixtures);
 L.enforceFixedLayout(fixtures);
 const roomRects=()=>galleryIndex===0
- ?L.roomFrames(fixtures,0).map(f=>{const {inner}=window.A18Entrance.frameGeometry(f);return [inner.x,inner.y,inner.x+inner.w,inner.y+inner.h];})
+ ?L.roomFrames(fixtures,0).map((f,i)=>{const work=slot(i);const {outer}=window.A18Entrance.frameGeometry(f,artworkImage(work),work?.preferredShape);return [outer.x,outer.y,outer.x+outer.w,outer.y+outer.h];})
  :L.roomFrames(fixtures,galleryIndex).map(L.r);
 const frameCount=room=>L.roomFrames(fixtures,room).length;
 const roomStart=room=>room===0?0:5+(room-1)*5;
@@ -388,7 +388,7 @@ const slot=i=>works.find(w=>w.fixtureId===slotId(i))||null;
 const workImageCache=new Map();
 function artworkImage(work){
  if(!work)return null;
- const source=work.displaySrc||work.originalURL;
+ const source=galleryIndex===0?work.originalURL:(work.displaySrc||work.originalURL);
  if(!source)return null;
  let entry=workImageCache.get(work.id);
  if(entry?.source!==source){
@@ -728,7 +728,7 @@ function draw(){
  for(let i=0;i<roomRects().length;i++)paintArtwork(slot(L.slotFor(galleryIndex,i)),i);
  decorate();drawButler();drawGalleryStaff();
  const hit=nearby();
- if(hit?.type==='art'&&carrying){const f=fixtureAt(hit.i);if(galleryIndex===0)window.A18Entrance.markSlot(ctx,f);else{const [x1,y1,x2,y2]=L.r(f);ctx.strokeStyle='#76b18a';ctx.lineWidth=3;ctx.strokeRect(x1-7,y1-7,x2-x1+14,y2-y1+14)}}
+ if(hit?.type==='art'&&carrying){const f=fixtureAt(hit.i);if(galleryIndex===0){const carried=works.find(w=>w.id===carrying);if(!carried)throw Error('E_ENTRANCE_CARRIED_WORK');window.A18Entrance.markSlot(ctx,f,artworkImage(carried),carried.preferredShape);}else{const [x1,y1,x2,y2]=L.r(f);ctx.strokeStyle='#76b18a';ctx.lineWidth=3;ctx.strokeRect(x1-7,y1-7,x2-x1+14,y2-y1+14)}}
  avatar();ctx.restore();requestAnimationFrame(draw);
 }
 function profileFields(){
