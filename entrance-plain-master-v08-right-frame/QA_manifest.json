@@ -27,5 +27,9 @@
     "detail_zoom_images": 3,
     "errors": 0,
     "result": "PASS"
-  }
+  },
+  "published_url": "https://arakiyuuta0314-sketch.github.io/a18-art-previews/entrance-plain-master-v08-right-frame/",
+  "publish_commit": "d0d5bd5",
+  "published_artifact_verification": "5 PNGs byte-identical; HTML EOL-normalized identical",
+  "mobile_published_Chrome_QA": "PASS"
 }

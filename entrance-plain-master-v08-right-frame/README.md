@@ -27,3 +27,8 @@ OFFのファイルはv07とバイト同一。右奥柱の構図は完全に保�
 木枠が四辺揃ったON案は美術比較用であり、OFF／ONをLv1に採用するかは決定していない。
 既存ゲーム本体とmainは変更していない。
 Gitの作業単位を継続し、feature/a18-entrance-plain-master-v06-20261026を使用する。
+
+## 公開配信検証
+- GitHub Pages: https://arakiyuuta0314-sketch.github.io/a18-art-previews/entrance-plain-master-v08-right-frame/
+- 公開commit: d0d5bd5 (deploy成功)。スマホChrome 390x844 DPR2 ON/OFF切替・拡大3枚・HTTP/JSエラー0。
+- 公開PNG5点は制作元とバイト同一、HTMLは改行正規化後同一。

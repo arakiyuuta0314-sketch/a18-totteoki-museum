@@ -36,13 +36,15 @@ OFFのファイルはv07とバイト同一。右奥柱の構図は完全に保�
 既存ゲーム本体とmainは変更していない。
 Gitの作業単位を継続し、feature/a18-entrance-plain-master-v06-20261026を使用する。
 """,encoding='utf8')
+with (OUT/'README.md').open('a',encoding='utf8') as f:
+ f.write('\n## 公開配信検証\n- GitHub Pages: https://arakiyuuta0314-sketch.github.io/a18-art-previews/entrance-plain-master-v08-right-frame/\n- 公開commit: d0d5bd5 (deploy成功)。スマホChrome 390x844 DPR2 ON/OFF切替・拡大3枚・HTTP/JSエラー0。\n- 公開PNG5点は制作元とバイト同一、HTMLは改行正規化後同一。\n')
 DRIVE=Path(r'G:\マイドライブ\06.アプリ開発\03.開発・テスト\A18_パズル美術館')
 assert DRIVE.is_dir()
 dest=DRIVE/'58_エントランス右手前正式木製額縁復元_ONOFF比較_v08_監修待ち'
 dest.mkdir(exist_ok=True)
 for p in OUT.iterdir():
  if p.is_file():shutil.copy2(p,dest/p.name)
-for n in ('rebuild_right_frame_v08.py','archive_v08.py'):
+for n in ('rebuild_right_frame_v08.py','archive_v08.py','verify_public_v08.py'):
  shutil.copy2(ROOT/n,dest/n)
 z=dest/'A18_front_frame_v08_review_package.zip'
 if z.exists():z.unlink()
