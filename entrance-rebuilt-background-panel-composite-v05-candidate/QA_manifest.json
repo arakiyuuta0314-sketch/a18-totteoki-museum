@@ -42,5 +42,21 @@
     "lamp_residual_status": "not solved by this iteration",
     "rear_right_frame_derived_from_left_source": "yes mirrored as geometry prototype; NOT formal independent right frame",
     "wood_seam_status": "visible artifacts; requires rebuilding from matching baseline"
+  },
+  "public_qa": {
+    "preview_commit": "026cd01",
+    "live_url": "https://arakiyuuta0314-sketch.github.io/a18-art-previews/entrance-wide-backwall-v05-study-20261026/",
+    "pages_build": "success",
+    "mobile_chrome_390x844_DPR2": "PASS",
+    "button_transitions": 3,
+    "comparison_switches": 2,
+    "javascript_http_errors": 0,
+    "exact_remote_png_matches": [
+      "entrance_OFF.png",
+      "entrance_ON.png",
+      "previous_v03_OFF.png",
+      "previous_v03_ON.png"
+    ],
+    "visual_art_qa": "FAIL / review only"
   }
 }

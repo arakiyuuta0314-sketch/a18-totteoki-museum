@@ -47,11 +47,12 @@ dest=R/'55_エントランス背面展示拡幅_柱端配置_構図試作_v05_�
 dest.mkdir(exist_ok=True)
 for p in d.iterdir():
  if p.is_file():shutil.copy2(p,dest/p.name)
-for nm in ('build_architecture_wide_v04_candidate.py','build_architecture_panel_v05_candidate.py','prepare_v05_candidate_page.py'):
+for nm in ('build_architecture_panel_v05_candidate.py','prepare_v05_candidate_page.py','QA_public_verify_v05.py','record_public_v05_study.py','record_v05_candidate.py'):
  shutil.copy2(repo/nm,dest/nm)
 # Rejected v04 evidence only; no merge with the selected candidate.
 p4=repo/'entrance-rebuilt-background-wide-panels-v04-candidate'
-shutil.copy2(p4/'QA_legacy_vs_new_OFF_ON.png',dest/'QA_rejected_v04_distorted_foreground.png')
+if (p4/'QA_legacy_vs_new_OFF_ON.png').exists():
+ shutil.copy2(p4/'QA_legacy_vs_new_OFF_ON.png',dest/'QA_rejected_v04_distorted_foreground.png')
 z=dest/'A18_v05_architecture_comparison_UNAPPROVED.zip'
 if z.exists():z.unlink()
 with zipfile.ZipFile(z,'w',compression=zipfile.ZIP_DEFLATED) as arch:
