@@ -1,38 +1,47 @@
-# -*- coding:utf-8 -*-
+# -*- coding: utf-8 -*-
 from pathlib import Path
-from PIL import Image
-import json,hashlib,shutil,zipfile
-HERE=Path(__file__).resolve().parent
-OUT=HERE/"entrance-canonical-single-H-v06-20261026"
-ROOT=Path(r"G:\マイドライブ\06.アプリ開発\03.開発・テスト\A18_パズル美術館")
-DEST=ROOT/"48_エントランス完成素材_右手前共通単一射影変換_v06"
-required=["README_完成候補とQA.md","index.html","QA_browser_v06.cjs",
-"QA_mobile_wood_empty_390x844.png","QA_mobile_gold_photos_390x844.png",
-"QA_mobile_registration_390x844.png","single_H_geometry.json",
-"right_front_frame_wood.png","right_front_frame_gold.png",
-"right_front_content_empty.png","right_front_content_photos.png",
-"right_front_shared_window_mask.png","QA_previous_v05_wood_empty.png",
-"QA_opposite_angle_same_source.png","QA_manifest.json"]
-for f in required: assert (OUT/f).is_file(),f
-assert len(list(OUT.glob("view_*.png")))==36
-m=json.loads((OUT/"QA_manifest.json").read_text(encoding="utf-8"))
-assert m["one_h_exact_common"] and m["photo_window_overlap"]==0
-assert m["frame_outer_union_raster_gap_pixels"]==0
-m["chrome_qa"]={"resolution_css":[390,844],"device_pixel_ratio":2,
- "tested_states":36,"http_errors":0,"js_errors":0,"overflow":False,"result":"PASS"}
-m["user_approved"]=False
-m["parent_43_to_47_unchanged"]=True
-m["file_hashes"]={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in OUT.glob("*.png")}
-(OUT/"QA_manifest.json").write_text(json.dumps(m,ensure_ascii=False,indent=2),encoding="utf-8")
-DEST.mkdir(exist_ok=True)
-for f in OUT.iterdir():
- if f.is_file():shutil.copy2(f,DEST/f.name)
-for name in ["build_v06.py","frame_projection_v06.py","finalize_v06.py"]:
- shutil.copy2(HERE/name,DEST/name)
-z=DEST/"A18_entrance_canonical_single_H_v06_20261026.zip"
-with zipfile.ZipFile(z,"w",compression=zipfile.ZIP_DEFLATED,compresslevel=6) as a:
- for f in DEST.iterdir():
-  if f.is_file() and f!=z:a.write(f,f.name)
-with zipfile.ZipFile(z) as a:assert a.testzip() is None
-assert Image.open(DEST/"right_front_frame_wood.png").size==(546,483)
-print("DRIVE48_SAVE_PASS",len(m["file_hashes"]),"PNGs",z.stat().st_size,"ZIP_BYTES")
+import json,shutil,zipfile
+BASE=Path(__file__).resolve().parent
+OUT=BASE/'entrance-plain-master-v06-study'
+meta=OUT/'QA_manifest.json'
+obj=json.loads(meta.read_text(encoding='utf8'))
+obj["local_browser_QA"]={"viewport":[390,844],"DPR":2,"Chrome_result":"PASS","switch_new_previous":2,"zoom_images_loaded":3,"HTTP_JS_errors":0}
+obj["remaining_art_issues"]=["thin aged matte edging has rough pixels","central gold hanging architectural ornament still visible","some upper wooden cornice joins and perspective require manual aesthetic approval","architectural base rebuilt synthetically from existing texture; not recovered hidden original"]
+meta.write_text(json.dumps(obj,ensure_ascii=False,indent=2),encoding='utf8')
+readme="""# A18 エントランス無装飾背景・構造再構築 v06（試作・未承認）
+2026-10-26
+
+## 目的・元データ
+- 55番(v05未承認)の「左右端の柱、拡張された2つの背面展示面」を大枠として継承。
+- 画像生成は使用しない。既存の546x483公式素材のみを下地とし、天井の木部・緑壁面を色パレット・周辺実画像から再構築。
+- 木製額縁ONを主役にせず、OFF無装飾版だけを基準候補にする。
+- 床、扉、手すり、受付、既存キャラクターは固定。 y>=212 のすべての画素、および中央扉領域は旧版と完全一致。
+- 構造を縦横に一括変形しない。
+
+## 今回作成
+- entrance_OFF.png：新しい無装飾基準候補
+- reference_v05_OFF.png：前回の拡幅構図、実際の原画を保持
+- QA_*before_after.png / QA_before_after.jpg：再修復部分の画像
+- QA_rebuilt_material_mask.png：再合成した画素
+- index.html：スマホ切替・拡大できる比較ページ
+- rebuild_plain_v06.py：合成ソース
+- QA_browser_v06.cjs：390x844ChromeブラウザQA
+- QA_manifest.json：作成経緯・不変領域・残課題
+
+## 実行QA
+- Python局所素材再構築を実行。画像546×483。
+- 旧v05と比較して変更は天井・背面左右の緑壁面のみ。下半分、ドア、前景・キャラは不変。
+- Chrome mobile 390x844 DPR2で切替、写真拡大3点、表示、HTTP/JavaScriptエラーなし。
+- 現在はユーザー美術QA待ち。**完成背景マスターとして固定しない**。
+
+## 未解決（実画像検査済み）
+- 照明跡を面単位で直したが、完全に新規レンダリングした建築ではないため木部の継ぎ目・自然さには未解決箇所あり。
+- 緑壁面と空き写真台紙の1〜2pixelの縁が一部荒い。
+- 扉上の中央金具は元の建築から維持。装飾としてさらに除くか未決定。
+- 写真展示枠木製ONの再構成は、このOFF版への美術承認後に独立工程。
+
+## Git保護
+既存アプリ本体・main・旧v05・v03は変更しない。独立worktreeのみ。
+"""
+(OUT/'README.md').write_text(readme,encoding='utf8')
+print('V06_DOCS_COMPLETE')

@@ -1,0 +1,35 @@
+{
+  "source": "55 v05 unapproved, reference exact 546x483",
+  "status": "technical_candidate_art_review_pending",
+  "base_only": true,
+  "no_lamps": true,
+  "new_image_generation": false,
+  "canvas": [
+    546,
+    483
+  ],
+  "changed_pixels": 23793,
+  "changed_outside_reconstruction_mask": 0,
+  "building_above_y212_recomposed": true,
+  "floor_door_characters_pixel_identical": true,
+  "Lv1_decided": false,
+  "game_unchanged": true,
+  "warnings": "Green surface is reconstructed with source-sampled palette; not restored original under fixtures. Need visual art approval. Wooden frame ON not part of v06 base.",
+  "local_browser_QA": {
+    "viewport": [
+      390,
+      844
+    ],
+    "DPR": 2,
+    "Chrome_result": "PASS",
+    "switch_new_previous": 2,
+    "zoom_images_loaded": 3,
+    "HTTP_JS_errors": 0
+  },
+  "remaining_art_issues": [
+    "thin aged matte edging has rough pixels",
+    "central gold hanging architectural ornament still visible",
+    "some upper wooden cornice joins and perspective require manual aesthetic approval",
+    "architectural base rebuilt synthetically from existing texture; not recovered hidden original"
+  ]
+}
