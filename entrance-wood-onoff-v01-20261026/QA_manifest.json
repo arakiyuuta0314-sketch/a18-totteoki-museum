@@ -1,0 +1,113 @@
+{
+  "status": "technical_candidate_pending_art_review",
+  "canvas": [
+    546,
+    483
+  ],
+  "OFF_ON_wood_only": true,
+  "base": "43/entrance_bare_three_frame_backing.png",
+  "components": [
+    "29 signs+inner wall sconces off",
+    "30 picture lights off adapted to 43 clean base",
+    "50 four other sconces off (only removed diff pixels)",
+    "51 ceiling lamps and reception lamp off (only removed diff pixels)",
+    "43 rear empty mats",
+    "49 v07 right-front empty matte",
+    "44 rear two wood",
+    "49 right-front v07 wood"
+  ],
+  "formal_characters_sha256": {
+    "butler-front-00.png": "e3d1f41184ccab4535f0fe05a19bef59024a3665a76e75b43b8991668372213c",
+    "curator-front-00.png": "8431fd181e70bc8f417840770c94238e664a1d2c9113777c333c926f0062cb43"
+  },
+  "source_sha256": {
+    "D43_base": "0dbdfab51f2c4675e387f77514f4c83f3d660cd474c6ce327e6670b7ea837c8f",
+    "D44_left": "67ce27980c1619a1676bfbae10c3ce645d46dd56ca0b6f311b84409abe208e88",
+    "D44_right": "b31b46cfc21758ce41eb27e63b7e643fa073ef96161aecd2fa5a44f8934cc41e",
+    "D49_front": "21f182fe2177aeb2c989fc5e50ac2f28cd13ce832baf6f9dafccbaa5ca6c2ed9",
+    "D50_off": "2735b0e0d7fb05d5dc3f59c82fa9c091e8e31743e9177aa2dcab8b1d50188852",
+    "D51_off": "a5a6a7265e5fab68f82dd72c007855d4512cf0eb5e3b941815c94a5c5d8d3f34"
+  },
+  "wood_pixels_affected": 11430,
+  "wood_alpha_area": 11443,
+  "non_wood_changed_pixels": 0,
+  "fifty_changed_pixels": 7758,
+  "fifty_allowed_rects": {
+    "outer_left": [
+      38,
+      68,
+      66,
+      150
+    ],
+    "outer_right": [
+      473,
+      68,
+      501,
+      150
+    ],
+    "foreground_left": [
+      392,
+      203,
+      419,
+      274
+    ],
+    "foreground_right": [
+      497,
+      253,
+      530,
+      327
+    ]
+  },
+  "fifty_one_changed_pixels": 4764,
+  "picture_light_repairs": {
+    "west": [
+      116,
+      30,
+      161,
+      69
+    ],
+    "east": [
+      391,
+      30,
+      438,
+      69
+    ]
+  },
+  "sign_wall_light_repairs": {
+    "west_sign": [
+      4,
+      61,
+      43,
+      116
+    ],
+    "east_sign": [
+      503,
+      61,
+      543,
+      116
+    ],
+    "west_sconce": [
+      214,
+      83,
+      233,
+      129
+    ],
+    "east_sconce": [
+      334,
+      83,
+      354,
+      129
+    ]
+  },
+  "estimated_repairs": [
+    "29 sign/sconce backgrounds",
+    "30 rear picture lights",
+    "50 sconces",
+    "51 ceiling lamps and reception desk lamp",
+    "43 wall behind old gold frames"
+  ],
+  "approval_level1": false,
+  "user_art_approval": false,
+  "game_integrated": false,
+  "main_game_modified": false
+}
