@@ -44,5 +44,11 @@
     "HTTP_and_JS_errors": 0
   },
   "final_design_approval": false,
-  "game_integration": false
+  "game_integration": false,
+  "public_pages_url": "https://arakiyuuta0314-sketch.github.io/a18-art-previews/entrance-plain-master-v07-right-column/",
+  "pages_commit": "563b3d3",
+  "web_asset_byte_match_count": 5,
+  "public_html_line_endings_normalized_match": true,
+  "public_source_verified": true,
+  "public_mobile_chrome_result": "PASS"
 }

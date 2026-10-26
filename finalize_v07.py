@@ -39,6 +39,11 @@ readme="""# A18｜無装飾エントランス・右奥柱拡張 v07
 - 既存のfeature/a18-entrance-plain-master-v06-20261026を継続（同じ無装飾背景完成の作業単位）。
 - 公開用作業worktreeはfeature/a18-plain-master-v06-preview-20261026を継続。
 - 正式ゲーム本体への自動統合なし。
+
+## 公開検証
+- URL: https://arakiyuuta0314-sketch.github.io/a18-art-previews/entrance-plain-master-v07-right-column/
+- Pagesコミット 563b3d3 は公開完了。390x844 DPR2 Chromeで比較切替・拡大画像3点、HTTP/JSエラーなし。
+- PNG5点は公開先と制作元でバイト単位一致。index.htmlは改行コード正規化後に内容一致。
 """
 (OUT/'README.md').write_text(readme,encoding='utf8')
 drive=Path(r'G:\マイドライブ\06.アプリ開発\03.開発・テスト\A18_パズル美術館')
@@ -47,7 +52,7 @@ d=drive/'57_エントランス無装飾基準_右奥柱端まで拡張_v07_監�
 d.mkdir(exist_ok=True)
 for p in OUT.iterdir():
  if p.is_file():shutil.copy2(p,d/p.name)
-for name in ('rebuild_right_column_v07.py','prepare_v07_page.py','finalize_v07.py'):
+for name in ('rebuild_right_column_v07.py','prepare_v07_page.py','finalize_v07.py','verify_public_v07.py'):
  shutil.copy2(BASE/name,d/name)
 archive=d/'A18_entrance_right_column_v07_UNAPPROVED.zip'
 if archive.exists():archive.unlink()
