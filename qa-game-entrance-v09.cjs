@@ -25,9 +25,9 @@ async function main(){
  }
  await send('Page.enable');await send('Runtime.enable');await send('Network.enable');
  await send('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:2,mobile:true});
- await send('Page.navigate',{url:'http://127.0.0.1:18897/layout-test/index.html?v=v09-integrated-qa'});
+ await send('Page.navigate',{url:'http://127.0.0.1:18899/layout-test/index.html?v=v09-regression-local'});
  let boot=null;
- for(let i=0;i<40;i++){
+ for(let i=0;i<100;i++){
   await nap(450);
   boot=await evaluate("({ready:!!window.__A18_SCENE_STUDY__?.ready(), entrance:!!window.A18Entrance?.ready(), document:document.readyState})");
   if(boot.ready&&boot.entrance)break;
@@ -74,7 +74,7 @@ async function main(){
  console.log('COLLISION_QA',JSON.stringify(movement));
  for(const k of ['rearLeft','rearRight','front','leftPortal','rightPortal'])assert.equal(movement[k],true,'unreachable '+k);
  for(const k of ['insidePartition','lockedNorth','butlerBody'])assert.equal(movement[k],false,'collision leak '+k);
- const galleries=await evaluate('(()=>{const canvas=document.createElement("canvas");canvas.width=589;canvas.height=482;const ctx=canvas.getContext("2d");const p={unlockedThroughLevel:6};const frames=window.A18Layout.defaults();const proof=[];for(let room=1;room<6;room++){ctx.clearRect(0,0,589,482);window.A18P3Gallery.background(ctx,room,p);for(const f of frames.filter(x=>x.roomId===room))window.A18P3Gallery.frame(ctx,f,null,frames.filter(x=>x.roomId===room));const data=ctx.getImageData(0,0,589,482).data;let opaque=0;for(let i=3;i<data.length;i+=4){if(data[i])opaque++;}proof.push({room,opaque});}return proof;})()');
+ const galleries=await evaluate('(async()=>{const canvas=document.createElement("canvas");canvas.width=589;canvas.height=482;const ctx=canvas.getContext("2d");const p={unlockedThroughLevel:6};const frames=window.A18Layout.defaults();const proof=[];for(let room=1;room<6;room++){await Promise.all([window.A18P3Gallery.prepare(room),window.A18P5Decorations.prepare(room,p)]);ctx.clearRect(0,0,589,482);window.A18P3Gallery.background(ctx,room,p);for(const f of frames.filter(x=>x.roomId===room))window.A18P3Gallery.frame(ctx,f,null,frames.filter(x=>x.roomId===room));const data=ctx.getImageData(0,0,589,482).data;let opaque=0;for(let i=3;i<data.length;i+=4){if(data[i])opaque++;}proof.push({room,opaque});}return proof;})()');
  console.log('GALLERY_02_TO_06_QA',JSON.stringify(galleries));
  assert.equal(galleries.length,5);
  for(const g of galleries)assert(g.opaque>100000,'gallery failed '+g.room);

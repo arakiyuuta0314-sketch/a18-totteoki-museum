@@ -126,6 +126,22 @@ function photoOverlay(img,f,p){
  entries.set(key,out);
  return out;
 }
+function markSlot(ctx,f){
+ ensureReady();
+ const panel=panelFor(f),r=panel.rect;
+ ctx.save();ctx.strokeStyle='#76b18a';ctx.lineWidth=3;
+ ctx.beginPath();
+ if(panel.name==='front'){
+  // Polygon from the approved single-H canvas geometry; never approximate
+  // the angled foreground wall with the logical collision rectangle.
+  ctx.moveTo(421.62,194.73);ctx.lineTo(493.79,228.73);
+  ctx.lineTo(489.88,325.87);ctx.lineTo(421.00,277.57);
+  ctx.closePath();
+ }else{
+  ctx.rect(r[0]-3,r[1]-3,r[2]-r[0]+6,r[3]-r[1]+6);
+ }
+ ctx.stroke();ctx.restore();
+}
 function frame(ctx,f,img,preferredShape=null){
  ensureReady();
  const panel=panelFor(f);
@@ -133,5 +149,5 @@ function frame(ctx,f,img,preferredShape=null){
  const overlay=photoOverlay(img,f,panel);
  ctx.drawImage(overlay,0,0);
 }
-window.A18Entrance={init,background,foreground,frame,frameGeometry,assetCount:()=>images.size,ready:()=>ready};
+window.A18Entrance={init,background,foreground,frame,frameGeometry,markSlot,assetCount:()=>images.size,ready:()=>ready};
 })();

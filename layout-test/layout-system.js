@@ -152,7 +152,7 @@ function migrateLegacy(works){
  }
 }
 function obstacles(fixtures,room){
- const result=room===0?[npcBounds('butler',room),[399,540,158,420],[0,115,321,443],[0,104,172,315]]:[staffBlock(room)];
+ const result=room===0?[npcBounds('butler',room),[399,540,158,410],[0,115,321,411],[0,104,172,315]]:[staffBlock(room)];
  for(const f of fixtures)if(f.roomId===room&&f.kind==='frame'&&f.installation==='floor'){
   const [l,t,rr,b]=r(f);
   result.push([l-10,rr+10,t-12,b+10]);
