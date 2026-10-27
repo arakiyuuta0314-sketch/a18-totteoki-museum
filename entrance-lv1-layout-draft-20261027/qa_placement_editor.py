@@ -28,6 +28,8 @@ with sync_playwright() as p:
   check(label+" responds",response.status==200)
   page.locator("#reference").wait_for(state="visible")
   check(label+" actual original game screenshot loaded",page.evaluate("document.querySelector('#reference').naturalWidth===780"))
+  check(label+" actual counter asset loaded",page.evaluate("document.querySelector('#piece-counter img').naturalWidth>=300"))
+  check(label+" frameless wall asset loaded",page.evaluate("document.querySelector('#piece-wall img').naturalWidth>=500"))
   state=page.evaluate("window.__A18_PLACEMENT_TEST__.getState()")
   check(label+" 3 distinct elements",set(state)=={"counter","wall","picture"})
   check(label+" all initially visible",all(x["visible"] for x in state.values()))
@@ -52,12 +54,12 @@ with sync_playwright() as p:
   photo=page.evaluate("window.__A18_PLACEMENT_TEST__.getState()")["picture"]
   check(label+" photo dimensions manually editable",photo["w"]==210)
   # Copy shareable URL to visible text even if clipboard permissions differ.
-  page.locator("#share").click()
+  page.locator("#shareTop").click()
   share=page.locator("#shareText").input_value()
   check(label+" URL conveys geometry",'layout=' in share and 'picture' in share)
   check(label+" URL selection restore",page.goto(share,wait_until="networkidle").status==200 and
         page.evaluate("window.__A18_PLACEMENT_TEST__.getState()")["picture"]["w"]==210)
-  check(label+" localStorage autosaved",page.evaluate("!!localStorage.getItem('a18-placement-editor-v1')"))
+  check(label+" localStorage autosaved",page.evaluate("!!localStorage.getItem('a18-placement-editor-v2')"))
   page.screenshot(path=str(OUT/f"placement_editor_{label}.png"),full_page=True,animations="disabled")
   # screenshot is QA evidence only
   check(label+" no page errors",not errors)

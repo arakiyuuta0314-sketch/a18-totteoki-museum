@@ -1,5 +1,5 @@
 {
-  "passed": 30,
+  "passed": 34,
   "checks": [
     [
       "desktop responds",
@@ -7,6 +7,14 @@
     ],
     [
       "desktop actual original game screenshot loaded",
+      true
+    ],
+    [
+      "desktop actual counter asset loaded",
+      true
+    ],
+    [
+      "desktop frameless wall asset loaded",
       true
     ],
     [
@@ -67,6 +75,14 @@
     ],
     [
       "iphone actual original game screenshot loaded",
+      true
+    ],
+    [
+      "iphone actual counter asset loaded",
+      true
+    ],
+    [
+      "iphone frameless wall asset loaded",
       true
     ],
     [

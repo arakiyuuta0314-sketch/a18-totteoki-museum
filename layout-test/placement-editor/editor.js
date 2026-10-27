@@ -1,10 +1,10 @@
 "use strict";
 (()=>{
- const SW=780,SH=1688,STORE="a18-placement-editor-v1";
+ const SW=780,SH=1688,STORE="a18-placement-editor-v2";
  const presets={
-  counter:{x:128,y:769,w:92,h:216,a:0,visible:true},
-  wall:{x:532,y:746,w:226,h:300,a:0,visible:true},
-  picture:{x:578,y:800,w:140,h:188,a:0,visible:true}
+  counter:{x:24,y:765,w:143,h:291,a:0,visible:true},
+  wall:{x:518,y:767,w:238,h:248,a:0,visible:true},
+  picture:{x:572,y:806,w:135,h:174,a:0,visible:true}
  };
  const labels={counter:"カウンター",wall:"右の仕切り壁",picture:"作品の表示サイズ"};
  const keys=Object.keys(presets),$=s=>document.querySelector(s);
@@ -160,6 +160,7 @@
   catch(e){$("#shareText").focus();$("#shareText").select();status("下の欄を長押ししてコピーしてください")}
  }
  $("#share").addEventListener("click",()=>copy(infoUrl(),"配置リンク"));
+ $("#shareTop").addEventListener("click",()=>copy(infoUrl(),"配置リンク"));
  $("#copyJson").addEventListener("click",()=>copy(JSON.stringify(state,null,2),"配置データ"));
  $("#download").addEventListener("click",()=>{
   const blob=new Blob([JSON.stringify({version:1,canvas:{w:SW,h:SH},objects:state},null,2)],
