@@ -196,7 +196,7 @@ async function commit(ctx,entry,canvas,editRecipe=null){
     '今回の新作、お預かりしました。額縁までは館長にお願いしてもよろしいですか？',
     '美しく仕上がりました。ぜひ館長ご自身の手で飾ってください。',
     ...doneLines.map(t=>t+' 作品をお渡ししますね。')
-  ]))+'</p></div></div>'+
+  ]).replaceAll('館長',activePlayer))+'</p></div></div>'+
   '<div class="rpg-choices"><button id="receiveWork">作品を受け取る ▼</button></div>', 'rpg');
  $('receiveWork').onclick=()=>{close();};
  return true;

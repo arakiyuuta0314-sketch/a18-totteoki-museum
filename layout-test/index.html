@@ -420,7 +420,7 @@ function updateTutorialHint(){
  $('hint').textContent=tutorialDisplayedWork()
   ?'最初の展示ができました。爺やに話しかけてください。'
   :carried
-   ?'作品を持って、奥の額縁に近づき「ここに飾る」を押しましょう。'
+   ?'壁に近づき、緑の枠が出たら「ここに飾る」を押しましょう。'
    :works.length
     ?'爺やの「作品一覧」から作品を取り出しましょう。'
     :'まずは爺やに話しかけて、最初の一枚を飾りましょう。';
@@ -463,7 +463,7 @@ function showFirstArtworkGift(){
    const ok=await commitEventAction('finish','intro-v1');
    if(!ok){storyFailure();return;}
    open('木製フレーム',storyPortrait('butler',
-    'これで、この一枚も立派な展示になりましたな。あとはどうぞ、館長のお好きなように。')+
+    'これで、この一枚も立派な展示になりましたな。あとはどうぞ、'+window.A18Registration.honorific('butler',playerName,avatarGender)+'のお好きなように。')+
     '<p>木製フレームが取り付けられました。</p>'+
     '<div class="p6-story-actions"><button id="tutorialFreeRoam" type="button">館内を見て回る</button></div>','rpg');
    $('tutorialFreeRoam').onclick=()=>{showingEvent=false;close();showProgressionEvent();};
@@ -476,9 +476,9 @@ function tutorialButlerDialog(){
  if(tutorialDisplayedWork()){showFirstArtworkGift();return;}
  const held=carrying&&works.find(w=>w.id===carrying);
  const guide=held
-  ?'作品をお持ちですな。奥の額縁の前まで歩いて「ここに飾る」を押してみてください。'
+  ?'作品をお持ちですな。壁に近づくと緑の枠が見えてまいります。そちらで「ここに飾る」を押してください。'
   :works.length
-   ?'お預かりした作品が保管されておりますな。作品一覧から一枚取り出し、額縁まで運んでみてください。'
+   ?'お預かりした作品が保管されておりますな。作品一覧から一枚取り出し、壁の緑の枠まで運んでみてください。'
    :'さあ、まずはお気に入りの一枚をお預かりしましょう。どんな写真でも、あなた様の大切な作品です。';
  const actionText=held?'飾りに行く':works.length?'作品一覧を開く':'最初の作品を預ける';
  open('爺や｜館内のご案内',storyPortrait('butler',guide)+

@@ -51,6 +51,11 @@
       "detail": null
     },
     {
+      "name": "handover addresses player by name",
+      "pass": true,
+      "detail": "爺や\n\n丁寧に仕上げました。どうぞ、花子お嬢様。お好きな場所へ飾ってください！\n\n作品を受け取る ▼"
+    },
+    {
       "name": "saved photo is real local blob",
       "pass": true,
       "detail": null
@@ -71,9 +76,9 @@
       "detail": null
     },
     {
-      "name": "persistent hint changes to carry-and-display",
+      "name": "hint uses visible green placement outline",
       "pass": true,
-      "detail": null
+      "detail": "壁に近づき、緑の枠が出たら「ここに飾る」を押しましょう。"
     },
     {
       "name": "physical walk reaches first empty frame",
@@ -173,7 +178,7 @@
           "dir": "right",
           "stride": 4
         },
-        "carrying": "local-1793064150372-36447",
+        "carrying": "local-1793065760787-0",
         "carryOrigin": null,
         "museumTitle": "最初の美術館",
         "playerName": "花子",
@@ -183,52 +188,52 @@
         "assetStatus": {
           "loaded": 48,
           "paths": [
-            "../scenes-preview/assets/official/characters/butler-front-00.png",
-            "../scenes-preview/assets/official/characters/butler-left-00.png",
             "../scenes-preview/assets/official/characters/butler-back-00.png",
+            "../scenes-preview/assets/official/characters/butler-front-00.png",
             "../scenes-preview/assets/official/characters/butler-right-00.png",
+            "../scenes-preview/assets/official/characters/butler-left-00.png",
             "../scenes-preview/assets/official/characters/curator-back-00.png",
             "../scenes-preview/assets/official/characters/curator-back-01.png",
             "../scenes-preview/assets/official/characters/curator-back-02.png",
-            "../scenes-preview/assets/official/characters/curator-back-04.png",
             "../scenes-preview/assets/official/characters/curator-back-03.png",
-            "../scenes-preview/assets/official/characters/curator-front-01.png",
+            "../scenes-preview/assets/official/characters/curator-back-04.png",
             "../scenes-preview/assets/official/characters/curator-front-00.png",
+            "../scenes-preview/assets/official/characters/curator-front-01.png",
             "../scenes-preview/assets/official/characters/curator-front-02.png",
-            "../scenes-preview/assets/official/characters/curator-front-04.png",
             "../scenes-preview/assets/official/characters/curator-front-03.png",
-            "../scenes-preview/assets/official/characters/curator-left-00.png",
             "../scenes-preview/assets/official/characters/curator-left-01.png",
+            "../scenes-preview/assets/official/characters/curator-front-04.png",
+            "../scenes-preview/assets/official/characters/curator-left-00.png",
             "../scenes-preview/assets/official/characters/curator-left-02.png",
             "../scenes-preview/assets/official/characters/curator-left-03.png",
             "../scenes-preview/assets/official/characters/curator-left-04.png",
-            "../scenes-preview/assets/official/characters/curator-right-02.png",
-            "../scenes-preview/assets/official/characters/curator-right-01.png",
             "../scenes-preview/assets/official/characters/curator-right-00.png",
+            "../scenes-preview/assets/official/characters/curator-right-01.png",
+            "../scenes-preview/assets/official/characters/curator-right-02.png",
             "../scenes-preview/assets/official/characters/curator-right-03.png",
             "../scenes-preview/assets/official/characters/curator-right-04.png",
             "../scenes-preview/assets/official/characters/female-back-00.png",
-            "../scenes-preview/assets/official/characters/female-back-03.png",
             "../scenes-preview/assets/official/characters/female-back-01.png",
             "../scenes-preview/assets/official/characters/female-back-02.png",
+            "../scenes-preview/assets/official/characters/female-back-03.png",
             "../scenes-preview/assets/official/characters/female-back-04.png",
             "../scenes-preview/assets/official/characters/female-front-00.png",
             "../scenes-preview/assets/official/characters/female-front-01.png",
-            "../scenes-preview/assets/official/characters/female-front-04.png",
             "../scenes-preview/assets/official/characters/female-front-02.png",
             "../scenes-preview/assets/official/characters/female-front-03.png",
+            "../scenes-preview/assets/official/characters/female-front-04.png",
             "../scenes-preview/assets/official/characters/female-left-00.png",
             "../scenes-preview/assets/official/characters/female-left-01.png",
             "../scenes-preview/assets/official/characters/female-left-02.png",
-            "../scenes-preview/assets/official/characters/female-left-03.png",
-            "../scenes-preview/assets/official/characters/female-right-00.png",
-            "../scenes-preview/assets/official/characters/female-left-04.png",
             "../scenes-preview/assets/official/characters/female-right-01.png",
+            "../scenes-preview/assets/official/characters/female-left-04.png",
+            "../scenes-preview/assets/official/characters/female-right-00.png",
+            "../scenes-preview/assets/official/characters/female-left-03.png",
             "../scenes-preview/assets/official/characters/female-right-02.png",
             "../scenes-preview/assets/official/characters/female-right-03.png",
-            "../scenes-preview/assets/official/characters/staff-back-00.png",
-            "../scenes-preview/assets/official/characters/female-right-04.png",
             "../scenes-preview/assets/official/characters/staff-front-00.png",
+            "../scenes-preview/assets/official/characters/female-right-04.png",
+            "../scenes-preview/assets/official/characters/staff-back-00.png",
             "../scenes-preview/assets/official/characters/staff-left-00.png",
             "../scenes-preview/assets/official/characters/staff-right-00.png"
           ]
@@ -770,7 +775,7 @@
         "viewport": {
           "logicalW": 445,
           "logicalH": 717.7051282051282,
-          "cameraX": 4.777002940805631e-11,
+          "cameraX": 7.250698730147287e-11,
           "cameraY": -117.35256410256407,
           "backingWidth": 780,
           "backingHeight": 1258,
@@ -791,7 +796,7 @@
         },
         "works": [
           {
-            "id": "local-1793064150372-36447",
+            "id": "local-1793065760787-0",
             "fixtureId": null,
             "title": "大切な景色",
             "complete": null,
@@ -829,6 +834,11 @@
       "name": "gift persists in intro-v1 status",
       "pass": true,
       "detail": null
+    },
+    {
+      "name": "free-roam blessing addresses player by name",
+      "pass": true,
+      "detail": "爺や\n\nこれで、この一枚も立派な展示になりましたな。あとはどうぞ、花子お嬢様のお好きなように。\n\n木製フレームが取り付けられました。\n\n館内を見て回る"
     },
     {
       "name": "tutorial hint disappears on completion",
@@ -921,6 +931,11 @@
       "detail": null
     },
     {
+      "name": "handover addresses player by name",
+      "pass": true,
+      "detail": "爺や\n\n丁寧に仕上げました。どうぞ、花子お嬢様。お好きな場所へ飾ってください！\n\n作品を受け取る ▼"
+    },
+    {
       "name": "saved photo is real local blob",
       "pass": true,
       "detail": null
@@ -941,9 +956,9 @@
       "detail": null
     },
     {
-      "name": "persistent hint changes to carry-and-display",
+      "name": "hint uses visible green placement outline",
       "pass": true,
-      "detail": null
+      "detail": "壁に近づき、緑の枠が出たら「ここに飾る」を押しましょう。"
     },
     {
       "name": "reopen keeps photo without completing intro",
@@ -952,6 +967,11 @@
     },
     {
       "name": "butler resumes carried art guidance",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "butler identifies green frame",
       "pass": true,
       "detail": null
     },

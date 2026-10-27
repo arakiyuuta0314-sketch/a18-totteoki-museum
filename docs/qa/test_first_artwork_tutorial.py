@@ -76,16 +76,22 @@ def register(page,via_walk=True):
     page.locator("#photo").set_input_files({"name":"my-memory.png","mimeType":"image/png","buffer":picture()})
     page.locator("#save").click()
     page.locator("#offerNo").wait_for(timeout=16000)
+    # Make the first completion line deterministic: it previously said 「館長」.
+    page.evaluate("Math.random = () => 0")
     page.locator("#offerNo").click()
     page.locator("#receiveWork").wait_for(timeout=30000)
+    handover=page.locator("#dialog").inner_text()
+    assert_pass("handover addresses player by name",
+                "花子お嬢様" in handover and "館長" not in handover,handover)
     assert_pass("saved photo is real local blob",len(save(page)["works"])==1 and
         page.evaluate("async()=> (await window.A18P2Store.load()).works[0].originalBlob.size")>1000)
     assert_pass("photo saved before handing over",game(page)["carrying"]==save(page)["works"][0]["id"])
     assert_pass("gift not issued by registration",intro(page)["status"]=="queued")
     assert_pass("legacy metadata not populated in new registration",
                 save(page)["works"][0]["complete"] is None and save(page)["works"][0]["pieces"] is None)
-    assert_pass("persistent hint changes to carry-and-display",
-        "作品を持って" in page.locator("#hint").inner_text())
+    hint=page.locator("#hint").inner_text()
+    assert_pass("hint uses visible green placement outline",
+        "緑の枠" in hint and "ここに飾る" in hint and "奥の額縁" not in hint,hint)
     page.locator("#receiveWork").click()
     page.locator("#overlay").wait_for(state="hidden")
 def placement_gift(page):
@@ -99,6 +105,7 @@ def placement_gift(page):
     assert_pass("physical walk reaches first empty frame",status["interaction"] is not None and
         status["interaction"]["type"]=="art" and status["interaction"]["i"]==0,status)
     assert_pass("physical action offers place",page.locator("#act").inner_text()=="ここに飾る")
+    page.screenshot(path=str(QA/"first_art_tutorial_green_outline_390.png"),full_page=True)
     page.locator("#act").click()
     page.locator("#tutorialNext").wait_for(timeout=15000)
     assert_pass("first wall fixture assigned",save(page)["works"][0]["fixtureId"]=="frame-0-0")
@@ -113,6 +120,9 @@ def placement_gift(page):
     page.locator("#tutorialNext").click()
     page.locator("#tutorialFreeRoam").wait_for(timeout=13000)
     assert_pass("gift persists in intro-v1 status",intro(page)["status"]=="seen")
+    final_lines=page.locator("#dialog").inner_text()
+    assert_pass("free-roam blessing addresses player by name",
+        "花子お嬢様" in final_lines and "館長" not in final_lines,final_lines)
     assert_pass("tutorial hint disappears on completion",page.locator("#hint").is_hidden())
     page.wait_for_timeout(350)
     after=page.locator("#world").screenshot(animations="disabled")
@@ -155,6 +165,8 @@ def interruption(page):
     page.locator("#tutorialButlerAction").wait_for()
     assert_pass("butler resumes carried art guidance",
                 "飾りに行く" in page.locator("#tutorialButlerAction").inner_text())
+    assert_pass("butler identifies green frame",
+                "緑の枠" in page.locator("#dialog").inner_text())
     page.locator("#tutorialButlerAction").click()
     page.evaluate("window.__A18_SCENE_STUDY__.inspect(0)")
     page.locator("#tutorialNext").wait_for()
