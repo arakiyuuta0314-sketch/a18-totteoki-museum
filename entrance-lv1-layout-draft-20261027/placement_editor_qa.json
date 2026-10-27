@@ -1,0 +1,125 @@
+{
+  "passed": 30,
+  "checks": [
+    [
+      "desktop responds",
+      true
+    ],
+    [
+      "desktop actual original game screenshot loaded",
+      true
+    ],
+    [
+      "desktop 3 distinct elements",
+      true
+    ],
+    [
+      "desktop all initially visible",
+      true
+    ],
+    [
+      "desktop drag moves wall",
+      true
+    ],
+    [
+      "desktop drag carries photo",
+      true
+    ],
+    [
+      "desktop photo dimensions unchanged on wall drag",
+      true
+    ],
+    [
+      "desktop wall width independently resizable",
+      true
+    ],
+    [
+      "desktop photo width stays original",
+      true
+    ],
+    [
+      "desktop photo dimensions manually editable",
+      true
+    ],
+    [
+      "desktop URL conveys geometry",
+      true
+    ],
+    [
+      "desktop URL selection restore",
+      true
+    ],
+    [
+      "desktop localStorage autosaved",
+      true
+    ],
+    [
+      "desktop no page errors",
+      true
+    ],
+    [
+      "desktop no network errors",
+      true
+    ],
+    [
+      "iphone responds",
+      true
+    ],
+    [
+      "iphone actual original game screenshot loaded",
+      true
+    ],
+    [
+      "iphone 3 distinct elements",
+      true
+    ],
+    [
+      "iphone all initially visible",
+      true
+    ],
+    [
+      "iphone drag moves wall",
+      true
+    ],
+    [
+      "iphone drag carries photo",
+      true
+    ],
+    [
+      "iphone photo dimensions unchanged on wall drag",
+      true
+    ],
+    [
+      "iphone wall width independently resizable",
+      true
+    ],
+    [
+      "iphone photo width stays original",
+      true
+    ],
+    [
+      "iphone photo dimensions manually editable",
+      true
+    ],
+    [
+      "iphone URL conveys geometry",
+      true
+    ],
+    [
+      "iphone URL selection restore",
+      true
+    ],
+    [
+      "iphone localStorage autosaved",
+      true
+    ],
+    [
+      "iphone no page errors",
+      true
+    ],
+    [
+      "iphone no network errors",
+      true
+    ]
+  ]
+}

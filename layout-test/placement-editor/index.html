@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#15392f">
+<title>A18 エントランス配置エディター</title>
+<link rel="stylesheet" href="./style.css?v=1">
+<script src="./editor.js?v=1" defer></script>
+</head>
+<body>
+<header class="header">
+  <div class="heading">
+    <div class="eyebrow">とっておき美術館・Lv.1</div>
+    <h1>エントランス配置エディター</h1>
+    <p>写真・背景を描き直さず、設備を指で動かせます。ゲーム本体には反映しません。</p>
+  </div>
+  <div class="status" id="status" role="status" aria-live="polite">調整用プレビュー</div>
+</header>
+<div class="guide">
+  <strong>操作：</strong>下の設備を選択 → 画像上でドラッグ。右下の小さな角を引っぱると大きさを変えられます。
+  <span>写真の大きさは、仕切り壁と別々に変更できます。</span>
+</div>
+<div class="selector" role="group" aria-label="操作する設備">
+  <button class="pick" data-select="counter" type="button">カウンター</button>
+  <button class="pick" data-select="wall" type="button">右の仕切り壁</button>
+  <button class="pick" data-select="picture" type="button">作品の表示サイズ</button>
+</div>
+<main class="main">
+  <div class="stage-area">
+    <div class="frame">
+      <div id="scene" class="scene" role="group" aria-label="公開ゲームの実画面を使った配置シミュレーター">
+        <img id="reference" src="./reference-game.png" width="780" height="1688" draggable="false" alt="公開ゲームを390×844で動かして撮影した検証用スクリーンショット（テスト画像使用）">
+        <div id="piece-wall" class="piece" data-key="wall" tabindex="0" role="button" aria-label="右の仕切り壁を移動。矢印キーで微調整。">
+          <img src="./wall.svg" alt="" draggable="false"><span class="handle" title="大きさを変更"></span>
+        </div>
+        <div id="piece-picture" class="piece" data-key="picture" tabindex="0" role="button" aria-label="写真の位置と大きさを移動。矢印キーで微調整。">
+          <img src="./picture.svg" alt="" draggable="false"><span class="handle" title="大きさを変更"></span>
+        </div>
+        <div id="piece-counter" class="piece" data-key="counter" tabindex="0" role="button" aria-label="左カウンターを移動。矢印キーで微調整。">
+          <img src="./counter.svg" alt="" draggable="false"><span class="handle" title="大きさを変更"></span>
+        </div>
+      </div>
+    </div>
+    <p class="source">背景・キャラ・UI：実公開ゲームの隔離Chrome検証画面。家具：配置用の独立仮素材。<strong>ゲーム内の保存データは変更されません。</strong></p>
+  </div>
+  <section class="controls" aria-label="配置とサイズの調整">
+    <h2>選択した設備の調整</h2>
+    <div class="selection-line"><strong id="selectedName">右の仕切り壁</strong><button id="visibility" type="button" class="button secondary">非表示にする</button></div>
+    <div class="control-grid">
+      <label>左から（X）<input id="x" type="number" inputmode="numeric" step="1"></label>
+      <label>上から（Y）<input id="y" type="number" inputmode="numeric" step="1"></label>
+      <label>横幅（W）<input id="w" type="number" inputmode="numeric" min="24" max="600" step="1"></label>
+      <label>高さ（H）<input id="h" type="number" inputmode="numeric" min="24" max="900" step="1"></label>
+    </div>
+    <div class="sliders">
+      <label for="widthRange">横幅を調整 <output id="widthValue"></output></label>
+      <input type="range" id="widthRange" min="24" max="440" step="1">
+      <label for="heightRange">高さを調整 <output id="heightValue"></output></label>
+      <input type="range" id="heightRange" min="40" max="520" step="1">
+      <label for="angleRange">傾き <output id="angleValue"></output></label>
+      <input type="range" id="angleRange" min="-25" max="25" step="1">
+    </div>
+    <fieldset class="adjust"><legend>1コマずつ微調整</legend>
+      <div class="nudge">
+        <button type="button" data-nudge="-1,0" aria-label="左へ1">←</button>
+        <button type="button" data-nudge="0,-1" aria-label="上へ1">↑</button>
+        <button type="button" data-nudge="0,1" aria-label="下へ1">↓</button>
+        <button type="button" data-nudge="1,0" aria-label="右へ1">→</button>
+      </div>
+      <p>長押しではなくタップごとに移動。Shift＋矢印キーなら10コマ。</p>
+    </fieldset>
+    <div class="upload">
+      <label for="assetUpload" class="upload-label">選択した設備の画像を差し替える（任意）</label>
+      <input type="file" id="assetUpload" accept="image/png,image/jpeg,image/webp">
+      <small>透過PNGにも対応。差し替え画像はこの端末内での表示用で、共有リンクには含まれません。</small>
+    </div>
+    <div class="result">
+      <h2>配置を残す・共有する</h2>
+      <p>変更はこのブラウザに自動保存。確認が終わったら<strong>「配置リンクをコピー」</strong>してチャットに貼ってね。正確な座標をこちらで受け取れます。</p>
+      <button id="share" type="button" class="button primary">配置リンクをコピー</button>
+      <button id="copyJson" type="button" class="button secondary">座標データをコピー</button>
+      <button id="download" type="button" class="button secondary">座標JSONを保存</button>
+      <button id="reset" type="button" class="button danger">初期配置へ戻す</button>
+      <textarea id="shareText" readonly rows="3" aria-label="コピーできなかった場合の共有用テキスト" placeholder="ここに共有リンクが表示されます"></textarea>
+    </div>
+    <p class="version">配置座標はゲーム画面の画像基準（幅780×高さ1688px）。完成素材・衝突判定・本番ゲームの操作画面ではありません。</p>
+  </section>
+</main>
+<footer>とっておき美術館｜配置検討専用。公開中のゲーム・あなたの登録作品は変更しません。</footer>
+</body>
+</html>
