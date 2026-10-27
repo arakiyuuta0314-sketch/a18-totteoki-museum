@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 320" preserveAspectRatio="none"><defs>
+<linearGradient id="wood" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#c18a4e"/><stop offset=".12" stop-color="#603c23"/><stop offset="1" stop-color="#4c2f1d"/></linearGradient>
+<linearGradient id="green" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#153c32"/><stop offset=".45" stop-color="#085146"/><stop offset="1" stop-color="#04382f"/></linearGradient>
+<linearGradient id="column" x1="0" x2="1"><stop stop-color="#c9b18b"/><stop offset=".4" stop-color="#fff1d7"/><stop offset="1" stop-color="#856342"/></linearGradient></defs>
+<g stroke-linejoin="round">
+<path d="M14 23 H247 V300 H14 Z" fill="url(#wood)" stroke="#3f281b" stroke-width="4"/>
+<path d="M28 62 H230 V245 H28 Z" fill="url(#green)" stroke="#76502d" stroke-width="5"/>
+<path d="M5 13 H255 V48 H5 Z" fill="url(#wood)" stroke="#ac7e45" stroke-width="5"/>
+<path d="M1 8 H259 V20 H1 Z" fill="#59391e" stroke="#c9a465" stroke-width="5"/>
+<path d="M13 43 H49 V281 H13 Z" fill="url(#column)" stroke="#785631" stroke-width="6"/>
+<path d="M212 43 H248 V281 H212 Z" fill="url(#column)" stroke="#785631" stroke-width="6"/>
+<path d="M9 39 H53 V62 H9 Z M208 39 H252 V62 H208 Z" fill="url(#wood)" stroke="#ae7d44" stroke-width="4"/>
+<path d="M7 267 H54 V311 H7 Z M207 267 H254 V311 H207 Z" fill="url(#wood)" stroke="#a67b49" stroke-width="5"/>
+<path d="M53 248 H207 V306 H53 Z" fill="#603d27" stroke="#a77a43" stroke-width="5"/>
+<path d="M63 259 H198 V293 H63 Z" fill="#3e291d" stroke="#8c612f" stroke-width="4"/>
+<path d="M76 262 V288 M106 262 V288 M136 262 V288 M166 262 V288" stroke="#a77a43" stroke-width="3"/>
+<path d="M9 312 H256" stroke="#291a14" stroke-width="7"/>
+</g></svg>
