@@ -22,6 +22,13 @@
 .a18-opening-dialog label{display:block;font-size:13px;margin:4px 0 7px}
 .a18-opening-dialog button{background:#efe0bb;color:#29251d;border:2px solid #a78953;border-radius:4px;font-size:17px;min-height:44px;padding:6px 15px;margin:8px 7px 0 0}
 .a18-opening-dialog button:focus-visible{outline:3px solid #fff}
+/* Keep the name form entirely below the sepia illustration on mobile. */
+.a18-opening-dialog.a18-opening-name-entry{min-height:0;padding:11px 15px 9px;line-height:1.35}
+.a18-opening-name-entry p{min-height:0;margin:5px 0 6px}
+.a18-opening-name-entry label{margin:5px 0 4px;font-size:13px}
+.a18-opening-name-entry input{min-height:42px;height:42px;padding:6px 10px;font-size:16px}
+.a18-opening-name-entry button{min-height:38px;margin:7px 0 0;padding:4px 14px;font-size:16px}
+.a18-opening-name-entry .a18-opening-error{min-height:0;margin-top:2px;font-size:12px;line-height:1.25}
 .a18-opening-error{font-size:12px;color:#ffc4b1;min-height:1em}
 .a18-opening-skip{position:absolute;right:12px;top:max(11px,env(safe-area-inset-top));z-index:4;background:#181612bd;border:1px solid #9d8158;border-radius:5px;color:#f0ddba;padding:8px 12px;font:14px "MS Gothic",monospace}
 .a18-opening-visual-curtain{position:absolute;inset:0;background:#120b06;opacity:0;pointer-events:none;transition:opacity .26s ease;z-index:2}

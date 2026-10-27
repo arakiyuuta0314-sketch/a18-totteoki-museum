@@ -104,6 +104,7 @@
   return true;
  }
  function renderText(beat){
+  el('a18OpeningDialog').classList.remove('a18-opening-name-entry');
   const msg=typeof beat.text==='function'?beat.text(state):beat.text;
   const characters=Array.from(msg);
   state.complete=false;state.currentText=msg;
@@ -124,6 +125,7 @@
  }
  function action(beat){
   state.complete=true;stopTyping();
+  el('a18OpeningDialog').classList.toggle('a18-opening-name-entry',beat.action==='name');
   el('a18OpeningSpeaker').textContent='？？？';
   el('a18OpeningNext').textContent='';
   const words=el('a18OpeningWords'),slot=el('a18OpeningForm');

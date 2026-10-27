@@ -34,6 +34,39 @@
       "detail": null
     },
     {
+      "name": "name entry is compact 390",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "name dialog sits below sepia image 390",
+      "pass": true,
+      "detail": {
+        "name": {
+          "x": 25.2,
+          "y": 557.3,
+          "width": 339.7,
+          "height": 210.7
+        },
+        "image": {
+          "x": 2,
+          "y": 202.5,
+          "width": 386,
+          "height": 217.1
+        }
+      }
+    },
+    {
+      "name": "name form has no excessive empty space 390",
+      "pass": true,
+      "detail": {
+        "x": 25.2,
+        "y": 557.3,
+        "width": 339.7,
+        "height": 210.7
+      }
+    },
+    {
       "name": "name field never auto-focuses 390",
       "pass": true,
       "detail": null
@@ -135,6 +168,39 @@
       "name": "scene 3 reached 320",
       "pass": true,
       "detail": null
+    },
+    {
+      "name": "name entry is compact 320",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "name dialog sits below sepia image 320",
+      "pass": true,
+      "detail": {
+        "name": {
+          "x": 21.0,
+          "y": 404.7,
+          "width": 278.1,
+          "height": 232.3
+        },
+        "image": {
+          "x": 2,
+          "y": 168,
+          "width": 316,
+          "height": 177.8
+        }
+      }
+    },
+    {
+      "name": "name form has no excessive empty space 320",
+      "pass": true,
+      "detail": {
+        "x": 21.0,
+        "y": 404.7,
+        "width": 278.1,
+        "height": 232.3
+      }
     },
     {
       "name": "name field never auto-focuses 320",

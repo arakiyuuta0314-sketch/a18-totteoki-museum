@@ -86,6 +86,15 @@ def main():
                 }""")
                 advance_until(page,"#a18OpeningName")
                 require("scene 3 reached "+str(width),page.locator("#a18OpeningImage").get_attribute("src").endswith("scene-03.webp"))
+                require("name entry is compact "+str(width),
+                        page.locator("#a18OpeningDialog.a18-opening-name-entry").count()==1)
+                name_bounds=rect(dialog)
+                image_bounds=rect(visual)
+                require("name dialog sits below sepia image "+str(width),
+                        name_bounds["y"]>=image_bounds["y"]+image_bounds["height"]+6,
+                        {"name":name_bounds,"image":image_bounds})
+                require("name form has no excessive empty space "+str(width),
+                        name_bounds["height"]<=235,name_bounds)
                 require("name field never auto-focuses "+str(width),
                         page.evaluate("document.activeElement?.id !== 'a18OpeningName'"))
                 require("name form does not scroll document "+str(width),
