@@ -11,6 +11,16 @@
       "detail": null
     },
     {
+      "name": "initial obsolete walk-up message absent",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "tutorial hint placed near bottom",
+      "pass": true,
+      "detail": null
+    },
+    {
       "name": "no intro auto-finish button",
       "pass": true,
       "detail": null
@@ -31,6 +41,16 @@
       "detail": null
     },
     {
+      "name": "obsolete completion and pieces inputs removed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "only title memory and photo are requested",
+      "pass": true,
+      "detail": null
+    },
+    {
       "name": "saved photo is real local blob",
       "pass": true,
       "detail": null
@@ -42,6 +62,11 @@
     },
     {
       "name": "gift not issued by registration",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "legacy metadata not populated in new registration",
       "pass": true,
       "detail": null
     },
@@ -148,7 +173,7 @@
           "dir": "right",
           "stride": 4
         },
-        "carrying": "local-1793061570165-31930",
+        "carrying": "local-1793064150372-36447",
         "carryOrigin": null,
         "museumTitle": "最初の美術館",
         "playerName": "花子",
@@ -158,28 +183,28 @@
         "assetStatus": {
           "loaded": 48,
           "paths": [
-            "../scenes-preview/assets/official/characters/butler-back-00.png",
             "../scenes-preview/assets/official/characters/butler-front-00.png",
             "../scenes-preview/assets/official/characters/butler-left-00.png",
+            "../scenes-preview/assets/official/characters/butler-back-00.png",
             "../scenes-preview/assets/official/characters/butler-right-00.png",
             "../scenes-preview/assets/official/characters/curator-back-00.png",
             "../scenes-preview/assets/official/characters/curator-back-01.png",
             "../scenes-preview/assets/official/characters/curator-back-02.png",
-            "../scenes-preview/assets/official/characters/curator-back-03.png",
             "../scenes-preview/assets/official/characters/curator-back-04.png",
-            "../scenes-preview/assets/official/characters/curator-front-00.png",
+            "../scenes-preview/assets/official/characters/curator-back-03.png",
             "../scenes-preview/assets/official/characters/curator-front-01.png",
+            "../scenes-preview/assets/official/characters/curator-front-00.png",
             "../scenes-preview/assets/official/characters/curator-front-02.png",
-            "../scenes-preview/assets/official/characters/curator-left-00.png",
             "../scenes-preview/assets/official/characters/curator-front-04.png",
             "../scenes-preview/assets/official/characters/curator-front-03.png",
+            "../scenes-preview/assets/official/characters/curator-left-00.png",
             "../scenes-preview/assets/official/characters/curator-left-01.png",
             "../scenes-preview/assets/official/characters/curator-left-02.png",
             "../scenes-preview/assets/official/characters/curator-left-03.png",
             "../scenes-preview/assets/official/characters/curator-left-04.png",
-            "../scenes-preview/assets/official/characters/curator-right-00.png",
             "../scenes-preview/assets/official/characters/curator-right-02.png",
             "../scenes-preview/assets/official/characters/curator-right-01.png",
+            "../scenes-preview/assets/official/characters/curator-right-00.png",
             "../scenes-preview/assets/official/characters/curator-right-03.png",
             "../scenes-preview/assets/official/characters/curator-right-04.png",
             "../scenes-preview/assets/official/characters/female-back-00.png",
@@ -189,11 +214,11 @@
             "../scenes-preview/assets/official/characters/female-back-04.png",
             "../scenes-preview/assets/official/characters/female-front-00.png",
             "../scenes-preview/assets/official/characters/female-front-01.png",
+            "../scenes-preview/assets/official/characters/female-front-04.png",
             "../scenes-preview/assets/official/characters/female-front-02.png",
             "../scenes-preview/assets/official/characters/female-front-03.png",
-            "../scenes-preview/assets/official/characters/female-front-04.png",
-            "../scenes-preview/assets/official/characters/female-left-01.png",
             "../scenes-preview/assets/official/characters/female-left-00.png",
+            "../scenes-preview/assets/official/characters/female-left-01.png",
             "../scenes-preview/assets/official/characters/female-left-02.png",
             "../scenes-preview/assets/official/characters/female-left-03.png",
             "../scenes-preview/assets/official/characters/female-right-00.png",
@@ -201,9 +226,9 @@
             "../scenes-preview/assets/official/characters/female-right-01.png",
             "../scenes-preview/assets/official/characters/female-right-02.png",
             "../scenes-preview/assets/official/characters/female-right-03.png",
-            "../scenes-preview/assets/official/characters/staff-front-00.png",
-            "../scenes-preview/assets/official/characters/female-right-04.png",
             "../scenes-preview/assets/official/characters/staff-back-00.png",
+            "../scenes-preview/assets/official/characters/female-right-04.png",
+            "../scenes-preview/assets/official/characters/staff-front-00.png",
             "../scenes-preview/assets/official/characters/staff-left-00.png",
             "../scenes-preview/assets/official/characters/staff-right-00.png"
           ]
@@ -745,8 +770,8 @@
         "viewport": {
           "logicalW": 445,
           "logicalH": 717.7051282051282,
-          "cameraX": 4.970127967093458e-09,
-          "cameraY": -117.35256410256406,
+          "cameraX": 4.777002940805631e-11,
+          "cameraY": -117.35256410256407,
           "backingWidth": 780,
           "backingHeight": 1258,
           "portrait": true,
@@ -766,7 +791,7 @@
         },
         "works": [
           {
-            "id": "local-1793061570165-31930",
+            "id": "local-1793064150372-36447",
             "fixtureId": null,
             "title": "大切な景色",
             "complete": null,
@@ -821,6 +846,21 @@
       "detail": null
     },
     {
+      "name": "artwork list omits obsolete metadata",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "photo viewer omits obsolete metadata",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "artwork detail omits obsolete metadata",
+      "pass": true,
+      "detail": null
+    },
+    {
       "name": "photo and frame survive restart",
       "pass": true,
       "detail": null
@@ -837,6 +877,16 @@
     },
     {
       "name": "intro stays queued after profile",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "initial obsolete walk-up message absent",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "tutorial hint placed near bottom",
       "pass": true,
       "detail": null
     },
@@ -861,6 +911,16 @@
       "detail": null
     },
     {
+      "name": "obsolete completion and pieces inputs removed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "only title memory and photo are requested",
+      "pass": true,
+      "detail": null
+    },
+    {
       "name": "saved photo is real local blob",
       "pass": true,
       "detail": null
@@ -872,6 +932,11 @@
     },
     {
       "name": "gift not issued by registration",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "legacy metadata not populated in new registration",
       "pass": true,
       "detail": null
     },

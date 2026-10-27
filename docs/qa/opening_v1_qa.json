@@ -41,6 +41,21 @@
       "info": null
     },
     {
+      "name": "museum dialogue has no form in greeting",
+      "pass": true,
+      "info": null
+    },
+    {
+      "name": "intro uses normal speaker box",
+      "pass": true,
+      "info": null
+    },
+    {
+      "name": "second dialogue separately presented",
+      "pass": true,
+      "info": null
+    },
+    {
       "name": "name persisted after museum choice",
       "pass": true,
       "info": null

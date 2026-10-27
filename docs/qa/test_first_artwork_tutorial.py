@@ -43,6 +43,16 @@ def boot_skip(page):
     page.locator("#overlay").wait_for(state="hidden",timeout=15000)
     assert_pass("profile title stored",save(page)["museumTitle"]=="最初の美術館")
     assert_pass("intro stays queued after profile",intro(page)["status"]=="queued")
+    hint=page.locator("#hint")
+    assert_pass("initial obsolete walk-up message absent",
+                "館長を歩かせて" not in hint.inner_text())
+    assert_pass("tutorial hint placed near bottom",
+                page.evaluate("""() => {
+                    const h=document.querySelector('#hint'),s=document.querySelector('#stage');
+                    const hb=h.getBoundingClientRect(),sb=s.getBoundingClientRect();
+                    return hb.top>sb.top+sb.height*.5 &&
+                           hb.bottom<sb.bottom-164+5;
+                }"""))
     assert_pass("no intro auto-finish button",page.locator("#startTour").count()==0)
 def walk_to_butler(page):
     for _ in range(15):page.evaluate("window.__A18_SCENE_STUDY__.move('left')")
@@ -57,6 +67,11 @@ def register(page,via_walk=True):
     page.locator("#tutorialButlerAction").wait_for()
     assert_pass("butler starts guided registration","最初の作品を預ける" in page.locator("#tutorialButlerAction").inner_text())
     page.locator("#tutorialButlerAction").click()
+    assert_pass("obsolete completion and pieces inputs removed",
+                page.locator("#date, #pieces, #dateToday, #dateClear").count()==0)
+    assert_pass("only title memory and photo are requested",
+                page.locator("#name, #notes, #photo").count()==3)
+    page.screenshot(path=str(QA/"first_art_registration_simple_390.png"),full_page=True)
     page.locator("#name").fill("大切な景色")
     page.locator("#photo").set_input_files({"name":"my-memory.png","mimeType":"image/png","buffer":picture()})
     page.locator("#save").click()
@@ -67,6 +82,8 @@ def register(page,via_walk=True):
         page.evaluate("async()=> (await window.A18P2Store.load()).works[0].originalBlob.size")>1000)
     assert_pass("photo saved before handing over",game(page)["carrying"]==save(page)["works"][0]["id"])
     assert_pass("gift not issued by registration",intro(page)["status"]=="queued")
+    assert_pass("legacy metadata not populated in new registration",
+                save(page)["works"][0]["complete"] is None and save(page)["works"][0]["pieces"] is None)
     assert_pass("persistent hint changes to carry-and-display",
         "作品を持って" in page.locator("#hint").inner_text())
     page.locator("#receiveWork").click()
@@ -104,6 +121,19 @@ def placement_gift(page):
     page.locator("#tutorialFreeRoam").click()
     page.locator("#overlay").wait_for(state="hidden")
     assert_pass("free roam after gift",not page.locator("#overlay").is_visible())
+    page.evaluate("window.__A18_SCENE_STUDY__.list()")
+    assert_pass("artwork list omits obsolete metadata",
+                "完成日" not in page.locator("#dialog").inner_text() and
+                "ピース" not in page.locator("#dialog").inner_text())
+    page.locator('[data-work]').first.click()
+    assert_pass("photo viewer omits obsolete metadata",
+                "完成日" not in page.locator("#photoDetails").inner_text() and
+                "ピース" not in page.locator("#photoDetails").inner_text())
+    page.evaluate("window.A18Viewer.close()")
+    page.evaluate("window.__A18_SCENE_STUDY__.inspect(0)")
+    assert_pass("artwork detail omits obsolete metadata",
+                "完成日" not in page.locator("#dialog").inner_text() and
+                "ピース" not in page.locator("#dialog").inner_text())
     page.reload(wait_until="domcontentloaded")
     page.locator("#a18OpeningStart").click()
     page.wait_for_timeout(650)

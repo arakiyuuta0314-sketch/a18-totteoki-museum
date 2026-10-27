@@ -131,7 +131,7 @@ def main():
                 require("only scene 1->2 uses partial dim "+str(width),any(x["dim"] for x in events))
                 require("dialogue stays fixed at scene 4 "+str(width),anchored_dialog(fixed_dialog,rect(dialog)))
                 page.screenshot(path=str(QA/("framed_transition_scene4_"+str(width)+".png")),full_page=True)
-                advance_until(page,"#a18OpeningMuseumTitle",limit=28)
+                advance_until(page,"#a18OpeningMuseumNext",limit=28)
                 events=page.evaluate("window.__openingFx")
                 require("end uses image-only white "+str(width),any(x["white"] and x["visible"] for x in events))
                 require("end white remains bounded "+str(width),all(x["bounded"] for x in events))

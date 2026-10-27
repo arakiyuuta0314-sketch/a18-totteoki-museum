@@ -40,9 +40,12 @@ function honorific(role,playerName,gender){
 }
 function portrait(message,role=activeRole){
  const butler=role==='butler',meta=window.A18Art?.manifest?.[butler?'butler':'staff'];
+ let text=esc(message);
+ if(activePlayer&&activePlayer!=='館長')
+  text=text.replaceAll(esc(activePlayer),'<span class="a18-speaker-honorific">'+esc(activePlayer)+'</span>');
  return '<div class="rpg-chat"><div class="rpg-portrait"><img src="'+esc(meta?.portraitPath||'')+'" alt="'+(butler?'爺や':'スタッフ')+'"></div>'+
  '<div class="rpg-words"><span class="rpg-name">'+(butler?'爺や':'展示室スタッフ')+'</span>'+
- '<p class="rpg-message">'+esc(message)+'</p></div></div>';
+ '<p class="rpg-message">'+text+'</p></div></div>';
 }
 function staffPortrait(message){return portrait(message);}
 function reviewLayout(message,media,choices){
@@ -125,9 +128,7 @@ function form({spotNo=0,viaStaff=false,open,close,works,onRegistered,changeScene
  '<div class="registration-intro">'+staffPortrait(role==='butler'?activePlayer+'、大切な作品をお預かりいたします。':'新しい作品を預かるね！')+'</div>'+
  '<div class="registration-fields">'+
  '<label>作品名<input id="name" maxlength="80" placeholder="例：お気に入りの風景"></label>'+
- '<label>完成日（任意・不明のまま登録できます）<input id="date" type="date"></label>'+
- '<div class="date-actions"><button type="button" id="dateClear" class="light">不明</button><button type="button" id="dateToday" class="light">今日</button></div>'+
- '<label>ピース数（任意）<input id="pieces" type="number" min="1" max="999999"></label>'+
+
  '<label>備考・思い出（任意）<textarea id="notes" maxlength="3000" rows="2" placeholder="作品にまつわる思い出を自由に残せます"></textarea></label>'+
  '<label>写真<input id="photo" type="file" accept="image/*"></label></div>'+
  '<p class="prep-warn">この端末のブラウザに保存します。原本写真は変更しません。ブラウザのデータ消去やプライベートモードでは失われる場合があります。</p>'+
@@ -137,21 +138,15 @@ function form({spotNo=0,viaStaff=false,open,close,works,onRegistered,changeScene
    const d=new Date();
    return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
  };
- $('date').value='';
- $('dateToday').onclick=()=>{$('date').value=today();};
- $('dateClear').onclick=()=>{$('date').value='';};
  $('close').onclick=close;
  $('save').onclick=()=>{
   const file=$('photo').files?.[0],name=$('name').value.trim();
-  const complete=$('date').value||null;
-  const rawPieces=$('pieces').value.trim();
-  const pieces=rawPieces===''?null:Number(rawPieces);
   if(!name||!file){$('err').textContent='作品名と写真を選んでください';return}
-  if($('pieces').validity.badInput||(pieces!==null&&(!Number.isFinite(pieces)||pieces<=0))){$('err').textContent='ピース数は空欄、または0より大きい数値を入力してください';return}
   if(!file.type.startsWith('image/')){$('err').textContent='画像を選択してください';return}
   if(file.size>30*1024*1024){$('err').textContent='30MB以下の画像を選んでください';return}
   const originalURL=URL.createObjectURL(file),image=new Image();
-  const entry={title:name,pieces,complete,
+  // Legacy v3 storage still requires these two keys. New artwork no longer uses them.
+  const entry={title:name,pieces:null,complete:null,
    notes:$('notes').value.trim(),registered:today(),fixtureId:null,image,originalURL,originalBlob:file};
   image.onload=()=>offer(ctx,entry);
   image.onerror=()=>{URL.revokeObjectURL(originalURL);$('err').textContent='写真を読み込めませんでした'};
