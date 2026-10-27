@@ -101,7 +101,7 @@ function drawHighResolutionFrame(ctx,r){
  }
  ctx.restore();
 }
-function rear(ctx,p,f,img,preferred){
+function rear(ctx,p,f,img,preferred,woodFrame){
  const {outer,inner}=frameGeometry(f,img,preferred),[x0,y0,x1,y1]=p.patch;
  const im=imgs.get('background'),{sourceY,sourceH}=backgroundCrop();
  ctx.drawImage(im,x0*im.naturalWidth/546,sourceY+y0*sourceH/483,
@@ -123,7 +123,7 @@ function rear(ctx,p,f,img,preferred){
  // details, does not alter or re-encode the user's original saved photo.
  ctx.filter='contrast(1.055) saturate(1.02)';
  ctx.drawImage(img,inner.x+(inner.w-dw)/2+ox,inner.y+(inner.h-dh)/2+oy,dw,dh);
- ctx.restore();drawHighResolutionFrame(ctx,outer);
+ ctx.restore();if(woodFrame)drawHighResolutionFrame(ctx,outer);
 }
 function front(img,f){
  const c=blank(PW,PH),cc=c.getContext('2d',{willReadFrequently:true});
@@ -158,13 +158,13 @@ function front(img,f){
  }
  rc.putImageData(image,0,0);return result;
 }
-function frame(ctx,f,img,preferred=null){
+function frame(ctx,f,img,preferred=null,woodFrame=true){
  check();const p=panel(f);
  if(!img?.naturalWidth)return;
  if(p.name!=='front'){
   // Draw directly to the device-pixel-ratio canvas. The previous 546px
   // intermediate bitmap blurred photo detail when scaled on Retina iPhone.
-  rear(ctx,p,f,img,preferred);
+  rear(ctx,p,f,img,preferred,woodFrame);
   return;
  }
  const key=[f.id,preferred,f.imageMode,f.imageScale,f.imageX,f.imageY].join('|');

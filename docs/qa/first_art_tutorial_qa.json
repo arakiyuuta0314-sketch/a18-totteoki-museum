@@ -1,0 +1,996 @@
+{
+  "checks": [
+    {
+      "name": "profile title stored",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "intro stays queued after profile",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "no intro auto-finish button",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "physical D-pad walk reaches butler",
+      "pass": true,
+      "detail": {
+        "x": 146,
+        "y": 374,
+        "dir": "up",
+        "stride": 0
+      }
+    },
+    {
+      "name": "butler starts guided registration",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved photo is real local blob",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "photo saved before handing over",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "gift not issued by registration",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "persistent hint changes to carry-and-display",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "physical walk reaches first empty frame",
+      "pass": true,
+      "detail": {
+        "scene": "entrance",
+        "galleryIndex": 0,
+        "roomNumber": 1,
+        "roomName": "エントランス",
+        "links": {
+          "west": 1,
+          "east": 2,
+          "north": 5
+        },
+        "allRoomLinks": {
+          "0": {
+            "west": 1,
+            "east": 2,
+            "north": 5
+          },
+          "1": {
+            "east": 0,
+            "north": 3
+          },
+          "2": {
+            "west": 0,
+            "north": 4
+          },
+          "3": {
+            "south": 1,
+            "east": 5
+          },
+          "4": {
+            "south": 2,
+            "west": 5
+          },
+          "5": {
+            "south": 0,
+            "west": 3,
+            "east": 4
+          }
+        },
+        "unlockedRooms": 1,
+        "maxWorks": 30,
+        "roomCapacity": 2,
+        "frameRects": [
+          [
+            43,
+            64,
+            189,
+            143
+          ],
+          [
+            374,
+            64,
+            506,
+            143
+          ]
+        ],
+        "interactionAnchors": [
+          {
+            "type": "art",
+            "i": 0,
+            "x": 116,
+            "y": 237,
+            "enter": 32,
+            "leave": 38
+          },
+          {
+            "type": "art",
+            "i": 1,
+            "x": 439,
+            "y": 237,
+            "enter": 32,
+            "leave": 38
+          },
+          {
+            "type": "butler",
+            "x": 138.64166666666668,
+            "y": 341.71428571428567,
+            "enter": 46,
+            "leave": 54
+          }
+        ],
+        "obstacles": [
+          [
+            129,
+            149,
+            361,
+            368
+          ]
+        ],
+        "wallFootLine": 210,
+        "pos": {
+          "x": 110,
+          "y": 266,
+          "dir": "right",
+          "stride": 4
+        },
+        "carrying": "local-1793061570165-31930",
+        "carryOrigin": null,
+        "museumTitle": "最初の美術館",
+        "playerName": "花子",
+        "viewMode": "overview",
+        "avatarGender": "female",
+        "museumLevel": 1,
+        "assetStatus": {
+          "loaded": 48,
+          "paths": [
+            "../scenes-preview/assets/official/characters/butler-back-00.png",
+            "../scenes-preview/assets/official/characters/butler-front-00.png",
+            "../scenes-preview/assets/official/characters/butler-left-00.png",
+            "../scenes-preview/assets/official/characters/butler-right-00.png",
+            "../scenes-preview/assets/official/characters/curator-back-00.png",
+            "../scenes-preview/assets/official/characters/curator-back-01.png",
+            "../scenes-preview/assets/official/characters/curator-back-02.png",
+            "../scenes-preview/assets/official/characters/curator-back-03.png",
+            "../scenes-preview/assets/official/characters/curator-back-04.png",
+            "../scenes-preview/assets/official/characters/curator-front-00.png",
+            "../scenes-preview/assets/official/characters/curator-front-01.png",
+            "../scenes-preview/assets/official/characters/curator-front-02.png",
+            "../scenes-preview/assets/official/characters/curator-left-00.png",
+            "../scenes-preview/assets/official/characters/curator-front-04.png",
+            "../scenes-preview/assets/official/characters/curator-front-03.png",
+            "../scenes-preview/assets/official/characters/curator-left-01.png",
+            "../scenes-preview/assets/official/characters/curator-left-02.png",
+            "../scenes-preview/assets/official/characters/curator-left-03.png",
+            "../scenes-preview/assets/official/characters/curator-left-04.png",
+            "../scenes-preview/assets/official/characters/curator-right-00.png",
+            "../scenes-preview/assets/official/characters/curator-right-02.png",
+            "../scenes-preview/assets/official/characters/curator-right-01.png",
+            "../scenes-preview/assets/official/characters/curator-right-03.png",
+            "../scenes-preview/assets/official/characters/curator-right-04.png",
+            "../scenes-preview/assets/official/characters/female-back-00.png",
+            "../scenes-preview/assets/official/characters/female-back-03.png",
+            "../scenes-preview/assets/official/characters/female-back-01.png",
+            "../scenes-preview/assets/official/characters/female-back-02.png",
+            "../scenes-preview/assets/official/characters/female-back-04.png",
+            "../scenes-preview/assets/official/characters/female-front-00.png",
+            "../scenes-preview/assets/official/characters/female-front-01.png",
+            "../scenes-preview/assets/official/characters/female-front-02.png",
+            "../scenes-preview/assets/official/characters/female-front-03.png",
+            "../scenes-preview/assets/official/characters/female-front-04.png",
+            "../scenes-preview/assets/official/characters/female-left-01.png",
+            "../scenes-preview/assets/official/characters/female-left-00.png",
+            "../scenes-preview/assets/official/characters/female-left-02.png",
+            "../scenes-preview/assets/official/characters/female-left-03.png",
+            "../scenes-preview/assets/official/characters/female-right-00.png",
+            "../scenes-preview/assets/official/characters/female-left-04.png",
+            "../scenes-preview/assets/official/characters/female-right-01.png",
+            "../scenes-preview/assets/official/characters/female-right-02.png",
+            "../scenes-preview/assets/official/characters/female-right-03.png",
+            "../scenes-preview/assets/official/characters/staff-front-00.png",
+            "../scenes-preview/assets/official/characters/female-right-04.png",
+            "../scenes-preview/assets/official/characters/staff-back-00.png",
+            "../scenes-preview/assets/official/characters/staff-left-00.png",
+            "../scenes-preview/assets/official/characters/staff-right-00.png"
+          ]
+        },
+        "fixtures": [
+          {
+            "id": "frame-0-0",
+            "roomId": 0,
+            "kind": "frame",
+            "x": 116,
+            "y": 103.5,
+            "width": 146,
+            "height": 79,
+            "installation": "wall",
+            "shape": "landscape",
+            "design": "gold",
+            "imageMode": "cover",
+            "imageScale": 1,
+            "imageX": 0,
+            "imageY": 0,
+            "workId": null,
+            "assetKey": null,
+            "legacySlot": 0
+          },
+          {
+            "id": "frame-0-1",
+            "roomId": 0,
+            "kind": "frame",
+            "x": 440,
+            "y": 103.5,
+            "width": 132,
+            "height": 79,
+            "installation": "wall",
+            "shape": "landscape",
+            "design": "gold",
+            "imageMode": "cover",
+            "imageScale": 1,
+            "imageX": 0,
+            "imageY": 0,
+            "workId": null,
+            "assetKey": null,
+            "legacySlot": 1
+          },
+          {
+            "id": "frame-0-2",
+            "roomId": 0,
+            "kind": "frame",
+            "x": 459.5,
+            "y": 285.5,
+            "width": 79,
+            "height": 115,
+            "installation": "floor",
+            "shape": "landscape",
+            "design": "gold",
+            "imageMode": "cover",
+            "imageScale": 1,
+            "imageX": 0,
+            "imageY": 0,
+            "workId": null,
+            "assetKey": null,
+            "legacySlot": 2
+          },
+          {
+            "id": "frame-1-0",
+            "roomId": 1,
+            "kind": "frame",
+            "x": 91,
+            "y": 96,
+            "width": 98,
+            "height": 76,
+            "installation": "wall",
+            "shape": "landscape",
+            "design": "gold",
+            "imageMode": "cover",
+            "imageScale": 1,
+            "imageX": 0,
+            "imageY": 0,
+            "workId": null,
+            "assetKey": null,
+            "legacySlot": 5
+          },
+          {
+            "id": "frame-1-1",
+            "roomId": 1,
+            "kind": "frame",
+            "x": 257,
+            "y": 96,
+            "width": 98,
+            "height": 76,
+            "installation": "wall",
+            "shape": "landscape",
+            "design": "gold",
+            "imageMode": "cover",
+            "imageScale": 1,
+            "imageX": 0,
+            "imageY": 0,
+            "workId": null,
+            "assetKey": null,
+            "legacySlot": 6
+          },
+          {
+            "id": "frame-1-2",
+            "roomId": 1,
+            "kind": "frame",
+            "x": 467,
+            "y": 96,
+            "width": 98,
+            "height": 76,
+            "installation": "wall",
+            "shape": "landscape",
+            "design": "gold",
+            "imageMode": "cover",
+            "imageScale": 1,
+            "imageX": 0,
+            "imageY": 0,
+            "workId": null,
+            "assetKey": null,
+            "legacySlot": 7
+          },
+          {
+            "id": "frame-1-3",
+            "roomId": 1,
+            "kind": "frame",
+            "x": 105,
+            "y": 289,
+            "width": 98,
+            "height": 76,
+            "installation": "floor",
+            "shape": "landscape",
+            "design": "gold",
+            "imageMode": "cover",
+            "imageScale": 1,
+            "imageX": 0,
+            "imageY": 0,
+            "workId": null,
+            "assetKey": null,
+            "legacySlot": 8
+          },
+          {
+            "id": "frame-1-4",
+            "roomId": 1,
+            "kind": "frame",
+            "x": 454,
+            "y": 289,
+            "width": 98,
+            "height": 76,
+            "installation": "floor",
+            "shape": "landscape",
+            "design": "gold",
+            "imageMode": "cover",
+            "imageScale": 1,
+            "imageX": 0,
+            "imageY": 0,
+            "workId": null,
+            "assetKey": null,
+            "legacySlot": 9
+          },
+          {
+            "id": "frame-2-0",
+            "roomId": 2,
+            "kind": "frame",
+            "x": 127.5,
+            "y": 109,
+            "width": 129,
+            "height": 92,
+            "installation": "wall",
+            "shape": "landscape",
+            "design": "gold",
+            "imageMode": "cover",
+            "imageScale": 1,
+            "imageX": 0,
+            "imageY": 0,
+            "workId": null,
+            "assetKey": null,
+            "legacySlot": 10
+          },
+          {
+            "id": "frame-2-1",
+            "roomId": 2,
+            "kind": "frame",
+            "x": 267,
+            "y": 101,
+            "width": 100,
+            "height": 76,
+            "installation": "wall",
+            "shape": "landscape",
+            "design": "gold",
+            "imageMode": "cover",
+            "imageScale": 1,
+            "imageX": 0,
+            "imageY": 0,
+            "workId": null,
+            "assetKey": null,
+            "legacySlot": 11
+          },
+          {
+            "id": "frame-2-2",
+            "roomId": 2,
+            "kind": "frame",
+            "x": 481,
+            "y": 104,
+            "width": 100,
+            "height": 76,
+            "installation": "wall",
+            "shape": "landscape",
+            "design": "gold",
+            "imageMode": "cover",
+            "imageScale": 1,
+            "imageX": 0,
+            "imageY": 0,
+            "workId": null,
+            "assetKey": null,
+            "legacySlot": 12
+          },
+          {
+            "id": "frame-2-3",
+            "roomId": 2,
+            "kind": "frame",
+            "x": 108,
+            "y": 272,
+            "width": 92,
+            "height": 74,
+            "installation": "floor",
+            "shape": "landscape",
+            "design": "gold",
+            "imageMode": "cover",
+            "imageScale": 1,
+            "imageX": 0,
+            "imageY": 0,
+            "workId": null,
+            "assetKey": null,
+            "legacySlot": 13
+          },
+          {
+            "id": "frame-2-4",
+            "roomId": 2,
+            "kind": "frame",
+            "x": 464.5,
+            "y": 298,
+            "width": 95,
+            "height": 74,
+            "installation": "floor",
+            "shape": "landscape",
+            "design": "gold",
+            "imageMode": "cover",
+            "imageScale": 1,
+            "imageX": 0,
+            "imageY": 0,
+            "workId": null,
+            "assetKey": null,
+            "legacySlot": 14
+          },
+          {
+            "id": "frame-3-0",
+            "roomId": 3,
+            "kind": "frame",
+            "x": 85.5,
+            "y": 114,
+            "width": 97,
+            "height": 78,
+            "installation": "wall",
+            "shape": "landscape",
+            "design": "gold",
+            "imageMode": "cover",
+            "imageScale": 1,
+            "imageX": 0,
+            "imageY": 0,
+            "workId": null,
+            "assetKey": null,
+            "legacySlot": 15
+          },
+          {
+            "id": "frame-3-1",
+            "roomId": 3,
+            "kind": "frame",
+            "x": 193.5,
+            "y": 97.5,
+            "width": 93,
+            "height": 79,
+            "installation": "wall",
+            "shape": "landscape",
+            "design": "gold",
+            "imageMode": "cover",
+            "imageScale": 1,
+            "imageX": 0,
+            "imageY": 0,
+            "workId": null,
+            "assetKey": null,
+            "legacySlot": 16
+          },
+          {
+            "id": "frame-3-2",
+            "roomId": 3,
+            "kind": "frame",
+            "x": 291,
+            "y": 95,
+            "width": 70,
+            "height": 80,
+            "installation": "wall",
+            "shape": "landscape",
+            "design": "gold",
+            "imageMode": "cover",
+            "imageScale": 1,
+            "imageX": 0,
+            "imageY": 0,
+            "workId": null,
+            "assetKey": null,
+            "legacySlot": 17
+          },
+          {
+            "id": "frame-3-3",
+            "roomId": 3,
+            "kind": "frame",
+            "x": 475,
+            "y": 114,
+            "width": 102,
+            "height": 78,
+            "installation": "wall",
+            "shape": "landscape",
+            "design": "gold",
+            "imageMode": "cover",
+            "imageScale": 1,
+            "imageX": 0,
+            "imageY": 0,
+            "workId": null,
+            "assetKey": null,
+            "legacySlot": 18
+          },
+          {
+            "id": "frame-3-4",
+            "roomId": 3,
+            "kind": "frame",
+            "x": 113,
+            "y": 298,
+            "width": 106,
+            "height": 74,
+            "installation": "floor",
+            "shape": "landscape",
+            "design": "gold",
+            "imageMode": "cover",
+            "imageScale": 1,
+            "imageX": 0,
+            "imageY": 0,
+            "workId": null,
+            "assetKey": null,
+            "legacySlot": 19
+          },
+          {
+            "id": "frame-4-0",
+            "roomId": 4,
+            "kind": "frame",
+            "x": 142,
+            "y": 105,
+            "width": 130,
+            "height": 98,
+            "installation": "wall",
+            "shape": "landscape",
+            "design": "gold",
+            "imageMode": "cover",
+            "imageScale": 1,
+            "imageX": 0,
+            "imageY": 0,
+            "workId": null,
+            "assetKey": null,
+            "legacySlot": 20
+          },
+          {
+            "id": "frame-4-1",
+            "roomId": 4,
+            "kind": "frame",
+            "x": 470.5,
+            "y": 105,
+            "width": 127,
+            "height": 98,
+            "installation": "wall",
+            "shape": "landscape",
+            "design": "gold",
+            "imageMode": "cover",
+            "imageScale": 1,
+            "imageX": 0,
+            "imageY": 0,
+            "workId": null,
+            "assetKey": null,
+            "legacySlot": 21
+          },
+          {
+            "id": "frame-4-2",
+            "roomId": 4,
+            "kind": "frame",
+            "x": 104.5,
+            "y": 281.5,
+            "width": 97,
+            "height": 75,
+            "installation": "floor",
+            "shape": "landscape",
+            "design": "gold",
+            "imageMode": "cover",
+            "imageScale": 1,
+            "imageX": 0,
+            "imageY": 0,
+            "workId": null,
+            "assetKey": null,
+            "legacySlot": 22
+          },
+          {
+            "id": "frame-4-3",
+            "roomId": 4,
+            "kind": "frame",
+            "x": 220.5,
+            "y": 281.5,
+            "width": 87,
+            "height": 75,
+            "installation": "floor",
+            "shape": "landscape",
+            "design": "gold",
+            "imageMode": "cover",
+            "imageScale": 1,
+            "imageX": 0,
+            "imageY": 0,
+            "workId": null,
+            "assetKey": null,
+            "legacySlot": 23
+          },
+          {
+            "id": "frame-4-4",
+            "roomId": 4,
+            "kind": "frame",
+            "x": 462,
+            "y": 299,
+            "width": 100,
+            "height": 74,
+            "installation": "floor",
+            "shape": "landscape",
+            "design": "gold",
+            "imageMode": "cover",
+            "imageScale": 1,
+            "imageX": 0,
+            "imageY": 0,
+            "workId": null,
+            "assetKey": null,
+            "legacySlot": 24
+          },
+          {
+            "id": "frame-5-0",
+            "roomId": 5,
+            "kind": "frame",
+            "x": 95,
+            "y": 108,
+            "width": 112,
+            "height": 90,
+            "installation": "wall",
+            "shape": "landscape",
+            "design": "gold",
+            "imageMode": "cover",
+            "imageScale": 1,
+            "imageX": 0,
+            "imageY": 0,
+            "workId": null,
+            "assetKey": null,
+            "legacySlot": 25
+          },
+          {
+            "id": "frame-5-1",
+            "roomId": 5,
+            "kind": "frame",
+            "x": 267.5,
+            "y": 97.5,
+            "width": 105,
+            "height": 99,
+            "installation": "wall",
+            "shape": "landscape",
+            "design": "gold",
+            "imageMode": "cover",
+            "imageScale": 1,
+            "imageX": 0,
+            "imageY": 0,
+            "workId": null,
+            "assetKey": null,
+            "legacySlot": 26
+          },
+          {
+            "id": "frame-5-2",
+            "roomId": 5,
+            "kind": "frame",
+            "x": 477.5,
+            "y": 108,
+            "width": 119,
+            "height": 90,
+            "installation": "wall",
+            "shape": "landscape",
+            "design": "gold",
+            "imageMode": "cover",
+            "imageScale": 1,
+            "imageX": 0,
+            "imageY": 0,
+            "workId": null,
+            "assetKey": null,
+            "legacySlot": 27
+          },
+          {
+            "id": "frame-5-3",
+            "roomId": 5,
+            "kind": "frame",
+            "x": 122.5,
+            "y": 297.5,
+            "width": 113,
+            "height": 81,
+            "installation": "floor",
+            "shape": "landscape",
+            "design": "gold",
+            "imageMode": "cover",
+            "imageScale": 1,
+            "imageX": 0,
+            "imageY": 0,
+            "workId": null,
+            "assetKey": null,
+            "legacySlot": 28
+          },
+          {
+            "id": "frame-5-4",
+            "roomId": 5,
+            "kind": "frame",
+            "x": 459.5,
+            "y": 277.5,
+            "width": 113,
+            "height": 77,
+            "installation": "floor",
+            "shape": "landscape",
+            "design": "gold",
+            "imageMode": "cover",
+            "imageScale": 1,
+            "imageX": 0,
+            "imageY": 0,
+            "workId": null,
+            "assetKey": null,
+            "legacySlot": 29
+          }
+        ],
+        "viewport": {
+          "logicalW": 445,
+          "logicalH": 717.7051282051282,
+          "cameraX": 4.970127967093458e-09,
+          "cameraY": -117.35256410256406,
+          "backingWidth": 780,
+          "backingHeight": 1258,
+          "portrait": true,
+          "entrancePaintCount": 28
+        },
+        "interaction": {
+          "type": "art",
+          "i": 0,
+          "x": 116,
+          "y": 237,
+          "enter": 32,
+          "leave": 38
+        },
+        "movement": {
+          "step": 12,
+          "repeatMs": 65
+        },
+        "works": [
+          {
+            "id": "local-1793061570165-31930",
+            "fixtureId": null,
+            "title": "大切な景色",
+            "complete": null,
+            "notes": ""
+          }
+        ]
+      }
+    },
+    {
+      "name": "physical action offers place",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "first wall fixture assigned",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "frame remains pending until gift",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "butler says first photo displayed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "butler presents wood frame",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "gift persists in intro-v1 status",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "tutorial hint disappears on completion",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "wooden border visually appears after gift",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "free roam after gift",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "photo and frame survive restart",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "normal butler restored",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "profile title stored",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "intro stays queued after profile",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "no intro auto-finish button",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "physical D-pad walk reaches butler",
+      "pass": true,
+      "detail": {
+        "x": 146,
+        "y": 374,
+        "dir": "up",
+        "stride": 0
+      }
+    },
+    {
+      "name": "butler starts guided registration",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved photo is real local blob",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "photo saved before handing over",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "gift not issued by registration",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "persistent hint changes to carry-and-display",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "reopen keeps photo without completing intro",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "butler resumes carried art guidance",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "first placement after reload triggers gift",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "reload during gift never skips it",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "gift can resume from butler after interrupted dialogue",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "no page errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "page_errors": [],
+  "messages": [
+    {
+      "entranceAnchors": [
+        {
+          "type": "art",
+          "i": 0,
+          "x": 116,
+          "y": 237,
+          "enter": 32,
+          "leave": 38
+        },
+        {
+          "type": "art",
+          "i": 1,
+          "x": 439,
+          "y": 237,
+          "enter": 32,
+          "leave": 38
+        },
+        {
+          "type": "butler",
+          "x": 138.64166666666668,
+          "y": 341.71428571428567,
+          "enter": 46,
+          "leave": 54
+        }
+      ],
+      "pos": {
+        "x": 326,
+        "y": 425,
+        "dir": "up",
+        "stride": 0
+      }
+    },
+    {
+      "walkedButler": {
+        "x": 146,
+        "y": 374,
+        "dir": "up",
+        "stride": 0
+      },
+      "interaction": {
+        "type": "butler",
+        "x": 138.64166666666668,
+        "y": 341.71428571428567,
+        "enter": 46,
+        "leave": 54
+      }
+    },
+    {
+      "walkedFrame": {
+        "x": 110,
+        "y": 266,
+        "dir": "right",
+        "stride": 4
+      },
+      "interaction": {
+        "type": "art",
+        "i": 0,
+        "x": 116,
+        "y": 237,
+        "enter": 32,
+        "leave": 38
+      }
+    },
+    {
+      "walkedButler": {
+        "x": 146,
+        "y": 374,
+        "dir": "up",
+        "stride": 0
+      },
+      "interaction": {
+        "type": "butler",
+        "x": 138.64166666666668,
+        "y": 341.71428571428567,
+        "enter": 46,
+        "leave": 54
+      }
+    }
+  ]
+}

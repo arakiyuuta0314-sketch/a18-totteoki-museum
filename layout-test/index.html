@@ -175,7 +175,7 @@ function applyCommitted(save){
  pos={...save.pos};carrying=save.carrying;carryOrigin=null;
  $('museumName').textContent=museumTitle;
  trimImageCache();
- if(loaded){resize();update();}
+ if(loaded){resize();update();updateTutorialHint();}
  for(const url of removed)URL.revokeObjectURL(url);
 }
 function saveError(e){
@@ -388,27 +388,92 @@ function showButlerMuseumName(draft){
  $('a18OpeningMuseumOk').onclick=()=>{void confirm();};
  $('a18OpeningMuseumTitle').onkeydown=e=>{if(e.key==='Enter'){e.preventDefault();void confirm();}};
 }
+function tutorialPending(){
+ return currentSave?.progression.events.find(e=>e.id==='intro-v1')?.status==='queued';
+}
+function tutorialDisplayedWork(){
+ const entranceIds=new Set(entranceVisibleFrames().map(f=>f.id));
+ return works.find(w=>w.fixtureId!=null&&entranceIds.has(w.fixtureId))||null;
+}
+function updateTutorialHint(){
+ if(!tutorialPending()){
+  if($('hint').dataset.firstArtwork==='yes'){$('hint').hidden=true;delete $('hint').dataset.firstArtwork;}
+  return;
+ }
+ const carried=carrying&&works.some(w=>w.id===carrying);
+ $('hint').textContent=tutorialDisplayedWork()
+  ?'最初の展示ができました。爺やに話しかけてください。'
+  :carried
+   ?'作品を持って、奥の額縁に近づき「ここに飾る」を押しましょう。'
+   :works.length
+    ?'爺やの「作品一覧」から作品を取り出しましょう。'
+    :'まずは爺やに話しかけて、最初の一枚を飾りましょう。';
+ $('hint').dataset.firstArtwork='yes';
+ $('hint').hidden=false;
+}
 function showIntroAfterProfile(){
- if(showingEvent||modal||saveBlocked||!playerName)return;
- const ev=currentSave.progression.events.find(e=>e.id==='intro-v1');
- if(!ev||ev.status!=='queued')return;
+ if(showingEvent||modal||saveBlocked||!playerName||!tutorialPending())return;
+ // Let the player actually walk over and speak with the butler.
+ // The queued intro stays durable until an artwork is displayed and the frame accepted.
+ updateTutorialHint();
+}
+function showFirstArtworkGift(){
+ if(showingEvent||modal||saveBlocked||!tutorialPending()||!tutorialDisplayedWork())return;
  showingEvent=true;
- const steps=eventData('intro-v1').steps.filter(step=>['O06','O07'].includes(step.step));
- let index=0;
- function render(){
-  open('ようこそ、館長',
-   '<div class="p6-story-meta">館長の登録が完了しました　'+(index+1)+' / '+steps.length+'</div>'+
-   storyPortrait('butler',steps[index].text)+
+ const lines=[
+  '……おお。最初の一枚が飾られましたな。',
+  'ほっほっほ。この館に、初めての景色が生まれました。',
+  'そういえば……こちらをお渡しするのを忘れておりました。木製のフレームでございます。'
+ ];
+ let page=0;
+ const render=()=>{
+  open('はじめての展示',storyPortrait('butler',lines[page])+
    '<p id="p6EventError" class="error" role="alert"></p>'+
-   '<div class="p6-story-actions">'+(index===0?'<button id="introNext">次へ ▼</button>':'')+
-   '<button id="startTour">はじめる</button><button id="skipTour" class="light">案内をとばす</button>'+
-   '<button id="p6Reload" class="light" hidden>再読み込みして復帰</button></div>','rpg');
-  if($('introNext'))$('introNext').onclick=()=>{index=1;render();};
-  $('startTour').onclick=()=>{void storyCommit('intro-v1','finish');};
-  $('skipTour').onclick=()=>{void storyCommit('intro-v1','skip');};
+   '<div class="p6-story-actions"><button id="tutorialNext" type="button">'+
+   (page===lines.length-1?'木製フレームを受け取る':'つづく ▼')+
+   '</button><button id="p6Reload" class="light" hidden>再読み込みして復帰</button></div>','rpg');
+  $('tutorialNext').onclick=()=>{
+   if(page<lines.length-1){page++;render();return;}
+   void grant();
+  };
   $('p6Reload').onclick=()=>location.reload();
+ };
+ async function grant(){
+  if(storyBusy||saving||saveBlocked)return;
+  storyBusy=true;
+  $('tutorialNext').disabled=true;
+  try{
+   // The existing v3 intro event is the durable gift marker: no new save fields.
+   const ok=await commitEventAction('finish','intro-v1');
+   if(!ok){storyFailure();return;}
+   open('木製フレーム',storyPortrait('butler',
+    'これで、この一枚も立派な展示になりましたな。あとはどうぞ、館長のお好きなように。')+
+    '<p>木製フレームが取り付けられました。</p>'+
+    '<div class="p6-story-actions"><button id="tutorialFreeRoam" type="button">館内を見て回る</button></div>','rpg');
+   $('tutorialFreeRoam').onclick=()=>{showingEvent=false;close();showProgressionEvent();};
+  }finally{storyBusy=false;}
  }
  render();
+}
+function tutorialButlerDialog(){
+ if(saveBlocked||showingEvent)return;
+ if(tutorialDisplayedWork()){showFirstArtworkGift();return;}
+ const held=carrying&&works.find(w=>w.id===carrying);
+ const guide=held
+  ?'作品をお持ちですな。奥の額縁の前まで歩いて「ここに飾る」を押してみてください。'
+  :works.length
+   ?'お預かりした作品が保管されておりますな。作品一覧から一枚取り出し、額縁まで運んでみてください。'
+   :'さあ、まずはお気に入りの一枚をお預かりしましょう。どんな写真でも、あなた様の大切な作品です。';
+ const actionText=held?'飾りに行く':works.length?'作品一覧を開く':'最初の作品を預ける';
+ open('爺や｜館内のご案内',storyPortrait('butler',guide)+
+  '<div class="p6-story-actions"><button id="tutorialButlerAction" type="button">'+actionText+
+  '</button><button id="tutorialButlerLater" type="button" class="light">またあとで</button></div>','rpg');
+ $('tutorialButlerAction').onclick=()=>{
+  if(held)close();
+  else if(works.length)list();
+  else form(0,true,'butler');
+ };
+ $('tutorialButlerLater').onclick=close;
 }
 function showStoryHistory(){
  if(saveBlocked)return;
@@ -432,7 +497,7 @@ function showStoryHistory(){
  };
  $('p6HistoryBack').onclick=()=>{close();showSettings();};
 }
-function butlerDialog(){staffDialog('butler');}
+function butlerDialog(){if(tutorialPending())tutorialButlerDialog();else staffDialog('butler');}
 
 const images=new Map(),spriteBounds=new Map(),movement={ArrowLeft:'left',ArrowRight:'right',ArrowUp:'up',ArrowDown:'down',w:'up',a:'left',s:'down',d:'right'};
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -649,7 +714,7 @@ function walk(dir){
   if(!safeMove(nx,ny))break;
   pos.x=nx;pos.y=ny;moved=true;
  }
- if(moved){pos.stride=(pos.stride+1)%5;$('hint').hidden=true;if(checkPortal())return;requestSave();}
+ if(moved){pos.stride=(pos.stride+1)%5;if(!tutorialPending())$('hint').hidden=true;if(checkPortal())return;requestSave();}
  update();
 }
 function interactionCandidates(){
@@ -694,7 +759,7 @@ async function changeScene(next,options={}){
 }
 function paintArtwork(a,i){
  const f=L.roomFrames(fixtures,galleryIndex)[i];
- if(galleryIndex===0)window.A18Entrance.frame(ctx,f,artworkImage(a),a?.preferredShape||null);
+ if(galleryIndex===0)window.A18Entrance.frame(ctx,f,artworkImage(a),a?.preferredShape||null,!tutorialPending());
  else window.A18P3Gallery.frame(ctx,f,artworkImage(a),L.roomFrames(fixtures,galleryIndex),a?.preferredShape||null);
 }
 function avatar(){
@@ -973,6 +1038,7 @@ function inspect(i){
    if(ok&&targetId&&targetId!==heldId){
     $('hint').hidden=false;$('hint').textContent='作品を受け取りました。次の額縁へ運べます';
    }
+   if(ok&&tutorialPending()&&tutorialDisplayedWork())showFirstArtworkGift();
   });
   return;
  }

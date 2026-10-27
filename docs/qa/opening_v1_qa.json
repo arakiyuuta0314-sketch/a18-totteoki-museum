@@ -46,6 +46,16 @@
       "info": null
     },
     {
+      "name": "intro remains queued for first artwork",
+      "pass": true,
+      "info": null
+    },
+    {
+      "name": "previous skip-tour completion removed",
+      "pass": true,
+      "info": null
+    },
+    {
       "name": "normal museum interaction returns",
       "pass": true,
       "info": null
