@@ -34,6 +34,16 @@
       "detail": null
     },
     {
+      "name": "name field never auto-focuses 390",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "name form does not scroll document 390",
+      "pass": true,
+      "detail": null
+    },
+    {
       "name": "fixed black-band image rectangle 390",
       "pass": true,
       "detail": null
@@ -74,7 +84,22 @@
       "detail": null
     },
     {
-      "name": "butler loads after ending 390",
+      "name": "white begins in image rect 390",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "white spreads fullscreen 390",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "museum reveals by fade 390",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "butler loads after gradual reveal 390",
       "pass": true,
       "detail": null
     },
@@ -108,6 +133,16 @@
     },
     {
       "name": "scene 3 reached 320",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "name field never auto-focuses 320",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "name form does not scroll document 320",
       "pass": true,
       "detail": null
     },
@@ -152,7 +187,22 @@
       "detail": null
     },
     {
-      "name": "butler loads after ending 320",
+      "name": "white begins in image rect 320",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "white spreads fullscreen 320",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "museum reveals by fade 320",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "butler loads after gradual reveal 320",
       "pass": true,
       "detail": null
     },

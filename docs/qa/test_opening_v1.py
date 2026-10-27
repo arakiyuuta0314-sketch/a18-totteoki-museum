@@ -62,6 +62,7 @@ def run():
         page.locator("#a18OpeningFemale").click()
         # Advance through final light dialogue until the museum naming scene.
         press_until(page,"#a18OpeningMuseumTitle",limit=32)
+        page.locator("#a18OpeningRoot").wait_for(state="hidden",timeout=8500)
         check("museum after white fade",page.locator("#a18OpeningRoot").is_hidden())
         check("butler addresses female honorific","花子お嬢様" in page.locator("#dialog").inner_text())
         take(page,"opening_v1_05_butler_museum_390.png")

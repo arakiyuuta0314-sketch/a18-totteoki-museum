@@ -86,6 +86,10 @@ def main():
                 }""")
                 advance_until(page,"#a18OpeningName")
                 require("scene 3 reached "+str(width),page.locator("#a18OpeningImage").get_attribute("src").endswith("scene-03.webp"))
+                require("name field never auto-focuses "+str(width),
+                        page.evaluate("document.activeElement?.id !== 'a18OpeningName'"))
+                require("name form does not scroll document "+str(width),
+                        page.evaluate("window.scrollY===0"))
                 require("fixed black-band image rectangle "+str(width),same_rect(fixed_visual,rect(visual)))
                 require("fixed dialogue rectangle "+str(width),anchored_dialog(fixed_dialog,rect(dialog)))
                 page.screenshot(path=str(QA/("framed_transition_scene3_"+str(width)+".png")),full_page=True)
@@ -95,6 +99,23 @@ def main():
                 page.locator("#a18OpeningFemale").click()
                 advance_until(page,'#a18OpeningImage[src$="scene-04.webp"]')
                 page.wait_for_timeout(160)
+                page.evaluate("""() => {
+                    window.__finaleStates=[];
+                    const root=document.querySelector('#a18OpeningRoot');
+                    const record=()=>{
+                        const flash=document.querySelector('#a18OpeningFullFlash');
+                        window.__finaleStates.push({
+                            flash:!!flash,
+                            clipped:flash?flash.style.clipPath:'',
+                            expanded:!!flash&&flash.classList.contains('expanded'),
+                            revealing:root.classList.contains('a18-opening-revealing')
+                        });
+                    };
+                    new MutationObserver(record).observe(root,{
+                        childList:true,subtree:true,attributes:true,attributeFilter:['class']
+                    });
+                    record();
+                }""")
                 events=page.evaluate("window.__openingFx")
                 require("all transition overlays stay bounded "+str(width),all(x["bounded"] for x in events))
                 require("uses overlapping image fades "+str(width),sum(x["incoming"]>0 for x in events)>0)
@@ -105,7 +126,15 @@ def main():
                 events=page.evaluate("window.__openingFx")
                 require("end uses image-only white "+str(width),any(x["white"] and x["visible"] for x in events))
                 require("end white remains bounded "+str(width),all(x["bounded"] for x in events))
-                require("butler loads after ending "+str(width),page.locator("#a18OpeningRoot").is_hidden())
+                page.locator("#a18OpeningRoot").wait_for(state="hidden",timeout=8500)
+                finale=page.evaluate("window.__finaleStates")
+                require("white begins in image rect "+str(width),
+                        any(x["flash"] and x["clipped"].startswith("inset(") for x in finale))
+                require("white spreads fullscreen "+str(width),
+                        any(x["expanded"] for x in finale))
+                require("museum reveals by fade "+str(width),
+                        any(x["revealing"] for x in finale))
+                require("butler loads after gradual reveal "+str(width),page.locator("#a18OpeningRoot").is_hidden())
                 ctx.close()
             browser.close()
         require("no page errors",not report["errors"],report["errors"])

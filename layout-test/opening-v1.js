@@ -27,7 +27,7 @@
  let active=false,state=null,typingTimer=0,changing=false,token=0;
  const el=id=>root.querySelector('#'+id);
  function stopTyping(){clearTimeout(typingTimer);typingTimer=0;}
- function deactivate(){stopTyping();active=false;changing=false;token++;root.hidden=true;root.innerHTML='';}
+ function deactivate(){stopTyping();active=false;changing=false;token++;root.hidden=true;root.classList.remove('a18-opening-revealing');root.innerHTML='';}
  function title(onStart){
   deactivate();active=true;root.hidden=false;
   root.innerHTML='<section class="a18-opening-frame" aria-label="タイトル画面">'+
@@ -141,7 +141,8 @@
    }
    el('a18OpeningNameOk').onclick=accept;
    el('a18OpeningName').onkeydown=e=>{if(e.key==='Enter'){e.preventDefault();accept()}};
-   el('a18OpeningName').focus();
+   // iOS Safari scrolls the story when an input is automatically focused.
+   // Let the player tap the field when ready; no keyboard on scene entry.
   }else if(beat.action==='gender'){
    words.textContent='あなたの姿は……';
    slot.innerHTML='<button id="a18OpeningMale" type="button">男性</button>'+
@@ -155,16 +156,38 @@
   if(changing)return;
   changing=true;stopTyping();
   const serial=token,curtain=el('a18OpeningVisualCurtain');
-  // The final white flash, too, belongs only to the illustrated area.
+  const illustrated=el('a18OpeningVisual');
+  // Brighten the sepia picture first; black bars and dialogue stay in place.
   curtain.classList.add('white');
   await sleep(25);
   if(serial!==token)return;
   curtain.classList.add('visible');
-  await sleep(580);
+  await sleep(590);
   if(serial!==token)return;
+  // Expand a white mask from the central picture to the entire screen.
+  const bounds=illustrated.getBoundingClientRect();
+  const flash=document.createElement('div');
+  flash.id='a18OpeningFullFlash';
+  flash.className='a18-opening-full-flash';
+  flash.setAttribute('aria-hidden','true');
+  flash.style.clipPath='inset('+Math.max(0,bounds.top)+'px '+
+    Math.max(0,window.innerWidth-bounds.right)+'px '+
+    Math.max(0,window.innerHeight-bounds.bottom)+'px '+
+    Math.max(0,bounds.left)+'px)';
+  root.appendChild(flash);
+  void flash.offsetWidth;
+  flash.classList.add('expanded');
+  await sleep(1000);
+  if(serial!==token)return;
+  // Mount the coloured museum behind solid white before gently revealing it.
   const complete=state.onComplete,result={name:state.name,gender:state.gender};
-  deactivate();
   complete(result);
+  await sleep(100);
+  if(serial!==token)return;
+  root.classList.add('a18-opening-revealing');
+  await sleep(1150);
+  if(serial!==token)return;
+  deactivate();
  }
  async function display(){
   if(!active||changing||!state)return;
