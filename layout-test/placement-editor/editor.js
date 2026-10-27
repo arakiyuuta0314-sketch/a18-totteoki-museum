@@ -1,10 +1,10 @@
 "use strict";
 (()=>{
- const SW=780,SH=1688,STORE="a18-placement-editor-v2";
+ const SW=780,SH=1688,STORE="a18-placement-editor-v3";
  const presets={
-  counter:{x:24,y:765,w:143,h:291,a:0,visible:true},
-  wall:{x:518,y:767,w:238,h:248,a:0,visible:true},
-  picture:{x:572,y:806,w:135,h:174,a:0,visible:true}
+  counter:{x:90,y:795,w:185,h:338,a:0,visible:true},
+  wall:{x:574,y:736,w:315,h:310,a:0,visible:true},
+  picture:{x:658,y:801,w:156,h:133,a:0,visible:true}
  };
  const labels={counter:"カウンター",wall:"右の仕切り壁",picture:"作品の表示サイズ"};
  const keys=Object.keys(presets),$=s=>document.querySelector(s);

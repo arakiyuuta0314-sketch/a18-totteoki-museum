@@ -5,15 +5,15 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#15392f">
 <title>A18 エントランス配置エディター</title>
-<link rel="stylesheet" href="./style.css?v=2">
-<script src="./editor.js?v=2" defer></script>
+<link rel="stylesheet" href="./style.css?v=3">
+<script src="./editor.js?v=3" defer></script>
 </head>
 <body>
 <header class="header">
   <div class="heading">
     <div class="eyebrow">とっておき美術館・Lv.1</div>
     <h1>エントランス配置エディター</h1>
-    <p>実素材を、公開ゲームの実画面に重ねて操作できます。背景は固定、ゲーム本体には反映しません。</p>
+    <p>椅子・棚を除いたカウンター試作と仕切り壁を、実ゲーム画面に重ねています。中央通路は空けた配置です。</p>
   </div>
   <div class="status" id="status" role="status" aria-live="polite">調整用プレビュー</div>
 </header>
@@ -32,7 +32,7 @@
     <p class="scene-intro">実際のゲーム画面＋制作済みのカウンター・仕切り壁。<strong>ドラッグでそのまま配置を調整できます。</strong></p>
     <div class="frame">
       <div id="scene" class="scene" role="group" aria-label="公開ゲームの実画面を使った配置シミュレーター">
-        <img id="reference" src="./reference-game.png" width="780" height="1688" draggable="false" alt="公開ゲームを390×844で動かして撮影した検証用スクリーンショット（テスト画像使用）">
+        <img id="reference" src="./reference-game-counter-inside.png" width="780" height="1688" draggable="false" alt="公開ゲームを390×844で動かして撮影した検証用スクリーンショット（テスト画像使用）">
         <div id="piece-wall" class="piece" data-key="wall" tabindex="0" role="button" aria-label="右の仕切り壁を移動。矢印キーで微調整。">
           <img src="./wall-real-noframe.webp" alt="" draggable="false"><span class="handle" title="大きさを変更"></span>
         </div>
@@ -40,11 +40,11 @@
           <img src="./picture.svg" alt="" draggable="false"><span class="handle" title="大きさを変更"></span>
         </div>
         <div id="piece-counter" class="piece" data-key="counter" tabindex="0" role="button" aria-label="左カウンターを移動。矢印キーで微調整。">
-          <img src="./counter-real.webp" alt="" draggable="false"><span class="handle" title="大きさを変更"></span>
+          <img src="./counter-open.webp" alt="" draggable="false"><span class="handle" title="大きさを変更"></span>
         </div>
       </div>
     </div>
-    <p class="source">背景・キャラ・UI：実公開ゲームの隔離Chrome検証画面。家具：以前制作した独立透過素材（仕切り壁は台紙・額縁を除いた編集用派生）。<strong>ゲーム内の保存データは変更されません。</strong></p>
+    <p class="source">背景・キャラ・UI：隔離Chromeで実ゲームを描画。執事だけ仮に受付内側へ移動。家具は独立透過素材。カウンターは椅子と棚を除去、仕切り壁は台紙・額縁なし。<strong>ゲーム内の保存データは変更されません。</strong></p>
   </div>
   <section class="controls" aria-label="配置とサイズの調整">
     <h2>選択した設備の調整</h2>
@@ -86,7 +86,7 @@
       <button id="reset" type="button" class="button danger">初期配置へ戻す</button>
       <textarea id="shareText" readonly rows="3" aria-label="コピーできなかった場合の共有用テキスト" placeholder="ここに共有リンクが表示されます"></textarea>
     </div>
-    <p class="version">配置座標はゲーム画面の画像基準（幅780×高さ1688px）。実素材の位置合わせ用で、当たり判定・本番ゲームの操作画面ではありません。</p>
+    <p class="version">配置座標はゲーム画面の画像基準（幅780×高さ1688px）。実素材の位置合わせ用で、当たり判定・本番ゲームの操作画面ではありません。写真は仮画像です。</p>
   </section>
 </main>
 <footer>とっておき美術館｜配置検討専用。公開中のゲーム・あなたの登録作品は変更しません。</footer>

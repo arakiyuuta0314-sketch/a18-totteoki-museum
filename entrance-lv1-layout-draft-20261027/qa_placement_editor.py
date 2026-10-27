@@ -59,7 +59,7 @@ with sync_playwright() as p:
   check(label+" URL conveys geometry",'layout=' in share and 'picture' in share)
   check(label+" URL selection restore",page.goto(share,wait_until="networkidle").status==200 and
         page.evaluate("window.__A18_PLACEMENT_TEST__.getState()")["picture"]["w"]==210)
-  check(label+" localStorage autosaved",page.evaluate("!!localStorage.getItem('a18-placement-editor-v2')"))
+  check(label+" localStorage autosaved",page.evaluate("!!localStorage.getItem('a18-placement-editor-v3')"))
   page.screenshot(path=str(OUT/f"placement_editor_{label}.png"),full_page=True,animations="disabled")
   # screenshot is QA evidence only
   check(label+" no page errors",not errors)
