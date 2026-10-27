@@ -13,7 +13,7 @@
 <script src="photo-tone.js?v=frame-photo-hq2-20261027" defer></script>
 <script src="photo-perspective.js?v=perspective-v1-20261027" defer></script>
 <script src="photo-editor.js?v=perspective-v1-20261027" defer></script>
-<script src="staff-flow.js?v=tutorial-hints-20261027" defer></script>
+<script src="staff-flow.js?v=butler-level-dialogue-20261027" defer></script>
 <title>とっておき美術館｜館長の美術館</title>
 <style>
 :root{font-family:system-ui,-apple-system,"Hiragino Kaku Gothic ProN",sans-serif;color:#f8f2e6;background:#152822}
@@ -1139,7 +1139,7 @@ function list(){
  $('close').onclick=close;
 }
 function staffDialog(role='staff'){
- window.A18Registration.staffDialog({open,close,list,form,carrying,role,playerName,gender:avatarGender,works});
+ window.A18Registration.staffDialog({open,close,list,form,carrying,role,playerName,gender:avatarGender,works,museumLevel:unlockedRooms()});
 }
 function fade(){const fade=document.createElement('div');fade.style.cssText='position:fixed;z-index:19;inset:0;background:#102d27;opacity:1;transition:opacity .4s;pointer-events:none';document.body.appendChild(fade);requestAnimationFrame(()=>fade.style.opacity='0');setTimeout(()=>fade.remove(),440);}
 function form(spotNo=0,viaStaff=false,role=galleryIndex===0?'butler':'staff'){

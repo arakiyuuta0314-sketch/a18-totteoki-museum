@@ -26,6 +26,45 @@ const doneLines=[
  '館長、作品のご用意が整いました。大切にお渡しします。',
  'お預かりした作品の仕上げが終わりました。いよいよ展示ですね。'
 ];
+// Butler greetings are keyed by the museum's confirmed unlocked level.
+// Add a level's dialogue here; do not silently reuse another level's lines.
+const BUTLER_GREETINGS_BY_LEVEL={
+ 1:[
+  '{name}、本日もお目にかかれて光栄でございます。',
+  '{name}、館内のご案内は私にお任せください。',
+  '{name}、ようこそお越しくださいました。どうぞごゆっくり。',
+  '{name}、お待ちしておりました。今日もごゆっくりお過ごしください。',
+  '{name}、またお会いできてうれしゅうございます。',
+  '{name}、今日もこの館で素敵な時間をお過ごしくださいませ。',
+  '{name}、何かございましたら、いつでもお声がけくださいませ。',
+  '{name}、こうしてお迎えできるのが、私の楽しみでございます。'
+ ],
+ 2:[
+  '{name}、新しい展示室の扉が開きましたな。',
+  '{name}、新たな仲間も加わり、館内が少しにぎやかになりましたな。',
+  '{name}、新しく開いた展示室も、ぜひご覧くださいませ。'
+ ],
+ 3:[
+  '{name}、また一つ展示室が増えましたな。',
+  '{name}、館内を歩く楽しみが、また増えましたな。',
+  '{name}、この館も、少しずつ立派になってまいりました。'
+ ],
+ 4:[
+  '{name}、展示室を巡るたび、館の歩みを感じますな。',
+  '{name}、新しい展示室もご案内できるようになりましたぞ。',
+  '{name}、これからどんな一枚に出会えるか、楽しみでございます。'
+ ],
+ 5:[
+  '{name}、館内もずいぶんと広くなりましたな。',
+  '{name}、作品を大切に飾ってまいりましょう。',
+  '{name}、館の変化を拝見するのも、私の楽しみの一つでございます。'
+ ],
+ 6:[
+  '{name}、この館も大きく育ちましたな。',
+  '{name}、どの展示室にも、まだ新しい一枚を迎えられそうでございます。',
+  '{name}、これからもご一緒できれば、うれしゅうございます。'
+ ]
+};
 const last=new Map();
 function pick(tag,arr){
  const previous=last.get(tag);let i=Math.floor(Math.random()*arr.length);
@@ -76,12 +115,18 @@ function chatText(role,playerName,gender,works){
  const line=text.replaceAll('{name}',name).replaceAll('{title}',title);
  return line.includes(name)?line:name+'、'+line;
 }
-function staffDialog({open,close,list,form,carrying,role='staff',playerName='館長',gender='male',works=[]}){
+function butlerGreeting(museumLevel,name){
+ const lines=BUTLER_GREETINGS_BY_LEVEL[museumLevel];
+ if(!Number.isInteger(museumLevel)||!lines?.length)
+  throw Error('E_BUTLER_GREETING_LEVEL: '+museumLevel);
+ return pick('butler-hi-lv'+museumLevel,lines).replaceAll('{name}',name);
+}
+function staffDialog({open,close,list,form,carrying,role='staff',playerName='館長',gender='male',works=[],museumLevel}){
  const butler=role==='butler',title=butler?'爺や':'展示室スタッフ';
  const name=honorific(role,playerName,gender);
  activeRole=role;activePlayer=name;
  const intro=butler
-  ?name+'、お呼びでございますか。何なりとお申し付けください。'
+  ?'お呼びでございますか。何なりとお申し付けください。'
   :name+'、おかえりなさい！ 今日はどうする？';
  function speak(text,choices=''){return portrait(text,role)+choices;}
  function menu(){
@@ -110,10 +155,7 @@ function staffDialog({open,close,list,form,carrying,role='staff',playerName='館
   $('close').onclick=close;
  }
  open(title,'<button type="button" id="rpgAdvance" class="rpg-dialogue-advance" aria-label="次の会話へ進む">'+
-  speak(butler?pick('butler-hi',[
-   name+'、本日もお目にかかれて光栄でございます。',
-   name+'、館内のご案内は私にお任せください。'
-  ]):pick('staff-hi',[
+  speak(butler?butlerGreeting(museumLevel,name):pick('staff-hi',[
    name+'、いらっしゃい！ 今日も楽しんでいってね。',
    name+'、会えてうれしい！ 作品を見せてくれる？'
   ]))+

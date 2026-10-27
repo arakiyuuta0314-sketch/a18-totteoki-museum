@@ -152,7 +152,14 @@ def placement_gift(page):
     page.evaluate("window.__A18_SCENE_STUDY__.butlerDialog()")
     assert_pass("normal butler restored",page.locator("#rpgAdvance").count()==1 and
         page.locator("#tutorialNext").count()==0)
+    greeting=page.locator("#dialog .rpg-message").inner_text()
+    assert_pass("post-tutorial Lv1 greeting addresses named player",
+                greeting.startswith("花子お嬢様、"),greeting)
     page.screenshot(path=str(QA/"first_art_tutorial_free_390.png"),full_page=True)
+    page.locator("#rpgAdvance").click()
+    menu=page.locator("#dialog .rpg-message").inner_text()
+    assert_pass("post-tutorial request menu avoids repeated name",
+                "花子お嬢様" not in menu and "お呼びでございますか" in menu,menu)
 def interruption(page):
     boot_skip(page)
     register(page)

@@ -178,7 +178,7 @@
           "dir": "right",
           "stride": 4
         },
-        "carrying": "local-1793065760787-0",
+        "carrying": "local-1793067969309-0",
         "carryOrigin": null,
         "museumTitle": "最初の美術館",
         "playerName": "花子",
@@ -190,8 +190,8 @@
           "paths": [
             "../scenes-preview/assets/official/characters/butler-back-00.png",
             "../scenes-preview/assets/official/characters/butler-front-00.png",
-            "../scenes-preview/assets/official/characters/butler-right-00.png",
             "../scenes-preview/assets/official/characters/butler-left-00.png",
+            "../scenes-preview/assets/official/characters/butler-right-00.png",
             "../scenes-preview/assets/official/characters/curator-back-00.png",
             "../scenes-preview/assets/official/characters/curator-back-01.png",
             "../scenes-preview/assets/official/characters/curator-back-02.png",
@@ -200,21 +200,21 @@
             "../scenes-preview/assets/official/characters/curator-front-00.png",
             "../scenes-preview/assets/official/characters/curator-front-01.png",
             "../scenes-preview/assets/official/characters/curator-front-02.png",
-            "../scenes-preview/assets/official/characters/curator-front-03.png",
-            "../scenes-preview/assets/official/characters/curator-left-01.png",
             "../scenes-preview/assets/official/characters/curator-front-04.png",
             "../scenes-preview/assets/official/characters/curator-left-00.png",
+            "../scenes-preview/assets/official/characters/curator-front-03.png",
+            "../scenes-preview/assets/official/characters/curator-left-01.png",
             "../scenes-preview/assets/official/characters/curator-left-02.png",
             "../scenes-preview/assets/official/characters/curator-left-03.png",
             "../scenes-preview/assets/official/characters/curator-left-04.png",
             "../scenes-preview/assets/official/characters/curator-right-00.png",
             "../scenes-preview/assets/official/characters/curator-right-01.png",
-            "../scenes-preview/assets/official/characters/curator-right-02.png",
             "../scenes-preview/assets/official/characters/curator-right-03.png",
+            "../scenes-preview/assets/official/characters/curator-right-02.png",
             "../scenes-preview/assets/official/characters/curator-right-04.png",
             "../scenes-preview/assets/official/characters/female-back-00.png",
-            "../scenes-preview/assets/official/characters/female-back-01.png",
             "../scenes-preview/assets/official/characters/female-back-02.png",
+            "../scenes-preview/assets/official/characters/female-back-01.png",
             "../scenes-preview/assets/official/characters/female-back-03.png",
             "../scenes-preview/assets/official/characters/female-back-04.png",
             "../scenes-preview/assets/official/characters/female-front-00.png",
@@ -225,14 +225,14 @@
             "../scenes-preview/assets/official/characters/female-left-00.png",
             "../scenes-preview/assets/official/characters/female-left-01.png",
             "../scenes-preview/assets/official/characters/female-left-02.png",
-            "../scenes-preview/assets/official/characters/female-right-01.png",
-            "../scenes-preview/assets/official/characters/female-left-04.png",
-            "../scenes-preview/assets/official/characters/female-right-00.png",
             "../scenes-preview/assets/official/characters/female-left-03.png",
+            "../scenes-preview/assets/official/characters/female-left-04.png",
+            "../scenes-preview/assets/official/characters/female-right-01.png",
+            "../scenes-preview/assets/official/characters/female-right-00.png",
             "../scenes-preview/assets/official/characters/female-right-02.png",
             "../scenes-preview/assets/official/characters/female-right-03.png",
-            "../scenes-preview/assets/official/characters/staff-front-00.png",
             "../scenes-preview/assets/official/characters/female-right-04.png",
+            "../scenes-preview/assets/official/characters/staff-front-00.png",
             "../scenes-preview/assets/official/characters/staff-back-00.png",
             "../scenes-preview/assets/official/characters/staff-left-00.png",
             "../scenes-preview/assets/official/characters/staff-right-00.png"
@@ -775,7 +775,7 @@
         "viewport": {
           "logicalW": 445,
           "logicalH": 717.7051282051282,
-          "cameraX": 7.250698730147287e-11,
+          "cameraX": 5.39225712068914e-11,
           "cameraY": -117.35256410256407,
           "backingWidth": 780,
           "backingHeight": 1258,
@@ -796,7 +796,7 @@
         },
         "works": [
           {
-            "id": "local-1793065760787-0",
+            "id": "local-1793067969309-0",
             "fixtureId": null,
             "title": "大切な景色",
             "complete": null,
@@ -879,6 +879,16 @@
       "name": "normal butler restored",
       "pass": true,
       "detail": null
+    },
+    {
+      "name": "post-tutorial Lv1 greeting addresses named player",
+      "pass": true,
+      "detail": "花子お嬢様、こうしてお迎えできるのが、私の楽しみでございます。"
+    },
+    {
+      "name": "post-tutorial request menu avoids repeated name",
+      "pass": true,
+      "detail": "お呼びでございますか。何なりとお申し付けください。"
     },
     {
       "name": "profile title stored",

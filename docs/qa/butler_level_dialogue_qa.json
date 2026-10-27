@@ -1,0 +1,264 @@
+{
+  "checks": [
+    {
+      "name": "level 1 greeting 1 addresses player",
+      "pass": true,
+      "actual": "ゆた様、本日もお目にかかれて光栄でございます。"
+    },
+    {
+      "name": "level 1 menu 1 does not repeat name",
+      "pass": true,
+      "actual": "お呼びでございますか。何なりとお申し付けください。"
+    },
+    {
+      "name": "level 1 menu actions 1",
+      "pass": true,
+      "actual": null
+    },
+    {
+      "name": "level 1 greeting 2 addresses player",
+      "pass": true,
+      "actual": "ゆた様、館内のご案内は私にお任せください。"
+    },
+    {
+      "name": "level 1 menu 2 does not repeat name",
+      "pass": true,
+      "actual": "お呼びでございますか。何なりとお申し付けください。"
+    },
+    {
+      "name": "level 1 menu actions 2",
+      "pass": true,
+      "actual": null
+    },
+    {
+      "name": "level 1 greeting 3 addresses player",
+      "pass": true,
+      "actual": "ゆた様、ようこそお越しくださいました。どうぞごゆっくり。"
+    },
+    {
+      "name": "level 1 menu 3 does not repeat name",
+      "pass": true,
+      "actual": "お呼びでございますか。何なりとお申し付けください。"
+    },
+    {
+      "name": "level 1 menu actions 3",
+      "pass": true,
+      "actual": null
+    },
+    {
+      "name": "level 1 greeting 4 addresses player",
+      "pass": true,
+      "actual": "ゆた様、お待ちしておりました。今日もごゆっくりお過ごしください。"
+    },
+    {
+      "name": "level 1 menu 4 does not repeat name",
+      "pass": true,
+      "actual": "お呼びでございますか。何なりとお申し付けください。"
+    },
+    {
+      "name": "level 1 menu actions 4",
+      "pass": true,
+      "actual": null
+    },
+    {
+      "name": "level 1 greeting 5 addresses player",
+      "pass": true,
+      "actual": "ゆた様、またお会いできてうれしゅうございます。"
+    },
+    {
+      "name": "level 1 menu 5 does not repeat name",
+      "pass": true,
+      "actual": "お呼びでございますか。何なりとお申し付けください。"
+    },
+    {
+      "name": "level 1 menu actions 5",
+      "pass": true,
+      "actual": null
+    },
+    {
+      "name": "level 1 greeting 6 addresses player",
+      "pass": true,
+      "actual": "ゆた様、今日もこの館で素敵な時間をお過ごしくださいませ。"
+    },
+    {
+      "name": "level 1 menu 6 does not repeat name",
+      "pass": true,
+      "actual": "お呼びでございますか。何なりとお申し付けください。"
+    },
+    {
+      "name": "level 1 menu actions 6",
+      "pass": true,
+      "actual": null
+    },
+    {
+      "name": "level 1 greeting 7 addresses player",
+      "pass": true,
+      "actual": "ゆた様、何かございましたら、いつでもお声がけくださいませ。"
+    },
+    {
+      "name": "level 1 menu 7 does not repeat name",
+      "pass": true,
+      "actual": "お呼びでございますか。何なりとお申し付けください。"
+    },
+    {
+      "name": "level 1 menu actions 7",
+      "pass": true,
+      "actual": null
+    },
+    {
+      "name": "level 1 greeting 8 addresses player",
+      "pass": true,
+      "actual": "ゆた様、こうしてお迎えできるのが、私の楽しみでございます。"
+    },
+    {
+      "name": "level 1 menu 8 does not repeat name",
+      "pass": true,
+      "actual": "お呼びでございますか。何なりとお申し付けください。"
+    },
+    {
+      "name": "level 1 menu actions 8",
+      "pass": true,
+      "actual": null
+    },
+    {
+      "name": "eight distinct level 1 greetings",
+      "pass": true,
+      "actual": [
+        "ゆた様、お待ちしておりました。今日もごゆっくりお過ごしください。",
+        "ゆた様、こうしてお迎えできるのが、私の楽しみでございます。",
+        "ゆた様、またお会いできてうれしゅうございます。",
+        "ゆた様、ようこそお越しくださいました。どうぞごゆっくり。",
+        "ゆた様、今日もこの館で素敵な時間をお過ごしくださいませ。",
+        "ゆた様、何かございましたら、いつでもお声がけくださいませ。",
+        "ゆた様、本日もお目にかかれて光栄でございます。",
+        "ゆた様、館内のご案内は私にお任せください。"
+      ]
+    },
+    {
+      "name": "level 2 uses its own line",
+      "pass": true,
+      "actual": "ゆた様、新しい展示室の扉が開きましたな。"
+    },
+    {
+      "name": "level 2 menu has no name",
+      "pass": true,
+      "actual": "お呼びでございますか。何なりとお申し付けください。"
+    },
+    {
+      "name": "level 2 chat is available",
+      "pass": true,
+      "actual": null
+    },
+    {
+      "name": "level 2 return menu has no name",
+      "pass": true,
+      "actual": null
+    },
+    {
+      "name": "level 3 uses its own line",
+      "pass": true,
+      "actual": "ゆた様、また一つ展示室が増えましたな。"
+    },
+    {
+      "name": "level 3 menu has no name",
+      "pass": true,
+      "actual": "お呼びでございますか。何なりとお申し付けください。"
+    },
+    {
+      "name": "level 3 chat is available",
+      "pass": true,
+      "actual": null
+    },
+    {
+      "name": "level 3 return menu has no name",
+      "pass": true,
+      "actual": null
+    },
+    {
+      "name": "level 4 uses its own line",
+      "pass": true,
+      "actual": "ゆた様、展示室を巡るたび、館の歩みを感じますな。"
+    },
+    {
+      "name": "level 4 menu has no name",
+      "pass": true,
+      "actual": "お呼びでございますか。何なりとお申し付けください。"
+    },
+    {
+      "name": "level 4 chat is available",
+      "pass": true,
+      "actual": null
+    },
+    {
+      "name": "level 4 return menu has no name",
+      "pass": true,
+      "actual": null
+    },
+    {
+      "name": "level 5 uses its own line",
+      "pass": true,
+      "actual": "ゆた様、館内もずいぶんと広くなりましたな。"
+    },
+    {
+      "name": "level 5 menu has no name",
+      "pass": true,
+      "actual": "お呼びでございますか。何なりとお申し付けください。"
+    },
+    {
+      "name": "level 5 chat is available",
+      "pass": true,
+      "actual": null
+    },
+    {
+      "name": "level 5 return menu has no name",
+      "pass": true,
+      "actual": null
+    },
+    {
+      "name": "level 6 uses its own line",
+      "pass": true,
+      "actual": "ゆた様、この館も大きく育ちましたな。"
+    },
+    {
+      "name": "level 6 menu has no name",
+      "pass": true,
+      "actual": "お呼びでございますか。何なりとお申し付けください。"
+    },
+    {
+      "name": "level 6 chat is available",
+      "pass": true,
+      "actual": null
+    },
+    {
+      "name": "level 6 return menu has no name",
+      "pass": true,
+      "actual": null
+    },
+    {
+      "name": "female honorific is preserved",
+      "pass": true,
+      "actual": "ゆたお嬢様、本日もお目にかかれて光栄でございます。"
+    },
+    {
+      "name": "female menu has no repeated honorific",
+      "pass": true,
+      "actual": null
+    },
+    {
+      "name": "staff greeting remains unchanged",
+      "pass": true,
+      "actual": "ゆたさん、いらっしゃい！ 今日も楽しんでいってね。"
+    },
+    {
+      "name": "unsupported level fails explicitly",
+      "pass": true,
+      "actual": "E_BUTLER_GREETING_LEVEL: 7"
+    },
+    {
+      "name": "no browser errors",
+      "pass": true,
+      "actual": []
+    }
+  ],
+  "passed": 50
+}
