@@ -1,0 +1,43 @@
+{
+  "url": "https://arakiyuuta0314-sketch.github.io/a18-totteoki-museum/layout-test/index.html",
+  "browser": "isolated Chrome Chromium channel=chrome",
+  "viewport_css": {
+    "width": 390,
+    "height": 844,
+    "dpr": 2
+  },
+  "visible_work_count": 1,
+  "game_state": {
+    "scene": "entrance",
+    "galleryIndex": 0,
+    "roomCapacity": 2,
+    "pos": {
+      "x": 266,
+      "y": 410,
+      "dir": "down",
+      "stride": 4
+    },
+    "viewport": {
+      "logicalW": 445,
+      "logicalH": 717.7051282051282,
+      "cameraX": 43.49999999999999,
+      "cameraY": -117.35256410256407,
+      "backingWidth": 780,
+      "backingHeight": 1258,
+      "portrait": true,
+      "entrancePaintCount": 40
+    },
+    "interaction": null,
+    "museumLevel": 1
+  },
+  "page_errors": [],
+  "http_errors": [],
+  "page_title": "とっておき美術館｜館長の美術館",
+  "world_box": {
+    "x": 0,
+    "y": 51,
+    "width": 390,
+    "height": 629
+  },
+  "canvas_box": null
+}

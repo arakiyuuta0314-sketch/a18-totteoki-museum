@@ -1,0 +1,37 @@
+{
+  "source": "Captured public GitHub Pages via isolated Chrome, not reconstructed background",
+  "viewport": {
+    "width": 390,
+    "height": 844,
+    "dpr": 2
+  },
+  "game_world": {
+    "logicalW": 445,
+    "logicalH": 717.7051282051282,
+    "cameraX": 43.49999999999999,
+    "cameraY": -117.35256410256407,
+    "backingWidth": 780,
+    "backingHeight": 1258,
+    "portrait": true,
+    "entrancePaintCount": 40
+  },
+  "tested_sample_photo": true,
+  "desk_and_right_frame_are_overlays_not_live_game_assets": true,
+  "butler_x_temporarily_changed_in_disposable_browser": true,
+  "variants": [
+    {
+      "name": "left_30",
+      "desk_shift_game": -30,
+      "butler_x_game": 111,
+      "display_full": "live_public_entrance_counter_left_30_390.jpg",
+      "display_world": "live_public_world_counter_left_30_390.jpg"
+    },
+    {
+      "name": "left_48",
+      "desk_shift_game": -48,
+      "butler_x_game": 93,
+      "display_full": "live_public_entrance_counter_left_48_390.jpg",
+      "display_world": "live_public_world_counter_left_48_390.jpg"
+    }
+  ]
+}
