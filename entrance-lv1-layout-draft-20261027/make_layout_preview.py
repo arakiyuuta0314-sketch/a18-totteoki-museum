@@ -91,8 +91,96 @@ def circulation():
     arr(d,(671,681+H),(970,546+H))
     chip(d,420,1035+H,'中央～左右へ回り込む想定',29)
     return Image.alpha_composite(target,layer).convert('RGB')
-for name,result in [('lv1_3frames_proposal_overlay.png',plan()),('lv1_3frames_passage_footprint.png',circulation())]:
+def new_counter_and_wall(angled=False):
+    """Keep source pixels exact; schematic colors only represent temporary equipment."""
+    name=('B｜右仕切り壁を斜めにして通路を広めに' if angled
+          else 'A｜真横カウンター＋正面向き展示壁')
+    target=create(name)
+    layer=Image.new('RGBA',target.size,(0,0,0,0))
+    d=ImageDraw.Draw(layer)
+    S=lambda pts:[(x,y+H) for x,y in pts]
+    common(d)
+
+    # A side-to-side reception desk (parallel to the back wall).
+    # Butler inside toward rear; visitor stands at lower/front side.
+    d.polygon(S([(95,669),(461,669),(500,713),(132,713)]),
+              fill=(241,194,109,233),outline=(84,54,30,255),width=8)
+    d.polygon(S([(132,713),(500,713),(500,806),(132,806)]),
+              fill=(132,79,41,231),outline=(78,43,22,255),width=9)
+    d.polygon(S([(95,669),(132,713),(132,806),(95,760)]),
+              fill=(90,57,34,228),outline=(78,43,22,255),width=8)
+    # Two inset wood panels convey a low reception desk rather than a block.
+    for x0,x1 in [(155,281),(307,474)]:
+        d.rectangle((x0,732+H,x1,786+H),outline=(228,174,98,255),width=5)
+    # Actual sprite not moved: only the desired staff-side region is indicated.
+    d.ellipse((255,608+H,302,655+H),fill=(50,105,110,255),
+              outline=(244,241,216,255),width=5)
+    chip(d,303,572+H,'爺や側（位置は仮）',size=25,color=(30,88,88,235))
+    chip(d,49,840+H,'左｜受付カウンターを真横に配置',size=29,color=(94,57,33,242))
+    # Right fixture plane: compare full front-facing and a compact angle.
+    if not angled:
+        d.polygon(S([(900,628),(1220,628),(1238,648),(917,648)]),
+                  fill=(239,199,119,225),outline=(66,42,26,255),width=7)
+        d.polygon(S([(917,648),(1238,648),(1238,910),(917,910)]),
+                  fill=(125,86,53,219),outline=(70,43,25,255),width=9)
+        d.polygon(S([(950,678),(1207,678),(1207,865),(950,865)]),
+                  fill=(30,98,83,213),outline=(208,155,72,255),width=9)
+        d.rectangle((973,701+H,1183,844+H),fill=(235,219,190,226),
+                    outline=(173,123,60,255),width=7)
+        chip(d,782,948+H,'右｜正面向き・幅広',size=29,color=(95,60,33,239))
+    else:
+        # The diagonal version uses a compact projection and keeps more of the
+        # upper-right approach unobstructed. Not a measured collision clearance.
+        d.polygon(S([(974,637),(1213,679),(1228,695),(990,654)]),
+                  fill=(239,199,119,225),outline=(66,42,26,255),width=7)
+        d.polygon(S([(990,654),(1228,695),(1220,923),(985,853)]),
+                  fill=(127,86,52,215),outline=(70,43,25,255),width=9)
+        d.polygon(S([(1013,684),(1205,721),(1198,883),(1008,824)]),
+                  fill=(30,98,83,213),outline=(208,155,72,255),width=9)
+        d.polygon(S([(1032,711),(1182,745),(1177,859),(1028,808)]),
+                  fill=(235,219,190,226),outline=(173,123,60,255),width=7)
+        chip(d,786,958+H,'右｜やや斜め・コンパクト',size=29,color=(95,60,33,239))
+    # There is still a central corridor around both movable fixtures.
+    dash(d,(681,1177+H),(681,754+H),color=(38,164,113,244),width=7)
+    arr(d,(685,754+H),(736,558+H),color=(33,156,110,252))
+    arr(d,(736,558+H),(1224,531+H),color=(33,156,110,252))
+    arr(d,(735,558+H),(72,542+H),color=(33,156,110,252))
+    chip(d,481,1045+H,'中央通路 → 奥で左右へ',size=25,
+         color=(20,95,73,240))
+    return Image.alpha_composite(target,layer).convert('RGB')
+
+def side_by_side():
+    from PIL import ImageOps
+    left=Image.open(OUT/'lv1_horizontal_counter_front_wall.png').convert('RGB')
+    right=Image.open(OUT/'lv1_horizontal_counter_angled_wall.png').convert('RGB')
+    # Maintain the full backgrounds and geometry; only scale for comparison.
+    w,h=735,770
+    a=ImageOps.contain(left,(w,h),method=Image.Resampling.LANCZOS)
+    b=ImageOps.contain(right,(w,h),method=Image.Resampling.LANCZOS)
+    out=Image.new('RGB',(w*2+42,h+135),'#f3eddf')
+    for n,img in enumerate([a,b]):
+        x=12+n*(w+18)
+        out.paste(img,(x,64))
+    dr=ImageDraw.Draw(out)
+    dr.rectangle((0,0,out.width,52),fill='#183a31')
+    dr.text((20,8),'Lv.1｜右壁 正面 vs 斜め',font=f(29),fill='#fff8e7')
+    dr.text((24,h+86),'どちらも左の受付は真横。右仕切り壁だけを比較。寸法・通路は仮。',font=f(21),fill='#574630')
+    out.save(OUT/'lv1_wall_angle_comparison.jpg',quality=88,optimize=True)
+
+for name,result in [('lv1_3frames_proposal_overlay.png',plan()),('lv1_3frames_passage_footprint.png',circulation()),
+                    ('lv1_horizontal_counter_front_wall.png',new_counter_and_wall(False)),
+                    ('lv1_horizontal_counter_angled_wall.png',new_counter_and_wall(True))]:
     path=OUT/name; result.save(path,optimize=True)
     assert Image.open(path).size==(1322,1385)
     print('CREATED',path,path.stat().st_size)
+for name in ('lv1_horizontal_counter_front_wall','lv1_horizontal_counter_angled_wall'):
+    src=Image.open(OUT/(name+'.png')).convert('RGB')
+    src.thumbnail((1040,1110))
+    jpeg=OUT/(name+'.jpg')
+    src.save(jpeg,quality=84,optimize=True)
+    assert jpeg.is_file() and Image.open(jpeg).size[0]<=1040
+    print('PHONE_PREVIEW',jpeg,jpeg.stat().st_size)
+side_by_side()
+assert (OUT/'lv1_wall_angle_comparison.jpg').is_file()
+print('SIDE_BY_SIDE',OUT/'lv1_wall_angle_comparison.jpg')
 print('APPROVED_BACKGROUND_SHA256',HASH)
