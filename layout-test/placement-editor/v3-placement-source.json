@@ -1,0 +1,67 @@
+{
+  "schema": "a18-entrance-placement-preview-v3",
+  "userSubmittedOn": "2026-10-27",
+  "canvas": {
+    "width": 780,
+    "height": 1688
+  },
+  "userProvidedGeometry": {
+    "counter": {
+      "x": 118,
+      "y": 827,
+      "w": 143,
+      "h": 291,
+      "a": 0,
+      "visible": true
+    },
+    "wall": {
+      "x": 574,
+      "y": 736,
+      "w": 315,
+      "h": 310,
+      "a": 0,
+      "visible": true
+    },
+    "picture": {
+      "x": 658,
+      "y": 801,
+      "w": 156,
+      "h": 133,
+      "a": 0,
+      "visible": true
+    }
+  },
+  "v3CounterEnlargementProposal": {
+    "counter": {
+      "x": 90,
+      "y": 795,
+      "w": 185,
+      "h": 338,
+      "a": 0,
+      "visible": true
+    },
+    "wall": {
+      "x": 574,
+      "y": 736,
+      "w": 315,
+      "h": 310,
+      "a": 0,
+      "visible": true
+    },
+    "picture": {
+      "x": 658,
+      "y": 801,
+      "w": 156,
+      "h": 133,
+      "a": 0,
+      "visible": true
+    }
+  },
+  "butlerScreenshotOverride": {
+    "x": 145,
+    "footY": 366,
+    "onlyIsolatedBrowser": true
+  },
+  "scope": "Preview-only; source background and game runtime unchanged, width of photo independently fixed",
+  "originalCounter": "counter_original.png unchanged; furniture silhouette modified by transparent alpha clearing"
+}
