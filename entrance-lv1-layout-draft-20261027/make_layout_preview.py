@@ -91,9 +91,10 @@ def circulation():
     arr(d,(671,681+H),(970,546+H))
     chip(d,420,1035+H,'中央～左右へ回り込む想定',29)
     return Image.alpha_composite(target,layer).convert('RGB')
-def new_counter_and_wall(angled=False):
+def new_counter_and_wall(angled=False,counter_vertical=False):
     """Keep source pixels exact; schematic colors only represent temporary equipment."""
-    name=('B｜右仕切り壁を斜めにして通路を広めに' if angled
+    name=('C｜縦向きカウンター＋正面向き展示壁' if counter_vertical
+          else 'B｜右仕切り壁を斜めにして通路を広めに' if angled
           else 'A｜真横カウンター＋正面向き展示壁')
     target=create(name)
     layer=Image.new('RGBA',target.size,(0,0,0,0))
@@ -101,22 +102,38 @@ def new_counter_and_wall(angled=False):
     S=lambda pts:[(x,y+H) for x,y in pts]
     common(d)
 
-    # A side-to-side reception desk (parallel to the back wall).
-    # Butler inside toward rear; visitor stands at lower/front side.
-    d.polygon(S([(95,669),(461,669),(500,713),(132,713)]),
-              fill=(241,194,109,233),outline=(84,54,30,255),width=8)
-    d.polygon(S([(132,713),(500,713),(500,806),(132,806)]),
-              fill=(132,79,41,231),outline=(78,43,22,255),width=9)
-    d.polygon(S([(95,669),(132,713),(132,806),(95,760)]),
-              fill=(90,57,34,228),outline=(78,43,22,255),width=8)
-    # Two inset wood panels convey a low reception desk rather than a block.
-    for x0,x1 in [(155,281),(307,474)]:
-        d.rectangle((x0,732+H,x1,786+H),outline=(228,174,98,255),width=5)
-    # Actual sprite not moved: only the desired staff-side region is indicated.
-    d.ellipse((255,608+H,302,655+H),fill=(50,105,110,255),
-              outline=(244,241,216,255),width=5)
-    chip(d,303,572+H,'爺や側（位置は仮）',size=25,color=(30,88,88,235))
-    chip(d,49,840+H,'左｜受付カウンターを真横に配置',size=29,color=(94,57,33,242))
+    if counter_vertical:
+        # The top runs straight from back to front, parallel to screen Y;
+        # low legs and front panels read as a desk, not a standing divider.
+        d.polygon(S([(136,568),(254,568),(265,869),(147,876)]),
+                  fill=(242,196,114,230),outline=(85,55,29,255),width=8)
+        d.polygon(S([(254,568),(265,869),(265,933),(254,635)]),
+                  fill=(132,79,41,228),outline=(77,44,26,255),width=7)
+        d.polygon(S([(147,876),(265,869),(265,933),(147,948)]),
+                  fill=(112,68,38,233),outline=(77,44,26,255),width=8)
+        d.polygon(S([(136,568),(147,876),(147,948),(136,642)]),
+                  fill=(105,64,38,211),outline=(77,44,26,255),width=7)
+        d.line((254,660+H,264,839+H),fill=(221,176,105,240),width=5)
+        # Staff stands left of desk, while customers approach from right.
+        d.ellipse((64,680+H,111,727+H),fill=(50,105,110,255),
+                  outline=(244,241,216,255),width=5)
+        chip(d,24,747+H,'爺や側（仮）',size=26,color=(30,88,88,235))
+        chip(d,288,736+H,'左｜縦向きカウンター',size=30,color=(94,57,33,242))
+        chip(d,288,785+H,'受付面は右側 →',size=27,color=(94,57,33,238))
+    else:
+        # Existing A/B: desk is parallel to the back wall; visitor stands in front.
+        d.polygon(S([(95,669),(461,669),(500,713),(132,713)]),
+                  fill=(241,194,109,233),outline=(84,54,30,255),width=8)
+        d.polygon(S([(132,713),(500,713),(500,806),(132,806)]),
+                  fill=(132,79,41,231),outline=(78,43,22,255),width=9)
+        d.polygon(S([(95,669),(132,713),(132,806),(95,760)]),
+                  fill=(90,57,34,228),outline=(78,43,22,255),width=8)
+        for x0,x1 in [(155,281),(307,474)]:
+            d.rectangle((x0,732+H,x1,786+H),outline=(228,174,98,255),width=5)
+        d.ellipse((255,608+H,302,655+H),fill=(50,105,110,255),
+                  outline=(244,241,216,255),width=5)
+        chip(d,303,572+H,'爺や側（位置は仮）',size=25,color=(30,88,88,235))
+        chip(d,49,840+H,'左｜受付カウンターを真横に配置',size=29,color=(94,57,33,242))
     # Right fixture plane: compare full front-facing and a compact angle.
     if not angled:
         d.polygon(S([(900,628),(1220,628),(1238,648),(917,648)]),
@@ -167,13 +184,30 @@ def side_by_side():
     dr.text((24,h+86),'どちらも左の受付は真横。右仕切り壁だけを比較。寸法・通路は仮。',font=f(21),fill='#574630')
     out.save(OUT/'lv1_wall_angle_comparison.jpg',quality=88,optimize=True)
 
+def compare_counter_orientation():
+    from PIL import ImageOps
+    names=['lv1_horizontal_counter_front_wall.png','lv1_vertical_counter_front_wall.png']
+    w,h=735,770
+    imgs=[ImageOps.contain(Image.open(OUT/name).convert('RGB'),(w,h),
+                           method=Image.Resampling.LANCZOS) for name in names]
+    out=Image.new('RGB',(w*2+42,h+135),'#f3eddf')
+    for k,img in enumerate(imgs):
+        out.paste(img,(12+k*(w+18),64))
+    dr=ImageDraw.Draw(out)
+    dr.rectangle((0,0,out.width,52),fill='#183a31')
+    dr.text((20,8),'Lv.1｜左の受付カウンター 真横 vs 縦向き',font=f(29),fill='#fff8e7')
+    dr.text((24,h+86),'右の展示壁は両方とも正面向き。受付の向きだけを比較。寸法・通路は仮。',font=f(20),fill='#574630')
+    out.save(OUT/'lv1_counter_orientation_comparison.jpg',quality=88,optimize=True)
+
 for name,result in [('lv1_3frames_proposal_overlay.png',plan()),('lv1_3frames_passage_footprint.png',circulation()),
                     ('lv1_horizontal_counter_front_wall.png',new_counter_and_wall(False)),
-                    ('lv1_horizontal_counter_angled_wall.png',new_counter_and_wall(True))]:
+                    ('lv1_horizontal_counter_angled_wall.png',new_counter_and_wall(True)),
+                    ('lv1_vertical_counter_front_wall.png',new_counter_and_wall(counter_vertical=True))]:
     path=OUT/name; result.save(path,optimize=True)
     assert Image.open(path).size==(1322,1385)
     print('CREATED',path,path.stat().st_size)
-for name in ('lv1_horizontal_counter_front_wall','lv1_horizontal_counter_angled_wall'):
+for name in ('lv1_horizontal_counter_front_wall','lv1_horizontal_counter_angled_wall',
+             'lv1_vertical_counter_front_wall'):
     src=Image.open(OUT/(name+'.png')).convert('RGB')
     src.thumbnail((1040,1110))
     jpeg=OUT/(name+'.jpg')
@@ -181,6 +215,9 @@ for name in ('lv1_horizontal_counter_front_wall','lv1_horizontal_counter_angled_
     assert jpeg.is_file() and Image.open(jpeg).size[0]<=1040
     print('PHONE_PREVIEW',jpeg,jpeg.stat().st_size)
 side_by_side()
+compare_counter_orientation()
 assert (OUT/'lv1_wall_angle_comparison.jpg').is_file()
+assert (OUT/'lv1_counter_orientation_comparison.jpg').is_file()
 print('SIDE_BY_SIDE',OUT/'lv1_wall_angle_comparison.jpg')
+print('COUNTER_ORIENTATION_COMPARISON',OUT/'lv1_counter_orientation_comparison.jpg')
 print('APPROVED_BACKGROUND_SHA256',HASH)
