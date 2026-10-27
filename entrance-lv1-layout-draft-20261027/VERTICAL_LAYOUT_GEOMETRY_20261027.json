@@ -1,0 +1,35 @@
+{
+  "background_sha256": "cc4bca9821242facbee3984d1df7034514845195205c2b30cc94ef4628a469cf",
+  "actual_npc_game_position": {
+    "butler_x": 139,
+    "butler_footY": 366
+  },
+  "actual_player_game_position": {
+    "x": 326,
+    "y": 425
+  },
+  "entrance_wallFootY_game": 210,
+  "counter_third_wall": "illustrative only",
+  "variants": [
+    {
+      "name": "compact",
+      "top": 657,
+      "bottom": 896,
+      "free_at_wall_logical": 57.0,
+      "reception_width_logical": 44.6,
+      "length_logical": 98.7,
+      "image": "lv1_vertical_compact_refined.png",
+      "jpeg": "lv1_vertical_compact_refined.jpg"
+    },
+    {
+      "name": "extended",
+      "top": 569,
+      "bottom": 910,
+      "free_at_wall_logical": 20.7,
+      "reception_width_logical": 44.6,
+      "length_logical": 140.8,
+      "image": "lv1_vertical_extended_refined.png",
+      "jpeg": "lv1_vertical_extended_refined.jpg"
+    }
+  ]
+}
