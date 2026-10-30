@@ -1,11 +1,11 @@
 {
   "date": "2026-10-31",
   "scope": "Upper rear-left/rear-right entrance route, frame gaps, physical wall/display/staff portals and diagnostic overlay",
-  "source": "df1b6b50709255c36f3e9c66199aafccad1c9c72",
+  "source": "5236abb8e3ac714dead50350784e17c00d9afdd9",
   "files": [
     {
       "file": "layout-test/index.html",
-      "sha256": "3f41c67a9f7ec14be3c318a829b5cd4e181b9051edbf0ef0afca4f1c07c61b9e"
+      "sha256": "9ad85b9478633251e23d96ee5ced7a9062ecf5f39be09a365d0f760d161a5fb5"
     },
     {
       "file": "layout-test/layout-system.js",
@@ -21,7 +21,7 @@
     },
     {
       "file": "layout-test/collision-debug-overlay.js",
-      "sha256": "02469864eace526a2a91ead219789095e0248848e351502aaac68ad1b317200c"
+      "sha256": "86a3b649d4aedff6007fccac1b70ec4011386ff6c3cb4251c80f9785105a427c"
     }
   ],
   "validation": "Real local release Chrome landscape 844x390 and portrait 390x844: 14 walking portal routes, all room hitbox overlays, collisions, museum level separated from story. Pass.",
