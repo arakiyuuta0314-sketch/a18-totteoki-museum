@@ -7,7 +7,7 @@ const BASE=[
  [[63,63,192,155],[217,63,317,139],[431,66,531,142],[62,235,154,309],[417,261,512,335]],
  [[37,75,134,153],[147,58,240,137],[256,55,326,135],[424,75,526,153],[60,261,166,335]],
  [[77,56,207,154],[407,56,534,154],[56,244,153,319],[177,244,264,319],[412,262,512,336]],
- [[39,63,151,153],[215,48,320,147],[418,63,537,153],[66,257,179,338],[403,239,516,316]]
+ [[39,63,151,153],[215,48,320,147],[418,63,537,153]]
 ];
 const ROOM_SIZE=Array.from({length:6},(_,i)=>({w:i===0?546:589,h:i===0?483:482,wallFoot:i===0?210:164}));
 const ROOM_LINKS={0:{west:1,east:2,north:5},1:{east:0,north:3},2:{west:0,north:4},3:{south:1,east:5},4:{south:2,west:5},5:{south:0,west:3,east:4}};
@@ -188,7 +188,10 @@ function walkable(x,y,fixtures,room){
  if(x<24||x>m.w-24||y<101||y>m.h-11)return false;
   // Entrance north portal uses the actual opening only after room 6 unlocks.
  if(room===0 && y<m.wallFoot && !(x>=260&&x<=312))return false;
- if(room!==0 && y<m.wallFoot && (ROOM_LINKS[room].north==null||(x<349||x>382)))return false;
+ if(room!==0 && y<m.wallFoot){
+  const north=room===1?[208,231]:room===2?[456,479]:[349,382];
+  if(ROOM_LINKS[room].north==null||x<north[0]||x>north[1])return false;
+ }
  for(const [l,rr,t,b] of obstacles(fixtures,room)){
   const cx=Math.max(l,Math.min(x,rr)),cy=Math.max(t,Math.min(fy,b));
   if(Math.hypot(x-cx,fy-cy)<radius)return false;

@@ -1,0 +1,136 @@
+﻿{
+    "sourceRepo":  "web-tools-preview",
+    "sourceBranch":  "work/a18-gallery1-layout-concepts-20261028",
+    "sourceSha":  "fe048b53f3f6921b73ad7bd1d7849f35f395e620",
+    "purpose":  "2026-10-31 provisional game-background and 6-area movement review",
+    "root":  "layout-test/",
+    "files":  [
+                  {
+                      "path":  "index.html",
+                      "sha256":  "cde1a39cae8ad1c366b14c65914bfab1f0d1fb8442fb01991d54cdf529ea74f8"
+                  },
+                  {
+                      "path":  "layout-system.js",
+                      "sha256":  "ad3e08366bda367a074f1c41c61a8cb3cbfae935c6a33eccadaca20b084b6989"
+                  },
+                  {
+                      "path":  "museum-navigation.js",
+                      "sha256":  "5cd697516408c7a9fbd1151f8bab97be2ae91d0dfa50066b338ab9bf6440ea25"
+                  },
+                  {
+                      "path":  "museum-p2-storage.js",
+                      "sha256":  "845ee0b9b70bed169d0e0abeeab3ceaf058d19b7d0e7f4ea8725abb36476afc1"
+                  },
+                  {
+                      "path":  "museum-p3-renderer.js",
+                      "sha256":  "97f8602e77d4fd14855c502eda436d2c046e21b271ffb2442a388f7b9ba805ca"
+                  },
+                  {
+                      "path":  "museum-p5-decorations.js",
+                      "sha256":  "aec2fefe96a249d67022e2cb397064942ce9f6c867856d263f49014b9740b1e5"
+                  },
+                  {
+                      "path":  "p6-event-dialogue-v1.json",
+                      "sha256":  "f651f9a3abba04a9cb71a4cdd7a26a9fbcdb08cde728287a2c96163399c96fbd"
+                  },
+                  {
+                      "path":  "assets/p5/v0.2/p5-manifest.json",
+                      "sha256":  "bee212711096ddacab4f97558aee9230f8e930276f448d21b173ae5d04a144c8"
+                  },
+                  {
+                      "path":  "assets/approved-galleries/approved-gallery-manifest.json",
+                      "sha256":  "90ce5f005b853f3a7db9a56974744f49e197fdbe5e2ef80cfff5c156f2e057e8"
+                  },
+                  {
+                      "path":  "assets/approved-galleries/gallery1_approved_930x582.png",
+                      "sha256":  "fc06c616fa8664a03efd2d159ac4f346903dcf18f498b6605bb4c45ffb7a3308"
+                  },
+                  {
+                      "path":  "assets/approved-galleries/gallery1_counter.png",
+                      "sha256":  "170aaa16f8afc303a06116057b8c38052122f26cfa7ed135301ab309d2813096"
+                  },
+                  {
+                      "path":  "assets/approved-galleries/gallery1_game_589x482.png",
+                      "sha256":  "16fa7c2b2de9321d130d0588ad3f55529ccb9ed30f79ec43770e90df47c984ed"
+                  },
+                  {
+                      "path":  "assets/approved-galleries/gallery1_wall4.png",
+                      "sha256":  "333d7344c4e73d7f180fad17059cac566b0f2509ac79347bc08d08e2ba20977a"
+                  },
+                  {
+                      "path":  "assets/approved-galleries/gallery1_wall5.png",
+                      "sha256":  "ff373bb98f9f9d438f5a69794da6243814b201395e6dd70d66525064a4e3bfae"
+                  },
+                  {
+                      "path":  "assets/approved-galleries/gallery2_approved_930x582.png",
+                      "sha256":  "c2f519420e869b377f9e4f12bfbe6e61c2091e49a42a4d11e30832085d9a6a70"
+                  },
+                  {
+                      "path":  "assets/approved-galleries/gallery2_game_589x482.png",
+                      "sha256":  "00505100b8e258a155936c1ab7bee9b00b4712faae268b3b59104d015ded899e"
+                  },
+                  {
+                      "path":  "assets/approved-galleries/gallery2_wall3.png",
+                      "sha256":  "5c5a2bc486487f7a3a9fc40df601167de9b5e76a8364395c6d9bacd2def12c0d"
+                  },
+                  {
+                      "path":  "assets/approved-galleries/gallery2_wall4.png",
+                      "sha256":  "8c4359a93f5aeef68ad5a73e9b39cd70c66e8db92863cc0680c2debe5ecf3aa7"
+                  },
+                  {
+                      "path":  "assets/approved-galleries/gallery2_wall5.png",
+                      "sha256":  "6f10e6c097318435f8963ace4afd5c13a760520efe6ec4a8adea5209dc9c5aa9"
+                  },
+                  {
+                      "path":  "assets/approved-galleries/gallery3_approved_930x582.png",
+                      "sha256":  "80a74b6a511fa6881b2126c16d7a0fc4a478e2db4d9505be902a7fa3b72ff596"
+                  },
+                  {
+                      "path":  "assets/approved-galleries/gallery3_game_589x482.png",
+                      "sha256":  "297a5f688b407cf4363f8a873379998a2beecfc3c9826ea203a55fbb9d808e80"
+                  },
+                  {
+                      "path":  "assets/approved-galleries/gallery3_wall4.png",
+                      "sha256":  "67c482e2748bb893fe81a8565217d9a38ce44820afde32770c18d2fe46113ec6"
+                  },
+                  {
+                      "path":  "assets/approved-galleries/gallery3_wall5.png",
+                      "sha256":  "69dc446b7e2122f0b3fdbffad4c832abdf2d0897988e6c1d03e3884991c4062c"
+                  },
+                  {
+                      "path":  "assets/approved-galleries/gallery4_approved_930x582.png",
+                      "sha256":  "1f77bb77a3633c5ec182ae80ce9f960ccd61379969d4b42d2ecdb296a5c6c8df"
+                  },
+                  {
+                      "path":  "assets/approved-galleries/gallery4_game_589x482.png",
+                      "sha256":  "43954e5df97e6b14551107f49beec8222bd3f1534f5c324496587e9140a83848"
+                  },
+                  {
+                      "path":  "assets/approved-galleries/gallery4_wall5.png",
+                      "sha256":  "59cd8e4f3eaa15e275dc939566c2085dc9a2bf7e2f7ab6f9df6966cdf180582b"
+                  },
+                  {
+                      "path":  "assets/approved-galleries/gallery5_approved_930x582.png",
+                      "sha256":  "fb8f376f6d93dd3de09b6d12af988c130a9999bf0d47ba9e2f0bca6238a1a815"
+                  },
+                  {
+                      "path":  "assets/approved-galleries/gallery5_game_589x482.png",
+                      "sha256":  "ba95607b423b35286659842ce54910470bacb62289c85d29fff540c08584d29d"
+                  },
+                  {
+                      "path":  "assets/approved-galleries/game-layout.json",
+                      "sha256":  "efcd63eb792c32108b687f35cba9613fb90f3456d72d991fd849e28b3e18a1da"
+                  }
+              ],
+    "notIncluded":  [
+                        "experiments",
+                        "layout-editor",
+                        "unapproved decor",
+                        "user photos",
+                        "preview editor"
+                    ],
+    "notYetValidated":  [
+                            "new frame photo placement in galleries 1-4",
+                            "freestanding display wall collisions and occlusion"
+                        ]
+}
