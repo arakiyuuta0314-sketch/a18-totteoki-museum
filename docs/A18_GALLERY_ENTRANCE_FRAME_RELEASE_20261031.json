@@ -1,0 +1,45 @@
+{
+  "schema": "a18-pages-provisional-release/v2",
+  "date": "2026-10-31",
+  "sourceRepository": "web-tools-preview",
+  "sourceWorkBranch": "work/a18-gallery1-layout-concepts-20261028",
+  "sourceCommit": "1ace0c28eb49d2048073c72755b3d9ccece65a79",
+  "previousPagesMain": "ac2fd214ca6bedbcf76b6cd810c492a91bd9119e",
+  "scope": [
+    "gallery1-5 obsolete collisions temporarily disabled; outer boundaries and actual portals retained",
+    "entrance approved artwork, avatar, staff and furniture uniformly scaled inside black structural frame",
+    "entrance room5 route in upper north doorway; gate remains based on public access",
+    "initial/setting public museum access 1-6, separate from story progression"
+  ],
+  "tests": [
+    "pre-publication local Chrome widths 844 and 390: 14 directed travel routes; non-QA public level selection/reload/story unchanged",
+    "local Chrome widths 844 and 390: five rooms times six obstacle spots walkable; physical walk from top entrance door to gallery5",
+    "Node syntax checks 4 scripts; source SHA256 parity for five files"
+  ],
+  "expectedLimitations": [
+    "gallery1-5 collisions intentionally removed pending new accepted footprints",
+    "gallery photo alignment and independent wall depth are separate work"
+  ],
+  "files": [
+    {
+      "file": "layout-test/index.html",
+      "sha256": "68c5463ba972c69b09ee2af3de06571b217f093fbc4a342579e175f8def894a0"
+    },
+    {
+      "file": "layout-test/layout-system.js",
+      "sha256": "c151658264058eac95d60105f4044de23ed2a88851887d032355885d93b0b975"
+    },
+    {
+      "file": "layout-test/entrance-renderer.js",
+      "sha256": "dc328b50340608156b2b593688e68d88fa98e3f9439dab3c89234e6a022713ba"
+    },
+    {
+      "file": "layout-test/museum-p2-storage.js",
+      "sha256": "c539bd4bd89e6800b26464c826686b5804fa4bfb0e43d1cc1f0b6f1f5fb292a3"
+    },
+    {
+      "file": "layout-test/museum-navigation.js",
+      "sha256": "0e32a5449a65178315359cb2b7b0c43bb3f98ce69542a336aebc05add4f47ea3"
+    }
+  ]
+}
