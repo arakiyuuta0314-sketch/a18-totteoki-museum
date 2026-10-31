@@ -1,0 +1,43 @@
+{
+  "schema": "a18-provisional-pages-release/v1",
+  "date": "2026-10-31",
+  "sourceRepo": "web-tools-preview",
+  "sourceBranch": "work/a18-gallery1-layout-concepts-20261028",
+  "sourceCommit": "daf0f670c84c6b651de95211f25f006d506a986a",
+  "previousPagesMain": "343ebae67aa7be12b74027f2ad92757595413958",
+  "changes": [
+    "Gallery2 derived background surrounded by black rectangular architecture; upper-left west passage kept open",
+    "Entrance east -> gallery2 west now arrives at (58,239), entrance west route unchanged",
+    "Gallery5 west/east passages moved toward inner center-facing edges of actual arches; reciprocal safe arrivals",
+    "Relevant JS and gallery2 derived image individually cache-busted for mobile Pages"
+  ],
+  "originalApprovedImagesChanged": false,
+  "tests": [
+    "QA Browser Chrome mobile390x844 and desktop844x390: 14 actual walking portal crossings",
+    "Chrome overlay all six rooms: real entrance/exit, obstacles and green walk borders",
+    "Collision staff/display/architecture and level/story save/reload",
+    "Gallery2 black-frame asset and approved source SHA 256 checks"
+  ],
+  "files": [
+    {
+      "path": "layout-test/index.html",
+      "sha256": "8b3925401fb8081929790a25dc6477b9794bd4505fbab7af59ee561bf191bc7f"
+    },
+    {
+      "path": "layout-test/layout-system.js",
+      "sha256": "e7f09322d3eaf8f6a35db92f592195d922ef8a450b29bf3c0cad09e3f6f2188d"
+    },
+    {
+      "path": "layout-test/museum-p3-renderer.js",
+      "sha256": "52caf9dd9a8d2dc7293a41c40f504362a012d51c1369b166d91baaddd6a5d43b"
+    },
+    {
+      "path": "layout-test/assets/approved-galleries/gallery2_game_589x482.png",
+      "sha256": "9083012c9ff0eaec66d265990c893828cdda1dcc20bbd75278c4ab35c5e88360"
+    },
+    {
+      "path": "layout-test/assets/approved-galleries/approved-gallery-manifest.json",
+      "sha256": "3147dd584b04e5bccce5472aa9830ef85810f70fd499942df34c5d5eeb984aaa"
+    }
+  ]
+}
